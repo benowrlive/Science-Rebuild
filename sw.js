@@ -2,7 +2,7 @@
    tools/build.mjs — do not hand-edit the list. Offline is the normal case for
    this product, not a degraded one. */
 
-const VERSION = "0a1a1603ba89";
+const VERSION = "a16841b1bf1d";
 const CACHE = `fp-${VERSION}`;
 
 /* __PRECACHE_START__ */
@@ -135,6 +135,9 @@ const PRECACHE = [
   "index.html",
   "js/app.js",
   "js/audio.js",
+  "js/author/index.js",
+  "js/author/stages.js",
+  "js/author/validate.js",
   "js/components/board.js",
   "js/components/predict.js",
   "js/components/quiz.js",

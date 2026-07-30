@@ -347,6 +347,13 @@ export function me() {
       { value: "hyperlegible", label: "Easier to read", hint: "A font designed for low vision and dyslexia" },
     ], progress.prefs.face ?? "", (v) => setPref("face", v)),
 
+    /* The authoring tool. Authors are not children and this is not a learning
+       control — it is a working surface for the people who build the content.
+       Linked from Me rather than the Atlas so a child never lands on it by
+       accident. The route is lazy-loaded, so opening Me costs nothing. */
+    el("a", { class: "back pressable", href: "#/author" },
+      svgIcon("next"), el("span", { text: "Authoring tool" })),
+
     el("button", {
       class: "danger pressable",
       onclick: () => { if (confirm("Erase all progress? This cannot be undone.")) { reset(); location.hash = "#/"; } },
@@ -367,3 +374,7 @@ export function levelPicker() {
           el("span", { class: "picker-age", text: `Ages ${l.label}` }))))),
   ];
 }
+
+/* The authoring tool is lazy-loaded — see app.js. This stub exists only so the
+   import in app.js resolves; the real entry is author/index.js. The Me screen
+   links to #/author, which triggers the lazy import. */

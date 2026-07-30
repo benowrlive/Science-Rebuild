@@ -14,6 +14,9 @@ const live = document.getElementById("live");
    Atlas never downloads the runner, the quiz component or the review flow. */
 const lazyLesson = (...args) => import("./lesson/view.js").then((m) => m.lessonView(...args));
 const lazyReview = () => import("./lesson/review.js").then((m) => m.reviewView());
+/* The authoring tool is lazy too — it is only opened by authors, never by a
+   child, and it carries the per-stage-type form components nothing else needs. */
+const lazyAuthor = () => import("./author/index.js").then((m) => m.authorView());
 
 /* `live: true` marks a route that owns its own DOM across state changes.
    Without it, awarding XP mid-lesson dispatched fp:change, the subscriber
@@ -25,6 +28,7 @@ const routes = [
   [/^\/m\/([\w-]+)$/, moduleScreen],
   [/^\/l\/([\w-]+)\/(\d+)$/, lazyLesson, { live: true }],
   [/^\/review$/, lazyReview, { live: true }],
+  [/^\/author$/, lazyAuthor, { live: true }],
   [/^\/me$/, me],
 ];
 
