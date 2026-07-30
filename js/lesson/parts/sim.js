@@ -27,6 +27,7 @@ const SIMS = {
   outbreak: () => import("../../sims/outbreak.js"),
   incline: () => import("../../sims/incline.js"),
   forces: () => import("../../sims/forces.js"),
+  coaster: () => import("../../sims/coaster.js"),
 };
 
 export const RENDER = {

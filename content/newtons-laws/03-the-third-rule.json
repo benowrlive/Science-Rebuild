@@ -1,0 +1,157 @@
+{
+  "id": "newtons-laws/03",
+  "module": "newtons-laws",
+  "index": 2,
+  "title": "The Third Rule: Every Push Has a Pull",
+  "specimen": null,
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "You push a wall. The wall does not move. But you go backward. What pushed you?",
+        "Push a wall. You go backward. Something pushed you — what?",
+        "You push a wall. The wall pushes you back with the same force. Why don't you both move equally?",
+        "Newton's third law: forces come in equal and opposite pairs. Why does the wall stay put while you recoil?"
+      ],
+      "sub": [
+        "Nothing visible touched you. But something did — the wall pushed back.",
+        "The wall pushed you. Every push has an equal push back. That is the third rule.",
+        "The wall exerted an equal and opposite force on you. Newton's third law: forces occur in pairs.",
+        "The contact force from the wall on you is equal and opposite to your force on the wall. F_AB = -F_BA."
+      ]
+    },
+    {
+      "type": "predict",
+      "concept": "action-reaction",
+      "question": [
+        "You are on roller skates. You push a heavy truck. What happens to YOU?",
+        "On roller skates, you push a stationary truck. What happens to you?",
+        "You push a massive truck while on frictionless skates. Describe your subsequent motion.",
+        "A person on frictionless skates exerts a force F on a truck of mass M >> m_person. What happens to the person?"
+      ],
+      "options": [
+        "You roll backward — the truck pushed you back, even though it barely moved",
+        "Nothing happens to you — the truck is too heavy",
+        "You go forward — the push carried you along"
+      ],
+      "outcome": "You roll backward — the truck pushed you back, even though it barely moved",
+      "note": [
+        "Most people forget about themselves. Think about what the truck did to you.",
+        "Predict — and remember: the push goes both ways.",
+        "Form a hypothesis. Apply F_AB = -F_BA to both bodies.",
+        "Predict. The truck exerts -F on you; by F = ma, your acceleration is F/m, much larger than the truck's F/M."
+      ]
+    },
+    {
+      "type": "slider",
+      "levels": [1, 2],
+      "guided": true,
+      "label": "Who is pushing who?",
+      "min": 0, "max": 3, "value": 0,
+      "captions": [
+        "You push the trolley. The trolley goes forward.",
+        "The trolley pushes you back. You go backward (if you are on skates).",
+        "Both pushes are the same size. The trolley moves more because it is lighter — not because the push is bigger.",
+        "Every push in the world comes with an equal push back. They are a pair — you never get one without the other."
+      ],
+      "t": [
+        "Move the slider. See the same push from both sides.",
+        "Drag the slider. The same push, seen from both ends."
+      ],
+      "after": [
+        "Two pushes, same size, opposite directions. That is every push in the universe.",
+        "F_AB = -F_BA. Action and reaction are equal, opposite, and simultaneous."
+      ]
+    },
+    {
+      "type": "slider",
+      "levels": [3, 4],
+      "guided": false,
+      "label": "Action-reaction pairs",
+      "min": 0, "max": 4, "value": 0,
+      "captions": [
+        "You push the trolley forward. The trolley pushes you backward. F_you→trolley = -F_trolley→you.",
+        "The Earth pulls you down (gravity). You pull the Earth up. Same force, opposite directions — the Earth just barely moves because it is so massive.",
+        "A rocket pushes gas backward. The gas pushes the rocket forward. No ground needed — that is why rockets work in space.",
+        "You walk by pushing the ground backward. The ground pushes you forward. Walking is a series of action-reaction pairs with the Earth."
+      ],
+      "t": [
+        "Work out the pair before the caption arrives.",
+        "Predict the reaction force before reading each caption. Identify the pair, not just one side."
+      ],
+      "after": [
+        "Every one of these is the same rule: forces come in pairs, equal and opposite. The third law.",
+        "Newton's third law: F_AB = -F_BA for all forces, gravitational, electromagnetic, and contact. There are no unpaired forces."
+      ]
+    },
+    {
+      "type": "name",
+      "t": [
+        "Every push has an equal push back. That is the third rule.",
+        "Every push has an equal push in the opposite direction. That is Newton's third law.",
+        "Newton's third law: for every action there is an equal and opposite reaction. The two forces act on different bodies.",
+        "Newton's third law: F_AB = -F_BA. The action-reaction pair acts on different bodies, so they do not cancel. They are simultaneous, equal, and opposite."
+      ],
+      "sub": [
+        "The pushes are the same size. The movement is different because the masses are different.",
+        "Why don't the forces cancel? Because they push on different things — one on you, one on the wall.",
+        "The pair never cancels because they act on different bodies. The Earth feels your weight; you feel the Earth's pull. Both are real.",
+        "Action-reaction pairs act on different systems. Choosing the system determines which member is relevant to the analysis."
+      ]
+    },
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "Rockets work in space because they push gas backward, and the gas pushes them forward. No air needed.",
+        "A rocket pushes gas out the back. The gas pushes the rocket forward. This works in space — no air needed.",
+        "Rocket propulsion is pure third law: expel mass backward, accelerate forward. The vacuum of space is not an obstacle; it is the point.",
+        "The Tsiolkovsky equation and all reaction propulsion derive from conservation of momentum, which is equivalent to Newton's third law integrated over time."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "action-reaction",
+      "q": [
+        "You push a wall. The wall pushes you. Which push is bigger?",
+        "You exert 50 N on a wall. What force does the wall exert on you?",
+        "You push a wall with force F. What is the reaction force on you?",
+        "You exert F on a wall. What is the magnitude and direction of the wall's force on you?"
+      ],
+      "options": [
+        "The same size — every push has an equal push back",
+        "The wall pushes harder — it is solid",
+        "The wall does not push — it just stops you"
+      ],
+      "answer": 0,
+      "why": [
+        "The wall pushes you with exactly the same force you pushed it. That is the third law — every push has an equal push back, on the other thing.",
+        "The wall pushes back with 50 N. Newton's third law: the forces are equal and opposite. The wall does not move because it is attached to the Earth; you move because you are not.",
+        "F_wall→you = -F_you→wall = -50 N (opposite direction, same magnitude). The wall's rigidity transmits the force to the Earth, which absorbs the recoil invisibly.",
+        "F_AB = -F_BA. The wall exerts -F on you. The Earth-wall system acquires momentum -p; you acquire +p. The Earth's enormous mass makes its motion undetectable."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "action-reaction",
+      "q": [
+        "Why do the action and reaction forces not cancel each other out?",
+        "If action = -reaction, why don't they cancel?",
+        "Newton's third law says F_AB = -F_BA. Why doesn't the net force on the system vanish?",
+        "If action and reaction are equal and opposite, why is there any acceleration at all?"
+      ],
+      "options": [
+        "They push on different things, so they do not cancel",
+        "They do cancel — that is why nothing moves",
+        "Only the bigger one counts"
+      ],
+      "answer": 0,
+      "why": [
+        "You push the wall. The wall pushes you. One push is on the wall, one is on you. They do not cancel because they are on different things.",
+        "The action force is on the wall. The reaction force is on you. They act on different objects, so neither object experiences both — no cancellation.",
+        "Action and reaction act on different bodies. The wall feels only your push; you feel only the wall's push. Neither body experiences a net zero from the pair.",
+        "F_AB acts on B; F_BA acts on A. They are equal and opposite but act on different systems. The net force on the combined system A+B is zero (momentum conserved), but each body accelerates according to the force on it alone."
+      ]
+    }
+  ]
+}

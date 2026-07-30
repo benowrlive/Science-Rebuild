@@ -7,7 +7,7 @@
    is a guide, the validator is the gate. */
 
 import { el } from "../el.js";
-import { AVAILABLE_SIMS } from "./validate.js";
+import { AVAILABLE_SIMS, SIM_INFO, defaultParams } from "./validate.js";
 
 /* A labelled field wrapper: label on top, control below, optional hint. */
 function field(label, control, hint) {
@@ -17,7 +17,20 @@ function field(label, control, hint) {
     hint ? el("p", { class: "auth-hint", text: hint }) : null);
 }
 
-/* A text input that updates a key on the stage. */
+/* A concept dropdown — shows the module's declared concepts so the author
+   picks from valid options instead of typing (and typo'ing). Falls back to
+   a text input if the module has no concepts declared. */
+function conceptSelect(stage, key, onChange, moduleConcepts) {
+  if (!moduleConcepts?.length) {
+    return text(stage, key, onChange, { placeholder: "e.g. velocity-is-rate" });
+  }
+  const current = stage[key] ?? "";
+  return el("select", {
+    class: "auth-input",
+    onchange: (e) => { stage[key] = e.target.value || ""; onChange(); },
+  }, el("option", { value: "", text: "(pick a concept)", selected: !current }),
+    ...moduleConcepts.map((c) => el("option", { value: c, selected: c === current, text: c })));
+}
 function text(stage, key, onChange, opts = {}) {
   const v = stage[key] ?? "";
   const input = el("input", {
@@ -132,9 +145,9 @@ const EDITORS = {
     field("The small line under it", variants(stage, "sub", onChange), "Optional. One short follow-up."),
   ],
 
-  predict: (stage, onChange) => [
-    field("Concept this prediction tests", text(stage, "concept", onChange, { placeholder: "e.g. position-is-relative" }),
-      "Must match a concept declared in the module's concepts list in curriculum.json."),
+  predict: (stage, onChange, mc) => [
+    field("Concept this prediction tests", conceptSelect(stage, "concept", onChange, mc),
+      "Pick from the module's declared concepts. Typos here fail the build."),
     field("The question", variants(stage, "question", onChange)),
     field("Options (the child picks one)", options(stage, "options", onChange),
       "outcome must be one of these, exactly."),
@@ -169,9 +182,9 @@ const EDITORS = {
       "Medicine, sport, agriculture, climate. One short beat, not a text panel."),
   ],
 
-  check: (stage, onChange) => [
-    field("Concept this checks", text(stage, "concept", onChange, { placeholder: "e.g. velocity-is-rate" }),
-      "Required. Must be declared in the module's concepts list. Seeded into the retrieval schedule."),
+  check: (stage, onChange, mc) => [
+    field("Concept this checks", conceptSelect(stage, "concept", onChange, mc),
+      "Required. Pick from the module's declared concepts. Seeded into the retrieval schedule."),
     field("The question", variants(stage, "q", onChange)),
     field("Options", options(stage, "options", onChange)),
     field("Correct answer (0-indexed)", num(stage, "answer", onChange, { min: 0, max: (stage.options?.length ?? 1) - 1 }),
@@ -180,26 +193,36 @@ const EDITORS = {
       "Show the mechanism, not the answer. 'Because it is too big' is the answer. 'The holes were big enough for food and too small for poison' is the mechanism."),
   ],
 
-  sim: (stage, onChange) => [
-    field("Levels", levels(stage, onChange)),
-    field("Guided?", checkbox(stage, "guided", "Guided (caption names what they see)", onChange)),
-    field("Simulation", (() => {
-      const sel = el("select", {
-        class: "auth-input",
-        onchange: (e) => { stage.sim = e.target.value; onChange(); },
-      }, ...AVAILABLE_SIMS.map((s) => el("option", { value: s, selected: s === stage.sim, text: s })));
-      return sel;
-    })(), "Which sim to load. Each sim is a file in js/sims/."),
-    field("The instruction", variants(stage, "t", onChange)),
-    field("Params (JSON)", el("textarea", {
-      class: "auth-textarea auth-json",
-      rows: 4,
-      "data-fk": "stage-params",
-      oninput: (e) => { try { stage.params = JSON.parse(e.target.value) || {}; onChange(); } catch { /* invalid JSON — keep last valid */ } },
-    }, document.createTextNode(JSON.stringify(stage.params ?? {}, null, 2))),
-      "Simulation parameters. Varies per sim — see the sim's source for what it reads."),
-    field("Goal (shown when objective met)", variants(stage, "goal", onChange)),
-  ],
+  sim: (stage, onChange) => {
+    const info = SIM_INFO[stage.sim];
+    const sel = el("select", {
+      class: "auth-input",
+      onchange: (e) => {
+        stage.sim = e.target.value;
+        stage.params = defaultParams(stage.sim);
+        onChange();
+      },
+    }, ...AVAILABLE_SIMS.map((s) => {
+      const d = SIM_INFO[s]?.desc;
+      return el("option", { value: s, selected: s === stage.sim, text: s + (d ? " - " + d.slice(0, 55) : "") });
+    }));
+    const ph = info ? Object.entries(info.params).map(([k, v]) => k + ": " + v).join("\n") : "";
+    return [
+      field("Levels", levels(stage, onChange)),
+      field("Guided?", checkbox(stage, "guided", "Guided (caption names what they see)", onChange)),
+      field("Simulation", sel, "Which sim to load. The description tells you what it does."),
+      info ? el("p", { class: "auth-hint", text: info.desc }) : null,
+      field("The instruction", variants(stage, "t", onChange)),
+      field("Params (JSON)", el("textarea", {
+        class: "auth-textarea auth-json",
+        rows: 5,
+        "data-fk": "stage-params",
+        oninput: (e) => { try { stage.params = JSON.parse(e.target.value) || {}; onChange(); } catch { /* keep last valid */ } },
+      }, document.createTextNode(JSON.stringify(stage.params ?? defaultParams(stage.sim) ?? {}, null, 2))),
+        ph ? "Available params for this sim:\n" + ph : "No documented params. Ask a coder."),
+      field("Goal (shown when objective met)", variants(stage, "goal", onChange)),
+    ];
+  },
 
   build: (stage, onChange) => [
     field("The instruction", variants(stage, "t", onChange)),
@@ -247,8 +270,11 @@ const EDITORS = {
   ],
 };
 
-/** Render the editor for one stage. Returns a DOM node. */
-export function stageEditor(stage, onChange, onRemove, onMove, index, total) {
+/** Render the editor for one stage. Returns a DOM node.
+    moduleConcepts is the array of concept ids declared in curriculum.json
+    for this lesson's module — passed down so concept fields render as
+    dropdowns instead of text inputs. */
+export function stageEditor(stage, onChange, onRemove, onMove, index, total, moduleConcepts) {
   const editor = EDITORS[stage.type] ?? (() => [el("p", { text: `No editor for type "${stage.type}"` })]);
   return el("section", { class: "auth-stage", "data-type": stage.type },
     el("header", { class: "auth-stage-head" },
@@ -258,7 +284,7 @@ export function stageEditor(stage, onChange, onRemove, onMove, index, total) {
       index > 0 ? el("button", { class: "auth-move pressable", type: "button", onclick: () => onMove(index, -1) }, "\u2191") : null,
       index < total - 1 ? el("button", { class: "auth-move pressable", type: "button", onclick: () => onMove(index, 1) }, "\u2193") : null,
       el("button", { class: "auth-remove pressable", type: "button", onclick: onRemove }, "Remove")),
-    el("div", { class: "auth-stage-body" }, ...editor(stage, onChange)));
+    el("div", { class: "auth-stage-body" }, ...editor(stage, onChange, moduleConcepts)));
 }
 
 /** The "add stage" toolbar. */

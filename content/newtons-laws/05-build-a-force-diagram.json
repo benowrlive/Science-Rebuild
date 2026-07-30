@@ -1,0 +1,141 @@
+{
+  "id": "newtons-laws/05",
+  "module": "newtons-laws",
+  "index": 4,
+  "title": "Build a Force Diagram",
+  "specimen": null,
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "A trolley is moving. Four forces are acting on it. Can you put them in the right place?",
+        "Four forces push and pull a moving trolley. Can you place each one correctly?",
+        "A moving trolley has four forces on it: push, friction, gravity, and the normal force. Assign each to its direction.",
+        "Identify the four forces on a body in motion and their directions. This is a free-body diagram."
+      ],
+      "sub": [
+        "Every force has a direction. Get all four right to finish the module.",
+        "Push goes one way, friction another. Gravity and the normal force are vertical. Place them all.",
+        "A free-body diagram shows every force and its direction. Build one correctly to finish.",
+        "The free-body diagram is the foundational tool of mechanics. Constructing it correctly is the prerequisite for every force analysis."
+      ]
+    },
+    {
+      "type": "predict",
+      "concept": "net-force",
+      "question": [
+        "A trolley sits on the ground, not moving. Which way does the ground push it?",
+        "A trolley is at rest on the ground. Which direction does the ground push it?",
+        "A stationary trolley on a surface: what is the direction of the normal force?",
+        "What is the direction of the normal force on a body at rest on a horizontal surface?"
+      ],
+      "options": [
+        "Up — the ground pushes up against gravity",
+        "Down — the ground pushes it into the ground",
+        "Sideways — the ground does not push vertically"
+      ],
+      "outcome": "Up — the ground pushes up against gravity",
+      "note": [
+        "The ground is doing something. Guess which way.",
+        "Predict. The ground is pushing — but which way?",
+        "The normal force has a direction. Predict it.",
+        "The normal force is perpendicular to the surface. Predict its direction."
+      ]
+    },
+    {
+      "type": "build",
+      "guided": true,
+      "t": [
+        "Put each force in the right direction. Push goes forward, friction goes backward, gravity goes down, and the normal force goes up.",
+        "Place each force arrow in its correct direction. Push: forward. Friction: backward. Gravity: down. Normal force: up."
+      ],
+      "parts": [
+        { "id": "push", "label": "Push" },
+        { "id": "friction", "label": "Friction" },
+        { "id": "gravity", "label": "Gravity" },
+        { "id": "normal", "label": "Normal force" }
+      ],
+      "slots": [
+        { "correct": "push", "label": ["Forward", "Forward (the push)"] },
+        { "correct": "friction", "label": ["Backward", "Backward (friction)"] },
+        { "correct": "gravity", "label": ["Down", "Down (gravity)"] },
+        { "correct": "normal", "label": ["Up", "Up (normal force)"] }
+      ],
+      "trials": [
+        {
+          "name": ["All forces correct", "Complete free-body diagram"],
+          "needs": ["push", "friction", "gravity", "normal"],
+          "pass": ["Every force is in its right place. That is a correct force diagram.", "The free-body diagram is complete and correct. All four forces are assigned to their proper directions."],
+          "fail": ["Some forces are in the wrong direction. Check which arrow points where.", "One or more forces are misassigned. Verify: push forward, friction back, gravity down, normal up."]
+        },
+        {
+          "name": ["Horizontal forces", "Horizontal pair"],
+          "needs": ["push", "friction"],
+          "pass": ["Push and friction are correctly placed — the horizontal forces are right.", "Horizontal pair correct: push forward, friction backward."],
+          "fail": ["The horizontal forces are wrong. Push goes forward, friction goes backward.", "Horizontal pair incorrect. Push is forward; friction opposes motion (backward)."]
+        },
+        {
+          "name": ["Vertical forces", "Vertical pair"],
+          "needs": ["gravity", "normal"],
+          "pass": ["Gravity and the normal force are correct — the vertical forces balance.", "Vertical pair correct: gravity down, normal force up."],
+          "fail": ["The vertical forces are wrong. Gravity pulls down, the normal force pushes up.", "Vertical pair incorrect. Gravity acts downward; the normal force is perpendicular to the surface (upward on a horizontal surface)."]
+        }
+      ],
+      "win": [
+        "You built a correct force diagram. Every force has a direction, and every direction has its force.",
+        "The free-body diagram is complete and correct. You can now analyse any force problem — this is the starting point of all mechanics."
+      ],
+      "lose": [
+        "Some forces are misplaced. Push forward, friction back, gravity down, normal up. Try again.",
+        "The diagram is incomplete or incorrect. Review: push is forward, friction opposes motion, gravity is downward, normal force is perpendicular to the surface. Adjust and re-test."
+      ]
+    },
+    {
+      "type": "name",
+      "t": [
+        "That diagram you just built is called a force diagram. It is how physicists see moving things.",
+        "A diagram showing every force on a thing is called a force diagram. It is the first step in solving any force problem.",
+        "A force diagram (or free-body diagram) shows every force acting on an object and its direction. It is the starting point of every mechanics problem.",
+        "A free-body diagram (FBD) isolates a body and represents all external forces as vectors. It is the prerequisite for applying ΣF = ma."
+      ],
+      "sub": [
+        "Every force problem starts with one of these. Get the forces right, and the rest is arithmetic.",
+        "Physicists and engineers draw these before every calculation. The diagram is the problem; the numbers come after.",
+        "The FBD is universal: the same tool solves trolley problems, bridge design, orbital mechanics, and crash analysis.",
+        "The FBD externalises the force analysis. Errors in FBDs propagate into every subsequent calculation — correctness here is non-negotiable."
+      ]
+    },
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "Engineers draw force diagrams before building anything — bridges, cars, rockets. Wrong diagram, wrong building.",
+        "Every bridge, car, and rocket starts with a force diagram. Get the forces wrong and the structure fails.",
+        "Structural engineering is force diagrams at scale. Every beam, cable, and bolt is analysed with a free-body diagram before it is built.",
+        "Finite element analysis is the computational descendant of the FBD. Every engineering simulation begins with the same question: what forces act on this body, and in what direction?"
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "net-force",
+      "q": [
+        "What is a force diagram?",
+        "What does a force diagram show?",
+        "Define a free-body diagram.",
+        "What is the purpose of a free-body diagram in mechanics?"
+      ],
+      "options": [
+        "A picture showing every force on a thing and which way it points",
+        "A picture of the thing itself, with no forces",
+        "A list of numbers about how heavy things are"
+      ],
+      "answer": 0,
+      "why": [
+        "A force diagram shows the thing and every force on it, each pointing the right way. It is how you see what is pushing what.",
+        "A force diagram (free-body diagram) shows an object and every force acting on it, with arrows for direction. It is the starting point for any force calculation.",
+        "A free-body diagram isolates a body and draws every external force as a vector. It is the visual representation of ΣF = ma.",
+        "An FBD externalises the force model: the body is isolated, and every external force is drawn as a vector. It is the prerequisite for applying Newton's second law correctly."
+      ]
+    }
+  ]
+}

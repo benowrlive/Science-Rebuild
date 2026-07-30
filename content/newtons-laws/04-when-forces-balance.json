@@ -1,0 +1,162 @@
+{
+  "id": "newtons-laws/04",
+  "module": "newtons-laws",
+  "index": 3,
+  "title": "When Forces Balance",
+  "specimen": null,
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "A trolley rolls at the same speed, not speeding up, not slowing down. Is anything pushing it?",
+        "A trolley moves at constant speed. Is a force pushing it?",
+        "An object moves at constant velocity. What is the net force on it?",
+        "A body in uniform motion: what does F_net equal?"
+      ],
+      "sub": [
+        "Most people say yes. The answer is no — and that is the strangest thing Newton discovered.",
+        "Aristotle said everything moving needs a push. Newton said: only changes in motion need a push.",
+        "Constant velocity means zero net force. This is the first law in action.",
+        "F_net = 0 ⟹ dv/dt = 0. Uniform motion requires no net force — the principle of inertia."
+      ]
+    },
+    {
+      "type": "predict",
+      "concept": "net-force",
+      "question": [
+        "The trolley is rolling. Push and friction are the same size. What happens to its speed?",
+        "A rolling trolley has push = friction. What happens to its speed?",
+        "If F_applied = F_friction, what happens to v?",
+        "When the applied force equals the frictional force, what is the resulting motion?"
+      ],
+      "options": [
+        "The speed stays the same — the forces cancel",
+        "The trolley speeds up — there is still a push",
+        "The trolley stops — friction always wins"
+      ],
+      "outcome": "The speed stays the same — the forces cancel",
+      "note": [
+        "This is the answer that fooled Aristotle. Guess what you think.",
+        "Predict. The forces are equal — what does that mean for the motion?",
+        "Form a hypothesis from F_net = F_applied - F_friction.",
+        "Predict. F_net = 0 implies uniform motion by the first law."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "forces",
+      "levels": [1, 2],
+      "guided": true,
+      "t": [
+        "Set push and friction to the same number. Launch. Watch the speed — it stays the same.",
+        "Set push = friction (try push 3, friction 3). Launch. The net force arrow shows zero — the trolley moves at constant speed."
+      ],
+      "params": {
+        "push": 3,
+        "mass": 2,
+        "friction": 3,
+        "goalSpeed": 0.3
+      },
+      "paramsByLevel": {
+        "1": { "push": 3, "mass": 1, "friction": 3, "goalSpeed": 0.25 },
+        "2": { "push": 3, "mass": 2, "friction": 3, "goalSpeed": 0.3 }
+      },
+      "goal": [
+        "Watch the net force arrow say zero. The trolley keeps its speed — balanced forces.",
+        "F_net = 0 confirmed: v is constant. This is equilibrium."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "forces",
+      "levels": [3, 4],
+      "guided": false,
+      "t": [
+        "Find the friction that balances a push of 4. Then predict: what happens if you increase friction by 1? Test it.",
+        "Determine the friction that balances F=4 (constant v). Then predict the motion at friction=5 before testing — identify the deceleration regime."
+      ],
+      "params": {
+        "push": 4,
+        "mass": 2,
+        "friction": 4,
+        "goalSpeed": 0.35
+      },
+      "paramsByLevel": {
+        "4": { "push": 4, "mass": 3, "friction": 4, "goalSpeed": 0.4 }
+      },
+      "goal": [
+        "Balance the forces. The trolley at constant speed is the proof.",
+        "Equilibrium achieved: F_net = 0, v = const. Verify by perturbing friction and observing acceleration."
+      ]
+    },
+    {
+      "type": "name",
+      "t": [
+        "When forces are the same size in opposite directions, they balance. The thing moves at the same speed.",
+        "When forces cancel out, we say they are balanced. Balanced forces mean constant speed — or staying still.",
+        "When the net force is zero, the forces are balanced. The object moves at constant velocity — which includes staying at rest.",
+        "Net force zero defines equilibrium. By the first law, velocity is constant: uniform motion or rest. Both are equilibrium states."
+      ],
+      "sub": [
+        "Balanced forces do not mean no forces. They mean the forces add up to zero.",
+        "Zero net force is not the same as no forces. It means the forces cancel. A book on a table has gravity down and the table pushing up — balanced.",
+        "Equilibrium: ΣF = 0. Forces may be present but their vector sum is zero. Static equilibrium (at rest) and dynamic equilibrium (constant v) are both cases.",
+        "Equilibrium requires ΣF = 0 and Στ = 0 (no net torque). Static and dynamic equilibrium differ in v but share F_net = 0."
+      ]
+    },
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "A skydiver stops speeding up when air resistance matches gravity. That is balanced forces.",
+        "A skydiver falls faster and faster until air resistance equals gravity. Then they fall at constant speed — balanced forces.",
+        "Terminal velocity: when drag equals weight, F_net = 0 and the skydiver falls at constant speed. About 200 km/h belly-down.",
+        "Terminal velocity: mg = ½ρv²C_dA. At equilibrium, v_t = √(2mg/ρC_dA). For a human, ~55 m/s; with a parachute, ~5 m/s."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "net-force",
+      "q": [
+        "A trolley rolls at constant speed. What is the net force on it?",
+        "An object moves at constant velocity. What is F_net?",
+        "A body in uniform motion has what net force?",
+        "For v = const, what is ΣF?"
+      ],
+      "options": [
+        "Zero — the forces are balanced",
+        "Forward — something must be pushing it",
+        "Backward — friction is slowing it"
+      ],
+      "answer": 0,
+      "why": [
+        "Constant speed means no change in motion. No change means no net force. The push and friction are the same size, so they cancel.",
+        "Constant velocity means zero acceleration, which means zero net force (F = ma, a = 0). The forces are present but balanced.",
+        "a = 0 ⟹ F_net = ma = 0. Uniform motion is the signature of balanced forces.",
+        "F_net = ma = m·0 = 0. The first law: uniform motion is the natural state in the absence of net force."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "net-force",
+      "q": [
+        "A book sits still on a table. Is gravity pulling it down?",
+        "A book rests on a table. Is there a force on it?",
+        "A book at rest on a table: what forces act on it?",
+        "Identify the forces on a book in static equilibrium on a table."
+      ],
+      "options": [
+        "Yes — gravity pulls down, and the table pushes up with the same force. They balance.",
+        "No — if it is not moving, there are no forces",
+        "Yes — gravity pulls down, and nothing pushes up"
+      ],
+      "answer": 0,
+      "why": [
+        "Gravity pulls the book down. The table pushes it up. The two forces are the same size, so the book stays still. That is balanced forces — not 'no forces'.",
+        "Gravity acts down; the table's normal force acts up. Both are present, both are real. They are equal and opposite, so the book does not move.",
+        "The normal force from the table exactly cancels gravity: N = mg. Both forces exist; their sum is zero. Static equilibrium.",
+        "N = mg (normal force balances weight). ΣF = N - mg = 0. The book is in static equilibrium; the table deforms microscopically to provide N."
+      ]
+    }
+  ]
+}

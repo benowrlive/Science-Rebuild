@@ -1,0 +1,160 @@
+{
+  "id": "kinetic-potential/01",
+  "module": "kinetic-potential",
+  "index": 0,
+  "title": "The Energy of Moving",
+  "specimen": "energy-meter",
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "A ball sits still at the top of a hill. It has not moved. What does it have?",
+        "A ball is at rest at the top of a hill. What does it have that a ball at the bottom does not?",
+        "A stationary ball at height h has something a stationary ball at ground level lacks. What is it?",
+        "A body at rest at height h possesses a quantity absent at h=0. Identify it."
+      ],
+      "sub": [
+        "It is not moving. But it is high up. And that matters.",
+        "Height is not nothing. A ball at the top of a hill can do something a ball at the bottom cannot.",
+        "Position carries energy. The ball at height has potential — the capacity to move, once it falls.",
+        "Gravitational potential energy: U = mgh. A state function of position in a gravitational field."
+      ]
+    },
+    {
+      "type": "predict",
+      "concept": "potential-energy",
+      "question": [
+        "A ball is twice as high. Does it have twice the height energy?",
+        "Double the height of a ball. Does its stored energy double?",
+        "If h → 2h, what happens to the potential energy?",
+        "If height doubles (at constant m and g), how does U change?"
+      ],
+      "options": [
+        "Yes, twice the height means twice the energy",
+        "No, the energy stays the same",
+        "No, the energy goes up by four"
+      ],
+      "outcome": "Yes, twice the height means twice the energy",
+      "note": [
+        "Guess before you try. The answer is simpler than you might think.",
+        "Predict. The relationship is one of the simplest in physics.",
+        "Form a hypothesis from U = mgh before testing.",
+        "Predict. U ∝ h at constant m, g. Verify in the sim."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "coaster",
+      "levels": [1, 2],
+      "guided": true,
+      "t": [
+        "Change the starting height. Watch the PE bar — higher start means more PE.",
+        "Set the start height to 2, then 4. Watch the PE bar (gold). Higher start = more potential energy."
+      ],
+      "params": {
+        "startHeight": 4,
+        "friction": 0,
+        "goalX": 0.9
+      },
+      "paramsByLevel": {
+        "1": { "startHeight": 3, "friction": 0, "goalX": 0.85 },
+        "2": { "startHeight": 4, "friction": 0, "goalX": 0.9 }
+      },
+      "goal": [
+        "Launch the ball. Watch the PE bar shrink as it falls — that stored energy is becoming motion.",
+        "Launch. Observe PE → KE conversion as the ball descends. The PE bar shrinks; the KE bar grows."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "coaster",
+      "levels": [3, 4],
+      "guided": false,
+      "t": [
+        "Find the minimum start height to clear the hill. Then predict: does doubling the height double the speed at the bottom?",
+        "Determine the minimum h₀ to clear the hill. Then predict: if h₀ doubles, does v at the bottom double? (Hint: KE = ½mv², PE = mgh.) Test and verify."
+      ],
+      "params": {
+        "startHeight": 3,
+        "friction": 0,
+        "goalX": 0.9
+      },
+      "paramsByLevel": {
+        "4": { "startHeight": 3, "friction": 1, "goalX": 0.9 }
+      },
+      "goal": [
+        "Clear the hill. The height you started with determined whether you made it.",
+        "Clear the hill. Verify energy conservation: mgh₀ = ½mv² at the bottom (minus friction)."
+      ]
+    },
+    {
+      "type": "name",
+      "t": [
+        "Being high up gives a thing stored energy. That is called potential energy.",
+        "The energy of being high up is called potential energy. The higher you are, the more you have.",
+        "Potential energy (PE) is the energy of position. For gravity, PE = mgh — mass times gravity times height.",
+        "Gravitational potential energy: U = mgh. A state function of position in a gravitational field. The reference height is arbitrary; only ΔU is physically meaningful."
+      ],
+      "sub": [
+        "When the ball falls, the potential energy turns into the energy of moving. That is the trade.",
+        "Potential energy converts to kinetic energy as the ball falls. PE at the top = KE at the bottom (no friction).",
+        "PE = mgh. At the bottom, all PE has converted to KE = ½mv². So mgh = ½mv², giving v = √(2gh).",
+        "Conservation of mechanical energy: mgh₀ = ½mv² + mgh. The total is constant in the absence of non-conservative forces."
+      ]
+    },
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "A dam holds water high up. The water's potential energy is what makes electricity when it falls.",
+        "Hydroelectric dams use potential energy. Water at height has PE; as it falls, PE becomes KE, which spins turbines.",
+        "A hydroelectric dam is a PE-to-KE-to-electrical converter. Hoover Dam: water drops 180 m, generating 2 GW.",
+        "Hydroelectric power: P = ηρgQh, where Q is flow rate and h is head. The gravitational potential energy of stored water is the largest form of grid-scale energy storage worldwide."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "potential-energy",
+      "q": [
+        "What is potential energy?",
+        "What does potential energy mean?",
+        "Define gravitational potential energy.",
+        "What is U = mgh?"
+      ],
+      "options": [
+        "The energy of being high up",
+        "The energy of moving fast",
+        "The energy of being hot"
+      ],
+      "answer": 0,
+      "why": [
+        "Potential energy is the energy of position. A ball at the top of a hill has it; a ball at the bottom does not. The higher you go, the more you have.",
+        "Potential energy is stored energy of position. For gravity, PE = mgh. A ball at height h has mgh of stored energy that can be released by falling.",
+        "Gravitational PE = mgh. It is the work gravity would do if the body fell from h to the reference level. A state function of position.",
+        "U = mgh is the gravitational potential energy in a uniform field. It represents the capacity to do work as the body descends. Only ΔU is measurable; the zero is arbitrary."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "potential-energy",
+      "q": [
+        "Ball A is at height 2. Ball B is at height 4. Who has more potential energy?",
+        "Ball A is at h=2, Ball B at h=4. Which has more PE?",
+        "Two balls of equal mass: A at h=2, B at h=4. Which has greater U?",
+        "Two identical masses at h₁=2 and h₂=4. Which has greater gravitational PE?"
+      ],
+      "options": [
+        "Ball B — twice the height means twice the PE",
+        "Ball A — lower is better",
+        "They have the same PE"
+      ],
+      "answer": 0,
+      "why": [
+        "PE = mass × gravity × height. Same ball, same gravity. Double the height, double the PE. Ball B has twice as much.",
+        "PE = mgh. With m and g constant, PE ∝ h. Ball B at h=4 has twice the PE of Ball A at h=2.",
+        "U = mgh. At constant m, g: U ∝ h. U_B = 2 × U_A.",
+        "U = mgh is linear in h. U_B/U_A = h_B/h_A = 4/2 = 2. The relationship is direct proportionality."
+      ]
+    }
+  ]
+}

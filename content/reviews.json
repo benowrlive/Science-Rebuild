@@ -1465,6 +1465,27 @@
     ],
     "from": "immunity/04"
   },
+  "potential-energy": {
+    "q": [
+      "What is potential energy?",
+      "What does potential energy mean?",
+      "Define gravitational potential energy.",
+      "What is U = mgh?"
+    ],
+    "options": [
+      "The energy of being high up",
+      "The energy of moving fast",
+      "The energy of being hot"
+    ],
+    "answer": 0,
+    "why": [
+      "Potential energy is the energy of position. A ball at the top of a hill has it; a ball at the bottom does not. The higher you go, the more you have.",
+      "Potential energy is stored energy of position. For gravity, PE = mgh. A ball at height h has mgh of stored energy that can be released by falling.",
+      "Gravitational PE = mgh. It is the work gravity would do if the body fell from h to the reference level. A state function of position.",
+      "U = mgh is the gravitational potential energy in a uniform field. It represents the capacity to do work as the body descends. Only ΔU is measurable; the zero is arbitrary."
+    ],
+    "from": "kinetic-potential/01"
+  },
   "drug-must-reach-target": {
     "q": [
       "Why do most new medicines fail?",
@@ -1829,6 +1850,69 @@
       "F_net = 0 ⟹ dv/dt = 0 ⟹ v = const. The principle of inertia. The ball follows a geodesic of flat spacetime — a straight line at constant velocity."
     ],
     "from": "newtons-laws/01"
+  },
+  "f-equals-ma": {
+    "q": [
+      "You push a 2 kg trolley with 6 newtons of force. What is its acceleration?",
+      "A 2 kg trolley is pushed with 6 N. What is its acceleration?",
+      "F = 6 N, m = 2 kg. Find a.",
+      "Given F_net = 6 N and m = 2 kg, compute a."
+    ],
+    "options": [
+      "3 m/s²",
+      "12 m/s²",
+      "4 m/s²"
+    ],
+    "answer": 0,
+    "why": [
+      "F = ma means a = F ÷ m. So 6 ÷ 2 = 3. The trolley accelerates at 3 metres per second per second.",
+      "a = F/m = 6/2 = 3 m/s². The force is split across the mass: each kilogram gets 3 newtons.",
+      "Rearranging F = ma: a = F/m = 6 N / 2 kg = 3 m/s². Each second, the speed increases by 3 m/s.",
+      "a = F_net/m = 6/2 = 3 m/s². By the second law, the acceleration vector is parallel to F_net with magnitude F/m."
+    ],
+    "from": "newtons-laws/02"
+  },
+  "action-reaction": {
+    "q": [
+      "You push a wall. The wall pushes you. Which push is bigger?",
+      "You exert 50 N on a wall. What force does the wall exert on you?",
+      "You push a wall with force F. What is the reaction force on you?",
+      "You exert F on a wall. What is the magnitude and direction of the wall's force on you?"
+    ],
+    "options": [
+      "The same size — every push has an equal push back",
+      "The wall pushes harder — it is solid",
+      "The wall does not push — it just stops you"
+    ],
+    "answer": 0,
+    "why": [
+      "The wall pushes you with exactly the same force you pushed it. That is the third law — every push has an equal push back, on the other thing.",
+      "The wall pushes back with 50 N. Newton's third law: the forces are equal and opposite. The wall does not move because it is attached to the Earth; you move because you are not.",
+      "F_wall→you = -F_you→wall = -50 N (opposite direction, same magnitude). The wall's rigidity transmits the force to the Earth, which absorbs the recoil invisibly.",
+      "F_AB = -F_BA. The wall exerts -F on you. The Earth-wall system acquires momentum -p; you acquire +p. The Earth's enormous mass makes its motion undetectable."
+    ],
+    "from": "newtons-laws/03"
+  },
+  "net-force": {
+    "q": [
+      "A trolley rolls at constant speed. What is the net force on it?",
+      "An object moves at constant velocity. What is F_net?",
+      "A body in uniform motion has what net force?",
+      "For v = const, what is ΣF?"
+    ],
+    "options": [
+      "Zero — the forces are balanced",
+      "Forward — something must be pushing it",
+      "Backward — friction is slowing it"
+    ],
+    "answer": 0,
+    "why": [
+      "Constant speed means no change in motion. No change means no net force. The push and friction are the same size, so they cancel.",
+      "Constant velocity means zero acceleration, which means zero net force (F = ma, a = 0). The forces are present but balanced.",
+      "a = 0 ⟹ F_net = ma = 0. Uniform motion is the signature of balanced forces.",
+      "F_net = ma = m·0 = 0. The first law: uniform motion is the natural state in the absence of net force."
+    ],
+    "from": "newtons-laws/04"
   },
   "food-is-fuel-and-parts": {
     "q": [

@@ -35,6 +35,46 @@ You do NOT need:
 - Node.js or npm
 - Any programming knowledge
 
+## Quick reference: the 9 stage types
+
+Every lesson is a sequence of stages. Here is what each one does, in one line:
+
+| Stage | What it does | When to use it |
+|---|---|---|
+| `hook` | Opens with a question, never a definition | Every lesson starts here |
+| `predict` | Child commits to a guess before seeing the answer | Before any sim or revelation |
+| `slider` | Child moves through a range with captions | When a parameter has named steps |
+| `sim` | Child operates a real simulation | The heart of the lesson |
+| `build` | Child places parts into slots (drag or tap) | The boss stage |
+| `name` | The concept is finally named | After the exploration |
+| `apply` | Why this matters in the real world | One short beat |
+| `check` | Multiple-choice with mechanism feedback | At least one per lesson |
+| `weigh` | Two attributed readings of contested evidence | Only for contested topics (L3-4) |
+
+A typical lesson: `hook` → `predict` → `sim` → `name` → `apply` → `check`.
+
+## Quick reference: the simulations
+
+The sim dropdown shows a description for each one. Here is the full list:
+
+| Sim | What it does | Key params |
+|---|---|---|
+| `incline` | Ball on a surface; push + friction sliders | `push` (1-6), `friction` (0-5), `goalDist` (0.5-0.9) |
+| `forces` | Trolley with push/mass/friction; F=ma with visible force arrows | `push` (0-6), `mass` (1-4), `friction` (0-4), `goalSpeed` (0.2-0.5) |
+| `membrane` | Cell membrane; molecules random-walk through pores | `kinds` (2-6), `pore` (1-9), `temp` (1-3), `target` (0.5-0.8) |
+| `selection` | Natural selection; beetles with different colours | (no documented params) |
+| `replication` | DNA replication; child copies a base sequence | (no documented params) |
+| `folding` | Protein folding; oil/water bead chain | (no documented params) |
+| `spike` | Viral spike protein binding to a receptor | (no documented params) |
+| `stomata` | Stomata opening/closing on a leaf | (no documented params) |
+| `web` | Food web; child connects organisms | (no documented params) |
+| `outbreak` | Epidemic spreading through a population | (no documented params) |
+| `energy` | Energy flow through a system | (no documented params) |
+
+When you select a sim in the tool, the params textarea pre-fills with defaults.
+Change the numbers to tune the difficulty. The hint below the textarea lists
+what each param does.
+
 ## Opening the authoring tool
 
 1. Open the site in your browser.
@@ -110,8 +150,9 @@ the answer obvious.
 
 You write:
 
-- **concept**: which concept this prediction tests (must match the
-  module's declared concepts — the tool will check)
+- **concept**: which concept this prediction tests. The tool shows a dropdown
+  of the module's declared concepts — pick from the list. Typing is not
+  needed and typos are impossible.
 - **question**: the prompt, in 2–4 level variants
 - **options**: 2–4 possible answers
 - **outcome**: which option is actually correct (must match one of the
@@ -146,11 +187,13 @@ a video, not an animation — a thing with physics).
 
 You write:
 
-- **sim**: which simulation to load (the tool shows a dropdown of
-  available sims)
+- **sim**: which simulation to load. The dropdown shows a description for
+  each sim so you know what it does before you pick it.
 - **t**: the instruction, in level variants
-- **params**: simulation parameters (varies per sim — see the sim's source
-  or ask a coder what each one reads)
+- **params**: simulation parameters. When you select a sim, the tool
+  pre-fills the params with defaults and shows a hint listing what each
+  param does. Change the numbers to tune difficulty — you do not need to
+  write JSON from scratch.
 - **goal**: shown when the child reaches the objective
 
 The sim stage also offers "I have had enough of this one" — the goal is
@@ -236,14 +279,25 @@ guarantees that what you produce will pass the build.
 When the panel is green, two buttons appear at the bottom:
 
 - **Copy JSON** — puts the lesson on your clipboard. Paste it into a file.
-- **Download file** — saves it as `module-NN.json` to your downloads.
+- **Download file** — saves it with the correct filename to your downloads.
 
-The file needs to go into `content/<module>/` in the project folder, with
-a name like `02-how-fast-is-fast.json` (two-digit index, hyphenated title).
-Then someone runs `npm run build` and the lesson is live.
+The tool names the file for you using the convention: `NN-slug.json` (e.g.
+`02-how-fast-is-fast.json`). The filename is shown above the buttons so you
+know what to expect.
+
+The file goes into `content/<module>/` in the project folder. For example,
+a Describing Motion lesson goes in:
+
+```
+content/describing-motion/02-how-fast-is-fast.json
+```
+
+Then someone runs `npm run build` and the lesson is live. The build
+regenerates `authored.json` and `reviews.json` automatically — you do not
+touch those files.
 
 **You do not run the build yourself.** That is a one-line command for
-whoever manages the code. Your job ends at the exported JSON file.
+whoever manages the code. Your job ends at the downloaded JSON file.
 
 ## Writing good level variants
 

@@ -1,0 +1,162 @@
+{
+  "id": "newtons-laws/02",
+  "module": "newtons-laws",
+  "index": 1,
+  "title": "The Second Rule: Push and Acceleration",
+  "specimen": "spring-scale",
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "Push a trolley twice as hard. Does it speed up twice as fast?",
+        "Push a trolley, then push it twice as hard. Does it accelerate twice as much?",
+        "Double the force on a trolley. Is the acceleration doubled?",
+        "If the net force on a body doubles, what happens to its acceleration?"
+      ],
+      "sub": [
+        "There is a rule. The rule is exact, and it is one of the most useful things ever discovered.",
+        "Newton found the rule, and it works for everything from marbles to rockets.",
+        "Newton's second law: F = ma. The relationship is linear in both force and mass.",
+        "Newton's second law: F_net = ma. The acceleration is directly proportional to net force and inversely proportional to mass."
+      ]
+    },
+    {
+      "type": "predict",
+      "concept": "f-equals-ma",
+      "question": [
+        "Same push, but the trolley is twice as heavy. How much acceleration now?",
+        "Same push, double the mass. What happens to the acceleration?",
+        "A force F produces acceleration a on mass m. What acceleration does F produce on 2m?",
+        "If F = ma, what is a when m is doubled and F is held constant?"
+      ],
+      "options": [
+        "Half as much acceleration",
+        "The same acceleration",
+        "Twice as much acceleration"
+      ],
+      "outcome": "Half as much acceleration",
+      "note": [
+        "Heavier things are harder to get moving. Guess how much harder.",
+        "Predict before checking. The relationship is exact, not a guess.",
+        "Form a hypothesis from F = ma before testing.",
+        "Apply a = F/m: doubling m halves a. Predict, then verify."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "forces",
+      "levels": [1, 2],
+      "guided": true,
+      "t": [
+        "Keep the push the same. Change the mass. Watch how the acceleration changes.",
+        "Set the push to 4. Try mass 1, then mass 2, then mass 3. Watch the net force arrow — it stays the same, but the trolley accelerates less with more mass."
+      ],
+      "params": {
+        "push": 4,
+        "mass": 2,
+        "friction": 0,
+        "goalSpeed": 0.4
+      },
+      "paramsByLevel": {
+        "1": { "push": 4, "mass": 1, "friction": 0, "goalSpeed": 0.35 },
+        "2": { "push": 4, "mass": 2, "friction": 0, "goalSpeed": 0.4 }
+      },
+      "goal": [
+        "Reach the goal speed. Try different masses — heavier means slower to get going.",
+        "Reach the target v. Confirm a = F/m by varying mass at constant F."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "forces",
+      "levels": [3, 4],
+      "guided": false,
+      "t": [
+        "Find the push that reaches the goal with mass 2. Then set mass to 4 — what push do you need now? Work it out before you test.",
+        "Determine the force needed to reach the goal at m=2. Then predict the force needed at m=4 (same target v) before testing. Verify a = F/m quantitatively."
+      ],
+      "params": {
+        "push": 3,
+        "mass": 2,
+        "friction": 0,
+        "goalSpeed": 0.45
+      },
+      "paramsByLevel": {
+        "4": { "push": 3, "mass": 3, "friction": 0, "goalSpeed": 0.5 }
+      },
+      "goal": [
+        "Reach the goal. The push you need scales with the mass — that is F = ma.",
+        "Reach the target v. Confirm F ∝ m for fixed a, verifying the second law."
+      ]
+    },
+    {
+      "type": "name",
+      "t": [
+        "Push equals mass times how fast it speeds up. That is the rule.",
+        "Force = mass × acceleration. That is Newton's second law.",
+        "Newton's second law: F = ma. Force equals mass times acceleration. The units are newtons (N), where 1 N = 1 kg × 1 m/s².",
+        "Newton's second law: F_net = ma. The net force on a body equals its mass times its acceleration. A vector equation; valid in inertial frames."
+      ],
+      "sub": [
+        "More push, more acceleration. More mass, less acceleration. The rule is exact.",
+        "Double the push, double the acceleration. Double the mass, halve the acceleration. F = ma.",
+        "F = ma is a vector equation. The acceleration points in the direction of the net force. 1 N accelerates 1 kg at 1 m/s².",
+        "F_net = ma is the foundational equation of mechanics. It holds in all inertial frames and breaks down only at relativistic speeds or quantum scales."
+      ]
+    },
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "A rocket is just F = ma with a very big push and a very small mass.",
+        "Rockets work because F = ma: big force, small mass, huge acceleration.",
+        "A Saturn V produces 35 million newtons to accelerate 3 million kg. That is F = ma at the scale of a building.",
+        "The Tsiolkovsky rocket equation derives from F = ma: Δv = v_e ln(m₀/m_f). Every gram of dry mass costs delta-v."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "f-equals-ma",
+      "q": [
+        "You push a 2 kg trolley with 6 newtons of force. What is its acceleration?",
+        "A 2 kg trolley is pushed with 6 N. What is its acceleration?",
+        "F = 6 N, m = 2 kg. Find a.",
+        "Given F_net = 6 N and m = 2 kg, compute a."
+      ],
+      "options": [
+        "3 m/s²",
+        "12 m/s²",
+        "4 m/s²"
+      ],
+      "answer": 0,
+      "why": [
+        "F = ma means a = F ÷ m. So 6 ÷ 2 = 3. The trolley accelerates at 3 metres per second per second.",
+        "a = F/m = 6/2 = 3 m/s². The force is split across the mass: each kilogram gets 3 newtons.",
+        "Rearranging F = ma: a = F/m = 6 N / 2 kg = 3 m/s². Each second, the speed increases by 3 m/s.",
+        "a = F_net/m = 6/2 = 3 m/s². By the second law, the acceleration vector is parallel to F_net with magnitude F/m."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "f-equals-ma",
+      "q": [
+        "Same push, but the mass doubles. What happens to the acceleration?",
+        "Double the mass, keep the force the same. What happens to a?",
+        "If m → 2m at constant F, what happens to a?",
+        "At constant F_net, if m doubles, how does a change?"
+      ],
+      "options": [
+        "It halves",
+        "It doubles",
+        "It stays the same"
+      ],
+      "answer": 0,
+      "why": [
+        "a = F ÷ m. If m gets twice as big, the answer is half as much. Heavier things accelerate less with the same push.",
+        "a = F/m. Doubling m doubles the denominator, so a halves. Inverse proportionality.",
+        "a = F/m. With F constant, a ∝ 1/m. Doubling m halves a.",
+        "a = F_net/m is inverse in m. At fixed F, a(2m) = a(m)/2. The relationship is hyperbolic."
+      ]
+    }
+  ]
+}

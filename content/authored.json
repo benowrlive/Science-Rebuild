@@ -102,6 +102,9 @@
     "3": "immunity/04-when-the-army-attacks-you.json",
     "4": "immunity/05-build-a-defence.json"
   },
+  "kinetic-potential": {
+    "0": "kinetic-potential/01-the-energy-of-moving.json"
+  },
   "medicine": {
     "0": "medicine/01-finding-the-right-molecule.json",
     "1": "medicine/02-why-trials-have-two-groups.json",
@@ -128,7 +131,11 @@
     "4": "neuroscience/05-wire-a-reflex.json"
   },
   "newtons-laws": {
-    "0": "newtons-laws/01-the-first-rule.json"
+    "0": "newtons-laws/01-the-first-rule.json",
+    "1": "newtons-laws/02-the-second-rule.json",
+    "2": "newtons-laws/03-the-third-rule.json",
+    "3": "newtons-laws/04-when-forces-balance.json",
+    "4": "newtons-laws/05-build-a-force-diagram.json"
   },
   "nutrition": {
     "0": "nutrition/01-food-is-two-things.json",

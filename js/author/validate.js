@@ -145,10 +145,88 @@ export function validate(lesson) {
     the filesystem. Update when a new sim is added to js/sims/. */
 const SIM_REGISTRY = new Set([
   "membrane", "energy", "selection", "replication", "folding",
-  "spike", "stomata", "web", "outbreak", "incline", "forces",
+  "spike", "stomata", "web", "outbreak", "incline", "forces", "coaster",
 ]);
 
 export const AVAILABLE_SIMS = [...SIM_REGISTRY];
+
+/** Sim metadata for the authoring tool: what each sim does, and what params
+    it accepts. A non-coder cannot read js/sims/<name>.js to find this out, so
+    the tool shows it inline. Keep in sync with the sim source files. */
+export const SIM_INFO = {
+  incline: {
+    desc: "A ball on a surface. Child sets push and friction, watches the ball roll (or stop).",
+    params: { push: "1-6: how hard the ball is pushed", friction: "0-5: how rough the ground is", goalDist: "0.5-0.9: how far the goal is (fraction of canvas width)" },
+  },
+  forces: {
+    desc: "A trolley on a surface. Child sets push, mass, and friction. Shows F=ma with visible force arrows.",
+    params: { push: "0-6: applied force", mass: "1-4: trolley mass", friction: "0-4: surface roughness", goalSpeed: "0.2-0.5: target velocity" },
+  },
+  membrane: {
+    desc: "A cell membrane with pores. Molecules random-walk through. Child sets pore size and temperature.",
+    params: { kinds: "2-6: how many molecule types", pore: "1-9: pore size", temp: "1-3: temperature", target: "0.5-0.8: fraction of molecules that need to get inside", per: "number of molecules per type" },
+  },
+  energy: {
+    desc: "Energy flow simulation. Shows how energy moves through a system.",
+    params: {},
+  },
+  selection: {
+    desc: "Natural selection. Beetles with different colours survive differently against a predator.",
+    params: {},
+  },
+  replication: {
+    desc: "DNA replication. Child copies a base sequence.",
+    params: {},
+  },
+  folding: {
+    desc: "Protein folding. A chain of beads folds based on oil/water interactions.",
+    params: {},
+  },
+  spike: {
+    desc: "Viral spike protein binding to a receptor.",
+    params: {},
+  },
+  stomata: {
+    desc: "Stomata opening and closing on a leaf surface.",
+    params: {},
+  },
+  web: {
+    desc: "A food web. Child connects organisms and watches energy flow.",
+    params: {},
+  },
+  outbreak: {
+    desc: "An epidemic spreading through a population.",
+    params: {},
+  },
+  coaster: {
+    desc: "A ball on a roller-coaster track. Shows KE/PE energy tradeoff. Child sets start height and friction.",
+    params: { startHeight: "1-5: how high the ball starts", friction: "0-3: track roughness", goalX: "0.8-0.95: where the goal is" },
+  },
+};
+
+/** Default params for each sim — pre-fills the params textarea so an author
+    sees what is available without reading source code. */
+export function defaultParams(sim) {
+  const info = SIM_INFO[sim];
+  if (!info) return {};
+  const out = {};
+  for (const k of Object.keys(info.params)) {
+    // Sensible defaults based on common usage
+    if (k === "push") out[k] = 3;
+    else if (k === "friction") out[k] = 2;
+    else if (k === "mass") out[k] = 2;
+    else if (k === "goalDist") out[k] = 0.7;
+    else if (k === "goalSpeed") out[k] = 0.4;
+    else if (k === "kinds") out[k] = 3;
+    else if (k === "pore") out[k] = 3;
+    else if (k === "temp") out[k] = 2;
+    else if (k === "target") out[k] = 0.6;
+    else if (k === "per") out[k] = 14;
+    else if (k === "startHeight") out[k] = 4;
+    else if (k === "goalX") out[k] = 0.9;
+  }
+  return out;
+}
 
 /** Default stage templates — what gets inserted when you add a stage.
     Pre-filled with the minimum the build requires, so a fresh stage passes

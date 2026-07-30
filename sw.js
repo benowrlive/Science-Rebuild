@@ -2,7 +2,7 @@
    tools/build.mjs — do not hand-edit the list. Offline is the normal case for
    this product, not a degraded one. */
 
-const VERSION = "d62292d7efe6";
+const VERSION = "d83ba7746602";
 const CACHE = `fp-${VERSION}`;
 
 /* __PRECACHE_START__ */
@@ -89,6 +89,7 @@ const PRECACHE = [
   "content/immunity/03-how-a-vaccine-teaches.json",
   "content/immunity/04-when-the-army-attacks-you.json",
   "content/immunity/05-build-a-defence.json",
+  "content/kinetic-potential/01-the-energy-of-moving.json",
   "content/medicine/01-finding-the-right-molecule.json",
   "content/medicine/02-why-trials-have-two-groups.json",
   "content/medicine/03-resistance.json",
@@ -107,6 +108,10 @@ const PRECACHE = [
   "content/neuroscience/04-memory-is-rebuilt-not-replayed.json",
   "content/neuroscience/05-wire-a-reflex.json",
   "content/newtons-laws/01-the-first-rule.json",
+  "content/newtons-laws/02-the-second-rule.json",
+  "content/newtons-laws/03-the-third-rule.json",
+  "content/newtons-laws/04-when-forces-balance.json",
+  "content/newtons-laws/05-build-a-force-diagram.json",
   "content/nutrition/01-food-is-two-things.json",
   "content/nutrition/02-what-happens-to-a-sandwich.json",
   "content/nutrition/03-the-vitamin-nobody-could-find.json",
@@ -164,6 +169,7 @@ const PRECACHE = [
   "js/scheduler.js",
   "js/screens.js",
   "js/sims/base.js",
+  "js/sims/coaster.js",
   "js/sims/energy.js",
   "js/sims/folding.js",
   "js/sims/forces.js",

@@ -110,7 +110,9 @@ export async function authorView() {
       ...(currentModule.specimens ?? []).map((s) =>
         el("option", { value: s.id, selected: s.id === lesson.specimen, text: s.id })));
 
-    // Stages
+    // Stages — pass the module's declared concepts so concept fields render
+    // as dropdowns instead of text inputs.
+    const mc = currentModule.concepts ?? [];
     const stageEls = lesson.stages.map((st, i) => stageEditor(
       st,
       () => { /* live edit — no rerender to preserve focus */ },
@@ -122,7 +124,7 @@ export async function authorView() {
         lesson.stages[j] = tmp;
         rerender();
       },
-      i, lesson.stages.length,
+      i, lesson.stages.length, mc,
     ));
 
     return [
@@ -153,7 +155,7 @@ export async function authorView() {
 
       el("section", { class: "auth-section" },
         el("h2", { text: "Export" }),
-        el("p", { class: "shelf-note", text: "Copy this JSON into content/<module>/<file>.json, then run npm run build. The build regenerates authored.json and reviews.json." }),
+        el("p", { class: "shelf-note", text: "Save this file to content/" + lesson.module + "/ then run npm run build. The build regenerates authored.json and reviews.json automatically." }),
         el("div", { class: "auth-export-actions" },
           el("button", {
             class: "pressable", type: "button", disabled: errors.length > 0,
@@ -168,11 +170,15 @@ export async function authorView() {
               const json = JSON.stringify(lesson, null, 2) + "\n";
               const blob = new Blob([json], { type: "application/json" });
               const url = URL.createObjectURL(blob);
-              const a = el("a", { href: url, download: `${lesson.id.replace("/", "-")}.json` });
+              // Filename convention: NN-slug.json (e.g. 02-how-fast-is-fast.json)
+              const nn = String(lesson.index + 1).padStart(2, "0");
+              const slug = lesson.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+              const a = el("a", { href: url, download: nn + "-" + slug + ".json" });
               document.body.append(a); a.click(); a.remove();
               URL.revokeObjectURL(url);
             },
           }, "Download file")),
+        el("p", { class: "auth-hint", text: "File will be saved as " + String(lesson.index + 1).padStart(2, "0") + "-" + lesson.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + ".json" }),
         el("pre", { class: "auth-json-out" }, document.createTextNode(JSON.stringify(lesson, null, 2)))),
     ];
   }
