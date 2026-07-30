@@ -3,6 +3,7 @@
    data, not here — this file only evaluates them. */
 
 export let worlds = [];
+export let subjects = [];   // top-level subject grouping, each world carries .subject
 export let authored = {};      // moduleId -> { lessonIndex: file }
 const byId = new Map();       // moduleId -> { module, world }
 
@@ -15,6 +16,7 @@ export async function loadCurriculum() {
   authored = auth;
   const data = await res.json();
   worlds = data.worlds;
+  subjects = data.subjects ?? [{ id: "all", title: "", tagline: [""] }];
   byId.clear();
   for (const world of worlds) for (const m of world.modules) byId.set(m.id, { module: m, world });
   return worlds;

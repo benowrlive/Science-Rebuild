@@ -47,6 +47,36 @@
   --w-frontier-line: #268BE4;
   --w-frontier-text: #016EBE;
   --w-frontier-deep: #002F56;
+  --w-motion-tint: #FDF0EC;
+  --w-motion-fill: #FEC5B3;
+  --w-motion-line: #DC633D;
+  --w-motion-text: #BB451D;
+  --w-motion-deep: #511805;
+  --w-forces-tint: #F6F5DB;
+  --w-forces-fill: #DDD986;
+  --w-forces-line: #928B0E;
+  --w-forces-text: #746E08;
+  --w-forces-deep: #322F00;
+  --w-energy-tint: #DDFCF0;
+  --w-energy-fill: #89EBCA;
+  --w-energy-line: #079A79;
+  --w-energy-text: #0B7A5F;
+  --w-energy-deep: #003729;
+  --w-waves-tint: #E6F7FD;
+  --w-waves-fill: #8EE3FD;
+  --w-waves-line: #1094B3;
+  --w-waves-text: #037690;
+  --w-waves-deep: #003441;
+  --w-fields-tint: #F0F3FE;
+  --w-fields-fill: #C6D3FD;
+  --w-fields-line: #6A80EA;
+  --w-fields-text: #5063CA;
+  --w-fields-deep: #1F285A;
+  --w-modern-tint: #FBEFFF;
+  --w-modern-fill: #EEC1FE;
+  --w-modern-line: #B46BCD;
+  --w-modern-text: #964EAE;
+  --w-modern-deep: #3F1C4B;
   --w-correct-tint: #E3FBE8;
   --w-correct-fill: #9FE9B2;
   --w-correct-line: #009C4F;
@@ -109,6 +139,36 @@
     --w-frontier-line: #066CB8;
     --w-frontier-text: #2188E0;
     --w-frontier-deep: #C6E1FF;
+    --w-motion-tint: #2A1610;
+    --w-motion-fill: #631E05;
+    --w-motion-line: #B74218;
+    --w-motion-text: #D76039;
+    --w-motion-deep: #FDD3C7;
+    --w-forces-tint: #1E1D08;
+    --w-forces-fill: #3D3A00;
+    --w-forces-line: #716C01;
+    --w-forces-text: #8F8802;
+    --w-forces-deep: #E5E29C;
+    --w-energy-tint: #082119;
+    --w-energy-fill: #044333;
+    --w-energy-line: #05785D;
+    --w-energy-text: #159776;
+    --w-energy-deep: #A0F2D5;
+    --w-waves-tint: #051F27;
+    --w-waves-fill: #043F4D;
+    --w-waves-line: #0E738B;
+    --w-waves-text: #0291AF;
+    --w-waves-deep: #AAEAFE;
+    --w-fields-tint: #161B2C;
+    --w-fields-fill: #26316D;
+    --w-fields-line: #4D60C7;
+    --w-fields-text: #677DE6;
+    --w-fields-deep: #D3DDFD;
+    --w-modern-tint: #221627;
+    --w-modern-fill: #4D225B;
+    --w-modern-line: #924AAA;
+    --w-modern-text: #B066C8;
+    --w-modern-deep: #F1D0FD;
     --w-correct-tint: #0E2014;
     --w-correct-fill: #00441F;
     --w-correct-line: #0B7A3E;
@@ -171,6 +231,36 @@
   --w-frontier-line: #268BE4;
   --w-frontier-text: #016EBE;
   --w-frontier-deep: #002F56;
+  --w-motion-tint: #FDF0EC;
+  --w-motion-fill: #FEC5B3;
+  --w-motion-line: #DC633D;
+  --w-motion-text: #BB451D;
+  --w-motion-deep: #511805;
+  --w-forces-tint: #F6F5DB;
+  --w-forces-fill: #DDD986;
+  --w-forces-line: #928B0E;
+  --w-forces-text: #746E08;
+  --w-forces-deep: #322F00;
+  --w-energy-tint: #DDFCF0;
+  --w-energy-fill: #89EBCA;
+  --w-energy-line: #079A79;
+  --w-energy-text: #0B7A5F;
+  --w-energy-deep: #003729;
+  --w-waves-tint: #E6F7FD;
+  --w-waves-fill: #8EE3FD;
+  --w-waves-line: #1094B3;
+  --w-waves-text: #037690;
+  --w-waves-deep: #003441;
+  --w-fields-tint: #F0F3FE;
+  --w-fields-fill: #C6D3FD;
+  --w-fields-line: #6A80EA;
+  --w-fields-text: #5063CA;
+  --w-fields-deep: #1F285A;
+  --w-modern-tint: #FBEFFF;
+  --w-modern-fill: #EEC1FE;
+  --w-modern-line: #B46BCD;
+  --w-modern-text: #964EAE;
+  --w-modern-deep: #3F1C4B;
   --w-correct-tint: #E3FBE8;
   --w-correct-fill: #9FE9B2;
   --w-correct-line: #009C4F;
@@ -232,6 +322,36 @@
   --w-frontier-line: #066CB8;
   --w-frontier-text: #2188E0;
   --w-frontier-deep: #C6E1FF;
+  --w-motion-tint: #2A1610;
+  --w-motion-fill: #631E05;
+  --w-motion-line: #B74218;
+  --w-motion-text: #D76039;
+  --w-motion-deep: #FDD3C7;
+  --w-forces-tint: #1E1D08;
+  --w-forces-fill: #3D3A00;
+  --w-forces-line: #716C01;
+  --w-forces-text: #8F8802;
+  --w-forces-deep: #E5E29C;
+  --w-energy-tint: #082119;
+  --w-energy-fill: #044333;
+  --w-energy-line: #05785D;
+  --w-energy-text: #159776;
+  --w-energy-deep: #A0F2D5;
+  --w-waves-tint: #051F27;
+  --w-waves-fill: #043F4D;
+  --w-waves-line: #0E738B;
+  --w-waves-text: #0291AF;
+  --w-waves-deep: #AAEAFE;
+  --w-fields-tint: #161B2C;
+  --w-fields-fill: #26316D;
+  --w-fields-line: #4D60C7;
+  --w-fields-text: #677DE6;
+  --w-fields-deep: #D3DDFD;
+  --w-modern-tint: #221627;
+  --w-modern-fill: #4D225B;
+  --w-modern-line: #924AAA;
+  --w-modern-text: #B066C8;
+  --w-modern-deep: #F1D0FD;
   --w-correct-tint: #0E2014;
   --w-correct-fill: #00441F;
   --w-correct-line: #0B7A3E;
@@ -291,6 +411,48 @@
   --w-line: var(--w-frontier-line);
   --w-text: var(--w-frontier-text);
   --w-deep: var(--w-frontier-deep);
+}
+[data-world="motion"] {
+  --w-tint: var(--w-motion-tint);
+  --w-fill: var(--w-motion-fill);
+  --w-line: var(--w-motion-line);
+  --w-text: var(--w-motion-text);
+  --w-deep: var(--w-motion-deep);
+}
+[data-world="forces"] {
+  --w-tint: var(--w-forces-tint);
+  --w-fill: var(--w-forces-fill);
+  --w-line: var(--w-forces-line);
+  --w-text: var(--w-forces-text);
+  --w-deep: var(--w-forces-deep);
+}
+[data-world="energy"] {
+  --w-tint: var(--w-energy-tint);
+  --w-fill: var(--w-energy-fill);
+  --w-line: var(--w-energy-line);
+  --w-text: var(--w-energy-text);
+  --w-deep: var(--w-energy-deep);
+}
+[data-world="waves"] {
+  --w-tint: var(--w-waves-tint);
+  --w-fill: var(--w-waves-fill);
+  --w-line: var(--w-waves-line);
+  --w-text: var(--w-waves-text);
+  --w-deep: var(--w-waves-deep);
+}
+[data-world="fields"] {
+  --w-tint: var(--w-fields-tint);
+  --w-fill: var(--w-fields-fill);
+  --w-line: var(--w-fields-line);
+  --w-text: var(--w-fields-text);
+  --w-deep: var(--w-fields-deep);
+}
+[data-world="modern"] {
+  --w-tint: var(--w-modern-tint);
+  --w-fill: var(--w-modern-fill);
+  --w-line: var(--w-modern-line);
+  --w-text: var(--w-modern-text);
+  --w-deep: var(--w-modern-deep);
 }
 [data-world="correct"] {
   --w-tint: var(--w-correct-tint);
@@ -771,6 +933,17 @@ body:not([data-ready]) #main { opacity: 0; }
 .continue .icon { grid-area: icon; color: var(--w-text); }
 
 /* ------------------------------------------------------------------- islands */
+/* A subject section wraps its islands and gives them a heading. The heading
+   is flat (no elevation): it names a direction, it is not a control. */
+.subject-section { margin-bottom: var(--s-10); }
+.subject-section:last-of-type { margin-bottom: var(--s-6); }
+.subject-title {
+  font-size: var(--fs-lg); color: var(--ink-2);
+  margin-bottom: var(--s-1); text-transform: uppercase;
+  letter-spacing: .06em; font-family: var(--font-body); font-weight: var(--weight-bold);
+}
+.subject-tag { color: var(--ink-3); font-size: var(--fs-sm); margin-bottom: var(--s-4); }
+
 .islands {
   display: grid; gap: var(--s-6);
   grid-template-columns: repeat(auto-fit, minmax(min(21rem, 100%), 1fr));

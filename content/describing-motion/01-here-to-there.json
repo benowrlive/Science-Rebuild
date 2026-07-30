@@ -1,0 +1,167 @@
+{
+  "id": "describing-motion/01",
+  "module": "describing-motion",
+  "index": 0,
+  "title": "Here to There",
+  "specimen": "ruler",
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "A ball rolls across the floor. How do you tell someone exactly what it did?",
+        "A ball rolls from here to there. Without showing them, can you say exactly what happened?",
+        "A ball crosses a room. To describe it you need three things: where it started, where it stopped, and how long it took.",
+        "Motion is change of position over time. Describing it completely requires a reference point, a displacement, and an interval — and the choice of reference point changes the description."
+      ],
+      "sub": [
+        "You need to say where it started, where it stopped, and how long it took.",
+        "Three numbers: where from, where to, how long. That is a full description of a journey.",
+        "Position, displacement, and time interval — the minimum complete description of any motion.",
+        "Position relative to a reference, displacement as a vector, and the time interval over which both are measured."
+      ]
+    },
+
+    {
+      "type": "predict",
+      "concept": "position-is-relative",
+      "question": [
+        "You are on a train, holding a ball. The train moves. Is the ball moving?",
+        "You hold a ball on a moving train. Is the ball moving?",
+        "A ball sits in your hand on a moving train. Is it moving?",
+        "A ball is at rest in your reference frame on a moving train. Is it in motion?"
+      ],
+      "options": [
+        "Yes, it is moving with the train",
+        "No, it is sitting still in your hand",
+        "Both are true — it depends who is asking"
+      ],
+      "outcome": "Both are true — it depends who is asking",
+      "note": [
+        "There is no right answer yet. Pick the one that feels right.",
+        "Commit to one before you check. The gap between your guess and the answer is what you will remember.",
+        "This is a reference-frame question. Predict before checking — the prediction is what makes the answer stick.",
+        "Galilean relativity: the answer depends on the inertial frame. Predict first, then verify."
+      ]
+    },
+
+    {
+      "type": "sim",
+      "sim": "incline",
+      "levels": [1, 2],
+      "guided": true,
+      "t": [
+        "Push the ball. Watch what happens when the ground is rough.",
+        "Push the ball with the slider. Try rough ground and smooth ground. Watch what stops it."
+      ],
+      "params": {
+        "push": 3,
+        "friction": 2,
+        "goalDist": 0.7
+      },
+      "paramsByLevel": {
+        "1": { "push": 3, "friction": 1, "goalDist": 0.6 },
+        "2": { "push": 3, "friction": 2, "goalDist": 0.7 }
+      },
+      "goal": [
+        "Push hard enough to reach the goal.",
+        "Find a push that overcomes the friction and reaches the goal."
+      ]
+    },
+
+    {
+      "type": "sim",
+      "sim": "incline",
+      "levels": [3, 4],
+      "guided": false,
+      "t": [
+        "Push the ball to the goal. Work out what friction does before the sim tells you.",
+        "Reach the goal. Predict which push–friction combinations will get there before you launch — then check."
+      ],
+      "params": {
+        "push": 3,
+        "friction": 3,
+        "goalDist": 0.75
+      },
+      "paramsByLevel": {
+        "4": { "push": 2, "friction": 4, "goalDist": 0.8 }
+      },
+      "goal": [
+        "Reach the goal. The friction is working against you.",
+        "Reach the goal. Determine the minimum push for a given friction coefficient."
+      ]
+    },
+
+    {
+      "type": "name",
+      "t": [
+        "That thing the ball did — going from here to there — is called motion.",
+        "Going from here to there is called motion. How fast you go is called speed.",
+        "Motion is change of position over time. Speed is how fast: distance divided by time.",
+        "Motion is the change of an object's position with respect to a reference frame over a time interval. Speed is the scalar rate: |Δx|/Δt."
+      ],
+      "sub": [
+        "How fast you go is called speed.",
+        "Speed is how much ground you cover in each second.",
+        "Speed = distance ÷ time. The units are metres per second.",
+        "Velocity is the vector form — speed with a direction. The distinction matters as soon as motion turns."
+      ]
+    },
+
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "When a car brakes, it is just a ball with friction. The same rule tells you when it stops.",
+        "A car braking is the same sim with bigger numbers. The friction stops it — and the rule is the same.",
+        "Braking distance scales with the square of speed because kinetic energy scales with v². The sim you just ran is the proof.",
+        "Highway braking distance follows from F=ma and the work–energy theorem: d = v²/(2μg). The simulation is the same integrator."
+      ]
+    },
+
+    {
+      "type": "check",
+      "concept": "position-is-relative",
+      "q": [
+        "You hold a ball on a moving train. Is the ball moving?",
+        "A ball sits still in your hand on a moving train. Is it moving?",
+        "A ball is at rest in your frame on a moving train. Is it in motion?",
+        "A ball is stationary relative to you on a train moving at constant velocity. Is the ball in motion?"
+      ],
+      "options": [
+        "Both are true — it depends who is watching",
+        "No, it is sitting still in your hand",
+        "Yes, it is moving with the train"
+      ],
+      "answer": 0,
+      "why": [
+        "It depends who is asking. To you, the ball is still. To someone outside, it moves with the train. Both are right.",
+        "Both are true. To you the ball is still; to someone on the platform it moves with the train. There is no 'really' moving — only relative to who is watching.",
+        "Motion is frame-dependent. In your frame the ball is at rest; in the platform frame it moves at the train's velocity. Galilean relativity: no inertial frame is privileged.",
+        "Galilean invariance: the ball is at rest in the train's inertial frame and moving in the platform's. No inertial frame is preferred, so 'really moving' has no absolute meaning."
+      ]
+    },
+
+    {
+      "type": "check",
+      "concept": "velocity-is-rate",
+      "q": [
+        "The ball stopped before the goal. What does that tell you?",
+        "The ball stopped short of the goal. Why?",
+        "In the sim, the ball stopped before reaching the goal. What does that mean?",
+        "The integrator halted with x < x_goal. What physical conclusion follows?"
+      ],
+      "options": [
+        "The push was not strong enough for how rough the ground was",
+        "The ball ran out of energy",
+        "The goal was too far away"
+      ],
+      "answer": 0,
+      "why": [
+        "Friction is a force that slows things down. When the push is small and the ground is rough, friction wins — and the ball stops. Nothing ran out; a force stopped it.",
+        "Friction is a force opposing motion. When friction is larger than the push, the ball decelerates to zero before reaching the goal. It did not 'run out of energy' — a force stopped it.",
+        "Friction decelerated the ball to rest. The applied impulse was insufficient to overcome kinetic friction over the required distance. Energy was dissipated as heat, not 'used up'.",
+        "The work done by friction (μmg·d) exceeded the initial kinetic energy (½mv²). The ball stopped where the dissipation equalled the imparted energy — a force, not a depletion."
+      ]
+    }
+  ]
+}

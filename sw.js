@@ -2,7 +2,7 @@
    tools/build.mjs — do not hand-edit the list. Offline is the normal case for
    this product, not a degraded one. */
 
-const VERSION = "93eac9dffbea";
+const VERSION = "0a1a1603ba89";
 const CACHE = `fp-${VERSION}`;
 
 /* __PRECACHE_START__ */
@@ -39,6 +39,7 @@ const PRECACHE = [
   "content/crispr/04-what-could-go-wrong.json",
   "content/crispr/05-edit-a-gene.json",
   "content/curriculum.json",
+  "content/describing-motion/01-here-to-there.json",
   "content/development/01-one-cell-becomes-an-animal.json",
   "content/development/02-where-is-the-instruction-for-leg.json",
   "content/development/03-the-same-toolkit-in-a-fly-and-in-you.json",
@@ -158,6 +159,8 @@ const PRECACHE = [
   "js/sims/base.js",
   "js/sims/energy.js",
   "js/sims/folding.js",
+  "js/sims/hand.js",
+  "js/sims/incline.js",
   "js/sims/membrane.js",
   "js/sims/outbreak.js",
   "js/sims/replication.js",

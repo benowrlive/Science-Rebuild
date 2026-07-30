@@ -80,6 +80,17 @@ body:not([data-ready]) #main { opacity: 0; }
 .continue .icon { grid-area: icon; color: var(--w-text); }
 
 /* ------------------------------------------------------------------- islands */
+/* A subject section wraps its islands and gives them a heading. The heading
+   is flat (no elevation): it names a direction, it is not a control. */
+.subject-section { margin-bottom: var(--s-10); }
+.subject-section:last-of-type { margin-bottom: var(--s-6); }
+.subject-title {
+  font-size: var(--fs-lg); color: var(--ink-2);
+  margin-bottom: var(--s-1); text-transform: uppercase;
+  letter-spacing: .06em; font-family: var(--font-body); font-weight: var(--weight-bold);
+}
+.subject-tag { color: var(--ink-3); font-size: var(--fs-sm); margin-bottom: var(--s-4); }
+
 .islands {
   display: grid; gap: var(--s-6);
   grid-template-columns: repeat(auto-fit, minmax(min(21rem, 100%), 1fr));

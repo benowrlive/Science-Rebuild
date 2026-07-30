@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "worlds": [
     {
       "id": "origins",
@@ -40,7 +40,7 @@
               "unlocks": "Sort any specimen into alive, not alive, or argue",
               "blurb": [
                 "A tray for sorting things into alive and not alive.",
-                "Sorts specimens against the seven signs — and flags the ones that refuse to sort."
+                "Sorts specimens against the seven signs \u2014 and flags the ones that refuse to sort."
               ]
             },
             {
@@ -57,7 +57,7 @@
               "title": "Flame Jar",
               "unlocks": "Compare any process against burning",
               "blurb": [
-                "A fire that grows, eats and breathes — and is not alive.",
+                "A fire that grows, eats and breathes \u2014 and is not alive.",
                 "The classic counter-example: metabolism-like behaviour with no organisation and no heredity."
               ]
             },
@@ -67,7 +67,7 @@
               "unlocks": "Run the 1953 experiment and see exactly what it gives you",
               "blurb": [
                 "The flask that made the beads life is built from.",
-                "Miller–Urey, reproduced honestly: monomers out, nothing alive, and the gap left visible."
+                "Miller\u2013Urey, reproduced honestly: monomers out, nothing alive, and the gap left visible."
               ]
             }
           ]
@@ -81,7 +81,7 @@
           ],
           "hook": [
             "What if a whole city had to fit inside something smaller than a grain of sand?",
-            "Fit a working city — power, walls, instructions, transport — into 20 micrometres."
+            "Fit a working city \u2014 power, walls, instructions, transport \u2014 into 20 micrometres."
           ],
           "lessonTitles": [
             "The City in a Speck",
@@ -210,7 +210,8 @@
             }
           ]
         }
-      ]
+      ],
+      "subject": "life"
     },
     {
       "id": "code",
@@ -417,7 +418,7 @@
               "unlocks": "Rescue a protein that folded badly",
               "blurb": [
                 "The helper that stops proteins folding wrong.",
-                "Chaperone protein. Prevents aggregation — the failure behind several diseases."
+                "Chaperone protein. Prevents aggregation \u2014 the failure behind several diseases."
               ]
             },
             {
@@ -431,7 +432,8 @@
             }
           ]
         }
-      ]
+      ],
+      "subject": "life"
     },
     {
       "id": "change",
@@ -644,7 +646,8 @@
             }
           ]
         }
-      ]
+      ],
+      "subject": "life"
     },
     {
       "id": "bodies",
@@ -776,7 +779,7 @@
               "unlocks": "Cure a deficiency in any body you build",
               "blurb": [
                 "The crate of lemons that stopped sailors dying.",
-                "Lind's 1747 trial in specimen form — arguably the first controlled clinical experiment."
+                "Lind's 1747 trial in specimen form \u2014 arguably the first controlled clinical experiment."
               ]
             },
             {
@@ -904,7 +907,7 @@
               "unlocks": "Connect any two neurons",
               "blurb": [
                 "The tiny gap the message has to jump.",
-                "Chemical transmission across a cleft — which is what makes the connection adjustable."
+                "Chemical transmission across a cleft \u2014 which is what makes the connection adjustable."
               ]
             },
             {
@@ -966,7 +969,7 @@
               "unlocks": "Classify any illness by what causes it",
               "blurb": [
                 "A sorter for what actually made you ill.",
-                "Infectious, genetic, deficiency, degenerative, environmental — and the overlaps."
+                "Infectious, genetic, deficiency, degenerative, environmental \u2014 and the overlaps."
               ]
             },
             {
@@ -1060,7 +1063,8 @@
             }
           ]
         }
-      ]
+      ],
+      "subject": "life"
     },
     {
       "id": "living",
@@ -1190,7 +1194,7 @@
               "unlocks": "Move any body you have built",
               "blurb": [
                 "All the ways of getting about without wheels.",
-                "Walking, swimming, flying, burrowing — each with its cost curve."
+                "Walking, swimming, flying, burrowing \u2014 each with its cost curve."
               ]
             },
             {
@@ -1259,7 +1263,7 @@
               "unlocks": "Grow and count any microbe",
               "blurb": [
                 "A plate for growing things you cannot see.",
-                "Selective media and colony counting — one colony, one founding cell."
+                "Selective media and colony counting \u2014 one colony, one founding cell."
               ]
             }
           ]
@@ -1400,7 +1404,8 @@
             }
           ]
         }
-      ]
+      ],
+      "subject": "life"
     },
     {
       "id": "frontier",
@@ -1469,7 +1474,7 @@
               "unlocks": "Manufacture any protein at scale",
               "blurb": [
                 "Medicine made by germs doing what you told them.",
-                "A human gene in a bacterial host — the first recombinant drug, and still the model."
+                "A human gene in a bacterial host \u2014 the first recombinant drug, and still the model."
               ]
             }
           ]
@@ -1604,7 +1609,7 @@
               "unlocks": "Proves your design survives contact with reality",
               "blurb": [
                 "Something you designed that actually lives.",
-                "Specified, built, and tested — including against what it does when it escapes."
+                "Specified, built, and tested \u2014 including against what it does when it escapes."
               ]
             }
           ]
@@ -1731,6 +1736,583 @@
             }
           ]
         }
+      ],
+      "subject": "life"
+    },
+    {
+      "id": "motion",
+      "title": "Motion",
+      "subject": "physics",
+      "tagline": [
+        "How things get from here to there",
+        "Position, velocity and acceleration \u2014 the three words that describe every move"
+      ],
+      "requires": [],
+      "modules": [
+        {
+          "id": "describing-motion",
+          "title": "Describing Motion",
+          "lessons": 4,
+          "requires": [],
+          "hook": [
+            "A ball rolls. How do you tell someone exactly what it did?",
+            "A ball rolls across the floor. Without a stopwatch and a tape, can you say what happened?"
+          ],
+          "concepts": [
+            "position-is-relative",
+            "velocity-is-rate",
+            "acceleration-is-change",
+            "frames-of-reference"
+          ],
+          "lessonTitles": [
+            "Here to There",
+            "How Fast Is Fast",
+            "Speeding Up and Slowing Down",
+            "Who Is Moving"
+          ],
+          "specimens": [
+            {
+              "id": "ruler",
+              "title": "Ruler",
+              "unlocks": "Measure position in any simulation",
+              "blurb": [
+                "A ruler. It tells you where things are.",
+                "A calibrated reference for position \u2014 every measurement in physics starts here."
+              ]
+            },
+            {
+              "id": "stopwatch",
+              "title": "Stopwatch",
+              "unlocks": "Measure time intervals in any simulation",
+              "blurb": [
+                "Counts the seconds while things move.",
+                "Resolves time intervals. Needed whenever you want to know how fast."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "graphs-of-motion",
+          "title": "Graphs of Motion",
+          "lessons": 4,
+          "requires": [
+            "describing-motion"
+          ],
+          "hook": [
+            "A line on a page can show a whole journey.",
+            "A flat line, a slope, a curve \u2014 each one is a journey told in ink."
+          ],
+          "concepts": [
+            "slope-is-rate",
+            "area-is-change",
+            "velocity-from-position",
+            "acceleration-from-velocity"
+          ],
+          "lessonTitles": [
+            "The Shape of a Walk",
+            "Reading Speed from a Line",
+            "When the Line Bends",
+            "Build a Motion Graph"
+          ],
+          "specimens": [
+            {
+              "id": "graph-paper",
+              "title": "Graph Paper",
+              "unlocks": "Plot any measurement against time",
+              "blurb": [
+                "Paper with a grid. You draw journeys on it.",
+                "A calibrated grid for plotting one quantity against another."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forces",
+      "title": "Forces",
+      "subject": "physics",
+      "tagline": [
+        "Why things start, stop and turn",
+        "Pushes and pulls \u2014 and the three rules that govern them"
+      ],
+      "requires": [
+        "describing-motion"
+      ],
+      "modules": [
+        {
+          "id": "newtons-laws",
+          "title": "Newton's Laws",
+          "lessons": 5,
+          "requires": [],
+          "hook": [
+            "Push a trolley. Push it twice as hard. What changes?",
+            "A trolley, a push, and a question: what exactly does the push do?"
+          ],
+          "concepts": [
+            "inertia",
+            "f-equals-ma",
+            "action-reaction",
+            "net-force"
+          ],
+          "lessonTitles": [
+            "The First Rule: Things Keep Going",
+            "The Second Rule: Push and Acceleration",
+            "The Third Rule: Every Push Has a Pull",
+            "When Forces Balance",
+            "Build a Force Diagram"
+          ],
+          "specimens": [
+            {
+              "id": "spring-scale",
+              "title": "Spring Scale",
+              "unlocks": "Measure force in any simulation",
+              "blurb": [
+                "A spring that stretches when you pull. The stretch is the force.",
+                "A calibrated spring \u2014 Hooke's law made tangible. Measures force in newtons."
+              ]
+            },
+            {
+              "id": "force-arrow",
+              "title": "Force Arrow",
+              "unlocks": "Show pushes and pulls on any object",
+              "blurb": [
+                "An arrow that shows a push.",
+                "A vector: direction and magnitude. The language of force."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "friction-gravity",
+          "title": "Friction and Gravity",
+          "lessons": 4,
+          "requires": [
+            "newtons-laws"
+          ],
+          "hook": [
+            "Why does a rolling ball ever stop?",
+            "Nothing pushes back on a rolling ball \u2014 yet it stops. Something must."
+          ],
+          "concepts": [
+            "friction-is-a-force",
+            "gravity-is-acceleration",
+            "terminal-velocity",
+            "normal-force"
+          ],
+          "lessonTitles": [
+            "The Force You Cannot See",
+            "Falling Is Accelerating",
+            "Why Raindrops Do Not Kill",
+            "Build a Surface"
+          ],
+          "specimens": [
+            {
+              "id": "incline",
+              "title": "Inclined Plane",
+              "unlocks": "Split gravity into components in any sim",
+              "blurb": [
+                "A ramp. It turns falling into sliding.",
+                "A plane that resolves gravity into parallel and perpendicular components."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "title": "Energy",
+      "subject": "physics",
+      "tagline": [
+        "The currency of change",
+        "What moves moves, what stops stops \u2014 and the books always balance"
+      ],
+      "requires": [
+        "describing-motion"
+      ],
+      "modules": [
+        {
+          "id": "kinetic-potential",
+          "title": "Kinetic and Potential",
+          "lessons": 4,
+          "requires": [],
+          "hook": [
+            "A ball at the top of a hill has not moved yet. What does it have?",
+            "A ball sits still at the top of a hill. It has no speed. What does it have?"
+          ],
+          "concepts": [
+            "kinetic-energy",
+            "potential-energy",
+            "energy-transforms",
+            "work-is-energy-transfer"
+          ],
+          "lessonTitles": [
+            "The Energy of Moving",
+            "The Energy of Where",
+            "Trading One for the Other",
+            "Build a Roller Coaster"
+          ],
+          "specimens": [
+            {
+              "id": "energy-meter",
+              "title": "Energy Meter",
+              "unlocks": "Read kinetic and potential in any sim",
+              "blurb": [
+                "A dial that reads how much energy something has.",
+                "Resolves kinetic and potential energy in real time."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "conservation",
+          "title": "Conservation",
+          "lessons": 4,
+          "requires": [
+            "kinetic-potential"
+          ],
+          "hook": [
+            "Energy never appears. Where did it come from?",
+            "A moving thing stops. Its energy did not vanish \u2014 so where is it?"
+          ],
+          "concepts": [
+            "energy-conservation",
+            "dissipation",
+            "efficiency",
+            "energy-chains"
+          ],
+          "lessonTitles": [
+            "The Books Always Balance",
+            "Where the Energy Goes",
+            "Nothing Is 100 Percent",
+            "Build an Energy Chain"
+          ],
+          "specimens": [
+            {
+              "id": "heat-sensor",
+              "title": "Heat Sensor",
+              "unlocks": "Find dissipated energy in any sim",
+              "blurb": [
+                "Sees the heat that lost energy becomes.",
+                "Detects thermal radiation \u2014 the final form of dissipated energy."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "waves",
+      "title": "Waves",
+      "subject": "physics",
+      "tagline": [
+        "How a wiggle travels",
+        "Sound, light, ripples \u2014 all the same trick, repeated"
+      ],
+      "requires": [
+        "describing-motion"
+      ],
+      "modules": [
+        {
+          "id": "oscillation",
+          "title": "Oscillation",
+          "lessons": 4,
+          "requires": [],
+          "hook": [
+            "Push a swing. Let go. Why does it come back?",
+            "A swing, pushed once, returns. Something pulls it back \u2014 what?"
+          ],
+          "concepts": [
+            "restoring-force",
+            "amplitude-and-frequency",
+            "period-and-rhythm",
+            "damping"
+          ],
+          "lessonTitles": [
+            "The Pull Back",
+            "How Far and How Often",
+            "The Rhythm of a Swing",
+            "Build an Oscillator"
+          ],
+          "specimens": [
+            {
+              "id": "pendulum",
+              "title": "Pendulum",
+              "unlocks": "Show periodic motion in any sim",
+              "blurb": [
+                "A weight on a string. It swings and swings.",
+                "A simple harmonic oscillator \u2014 the prototype of every rhythm in physics."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wave-properties",
+          "title": "Wave Properties",
+          "lessons": 5,
+          "requires": [
+            "oscillation"
+          ],
+          "hook": [
+            "Drop a stone in water. The water does not move outward \u2014 but something does.",
+            "A stone drops in water. A ripple crosses the pond. No water crosses with it. What moved?"
+          ],
+          "concepts": [
+            "wave-carries-energy-not-matter",
+            "wavelength-and-speed",
+            "superposition",
+            "interference"
+          ],
+          "lessonTitles": [
+            "What Travels in a Wave",
+            "Wavelength and Speed",
+            "When Waves Meet",
+            "Loud and Quiet, Bright and Dim",
+            "Build a Wave"
+          ],
+          "specimens": [
+            {
+              "id": "ripple-tank",
+              "title": "Ripple Tank",
+              "unlocks": "Visualise waves in any sim",
+              "blurb": [
+                "A tank of water. You see the waves on it.",
+                "A shallow tank for observing wave propagation, reflection and interference."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fields",
+      "title": "Fields",
+      "subject": "physics",
+      "tagline": [
+        "The invisible that reaches across space",
+        "Gravity, electricity, magnetism \u2014 three things that act without touching"
+      ],
+      "requires": [
+        "newtons-laws",
+        "kinetic-potential"
+      ],
+      "modules": [
+        {
+          "id": "gravity-fields",
+          "title": "Gravity Fields",
+          "lessons": 4,
+          "requires": [],
+          "hook": [
+            "The Earth pulls you. Nothing touches you. What is doing the pulling?",
+            "You fall. The ground is not pushing you. The air is not pushing you. What is?"
+          ],
+          "concepts": [
+            "field-is-action-at-a-distance",
+            "field-strength-falls-with-distance",
+            "orbital-motion",
+            "weight-vs-mass"
+          ],
+          "lessonTitles": [
+            "Pulling Without Touching",
+            "The Further, the Weaker",
+            "Why the Moon Does Not Fall",
+            "Build an Orbit"
+          ],
+          "specimens": [
+            {
+              "id": "field-line",
+              "title": "Field Line",
+              "unlocks": "Draw invisible forces in any sim",
+              "blurb": [
+                "A line that shows where a force points.",
+                "A directed line representing field direction. The vocabulary of action at a distance."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "electricity",
+          "title": "Electricity",
+          "lessons": 5,
+          "requires": [
+            "gravity-fields"
+          ],
+          "hook": [
+            "A wire, a battery, a bulb. What is flowing?",
+            "A battery, a wire, a bulb. Something moves in the wire. What is it?"
+          ],
+          "concepts": [
+            "charge-and-current",
+            "voltage-is-push",
+            "resistance-is-opposition",
+            "circuit-is-a-loop"
+          ],
+          "lessonTitles": [
+            "What Flows in a Wire",
+            "The Push and the Flow",
+            "What Stops the Flow",
+            "The Loop Must Be Closed",
+            "Build a Circuit"
+          ],
+          "specimens": [
+            {
+              "id": "ammeter",
+              "title": "Ammeter",
+              "unlocks": "Measure current in any circuit",
+              "blurb": [
+                "A dial that reads what is flowing.",
+                "Measures current in amperes. Placed in series."
+              ]
+            },
+            {
+              "id": "voltmeter",
+              "title": "Voltmeter",
+              "unlocks": "Measure push in any circuit",
+              "blurb": [
+                "A dial that reads the push.",
+                "Measures potential difference in volts. Placed in parallel."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "magnetism",
+          "title": "Magnetism",
+          "lessons": 4,
+          "requires": [
+            "electricity"
+          ],
+          "hook": [
+            "A magnet pulls iron. It does not pull copper. Why?",
+            "A magnet pulls iron through air. It does not pull copper through air. What is the difference?"
+          ],
+          "concepts": [
+            "magnetic-field",
+            "current-makes-magnetism",
+            "magnet-makes-current",
+            "electromagnetism-unified"
+          ],
+          "lessonTitles": [
+            "The Field You Can See",
+            "A Current Is a Magnet",
+            "A Magnet Makes a Current",
+            "Build an Electromagnet"
+          ],
+          "specimens": [
+            {
+              "id": "compass",
+              "title": "Compass",
+              "unlocks": "Find field direction in any sim",
+              "blurb": [
+                "A needle that points. Always points.",
+                "A magnetised needle on a pivot \u2014 aligns with any magnetic field."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "modern",
+      "title": "Modern Physics",
+      "subject": "physics",
+      "tagline": [
+        "Where the simple story breaks down",
+        "Very fast, very small, very heavy \u2014 and the rules change"
+      ],
+      "requires": [
+        "kinetic-potential",
+        "oscillation"
+      ],
+      "modules": [
+        {
+          "id": "relativity",
+          "title": "Relativity",
+          "lessons": 4,
+          "requires": [],
+          "hook": [
+            "If you run fast enough, does the light go faster?",
+            "You chase a beam of light. No matter how fast you run, it pulls away at the same speed. How?"
+          ],
+          "concepts": [
+            "speed-of-light-is-constant",
+            "time-dilation",
+            "length-contraction",
+            "mass-energy-equivalence"
+          ],
+          "lessonTitles": [
+            "The Constant Light",
+            "Time Is Not the Same for Everyone",
+            "Shorter When You Move",
+            "E Equals MC Squared"
+          ],
+          "specimens": [
+            {
+              "id": "light-clock",
+              "title": "Light Clock",
+              "unlocks": "See time dilation in any sim",
+              "blurb": [
+                "A clock made of light. It ticks differently when it moves.",
+                "A photon bouncing between two mirrors \u2014 the thought experiment that derives time dilation."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quantum",
+          "title": "Quantum",
+          "lessons": 5,
+          "requires": [
+            "relativity"
+          ],
+          "hook": [
+            "An electron goes through two holes at once. Which one?",
+            "An electron is fired at a wall with two holes. It goes through both. How do we know? The pattern on the other side."
+          ],
+          "concepts": [
+            "quantum-is-probabilistic",
+            "wave-particle-duality",
+            "uncertainty-principle",
+            "measurement-changes-outcome"
+          ],
+          "lessonTitles": [
+            "The Two Holes",
+            "A Particle That Is a Wave",
+            "You Cannot Know Everything",
+            "Watching Changes It",
+            "Build a Probability"
+          ],
+          "specimens": [
+            {
+              "id": "double-slit",
+              "title": "Double Slit",
+              "unlocks": "Show wave-particle duality in any sim",
+              "blurb": [
+                "Two holes in a wall. The simplest experiment that breaks common sense.",
+                "The apparatus that forces wave-particle duality into the open."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "subjects": [
+    {
+      "id": "life",
+      "title": "Life Sciences",
+      "tagline": [
+        "Learn biology by operating the mechanism before naming it.",
+        "Twenty-five modules across six worlds, ages 5 to 16."
+      ]
+    },
+    {
+      "id": "physics",
+      "title": "Physics",
+      "tagline": [
+        "Learn physics by pushing things and watching what happens.",
+        "Six worlds from motion to quantum, ages 5 to 16."
       ]
     }
   ]

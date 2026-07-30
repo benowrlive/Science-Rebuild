@@ -25,6 +25,7 @@ const SIMS = {
   stomata: () => import("../../sims/stomata.js"),
   web: () => import("../../sims/web.js"),
   outbreak: () => import("../../sims/outbreak.js"),
+  incline: () => import("../../sims/incline.js"),
 };
 
 export const RENDER = {

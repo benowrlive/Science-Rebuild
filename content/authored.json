@@ -31,6 +31,9 @@
     "3": "crispr/04-what-could-go-wrong.json",
     "4": "crispr/05-edit-a-gene.json"
   },
+  "describing-motion": {
+    "0": "describing-motion/01-here-to-there.json"
+  },
   "development": {
     "0": "development/01-one-cell-becomes-an-animal.json",
     "1": "development/02-where-is-the-instruction-for-leg.json",

@@ -450,6 +450,48 @@
     ],
     "from": "crispr/04"
   },
+  "position-is-relative": {
+    "q": [
+      "You hold a ball on a moving train. Is the ball moving?",
+      "A ball sits still in your hand on a moving train. Is it moving?",
+      "A ball is at rest in your frame on a moving train. Is it in motion?",
+      "A ball is stationary relative to you on a train moving at constant velocity. Is the ball in motion?"
+    ],
+    "options": [
+      "Both are true — it depends who is watching",
+      "No, it is sitting still in your hand",
+      "Yes, it is moving with the train"
+    ],
+    "answer": 0,
+    "why": [
+      "It depends who is asking. To you, the ball is still. To someone outside, it moves with the train. Both are right.",
+      "Both are true. To you the ball is still; to someone on the platform it moves with the train. There is no 'really' moving — only relative to who is watching.",
+      "Motion is frame-dependent. In your frame the ball is at rest; in the platform frame it moves at the train's velocity. Galilean relativity: no inertial frame is privileged.",
+      "Galilean invariance: the ball is at rest in the train's inertial frame and moving in the platform's. No inertial frame is preferred, so 'really moving' has no absolute meaning."
+    ],
+    "from": "describing-motion/01"
+  },
+  "velocity-is-rate": {
+    "q": [
+      "The ball stopped before the goal. What does that tell you?",
+      "The ball stopped short of the goal. Why?",
+      "In the sim, the ball stopped before reaching the goal. What does that mean?",
+      "The integrator halted with x < x_goal. What physical conclusion follows?"
+    ],
+    "options": [
+      "The push was not strong enough for how rough the ground was",
+      "The ball ran out of energy",
+      "The goal was too far away"
+    ],
+    "answer": 0,
+    "why": [
+      "Friction is a force that slows things down. When the push is small and the ground is rough, friction wins — and the ball stops. Nothing ran out; a force stopped it.",
+      "Friction is a force opposing motion. When friction is larger than the push, the ball decelerates to zero before reaching the goal. It did not 'run out of energy' — a force stopped it.",
+      "Friction decelerated the ball to rest. The applied impulse was insufficient to overcome kinetic friction over the required distance. Energy was dissipated as heat, not 'used up'.",
+      "The work done by friction (μmg·d) exceeded the initial kinetic energy (½mv²). The ball stopped where the dissipation equalled the imparted energy — a force, not a depletion."
+    ],
+    "from": "describing-motion/01"
+  },
   "one-cell-to-many": {
     "q": [
       "How does a cell know what to become?",

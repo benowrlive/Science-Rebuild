@@ -5,7 +5,12 @@ spec = importlib.util.spec_from_file_location("p", pathlib.Path(__file__).with_n
 p = importlib.util.module_from_spec(spec); spec.loader.exec_module(p)
 hexof, in_gamut, solve, contrast = p.hexof, p.in_gamut, p.solve, p.contrast
 
-WORLDS = [("origins",190),("code",295),("change",55),("bodies",340),("living",122),("frontier",250)]
+# Physics worlds join the life-sciences worlds here. Hues were chosen to
+# sit in the widest gaps between existing worlds and semantic colours, so
+# every world reads as distinct at a glance. See docs/DECISIONS.md for the
+# methodology.
+WORLDS = [("origins",190),("code",295),("change",55),("bodies",340),("living",122),("frontier",250),
+          ("motion",38),("forces",106),("energy",170),("waves",220),("fields",272),("modern",317)]
 SEM    = [("correct",152),("wrong",22),("discovery",90)]
 PAPER, NIGHT = "#FDFBF7", "#191614"
 INK_L, INK_D = "#241F1B", "#F7F3ED"

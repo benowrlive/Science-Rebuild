@@ -7,7 +7,7 @@ import { progress, reset, update } from "./state.js";
 import { LEVELS, DEPTH, prose, content, setLevels } from "./level.js";
 import { sfx, canSpeak } from "./audio.js";
 import {
-  worlds, getModule, getWorldOf, isComplete, isModuleUnlocked,
+  worlds, subjects, getModule, getWorldOf, isComplete, isModuleUnlocked,
   isWorldUnlocked, worldProgress, lockReason, nextUp, completedCount, allSpecimens,
   playableWorlds, comingWorlds, writtenCount, isWritten,
 } from "./curriculum.js";
@@ -98,11 +98,12 @@ export function atlas() {
   const next = nextUp(progress);
   const m = next && getModule(next);
   const ready = due().length, waiting = dueCount();
+  const playable = playableWorlds();
   return [
     el("h1", { text: "Atlas" }),
     el("p", { class: "lede", text: pick([
-      "Every place here is something alive. Pick one and go.",
-      "Twenty-five modules across six worlds. Most of them are already open to you.",
+      "Pick a place and go. Everything here is something you can operate.",
+      `${worlds.length} worlds across ${subjects.length} subjects. Most of them are already open to you.`,
     ]) }),
     // Reviews sit above new material: a due retrieval is worth more than the
     // next lesson, and the Atlas should say so. Flat, not raised — the review
@@ -122,7 +123,18 @@ export function atlas() {
         el("span", { class: "continue-title", text: m.title }),
         el("span", { class: "continue-hook", text: pick(m.hook) }),
         svgIcon("next", "icon icon--lg")) : null,
-    el("div", { class: "islands" }, playableWorlds().map(island)),
+    // Group playable worlds by subject. A single flat list stopped working once
+    // physics joined — six life-science islands and six physics islands in one
+    // row reads as twelve cards of the same kind, not two subjects. A subject
+    // header gives the child a way to choose a direction before a module.
+    ...subjects.map((subj) => {
+      const mine = playable.filter((w) => (w.subject ?? "life") === subj.id);
+      if (!mine.length) return null;
+      return el("section", { class: "subject-section", "data-subject": subj.id },
+        el("h2", { class: "subject-title", text: subj.title }),
+        el("p", { class: "subject-tag", text: pick(subj.tagline) }),
+        el("div", { class: "islands" }, mine.map(island)));
+    }),
     signpost(),
   ];
 }
