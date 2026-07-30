@@ -1,0 +1,2201 @@
+{
+  "form-follows-constraint": {
+    "q": [
+      "Why is there no animal that is good at everything?",
+      "Why is a universally optimal animal impossible rather than merely absent?",
+      "What excludes a universally optimal phenotype?"
+    ],
+    "options": [
+      "Because getting better at one thing makes you worse at another",
+      "Because it would be too expensive to grow",
+      "Because they would take over the world"
+    ],
+    "answer": 0,
+    "why": [
+      "Armour is heavy, so it slows you down. Big muscles need lots of food. Being small means you cannot be strong. You cannot have all of it because the things fight each other.",
+      "Traits compete for a shared budget and some are physically contradictory. Armour adds the mass that speed requires you not to carry; large muscles require the food supply that small size exists to avoid needing.",
+      "Two separate mechanisms, and both are needed for the full argument. Shared resource budgets make simultaneous maximisation costly; physical contradiction makes it impossible. Only the second explains the complete absence rather than the rarity."
+    ],
+    "from": "animals/01"
+  },
+  "surface-area-to-volume": {
+    "q": [
+      "Why does a mouse have to eat so much for its size?",
+      "Why is mass-specific metabolic rate higher in small animals?",
+      "Why does the square-cube law force high mass-specific metabolism at small size?"
+    ],
+    "options": [
+      "It has much more outside for its inside, so heat pours out",
+      "Mice are greedy",
+      "Small animals have bigger stomachs for their size"
+    ],
+    "answer": 0,
+    "why": [
+      "Heat is made by the inside and lost through the outside. A small animal has loads of outside for very little inside, so it loses heat fast and has to keep replacing it — which means eating almost all the time.",
+      "Heat production scales with volume and heat loss with surface, so as size falls the loss term grows relative to the production term. The animal compensates by running its metabolism faster, and pays for it by needing to eat almost continuously.",
+      "It is a ratio problem rather than an absolute one. A shrew loses less heat in total than an elephant and vastly more per gram, and it is the per-gram figure that determines how hard the metabolism has to work. Kleiber's exponent of 0.75 sits between the 0.67 of pure surface scaling and the 1.0 of pure volume scaling, which is itself informative."
+    ],
+    "from": "animals/02"
+  },
+  "locomotion-tradeoffs": {
+    "q": [
+      "Why is swimming the cheapest way to travel?",
+      "Why is the energy cost per distance lowest for swimming?",
+      "Why does swimming have the lowest cost of transport?"
+    ],
+    "options": [
+      "The water holds you up, so no energy goes into not falling",
+      "Water is thinner than air",
+      "Swimming animals are lazier"
+    ],
+    "answer": 0,
+    "why": [
+      "A running animal spends energy holding itself up and lifting itself with every step. A fish is already held up by the water, so all its effort goes into going forwards.",
+      "Buoyancy removes the cost of supporting body weight, which is a large part of what walking and running spend energy on. Everything left goes into overcoming drag — so per kilometre, swimming wins comfortably despite water being far denser than air.",
+      "Cost of transport separates into supporting weight and overcoming resistance. Buoyancy nearly eliminates the first term, and although drag in water is much higher than in air, the elimination outweighs it at the speeds animals actually use. Flight is the opposite case: it must pay for support continuously, which is why it is the most expensive per unit time and yet efficient per unit distance."
+    ],
+    "from": "animals/03"
+  },
+  "behaviour-is-heritable": {
+    "q": [
+      "Can natural selection change how an animal behaves?",
+      "Can behaviour evolve by natural selection?",
+      "Why does the mechanism apply to behaviour without modification?"
+    ],
+    "options": [
+      "Yes — behaviour is inherited, so the same three conditions apply",
+      "No, selection only changes bodies",
+      "Only if the animal practises"
+    ],
+    "answer": 0,
+    "why": [
+      "The three conditions are about differences being passed on and mattering for survival. They never say the difference has to be a colour or a bone. If a behaviour is inherited and it matters, it gets selected.",
+      "Nothing in the mechanism refers to the physical nature of the trait. Behaviour varies, is heritable, and affects survival and reproduction, so it satisfies all three conditions and is selected on identically.",
+      "The mechanism is substrate-neutral, which is why it also describes antibiotic resistance and clonal selection in your immune system. That generality is the strongest thing about it — and it is why 'evolution of behaviour' needs no separate theory."
+    ],
+    "from": "animals/04"
+  },
+  "polymers-from-monomers": {
+    "q": [
+      "Why is a short parts list not a problem?",
+      "Why does a small monomer set not limit variety?",
+      "Why is monomer diversity not the binding constraint?"
+    ],
+    "options": [
+      "Because the order they are joined in does the work",
+      "Because the pieces are very complicated",
+      "Because living things are all quite similar"
+    ],
+    "answer": 0,
+    "why": [
+      "Twenty different beads on a string a hundred beads long gives more orders than there are atoms in the universe. The pieces do not need to be clever.",
+      "Variety comes from sequence, not from inventory. Twenty amino acids in a chain of 100 gives 20¹⁰⁰ possible proteins — a number with 130 digits, against roughly 10⁸⁰ atoms in the observable universe.",
+      "This is the same argument as the four-letter alphabet in DNA, and it generalises: capacity scales exponentially with length and only linearly with alphabet size, so the interesting constraints are always on length, error rate and assembly cost rather than on the parts list."
+    ],
+    "from": "biomolecules/01"
+  },
+  "sugar-is-stored-energy": {
+    "q": [
+      "Why does sugar not release its energy on its own?",
+      "Why is glucose stable in a bowl but not in a cell?",
+      "Why is glucose kinetically stable despite being thermodynamically unstable?"
+    ],
+    "options": [
+      "It needs something to start it off and take it apart",
+      "It has no energy until you eat it",
+      "Sugar only works inside a body"
+    ],
+    "answer": 0,
+    "why": [
+      "The energy is there the whole time. It just needs something to get it started — which is exactly why a sugar cube burns if you light it, and does nothing if you do not.",
+      "Releasing the energy requires getting over a barrier first. Heat does it crudely; an enzyme does it at body temperature, in small steps, capturing the energy instead of losing it.",
+      "The reaction is strongly favourable and extremely slow, which is the definition of kinetic stability. Enzymes lower the activation barrier without altering ΔG, so they change the rate and never the yield — the same amount of energy is available whether it is burnt or respired."
+    ],
+    "from": "biomolecules/02"
+  },
+  "hydrophobic-effect": {
+    "q": [
+      "What actually pushes oil into a blob?",
+      "Where does the driving force for hydrophobic association come from?",
+      "Why is the hydrophobic effect not an attraction between oily molecules?"
+    ],
+    "options": [
+      "The water, getting itself out of the way",
+      "The oil molecules gripping each other",
+      "Gravity"
+    ],
+    "answer": 0,
+    "why": [
+      "Oily things are not sticky. Water is just much happier next to other water, so it shoves the oil together to get on with it.",
+      "The force comes from the solvent. Water has to arrange itself into a rigid cage around an exposed oily surface; shrinking that surface releases the cage, and that release is what drives the association.",
+      "The effect is entropic and lives in the water, not enthalpic and living in the oil. The clearest evidence is the temperature dependence: over a broad range hydrophobic association gets stronger as you warm it, which no ordinary attraction between two molecules does."
+    ],
+    "from": "biomolecules/03"
+  },
+  "shape-from-sequence": {
+    "q": [
+      "Why does changing one bead matter so much?",
+      "Why can a single substitution abolish function?",
+      "Why is the sequence-structure map so unforgiving at some positions and not others?"
+    ],
+    "options": [
+      "Because the shape depends on the whole order at once",
+      "Because one bead is much bigger than the others",
+      "Because there are only twenty to choose from"
+    ],
+    "answer": 0,
+    "why": [
+      "The shape comes from all the beads together. Move one and the folding can come out completely different — or leave a sticky bit on the outside where there should not be one.",
+      "The fold is a global property of the sequence, so a local change can have a non-local effect. A substitution buried in the core, or one that exposes an oily surface, can wreck the structure; the same change elsewhere may do nothing at all.",
+      "Positional sensitivity varies enormously and predictably: buried core residues and active-site residues are highly constrained, surface loops are largely tolerant. This is why conservation across species is such a good predictor of which mutations will be pathogenic — evolution has already run the experiment."
+    ],
+    "from": "biomolecules/04"
+  },
+  "cells-as-factories": {
+    "q": [
+      "Why does a bacterium read a human gene correctly?",
+      "Why is a human gene expressed by a bacterial host?",
+      "What makes cross-species expression possible at all?"
+    ],
+    "options": [
+      "The genetic code is essentially the same in everything alive",
+      "The gene is translated into bacterial first",
+      "Bacteria are closely related to humans"
+    ],
+    "answer": 0,
+    "why": [
+      "The same four letters mean the same things in a germ and in you. So a bacterium reading a human instruction is just reading — it has no way of knowing where it came from.",
+      "The code is near-universal, so the same triplets specify the same amino acids in both. Nothing is converted; the host machinery simply reads a sequence it can read.",
+      "It is a fact about shared inheritance rather than about similarity — bacteria and humans are about as distantly related as living things get, and the code is shared anyway. That universality across the whole of life is what makes it exploitable, and it is one of the observations any account of life's history has to accommodate."
+    ],
+    "from": "biotechnology/01"
+  },
+  "amplify-dna": {
+    "q": [
+      "Why does PCR make so much so fast?",
+      "Why is amplification exponential rather than steady?",
+      "Why does exponential amplification make single-molecule detection possible?"
+    ],
+    "options": [
+      "Every copy becomes a template for the next round",
+      "The machine works very quickly",
+      "It starts with a lot of DNA"
+    ],
+    "answer": 0,
+    "why": [
+      "Each round copies everything you have, including the copies. So it doubles rather than adding — and thirty doublings from one molecule is a billion.",
+      "Products become templates, so the reaction compounds. Adding a fixed amount each cycle would give thirty copies; doubling gives a billion, and that difference is what lets a test detect what was never detectable directly.",
+      "Detection has a floor set by instrument sensitivity, and amplification raises the sample to meet it rather than lowering the floor. Because growth is exponential, the number of cycles needed scales only with the logarithm of how few molecules you started with — which is why the same protocol works from one copy or from a thousand."
+    ],
+    "from": "biotechnology/02"
+  },
+  "read-a-genome": {
+    "q": [
+      "What is the hard part now that sequencing is cheap?",
+      "Where has the bottleneck moved?",
+      "Why did cheap sequencing not resolve the interpretation problem?"
+    ],
+    "options": [
+      "Working out what any of it means",
+      "Getting hold of enough DNA",
+      "Nothing — it is a solved problem"
+    ],
+    "answer": 0,
+    "why": [
+      "Reading the letters is now easy. Knowing what a particular change does to a person is not, and mostly we still cannot say.",
+      "Data generation outran interpretation. Most human genetic variants found in a clinical test are classed as of uncertain significance — the sequence is known and its consequence is not.",
+      "Because cost was never the limiting factor on understanding. Sequencing tells you the letters; connecting a variant to a phenotype requires population data, functional work and statistics, none of which got cheaper at the same rate. The gap has widened rather than closed, which is a general pattern when one step in a pipeline improves by orders of magnitude and the others do not."
+    ],
+    "from": "biotechnology/03"
+  },
+  "recombinant-protein": {
+    "q": [
+      "Why is recombinant insulin better than the animal kind?",
+      "What advantages does recombinant insulin have over extracted animal insulin?",
+      "Which of those advantages was the decisive one?"
+    ],
+    "options": [
+      "It is exactly human, and the supply is unlimited",
+      "It is stronger",
+      "It can be swallowed"
+    ],
+    "answer": 0,
+    "why": [
+      "Animal insulin is nearly right, and nearly right can make some people ill. And there is only as much of it as there are animals. Bacteria make the exact human version, and you can always grow more.",
+      "Sequence identity removes the immune reactions that animal insulin caused in some patients, and supply is limited only by fermenter capacity rather than by livestock numbers.",
+      "Supply, on the evidence. Immunological problems affected a minority; the supply constraint affected everyone and was structural — insulin availability was tied to the meat industry with no way to increase it independently. It is a useful reminder that the decisive advantage of a technology is often the unglamorous one."
+    ],
+    "from": "biotechnology/04"
+  },
+  "cell-scale": {
+    "q": [
+      "How big is a cell?",
+      "Roughly how big is a typical human cell?",
+      "What is the approximate diameter of a typical human cell?",
+      "Order of magnitude for a typical eukaryotic cell diameter?"
+    ],
+    "options": [
+      "Too small to see without a microscope",
+      "About the size of a grain of sand",
+      "Big enough to see if you look closely"
+    ],
+    "answer": 0,
+    "why": [
+      "About 25 cells fit across a full stop. Your eyes stop working long before that.",
+      "About 25 fit across a full stop — roughly 20 micrometres each. The eye can just about resolve 100 micrometres, so a cell is about five times too small.",
+      "≈20 µm. Unaided visual acuity bottoms out around 100 µm, so a cell is about five times below the limit.",
+      "≈20 µm, against an unaided resolution limit near 100 µm — hence the entire history of the field waiting on lens grinding."
+    ],
+    "from": "cells/01"
+  },
+  "cell-is-a-system": {
+    "q": [
+      "What makes a cell like a city?",
+      "Why is a cell more like a city than like a brick?",
+      "In what sense is a cell a system rather than a component?",
+      "Why does the city analogy hold and the brick analogy fail?"
+    ],
+    "options": [
+      "It has many parts, each doing a different job",
+      "It is made of one solid material",
+      "It is the same all the way through"
+    ],
+    "answer": 0,
+    "why": [
+      "A brick is the same all the way through. A cell has power, walls and instructions — all different, all working at once.",
+      "A brick is uniform. A cell has a boundary, power plants, an instruction store and transport, all running at the same time and depending on each other.",
+      "A brick is homogeneous and passive. A cell is compartmentalised and active: each organelle performs a distinct function, and removing one stops the whole.",
+      "The analogy holds on functional differentiation and interdependence — remove the power plant and the instruction store stops being read. A brick has neither property."
+    ],
+    "from": "cells/01"
+  },
+  "membrane-selectivity": {
+    "q": [
+      "Why did the poison stay outside?",
+      "Why did the poison stay out when the food got in?",
+      "What determined which molecules crossed the membrane?",
+      "What is the selectivity mechanism at work here?"
+    ],
+    "options": [
+      "It was too big for the holes",
+      "The cell pushed it away",
+      "Poison cannot move"
+    ],
+    "answer": 0,
+    "why": [
+      "The holes were big enough for food and too small for poison. Nothing pushed anything — the size did all the work.",
+      "Passage depended only on size against hole size. The cell did nothing active: the food fitted and the poison did not.",
+      "Steric exclusion. Molecules smaller than the pore crossed by random motion; larger ones bounced. No energy was expended by the cell.",
+      "Steric exclusion alone. Both species executed the same unbiased random walk; only the pore geometry differed in outcome."
+    ],
+    "from": "cells/02"
+  },
+  "diffusion-is-passive": {
+    "q": [
+      "What made the food move inside?",
+      "What made the food end up inside the cell?",
+      "What drove net movement of food into the cell?",
+      "What accounts for the net inward flux of food?"
+    ],
+    "options": [
+      "It moved randomly and there was more room inside",
+      "The cell sucked it in",
+      "Food always moves towards cells"
+    ],
+    "answer": 0,
+    "why": [
+      "Every molecule wandered at random. There were more outside than inside, so more wandered in than out — until it evened up.",
+      "Each molecule moves randomly with no sense of direction. Because there were more outside, more happened to cross inwards than outwards, and it stopped when both sides matched.",
+      "Random motion plus a concentration difference. Flux is proportional to the gradient, so it falls to zero at equilibrium — nothing 'pulls'.",
+      "Fick's first law falling out of an unbiased random walk: net flux is proportional to the negative concentration gradient, and vanishes at equilibrium."
+    ],
+    "from": "cells/02"
+  },
+  "atp-is-a-flow": {
+    "q": [
+      "Why does the energy bar never stay still?",
+      "Why did the energy level never sit still, even when it was working?",
+      "Why is ATP level always changing even at steady state?",
+      "Why is a constant ATP pool not evidence of a static system?"
+    ],
+    "options": [
+      "Because energy is being made and spent all the time",
+      "Because the cell stores energy up",
+      "Because the sliders were moving"
+    ],
+    "answer": 0,
+    "why": [
+      "The cell never fills up. It makes energy and spends it at the same time, all the time.",
+      "There is no tank. Production and consumption run simultaneously, so the level is always the difference between two flows.",
+      "Steady state is a balance of two large opposing fluxes, not the absence of change. Stop synthesis and the pool is gone in seconds.",
+      "A constant pool reflects matched synthesis and hydrolysis rates, both large. Turnover, not stock, is the quantity that matters."
+    ],
+    "from": "cells/03"
+  },
+  "mitochondria-cost": {
+    "q": [
+      "Why is building loads of power plants a bad idea?",
+      "Why did adding more and more power plants stop helping?",
+      "Why does mitochondrial number have an optimum rather than a maximum?",
+      "What sets the upper bound on useful mitochondrial density?"
+    ],
+    "options": [
+      "Each one costs energy to run",
+      "They get in each other's way",
+      "There is not enough room"
+    ],
+    "answer": 0,
+    "why": [
+      "Every power plant needs energy just to keep going. Build too many and they eat more than they make.",
+      "Each mitochondrion has a maintenance cost. Past a point, the upkeep of the extras exceeds what they contribute.",
+      "Maintenance cost scales with number while output is capped by substrate supply, so net gain turns negative — cells regulate density rather than maximising it.",
+      "Output saturates at substrate limitation while maintenance scales linearly, so net ATP is non-monotonic in copy number."
+    ],
+    "from": "cells/03"
+  },
+  "copy-not-original": {
+    "q": [
+      "Why does the original stay in its room?",
+      "Why does DNA never leave the nucleus?",
+      "Why is the template retained rather than exported?",
+      "What is the functional argument for sequestering the template?"
+    ],
+    "options": [
+      "So it cannot be damaged or lost",
+      "Because it is stuck",
+      "Because copies are faster"
+    ],
+    "answer": 0,
+    "why": [
+      "There is only one original. If it were damaged, every copy after it would be wrong too.",
+      "You have one copy of your genome per cell. Damage to it is permanent and inherited by every daughter cell; damage to a transcript costs nothing.",
+      "The template is irreplaceable and its errors propagate; transcripts are disposable and their errors do not. Sequestering the template also allows expression to be regulated at the point of copying.",
+      "Error in a transcript is transient; error in the template is heritable. Compartmentalisation also creates a regulatory step between archive and product."
+    ],
+    "from": "cells/04"
+  },
+  "guided-cutting": {
+    "q": [
+      "How do the scissors know where to cut?",
+      "What determines the cut site?",
+      "Why is separating targeting from cutting the important design feature?"
+    ],
+    "options": [
+      "A guide strand pairs with the matching letters",
+      "The protein recognises the gene it is looking for",
+      "It cuts wherever the DNA is loose"
+    ],
+    "answer": 0,
+    "why": [
+      "It is the same pairing rule you used to copy DNA. The guide sticks only where every letter matches, and the scissors cut where the guide stopped.",
+      "Base pairing between a 20-letter guide RNA and the target strand. The protein does the cutting and has no sequence preference of its own beyond a short adjacent motif — the address is entirely in the RNA.",
+      "Because it makes the address a piece of data rather than a piece of engineering. Every previous targeted nuclease required designing a new protein per target; here the protein is constant and only the RNA changes, which is why the cost and time fell by orders of magnitude and why the technique spread as fast as it did."
+    ],
+    "from": "crispr/01"
+  },
+  "bacterial-origin": {
+    "q": [
+      "What is CRISPR actually for, in a bacterium?",
+      "What is the native function of the CRISPR system?",
+      "In what sense is it an adaptive immune system?"
+    ],
+    "options": [
+      "Recognising and destroying viruses it has met before",
+      "Editing its own genes",
+      "Copying its DNA faster"
+    ],
+    "answer": 0,
+    "why": [
+      "It is a defence. The bacterium keeps a piece of every virus that attacked it, and uses those pieces to recognise and cut up the same virus next time.",
+      "Antiviral defence. Fragments of past invaders are stored as spacers and used to generate guides that destroy matching sequences on re-infection — acquisition, memory and specific response, which is what adaptive means.",
+      "It satisfies every criterion: the response is specific to a particular invader, it is acquired from experience rather than pre-existing, and it persists as memory. It is also heritable, which vertebrate adaptive immunity is not — the memory is in the genome rather than in a cell population."
+    ],
+    "from": "crispr/02"
+  },
+  "targeting-accuracy": {
+    "q": [
+      "Why can the scissors cut in the wrong place at all?",
+      "Why does a 20-letter guide not guarantee a unique cut?",
+      "Why is pairing specificity a gradient rather than a threshold?"
+    ],
+    "options": [
+      "Nearly-matching still sticks well enough",
+      "The scissors sometimes malfunction",
+      "The genome moves around"
+    ],
+    "answer": 0,
+    "why": [
+      "Pairing is about how strongly things stick together, not a lock that only one key opens. Eighteen letters out of twenty still stick pretty well — well enough to cut, sometimes.",
+      "Binding strength falls gradually with mismatches rather than dropping to zero, so sites that are close but not identical can still be bound and cut. Nothing in the chemistry provides a sharp cut-off at 'perfect'.",
+      "Each base pair contributes a small amount of binding energy, so the total falls incrementally as mismatches accumulate. Specificity is therefore statistical, and the practical response is to choose guides whose nearest genomic near-match is as distant as possible — managing the gradient rather than escaping it."
+    ],
+    "from": "crispr/03"
+  },
+  "edit-consequences": {
+    "q": [
+      "Why is editing an embryo treated so differently?",
+      "Why is germline editing regulated differently from somatic editing?",
+      "What is the structural difference the regulation tracks?"
+    ],
+    "options": [
+      "Nobody affected by it can agree to it, and it never stops",
+      "It costs much more",
+      "It does not work as well"
+    ],
+    "answer": 0,
+    "why": [
+      "A patient can be told the risks and say yes. An embryo cannot, and neither can their children, or their grandchildren. The change carries on for ever and nobody it affects was ever asked.",
+      "Consent and permanence. Somatic edits are confined to a consenting patient and end with them; germline edits propagate indefinitely to people who cannot be consulted and cannot opt out.",
+      "It tracks who bears the risk relative to who accepted it. In somatic therapy those are the same person; in germline editing they diverge permanently and by construction. That divergence is why the argument does not dissolve as the technology becomes safer — safety addresses the magnitude of the risk and not who is bearing it unasked."
+    ],
+    "from": "crispr/04"
+  },
+  "one-cell-to-many": {
+    "q": [
+      "How does a cell know what to become?",
+      "What determines a cell's fate during development?",
+      "What is the source of positional information?"
+    ],
+    "options": [
+      "From where it is and what is next to it",
+      "It reads a plan of the whole body",
+      "It is decided randomly"
+    ],
+    "answer": 0,
+    "why": [
+      "There is no plan of you anywhere. A cell can only tell what is right next to it, and that turns out to be enough.",
+      "Fate follows position, and position is read from local signals — chemicals reaching the cell and contact with neighbours. No cell has access to any description of the whole.",
+      "Positional information is encoded in gradients and contacts, both strictly local. The remarkable part is that purely local rules produce a reproducible global arrangement, which is why development is the best worked example of emergence in biology."
+    ],
+    "from": "development/01"
+  },
+  "positional-information": {
+    "q": [
+      "How does one chemical make five different fingers?",
+      "How does a single morphogen specify multiple distinct fates?",
+      "How does a smooth gradient produce discrete boundaries?"
+    ],
+    "options": [
+      "Different amounts mean different things",
+      "It changes colour along the way",
+      "There are secretly five chemicals"
+    ],
+    "answer": 0,
+    "why": [
+      "Near the source there is a lot, far away there is hardly any. Cells do different things depending on how much they get, so one chemical can say five different things.",
+      "Concentration thresholds. Cells respond to bands of concentration rather than to the exact amount, so a smooth slope is read as a set of discrete regions.",
+      "Thresholds plus downstream gene networks that sharpen boundaries by mutual repression. The gradient supplies approximate position; cross-repression between the genes it switches on converts fuzzy edges into crisp ones — which is why real boundaries are far sharper than the gradient that specifies them."
+    ],
+    "from": "development/02"
+  },
+  "conserved-toolkit": {
+    "q": [
+      "What do Hox genes actually do?",
+      "What is the function of a Hox gene?",
+      "Why does a Hox mutation produce a well-formed structure in the wrong place?"
+    ],
+    "options": [
+      "They say what kind of thing to build here",
+      "They build legs and antennae directly",
+      "They control how fast the animal grows"
+    ],
+    "answer": 0,
+    "why": [
+      "They are labels, not builders. The gene says 'this bit is a head' or 'this bit is a middle', and everything else does the building.",
+      "They assign identity to a region. The machinery for building a leg exists regardless; the Hox gene decides whether that machinery is the one switched on there. Change the label and you get a correctly built leg in the wrong socket.",
+      "Because the addressing and the construction are separate systems. A homeotic mutation misaddresses a fully intact construction programme, which is why the result is a perfect structure in the wrong location rather than a malformed one in the right place. That separation is itself the discovery."
+    ],
+    "from": "development/03"
+  },
+  "differentiation": {
+    "q": [
+      "Why is the same toolkit in a fly and in a human interesting?",
+      "What made the conservation of the developmental toolkit surprising?"
+    ],
+    "options": [
+      "Because very different animals turn out to be built by the same small set of switches",
+      "Because it proves flies and humans are closely related",
+      "Because it means all animals develop identically"
+    ],
+    "answer": 0,
+    "why": [
+      "A fly and a person could hardly look less alike. The expectation was that they would need different genes. Instead they use the same small set, switched on in different places and at different times — the difference is in the deployment, not the inventory.",
+      "The pre-genomic expectation was that morphological disparity required genetic disparity. What was found instead was a small, highly conserved regulatory toolkit used combinatorially. That relocated the explanation of body-plan difference from gene content to gene regulation, and it is the reason evo-devo exists as a field."
+    ],
+    "from": "development/03"
+  },
+  "body-plan": {
+    "q": [
+      "Why do you have separate fingers?",
+      "How are digits separated during development?",
+      "What does interdigital apoptosis illustrate about development?"
+    ],
+    "options": [
+      "The cells between them were removed on purpose",
+      "The fingers grew outwards from a point",
+      "They were always separate"
+    ],
+    "answer": 0,
+    "why": [
+      "Your hand started as a paddle with no gaps. The cells in between were told to die, and that is what made the fingers separate.",
+      "The limb bud forms as a plate and the interdigital tissue is eliminated by programmed cell death. The fingers are not built apart; the space between them is taken away.",
+      "It shows that development is subtractive as well as additive, and that removal is instructed rather than incidental. Where the instruction fails, the digits remain joined — which is exactly what simple syndactyly is."
+    ],
+    "from": "development/04"
+  },
+  "causes-of-illness": {
+    "q": [
+      "Will an antibiotic help a cold?",
+      "Are antibiotics effective against viral infections?",
+      "Why does prescribing an antibiotic for a virus have a cost rather than merely no benefit?"
+    ],
+    "options": [
+      "No — a cold is a virus, and antibiotics only work on bacteria",
+      "Yes, it will shorten it",
+      "Only if you take it early enough"
+    ],
+    "answer": 0,
+    "why": [
+      "Antibiotics attack things bacteria have and viruses do not — like their cell walls. A virus has none of those, so there is nothing for the drug to attack.",
+      "They target bacterial structures and processes that viruses do not possess. There is no mechanism by which one could act on a virus, so timing makes no difference either.",
+      "Because the selection pressure is applied regardless of whether the drug helps. The bacteria in and on the patient are exposed, resistant ones survive, and resistance accumulates — so an ineffective prescription is not neutral, it spends a shared resource for nothing. That is the same mechanism you ran in the beetle simulation."
+    ],
+    "from": "disease/01"
+  },
+  "transmission-and-r0": {
+    "q": [
+      "Why does an epidemic stop before everyone has had it?",
+      "Why does an unchecked epidemic leave people uninfected?",
+      "Why does the epidemic end above rather than at the threshold?"
+    ],
+    "options": [
+      "Once enough people are immune, it cannot find new people fast enough",
+      "The germ gets weaker over time",
+      "Everyone does get it eventually"
+    ],
+    "answer": 0,
+    "why": [
+      "As more people have had it, an ill person meets fewer people who can catch it. Once each one passes it to less than one other, it dies out — and there are still plenty of people who never got it.",
+      "Transmission requires susceptible contacts. Once the susceptible fraction falls below 1/R₀, each case produces fewer than one further case and the outbreak declines — with a substantial fraction never infected.",
+      "Because infectious people are still present when the threshold is crossed, so transmission continues while R is below one and declining. That overshoot means the final size exceeds the threshold, which is why an unchecked epidemic infects considerably more people than herd immunity strictly requires — and why reaching immunity by infection costs far more cases than reaching it by vaccination."
+    ],
+    "from": "disease/02"
+  },
+  "outbreak-investigation": {
+    "q": [
+      "Did Snow know what caused cholera?",
+      "Did Snow's intervention depend on identifying the pathogen?",
+      "What does the case show about the relation between mechanism and action?"
+    ],
+    "options": [
+      "No — but he knew where it was coming from, and that was enough",
+      "Yes, he identified the bacterium",
+      "No, so his intervention did not really work"
+    ],
+    "answer": 0,
+    "why": [
+      "Nobody knew about the germ for another thirty years. He worked out where it was coming from by looking at who got ill, and taking the pump handle off stopped it.",
+      "The bacterium was not identified until 1884. Snow's argument was entirely about exposure patterns, and removing the exposure worked without any knowledge of what was being removed.",
+      "Mechanism and action are separable. Knowing the cause is sufficient for action and not necessary for it — identifying a removable exposure can be enough. That is why epidemiology functions as an independent discipline rather than an applied branch of microbiology, and why it usually gets there first."
+    ],
+    "from": "disease/03"
+  },
+  "eradication-conditions": {
+    "q": [
+      "Why can we not wipe out flu the way we did smallpox?",
+      "Which eradication condition does influenza fail?",
+      "Why is influenza structurally not an eradication candidate?"
+    ],
+    "options": [
+      "It changes constantly and lives in birds and pigs as well",
+      "It is not serious enough to bother",
+      "There is no vaccine for it"
+    ],
+    "answer": 0,
+    "why": [
+      "Flu changes its coat every year, so last year's vaccine stops matching. And it lives in birds and pigs, so even if every person were protected it would still be out there.",
+      "It fails two conditions at once: antigenic stability, which is why the vaccine is reformulated annually, and the absence of an animal reservoir — influenza circulates in wild birds and pigs permanently.",
+      "The reservoir alone is decisive. Antigenic drift makes control expensive and continuous; the reservoir makes eradication impossible in principle, because the pathogen persists in populations no campaign can vaccinate. Only one of those two can be engineered around."
+    ],
+    "from": "disease/04"
+  },
+  "dna-packing": {
+    "q": [
+      "Why can the thread not just be squashed into a ball?",
+      "Why is simple compression the wrong solution?",
+      "Why is undifferentiated compaction unacceptable?"
+    ],
+    "options": [
+      "Because it still has to be read, one bit at a time",
+      "Because a ball takes up more room",
+      "Because DNA is too stiff to squash"
+    ],
+    "answer": 0,
+    "why": [
+      "A tangle would fit. But the cell has to find one small part of it and read it — so it has to be packed in a way that can be undone in one spot without undoing the rest.",
+      "Volume is only half the problem. The structure has to permit local, reversible unpacking, because genes are read individually while the rest stays stored.",
+      "Compaction and accessibility are competing requirements, and the hierarchical solution satisfies both: each level can be locally relaxed without disturbing the others. A tangle would satisfy the first requirement and destroy the second."
+    ],
+    "from": "dna/01"
+  },
+  "chromosome-structure": {
+    "q": [
+      "When can you actually see a chromosome?",
+      "When are chromosomes visible under a light microscope?",
+      "Under what condition is a chromosome resolvable by light microscopy?"
+    ],
+    "options": [
+      "When the cell is dividing and it is packed up tight",
+      "All the time",
+      "Only when the cell is dead"
+    ],
+    "answer": 0,
+    "why": [
+      "Most of the time the thread is loose so it can be read. It only packs up tight when the cell is about to split, and that is the only time it is thick enough to see.",
+      "Chromatin is decondensed during interphase — which is what makes it readable — and condenses only for division. Chromosomes were named and counted for decades before anyone knew what they were made of, precisely because that is the one state visible with the instruments available.",
+      "Resolution is the constraint: decondensed chromatin is well below the diffraction limit, and only metaphase condensation brings it above. This is a nice case of a structure being characterised long before its composition, because the observable state was the atypical one."
+    ],
+    "from": "dna/01"
+  },
+  "four-letters": {
+    "q": [
+      "Why is four letters enough?",
+      "Why is a four-base alphabet sufficient?",
+      "Why is alphabet size the wrong thing to worry about?"
+    ],
+    "options": [
+      "Because the message is billions of letters long",
+      "Because each letter means a lot on its own",
+      "Because living things are simple"
+    ],
+    "answer": 0,
+    "why": [
+      "Each extra letter multiplies what you can say by four. Make the message long enough and four letters can say anything.",
+      "Capacity grows exponentially with length and only linearly with alphabet size. Three billion positions at four options each is capacity nobody has found a use for all of.",
+      "This is why binary is not a limitation for computers either. The alphabet sets bits per symbol — two for DNA — and the length does the rest. The interesting constraints on genomes are error rate and replication cost, not vocabulary."
+    ],
+    "from": "dna/02"
+  },
+  "base-pairing": {
+    "q": [
+      "Which letter does C hold hands with?",
+      "Which base pairs with cytosine?",
+      "What is the complement of cytosine?"
+    ],
+    "options": [
+      "G",
+      "A",
+      "T"
+    ],
+    "answer": 0,
+    "why": [
+      "C always goes with G, and A always goes with T. Never any other way round.",
+      "C pairs with G, A with T. The rule has no exceptions, and the next lesson is about what that rule makes possible.",
+      "C–G, joined by three hydrogen bonds against A–T's two, which is why GC-rich sequence has a higher melting temperature. The pairing is geometric as well as chemical: purine to pyrimidine keeps every rung the same width."
+    ],
+    "from": "dna/02"
+  },
+  "semiconservative-copying": {
+    "q": [
+      "How much of a new ladder is brand new?",
+      "In a newly replicated double helix, how much is newly synthesised?",
+      "What is the composition of a daughter duplex?"
+    ],
+    "options": [
+      "Half — one side is the original",
+      "All of it",
+      "None of it"
+    ],
+    "answer": 0,
+    "why": [
+      "Each new ladder is one old side and one new side. That is why it is called semiconservative — half is conserved.",
+      "One parental strand and one new one. Meselson and Stahl proved it by weight: after one round every molecule was intermediate in density, which only the semiconservative model predicts.",
+      "One parental, one daughter strand. Conservative replication would have given two populations after one round — all-heavy and all-light — and dispersive would never have separated at all. The single intermediate band ruled out both."
+    ],
+    "from": "dna/03"
+  },
+  "mutation-is-copy-error": {
+    "q": [
+      "What is a mutation?",
+      "What is a mutation, precisely?",
+      "What is the precise definition of a mutation?"
+    ],
+    "options": [
+      "A letter that got copied wrong and was not fixed",
+      "A monster in a film",
+      "Something a body does on purpose when it needs to change"
+    ],
+    "answer": 0,
+    "why": [
+      "It is just a copying mistake nobody corrected. Not something the body chose, and usually not dramatic at all.",
+      "An uncorrected copying error. Nothing about it is intentional — a cell cannot decide to mutate a gene it would find useful, and this is why the beetles could not simply turn dark.",
+      "It is undirected with respect to need, which is the load-bearing part. Bacteria placed under antibiotic pressure do not generate resistance mutations in response to the drug; the variation is present beforehand at low frequency and the drug reveals it. That was the point of the Luria–Delbrück experiment in 1943."
+    ],
+    "from": "dna/04"
+  },
+  "nothing-eats-alone": {
+    "q": [
+      "Why is a food web safer than a food chain?",
+      "Why does a web tolerate a loss that a chain would not?",
+      "What property does the chain abstraction discard?"
+    ],
+    "options": [
+      "If one link goes, there are other routes",
+      "Webs have more animals in them",
+      "Chains only exist in the sea"
+    ],
+    "answer": 0,
+    "why": [
+      "In a chain, if one thing disappears everything above it goes hungry. In a web there is usually something else to eat, so losing one link does not have to bring the whole thing down.",
+      "Redundancy. Multiple routes to the same energy mean the loss of one link can be absorbed — which is why real ecosystems survive losses that a chain diagram predicts would be fatal.",
+      "It discards redundancy, which is the property that determines robustness. That makes the chain actively misleading rather than merely simplified: it predicts fragility that is usually absent, and it gives no way to identify the cases — keystone species — where the fragility is real."
+    ],
+    "from": "ecology/01"
+  },
+  "energy-loss-up-trophic": {
+    "q": [
+      "Why are there so few big predators?",
+      "Why is the number of trophic levels limited to four or five?",
+      "Why does trophic efficiency bound chain length?"
+    ],
+    "options": [
+      "There is only a tenth as much energy at each level up",
+      "They are killed by people",
+      "They breed too slowly"
+    ],
+    "answer": 0,
+    "why": [
+      "Ten thousand units of sunlight becomes about one unit five levels up. There is simply not enough left to feed anything else, so the chain has to stop.",
+      "Energy falls by roughly a factor of ten per level, so after four or five levels there is not enough to support a viable population. The limit is arithmetic, not biology.",
+      "Each transfer loses about 90%, so available energy falls geometrically while the minimum viable population size does not. The two curves cross after four or five levels, and that crossing is the ceiling. It also explains why top predators need enormous territories — the area required scales with the energy shortfall."
+    ],
+    "from": "ecology/02"
+  },
+  "carrying-capacity": {
+    "q": [
+      "What decides how many animals a place can hold?",
+      "What sets carrying capacity?",
+      "Why does only the scarcest resource matter?"
+    ],
+    "options": [
+      "Whichever thing they need runs out first",
+      "How much space there is",
+      "How fast they breed"
+    ],
+    "answer": 0,
+    "why": [
+      "Plenty of grass is no use if there is no water. Whatever they run out of first is what sets the number, and giving them more of anything else makes no difference at all.",
+      "The binding constraint, and only that one. Relieving any other requirement changes nothing until the scarce one is relieved too — which is why a single limiting nutrient can control the productivity of a whole system.",
+      "Breeding rate determines how fast the ceiling is reached, never how high it is. Confusing the two is why 'they breed too fast' is almost always the wrong diagnosis of an overpopulation problem — the rate sets the approach, the resource sets the level."
+    ],
+    "from": "ecology/03"
+  },
+  "keystone-effects": {
+    "q": [
+      "Why did the plants suffer when the hunters were removed?",
+      "Why does removing a predator reduce plant abundance?",
+      "Why does the effect alternate in sign as it descends?"
+    ],
+    "options": [
+      "Nothing was eating the plant eaters any more, so there were far more of them",
+      "The hunters had been protecting the plants directly",
+      "The plants needed the hunters' waste"
+    ],
+    "answer": 0,
+    "why": [
+      "The hunters never went near the plants. But they kept the plant eaters down — and once they were gone there were more than twice as many mouths, and the plants could not keep up.",
+      "Predator release raised herbivore numbers, and the increased grazing pressure suppressed the plants. The route runs through the middle level, which is why the effect is indirect and why nobody expected it.",
+      "Because each level suppresses the one below it. Removing a suppressor releases its prey, which suppresses the next level down, so the sign flips at every step. That alternation predicts what happens when you remove a herbivore instead — plants should rise — and it does, which is what makes the account testable."
+    ],
+    "from": "ecology/04"
+  },
+  "food-web-stability": {
+    "q": [
+      "Why does having several species doing the same job help?",
+      "What does functional redundancy buy?",
+      "Why does redundancy loss produce non-linear failure?"
+    ],
+    "options": [
+      "If one is lost, another can do it",
+      "It makes the ecosystem bigger",
+      "They help each other out"
+    ],
+    "answer": 0,
+    "why": [
+      "If only one thing eats a particular plant and it disappears, that job stops. If four things eat it, losing one hardly matters. Spares are what let a web survive losing pieces.",
+      "It buys the ability to absorb loss. A role with several occupants continues when one is lost; a role with one occupant does not — and a species in that position is a keystone whether or not it is abundant.",
+      "Because redundancy is consumed before function is. Losses are absorbed with no measurable change until the last occupant of some role goes, and then the failure is abrupt. This is why monitoring ecosystem function is a poor early-warning system, and why diversity is worth protecting before anything appears to be wrong."
+    ],
+    "from": "ecology/05"
+  },
+  "carbon-cycle": {
+    "q": [
+      "Why is burning coal different from a tree rotting?",
+      "Both release CO₂. Why are they treated differently?",
+      "Why does fossil carbon count differently from biological carbon?"
+    ],
+    "options": [
+      "The coal's carbon had been out of circulation for a hundred million years",
+      "Coal makes a different kind of carbon dioxide",
+      "There is no difference at all"
+    ],
+    "answer": 0,
+    "why": [
+      "A rotting tree gives back carbon it took from the air a few decades ago, so it goes round in a circle. Coal's carbon was put away before the dinosaurs, and burning it adds to the circle instead of going round it.",
+      "The molecule is identical; the reservoir is not. Biological carbon cycles within the fast pool on a timescale of years, so it roughly balances. Fossil carbon is a transfer from the slow pool into the fast one, and nothing returns it at a comparable rate.",
+      "It is a question of flux balance rather than chemistry. The fast cycle's enormous fluxes very nearly cancel; a comparatively small one-way transfer from the geological reservoir does not, and it is the net that accumulates. The isotopic signature confirms the source directly — fossil carbon is depleted in ¹³C and contains no ¹⁴C, and atmospheric CO₂ shows both changes."
+    ],
+    "from": "environmental-science/01"
+  },
+  "energy-balance": {
+    "q": [
+      "Why does a tiny difference matter?",
+      "Why does a 0.3% imbalance have large consequences?",
+      "Why is the size of the imbalance the wrong thing to focus on?"
+    ],
+    "options": [
+      "Because it keeps adding up, everywhere, all the time",
+      "Because it gets bigger each year",
+      "Because small things are always dangerous"
+    ],
+    "answer": 0,
+    "why": [
+      "It is like a bath filling one drop a second. One drop is nothing. A drop a second for a year is a flood. The gap is small; the time and the size of the planet are not.",
+      "A rate is not a total. A small persistent imbalance integrates over the whole surface and over decades, and the accumulated energy is what changes anything — which is why arguing about whether one watt sounds like a lot is the wrong argument.",
+      "Because the imbalance is a flux and the consequence is its integral. The system also has enormous thermal inertia — over 90% of the accumulated energy is in the ocean — which means the response lags the forcing by decades, and the temperature at any moment reflects an imbalance sustained long before it."
+    ],
+    "from": "environmental-science/02"
+  },
+  "extinction-is-permanent": {
+    "q": [
+      "Why is a population that dropped very low still in trouble afterwards?",
+      "Why does numerical recovery not constitute recovery?",
+      "Why is lost genetic variation not restored by population growth?"
+    ],
+    "options": [
+      "The variation it lost is gone, and it cannot adapt without it",
+      "The animals remember being rare",
+      "It is not in trouble once the numbers are back"
+    ],
+    "answer": 0,
+    "why": [
+      "You have seen what happens to a population with no variation: nothing. It cannot change when the world does. Getting the numbers back does not get the differences back.",
+      "Numbers regrow from the survivors, so the population inherits only what those survivors happened to carry. Variation returns only by mutation, which is far slower than the growth in numbers — so the population is numerous and unable to adapt.",
+      "Mutation restores variation at a rate set by generation time and population size, which is orders of magnitude slower than demographic recovery. A bottlenecked population is therefore in a state that looks healthy by every count and is not, and this is why conservation genetics measures heterozygosity rather than headcount."
+    ],
+    "from": "environmental-science/03"
+  },
+  "intervention-tradeoffs": {
+    "q": [
+      "What should you ask before changing something in an ecosystem?",
+      "What questions should precede an ecological intervention?",
+      "Which question does an irreversible intervention specifically require?"
+    ],
+    "options": [
+      "What is above it, what is below it, and can this be undone",
+      "Whether it will be popular",
+      "How much it will cost"
+    ],
+    "answer": 0,
+    "why": [
+      "Everything is joined to more than one thing, so the effect goes up and down from where you touched it. And if you cannot undo it, you had better be right the first time.",
+      "Trace upward and downward before acting, and treat reversibility as a separate question from likely benefit. An intervention that can be stopped needs only to be probably right; one that cannot needs to be right.",
+      "Reversibility deserves its own weight because it changes how much uncertainty is tolerable. Introducing an organism and building a dam are both irreversible in practice, and both have a long history of being assessed as though they were not — which is the specific error, rather than insufficient care in general."
+    ],
+    "from": "environmental-science/04"
+  },
+  "testable-expectation": {
+    "q": [
+      "What makes an idea a good one to test?",
+      "What makes an idea testable?",
+      "Which property makes a claim testable?",
+      "Which property makes a claim empirically tractable?"
+    ],
+    "options": [
+      "It tells you what you should find",
+      "Lots of people believe it",
+      "It has been around a long time"
+    ],
+    "answer": 0,
+    "why": [
+      "A good idea sticks its neck out. It says: if I am right, you will find THIS. Then you can go and look.",
+      "An idea earns its keep by saying in advance what you should find. If it fits whatever you discover, it was never at risk, and an idea that was never at risk has not been tested.",
+      "Testability is about forbidden outcomes. A claim that is compatible with every possible observation excludes nothing and so is confirmed by nothing. This is why 'what would change your mind?' is the sharpest question you can ask anyone, including yourself.",
+      "A hypothesis is informative in proportion to what it rules out. Popper's asymmetry — that no number of confirmations establishes a universal claim while one clean falsification refutes it — is the strict form; in practice theories are compared on how much they forbid and how well they survive attempts to violate it."
+    ],
+    "from": "evolution/01"
+  },
+  "evidence-and-inference": {
+    "q": [
+      "Two people look at the same clue and say different things. What helps most?",
+      "Two accounts fit the same evidence. What helps you decide between them?",
+      "What most effectively discriminates between two accounts that both fit the current evidence?",
+      "Given underdetermination by present evidence, what best discriminates two rival accounts?"
+    ],
+    "options": [
+      "Ask each one what they would expect to find next",
+      "See which one sounds more confident",
+      "Count how many people agree with each"
+    ],
+    "answer": 0,
+    "why": [
+      "If two people expect different things, go and look. Whoever guessed right has the better idea — and being willing to say what you expect is what makes it a fair test.",
+      "Confidence and popularity are not evidence; expectations are. Ask each account what it predicts you will find next, then go and find out. The account that keeps being surprised is in trouble, whichever one it is.",
+      "Present evidence usually underdetermines rival accounts, so the discriminating move is forward-looking: derive a novel prediction from each, and test where they diverge. Note that this test is symmetrical — it is only useful if you are willing to apply it to the account you favour.",
+      "Novel-prediction success is the standard currency because it is the hardest thing to arrange after the fact. Accommodation of known data is cheap; both rival accounts will manage it. The asymmetry appears only at the points where they forbid different things."
+    ],
+    "from": "evolution/01"
+  },
+  "homology": {
+    "q": [
+      "What does 'homologous' mean?",
+      "What does calling two structures homologous claim?",
+      "What is the content of a homology claim?"
+    ],
+    "options": [
+      "The same parts in the same order, doing different jobs",
+      "Two things that do the same job",
+      "Two things that look the same from outside"
+    ],
+    "answer": 0,
+    "why": [
+      "It is about the parts underneath, not the job on top. A bat's wing and a bee's wing both fly, but they are not homologous — there are no matching bones, because a bee has none.",
+      "Homology is correspondence of parts by position and origin, deliberately defined without reference to function. A bat wing and an insect wing are analogous — same job, no shared parts. A bat wing and a whale flipper are homologous — same parts, no shared job.",
+      "The definition is intentionally function-blind, because a function-based definition would make the concept circular. Diagnosis rests on relative position, connectivity and developmental origin, which is why an octopus eye and a vertebrate eye are analogous despite the resemblance: they develop from different tissues and are wired in opposite directions."
+    ],
+    "from": "evolution/02"
+  },
+  "fossil-order": {
+    "q": [
+      "What is the surprising thing about the fossil layers?",
+      "What is the feature of the fossil record that most needs explaining?",
+      "Which feature of the record carries the explanatory burden?"
+    ],
+    "options": [
+      "The order is the same all over the world",
+      "There are a lot of fossils",
+      "Fossils are made of stone"
+    ],
+    "answer": 0,
+    "why": [
+      "Fossils being common is not surprising. The same order turning up on every continent is — that is a pattern, and patterns need a reason.",
+      "Abundance is unremarkable; consistency of sequence across independent sites is not. A pattern that could easily have come out otherwise and did not is the thing an account has to earn.",
+      "Global consistency of relative order is the explanandum, because it is highly specific and would have been easy to violate. Both accounts on offer are attempts to supply a sorting mechanism for it, and both should be judged on how much they forbid."
+    ],
+    "from": "evolution/03"
+  },
+  "shared-errors": {
+    "q": [
+      "Why do scientists care more about shared mistakes than shared working parts?",
+      "Why is a shared defect treated as stronger evidence than a shared function?",
+      "Why does a shared inactivating lesion carry more inferential weight than shared function?"
+    ],
+    "options": [
+      "Because there are far more ways to break something than to make it work",
+      "Because broken things are more interesting",
+      "Because working parts are harder to compare"
+    ],
+    "answer": 0,
+    "why": [
+      "Two people can spell a word right for the same reason: it is right. Spelling it wrong the same way needs an explanation.",
+      "Function constrains: there may be only a few ways to build a working enzyme, so independent arrival at the same solution is unremarkable. Failure does not constrain — the space of possible breaks is huge, so a shared specific break is a much narrower coincidence.",
+      "It is an argument from the size of the outcome space. Convergence on function is expected under constraint; convergence on one particular lesion out of an enormous set of equally-disabling alternatives is not. This is why the argument targets shared derived defects specifically, and why demonstrating function in the sequence is the relevant counter-move."
+    ],
+    "from": "evolution/04"
+  },
+  "limits-of-change": {
+    "q": [
+      "What do both sides of this argument actually agree about?",
+      "Which of these is agreed by both accounts?",
+      "Which claim is common ground across the dispute?"
+    ],
+    "options": [
+      "That natural selection is real and new species appear",
+      "That nothing ever changes",
+      "That all life shares one ancestor"
+    ],
+    "answer": 0,
+    "why": [
+      "Natural selection is not the argument. Both sides think it happens. The argument is about how far it can take you.",
+      "Selection, mutation and speciation are common ground. Finding the actual point of disagreement — the ceiling — is what makes it possible to argue about the right thing.",
+      "Locating the genuine locus of dispute is a discipline worth having in every argument, not only this one. Most heat here is generated by attacking positions the other side does not hold: selection and speciation are accepted on both accounts, and universal common descent is the contested claim."
+    ],
+    "from": "evolution/05"
+  },
+  "grown-tissue": {
+    "q": [
+      "Why can a lab grow skin but not a heart?",
+      "Why does the diffusion limit prevent solid-organ engineering?",
+      "Why does a decellularised scaffold address the problem differently?"
+    ],
+    "options": [
+      "Anything thick needs blood vessels built through it, and that has not been solved",
+      "Heart cells cannot be grown",
+      "There are not enough donors to copy from"
+    ],
+    "answer": 0,
+    "why": [
+      "Skin is thin enough that the cells in the middle can get what they need from the outside. A heart is not. Every cell deep inside needs its own delivery.",
+      "Oxygen diffuses only 100 to 200 micrometres through tissue. Anything thicker requires an internal vascular network, and fabricating a branching, perfusable network at capillary scale is unsolved.",
+      "Because it inherits the network instead of building it. Stripping a donor organ of its cells leaves the vascular tree intact down to the capillaries, so the geometry problem is transferred rather than solved — and the approach then needs a donor organ, which is the shortage it was meant to relieve."
+    ],
+    "from": "future-biology/01"
+  },
+  "de-extinction": {
+    "q": [
+      "Why can nobody bring back a dinosaur?",
+      "Why is 66 million years beyond any recovery technique?",
+      "Why does the reference genome make 'bringing back' an imprecise description?"
+    ],
+    "options": [
+      "DNA falls apart, and after that long there is none left to read",
+      "Dinosaur DNA is too complicated",
+      "No living relative is close enough"
+    ],
+    "answer": 0,
+    "why": [
+      "DNA breaks itself apart slowly no matter what you do. After a few million years there are no pieces left big enough to read, and after 66 million there is nothing at all.",
+      "The measured half-life implies complete fragmentation well within a few million years even in permafrost. There is no signal remaining to amplify, so the limit is the absence of material rather than the sensitivity of the method.",
+      "Because the gaps in a degraded genome are filled from the closest living relative, so a fraction of the reconstruction is that relative's sequence rather than the extinct animal's. The recovered genome is a mosaic whose composition depends on how much survived — which means the phrase describes a spectrum, not an event."
+    ],
+    "from": "future-biology/02"
+  },
+  "ethics-of-capability": {
+    "q": [
+      "Someone proves a thing can be built. What has that settled?",
+      "What does a demonstration of feasibility contribute to the question of whether to proceed?",
+      "Why is a factual premise alone insufficient to reach a conclusion about what ought to be done?"
+    ],
+    "options": [
+      "Only that it is possible — every other question is still open",
+      "That it should be built, since it works",
+      "Nothing at all; feasibility is irrelevant"
+    ],
+    "answer": 0,
+    "why": [
+      "Knowing you can do something tells you nothing about whether it is a good idea. It just means the question is now worth arguing about.",
+      "It settles the first of five questions and moves the debate from hypothetical to actual. Purpose, distribution of risk, reversibility and authority are untouched by it.",
+      "Because a conclusion about what ought to be done requires at least one premise about what is good or owed, and no experiment supplies one. Feasibility is necessary for the question to arise and contributes nothing to its answer — which is why the third option is wrong too."
+    ],
+    "from": "future-biology/03"
+  },
+  "designing-responsibly": {
+    "q": [
+      "What is the most important thing to be able to say about your own idea?",
+      "Which element of a proposal makes it assessable by anyone else?",
+      "Why is disconfirmability the load-bearing requirement rather than plausibility?"
+    ],
+    "options": [
+      "What would happen if it were wrong, and how you would find out",
+      "That it has never been done before",
+      "That you are confident it will work"
+    ],
+    "answer": 0,
+    "why": [
+      "Anyone can be sure. Being able to say what would change your mind is what makes an idea worth listening to, and it is what you have been practising the whole way through.",
+      "A stated disconfirming result makes the claim checkable independently of the person making it. Novelty and confidence are properties of the proposer; a test is a property of the proposal.",
+      "Because a plausible claim compatible with every outcome forbids nothing and therefore says nothing about the world. Disconfirmability is what makes a proposal a claim at all — and it is also what makes being wrong survivable, which is the practical reason to insist on it."
+    ],
+    "from": "future-biology/04"
+  },
+  "gene-is-a-unit": {
+    "q": [
+      "What makes a gene a gene?",
+      "What defines the boundaries of a gene?",
+      "What individuates a gene?"
+    ],
+    "options": [
+      "It has a start, a stop, and something it makes",
+      "It is a fixed number of letters long",
+      "It is the part of DNA that is coloured differently"
+    ],
+    "answer": 0,
+    "why": [
+      "Genes are all different lengths. What they share is a signal saying where to start reading, a signal saying where to stop, and something they make.",
+      "Boundaries and product, not size. Genes vary from a few hundred bases to over two million, so length tells you nothing about whether you are looking at one.",
+      "The individuation is functional and regulatory rather than structural, which is exactly why the concept frays at the edges: overlapping reading frames, nested genes and alternative splicing all break the assumption that the genome partitions cleanly into units."
+    ],
+    "from": "genes/01"
+  },
+  "genotype-vs-phenotype": {
+    "q": [
+      "Is the instruction the same thing as the eye?",
+      "What is the relationship between a gene and the trait it affects?",
+      "How does genotype relate to phenotype?"
+    ],
+    "options": [
+      "No — one is the recipe, the other is what gets made",
+      "Yes, they are the same thing",
+      "The gene is a tiny copy of the eye"
+    ],
+    "answer": 0,
+    "why": [
+      "The recipe is not the cake. A gene is instructions for making something, and lots of other things affect how it turns out.",
+      "The sequence you carry is your genotype; what you actually end up with is your phenotype. Food, temperature, chance and other genes all sit between them.",
+      "The mapping is many-to-many and heavily context-dependent. Identical twins share a genotype and are distinguishable, which is the cleanest everyday demonstration that the relation is not identity — and the reason 'a gene for X' is nearly always a misleading phrase."
+    ],
+    "from": "genes/01"
+  },
+  "expression-is-selective": {
+    "q": [
+      "What is different between a liver cell and a nerve cell?",
+      "What differs between two cell types in the same body?",
+      "What is the locus of difference between differentiated cell types?"
+    ],
+    "options": [
+      "Which genes they are reading",
+      "Which genes they have",
+      "How many chromosomes they have"
+    ],
+    "answer": 0,
+    "why": [
+      "They both have all the instructions. They are just reading different bits — and the bits they are not reading are still there.",
+      "The genome is identical; the expression pattern is not. This is why a skin cell can be reprogrammed back into something that can become anything — nothing was ever thrown away.",
+      "Difference is regulatory, not genomic. The strongest evidence is reversibility: somatic cell nuclear transfer produces a whole organism from a differentiated nucleus, which would be impossible if differentiation involved loss."
+    ],
+    "from": "genes/02"
+  },
+  "dominance": {
+    "q": [
+      "Why is a dominant copy dominant?",
+      "Why is a dominant allele dominant?",
+      "What is the usual mechanistic basis of dominance?"
+    ],
+    "options": [
+      "Because one working copy makes enough",
+      "Because it is stronger than the other one",
+      "Because it comes from the father"
+    ],
+    "answer": 0,
+    "why": [
+      "Nothing is fighting anything. If one copy makes enough of what you need, having a broken second copy does not show.",
+      "It is a dosage fact, not a contest. One functional allele generally produces sufficient product, so the broken one is invisible — which also explains why some conditions are not recessive: where half the normal amount is not enough, one broken copy does show.",
+      "Dominance is a consequence of the shape of the dose-response curve. Most enzymes operate well above the level at which output limits flux, so halving them changes nothing measurable. Where flux is dose-sensitive you get haploinsufficiency instead, and the same class of mutation becomes dominant."
+    ],
+    "from": "genes/03"
+  },
+  "inheritance-patterns": {
+    "q": [
+      "Did the trait really skip a generation?",
+      "In what sense did the trait skip a generation?",
+      "Is 'skipping a generation' an accurate description?"
+    ],
+    "options": [
+      "No — the instruction was there, it just did not show",
+      "Yes, it was gone and came back",
+      "Yes, it jumped from grandmother to grandchild directly"
+    ],
+    "answer": 0,
+    "why": [
+      "Your mother had the broken copy and passed it to you. She had a working copy too, so it never showed in her.",
+      "The allele was transmitted at every step. Only the phenotype was absent, because the intervening carrier also had a working copy. Nothing skipped anything.",
+      "Genotype and phenotype come apart here, which is precisely why the distinction is worth having. Nothing can jump a generation — transmission is strictly stepwise — so any apparent skip is an unexpressed carrier."
+    ],
+    "from": "genes/04"
+  },
+  "colony-of-cells": {
+    "q": [
+      "Who tells all your cells what to do?",
+      "What coordinates the cells of a body?",
+      "How is coordination achieved without central control?"
+    ],
+    "options": [
+      "Nobody — each reacts to what is around it",
+      "The brain, cell by cell",
+      "The heart"
+    ],
+    "answer": 0,
+    "why": [
+      "No cell is in charge and no cell can see the whole body. Each one just responds to the chemicals and cells right next to it, and the whole thing works out.",
+      "Coordination is local and chemical. A cell responds to what touches it and to signals reaching it; there is no address book and no central instruction. Your brain has no connection at all to most of your cells.",
+      "It is distributed control with no controller — the same class of system as the beetle population, and the same reason it is counter-intuitive. Order at the top does not require an orderer, only rules at the bottom and a lot of iterations."
+    ],
+    "from": "human-body/01"
+  },
+  "circulation-is-a-loop": {
+    "q": [
+      "Why can your body not just let things spread on their own?",
+      "Why is diffusion insufficient for a body your size?",
+      "Why does body size force the evolution of circulation?"
+    ],
+    "options": [
+      "Diffusion is fine over tiny distances and hopeless over big ones",
+      "Diffusion only works in water",
+      "Diffusion stops working once you are born"
+    ],
+    "answer": 0,
+    "why": [
+      "Diffusion is quick across a cell and impossibly slow across a body. Over a centimetre it would take hours, and you would be dead long before the oxygen arrived.",
+      "Diffusion time rises with the square of distance. Crossing a cell takes under a millisecond; crossing a centimetre of tissue would take hours. Circulation exists to carry things the long way quickly, so diffusion only ever has to cover the last few micrometres.",
+      "The t ∝ x² scaling is the whole argument, and it is why every animal above a millimetre or so has some form of bulk transport. It also explains capillary density: the system's job is to get a vessel within diffusion distance of every cell, which is why no cell in you sits more than about 20 micrometres from one."
+    ],
+    "from": "human-body/02"
+  },
+  "gas-exchange": {
+    "q": [
+      "What makes oxygen go into your blood?",
+      "What drives oxygen across the alveolar wall?",
+      "What accounts for net oxygen flux into the pulmonary capillary?"
+    ],
+    "options": [
+      "There is more of it in the air than in the blood",
+      "The lungs suck it in",
+      "The blood grabs hold of it"
+    ],
+    "answer": 0,
+    "why": [
+      "It is exactly what you watched in the membrane. More outside than inside means more happens to wander in than out. Nothing pulls it.",
+      "A concentration difference plus random motion. Breathing keeps fresh air arriving so the gradient stays steep, and blood flow keeps carrying the oxygen away — but the crossing itself is unassisted diffusion.",
+      "Net flux is proportional to the partial pressure gradient, and both ventilation and perfusion exist to maintain that gradient rather than to move the gas. Haemoglobin sharpens it further by binding oxygen and so keeping dissolved concentration low, which steepens the gradient it is diffusing down."
+    ],
+    "from": "human-body/03"
+  },
+  "digestion-is-disassembly": {
+    "q": [
+      "What actually crosses into you?",
+      "What is absorbed across the gut wall?",
+      "What is the absorbed form, and why that form?"
+    ],
+    "options": [
+      "Small pieces: sugars, amino acids, fatty acids",
+      "The food itself, in small lumps",
+      "Only water and salt"
+    ],
+    "answer": 0,
+    "why": [
+      "Big things cannot cross the wall, and anyway they are built to somebody else's plan. You take them apart into the standard pieces and build your own.",
+      "Monomers cross, polymers do not. That solves two problems at once — size, which the membrane lesson covered, and specification, since a cow's protein is the wrong protein for you regardless.",
+      "Reduction to monomers is what makes any food substitutable for any other. It is also why the process must be thorough: an intact protein crossing the barrier is precisely the signal the immune system treats as foreign, which is the basis of food allergy."
+    ],
+    "from": "human-body/04"
+  },
+  "systems-interact": {
+    "q": [
+      "Why does the loop need a signal coming back?",
+      "Why is the return path essential rather than a refinement?",
+      "Why does open-loop control fail here specifically?"
+    ],
+    "options": [
+      "So it knows when to stop and does not overshoot",
+      "So the brain can keep a record",
+      "So it can happen twice"
+    ],
+    "answer": 0,
+    "why": [
+      "Without something reporting back, the response has no way of knowing the problem is fixed. It keeps pushing, overshoots, and then has to correct the other way.",
+      "Feedback is what makes the response proportional to the remaining error. Without it the effector runs at full output regardless, so the system overshoots and oscillates rather than settling — instability, not just imprecision.",
+      "The controlled variable is the same one being sensed, which is what closes the loop and makes the correction self-limiting. Open loop, the output is independent of the result, so any disturbance or drift accumulates. Baroreflex failure produces exactly this clinically: pressure that swings wildly rather than pressure that is simply low."
+    ],
+    "from": "human-body/05"
+  },
+  "layered-defence": {
+    "q": [
+      "Does your skin know what it is keeping out?",
+      "Do innate defences identify what they are stopping?",
+      "On what basis does innate immunity discriminate?"
+    ],
+    "options": [
+      "No — it stops everything the same way",
+      "Yes, it recognises each germ",
+      "Only if you have met that germ before"
+    ],
+    "answer": 0,
+    "why": [
+      "Skin does not identify anything. It is a wall, and a wall works on whatever arrives. That is why it is so effective and why a burn or a cut is so dangerous.",
+      "Innate defences are non-specific. They act on broad features rather than identities, which is what lets them respond in minutes — and why breaching them, by a wound or a catheter, is such a common route to serious infection.",
+      "Pattern recognition rather than identification: receptors for conserved molecular features that pathogens cannot easily discard. This is the trade the system makes — speed and breadth for precision — and it is why the adaptive system exists to cover what gets through."
+    ],
+    "from": "immunity/01"
+  },
+  "recognise-remember-respond": {
+    "q": [
+      "Were the right cells made because the germ arrived?",
+      "Are matching lymphocytes produced in response to the antigen?",
+      "In what sense is the antigen not instructive?"
+    ],
+    "options": [
+      "No — they were already there, and the germ picked them out",
+      "Yes, the body designs a cell to fit each germ",
+      "Yes, the germ teaches the cells what shape to be"
+    ],
+    "answer": 0,
+    "why": [
+      "The cells with the right shape were made at random, before the germ ever arrived. All the germ did was find them — and then they copied themselves.",
+      "The repertoire is generated in advance and randomly. Antigen selects from what already exists; it does not instruct anything to change. This is exactly the distinction you drew about antibiotic resistance, in a different system.",
+      "The instructive theory — antigen acting as a template for antibody shape — was the leading account into the 1950s and was displaced by clonal selection. The decisive consideration was the same one that settles the resistance question: the specificity exists before the encounter, and the encounter only amplifies it."
+    ],
+    "from": "immunity/02"
+  },
+  "vaccination-is-training": {
+    "q": [
+      "Does a vaccine kill germs?",
+      "Is a vaccine a treatment?",
+      "Why is calling a vaccine a medicine a category error?"
+    ],
+    "options": [
+      "No — it teaches your body to, before you meet any",
+      "Yes, that is what is in it",
+      "Yes, but only weakly"
+    ],
+    "answer": 0,
+    "why": [
+      "There is nothing in a vaccine that kills anything. It shows your body a shape, and your body gets ready. All the killing is done by you, later.",
+      "A vaccine contains no antimicrobial agent and treats no existing illness. It supplies an antigen so that clonal selection happens in advance, which is why it must be given before exposure to be useful.",
+      "Medicines act on a disease process; a vaccine acts on the immune system before there is any disease process. The distinction matters practically: it explains why vaccines are given to well people, why timing is everything, and why 'does it cure it?' is the wrong question to evaluate one by."
+    ],
+    "from": "immunity/03"
+  },
+  "herd-effect": {
+    "q": [
+      "Why does vaccinating you protect someone who cannot be vaccinated?",
+      "How does individual vaccination confer population-level protection?"
+    ],
+    "options": [
+      "Because a germ that cannot find a susceptible host stops spreading",
+      "Because immunity passes between people",
+      "Because it makes the germ weaker"
+    ],
+    "answer": 0,
+    "why": [
+      "Nothing passes from you to them. But a germ needs to keep finding people it can infect, and if enough people around it cannot be infected, the chain of transmission breaks before it reaches the person who is vulnerable.",
+      "Transmission requires each infection to produce at least one more. Raising the immune fraction reduces the effective reproduction number; once it falls below one, chains die out and the unvaccinated are protected by the absence of transmission rather than by any immunity of their own. This is why the threshold is a function of R₀ — around 95% for measles — and why coverage falling a few points can restore epidemics that were absent for decades."
+    ],
+    "from": "immunity/03"
+  },
+  "self-vs-nonself": {
+    "q": [
+      "Why does your body make cells that attack you at all?",
+      "Why are self-reactive lymphocytes produced in the first place?",
+      "Why is self-reactivity unavoidable given the mechanism?"
+    ],
+    "options": [
+      "Because the shapes are random, and random includes you",
+      "Because it is a mistake that should not happen",
+      "Because you have been infected by something"
+    ],
+    "answer": 0,
+    "why": [
+      "The shapes are made at random so that some of them will fit germs nobody has met. Random means random — some of them fit you instead. There is no way to have one without the other.",
+      "Randomness is what gives the repertoire its coverage, and randomness cannot be selective about what it happens to match. Self-reactive cells are a necessary by-product, which is why an entire screening organ exists to remove them.",
+      "It is a structural consequence, not an error. Any system generating specificity without prior knowledge of its targets must generate self-reactivity, and must therefore also implement a separate deletion step. The thymus is the cost of the strategy."
+    ],
+    "from": "immunity/04"
+  },
+  "drug-must-reach-target": {
+    "q": [
+      "Why do most new medicines fail?",
+      "At what stage do most candidates fail, and why?",
+      "Why has better target biology not raised success rates much?"
+    ],
+    "options": [
+      "They cannot get where they need to go, or they do other things too",
+      "They do not bind their target",
+      "They are too expensive to make"
+    ],
+    "answer": 0,
+    "why": [
+      "Finding something that sticks to the right protein is the easy bit. Getting it into the body, past the liver, into the right cells, without doing anything else, is where nearly everything falls over.",
+      "Most fail on pharmacokinetics or toxicity, after target binding has been established. Absorption, metabolism, distribution and off-target effects are separate hurdles and a molecule must clear all of them at once.",
+      "Because target identification was never the binding constraint. Knowing which protein to block does not tell you that a molecule exists which binds it, crosses membranes, survives the liver, ignores everything else and clears — and that conjunction is what fails."
+    ],
+    "from": "medicine/01"
+  },
+  "controlled-trial": {
+    "q": [
+      "Why does a trial need a group that gets nothing?",
+      "What does a control group establish?",
+      "Why is randomisation necessary given that a control group exists?"
+    ],
+    "options": [
+      "To show what would have happened anyway",
+      "To save money on the medicine",
+      "To have someone to compare complaints with"
+    ],
+    "answer": 0,
+    "why": [
+      "Most people get better from most things eventually. Without a group that got nothing, you cannot tell whether the medicine helped or you just watched people recover.",
+      "It establishes the counterfactual — what would have happened without treatment. Any outcome in the treated group is uninterpretable without it, however good it looks.",
+      "A control group gives you a comparison; randomisation makes the comparison fair. Without it, whoever assigns patients will — usually unconsciously — put different sorts of patient in each group, and the difference you measure is that rather than the treatment."
+    ],
+    "from": "medicine/02"
+  },
+  "resistance-is-selection": {
+    "q": [
+      "Why can no drug be resistance-proof?",
+      "Why is resistance inevitable rather than a failure of drug design?",
+      "Which of the three conditions could chemistry remove?"
+    ],
+    "options": [
+      "The drug only supplies one of the three conditions; the bacteria supply the others",
+      "Because drugs are never strong enough",
+      "Because bacteria adapt on purpose"
+    ],
+    "answer": 0,
+    "why": [
+      "Bacteria already vary, and they already pass what they have to their offspring. All the drug adds is a reason for some to survive and others not. You cannot design away the first two.",
+      "Variation and heredity are properties of the bacterial population and exist before any drug arrives. The drug supplies only differential survival. No molecule can remove conditions it does not control.",
+      "None. That is the point of the question — chemistry acts only on the third condition, and removing it means the drug does not kill anything. The strongest version of the argument is that a drug which selects nothing is a drug that does nothing."
+    ],
+    "from": "medicine/03"
+  },
+  "risk-and-benefit": {
+    "q": [
+      "Which part of making a treatment cannot be fixed by better chemistry?",
+      "Which requirement is immune to improved molecular design?",
+      "Why is stewardship structurally different from the other requirements?"
+    ],
+    "options": [
+      "Keeping it working — that depends on how it is used",
+      "Finding the right target",
+      "Getting the molecule into cells"
+    ],
+    "answer": 0,
+    "why": [
+      "You can make a better molecule to reach a target or to avoid side effects. You cannot make a molecule that stops bacteria from varying and passing things on. How long it keeps working depends on how much it gets used.",
+      "Resistance is driven by selection on the pathogen population, and the drug supplies only one of the three conditions. Better chemistry can improve every other requirement and cannot touch this one.",
+      "Because its determinants sit outside the molecule entirely — in prescribing behaviour, agricultural practice and how many doses are given worldwide. It is a collective-action problem wearing a scientific costume, and it responds to policy rather than to research."
+    ],
+    "from": "medicine/04"
+  },
+  "invisible-majority": {
+    "q": [
+      "Why did nobody know about germs until 350 years ago?",
+      "Why was microbial life undiscovered for the whole of recorded history?",
+      "What made microbial life inaccessible before the 1670s?"
+    ],
+    "options": [
+      "They are far too small to see without a lens",
+      "There were fewer of them then",
+      "Nobody thought to look"
+    ],
+    "answer": 0,
+    "why": [
+      "They were everywhere the whole time. Nobody could see them, and you cannot investigate something you have no way of detecting.",
+      "It was an instrument problem, not a curiosity problem. People had wondered about invisible causes of disease for centuries; what was missing was any way to look, and a good enough lens supplied it immediately.",
+      "The observation was gated entirely on optics, which is why the discovery arrives so suddenly and so completely once lens-making improves. It is a clean example of a whole domain of nature being inaccessible not for want of thought but for want of an instrument — and a reason to be careful about concluding that something does not exist."
+    ],
+    "from": "microbiology/01"
+  },
+  "fast-generations": {
+    "q": [
+      "Why do bacteria evolve so much faster than animals?",
+      "Why is evolutionary change so rapid in bacteria?",
+      "What makes generation time the rate-limiter on adaptation?"
+    ],
+    "options": [
+      "They have a new generation every twenty minutes",
+      "Their DNA is less accurate",
+      "They want to change more"
+    ],
+    "answer": 0,
+    "why": [
+      "Selection needs generations to work with. A bacterium has three an hour, so what would take an elephant a thousand years takes a germ a fortnight.",
+      "The three conditions act once per generation, so the number of generations sets the pace. Twenty minutes against twenty years is a factor of half a million, and that is nearly the whole explanation.",
+      "Population size compounds it: a culture holds enough individuals that even very rare mutations are present somewhere, so a bacterial population explores sequence space vastly faster than a large-bodied animal can. Rate and number, not any difference in the mechanism."
+    ],
+    "from": "microbiology/02"
+  },
+  "microbiome": {
+    "q": [
+      "Are the bacteria living in you a bad thing?",
+      "Is the resident microbiota harmful, harmless or necessary?",
+      "In what sense is the microbiome functionally part of the organism?"
+    ],
+    "options": [
+      "No — you need them, and you are unhealthy without them",
+      "Yes, all bacteria cause illness",
+      "They make no difference either way"
+    ],
+    "answer": 0,
+    "why": [
+      "They do jobs you cannot do yourself: getting energy out of food you cannot digest, making vitamins you cannot make, and teaching your defences what to leave alone.",
+      "They are necessary. Germ-free animals are demonstrably abnormal — poorly developed guts, miscalibrated immune systems — which establishes that the community is doing work the host depends on rather than merely tolerating it.",
+      "It supplies metabolic capability absent from the host genome and participates in host development, which is a functional rather than a rhetorical sense of 'part of'. It is also why broad-spectrum antibiotics have consequences beyond the infection they treat: they are not selective about which community members they remove."
+    ],
+    "from": "microbiology/03"
+  },
+  "culture-and-count": {
+    "q": [
+      "Why does one spot mean one cell?",
+      "Why does a colony correspond to a single founding cell?",
+      "Why does the method depend on adequate dilution?"
+    ],
+    "options": [
+      "The spot is all the descendants of one cell that landed there",
+      "Bacteria always arrive in groups of one",
+      "The spots are drawn on afterwards"
+    ],
+    "answer": 0,
+    "why": [
+      "A single cell lands, and cannot move. It divides where it is until there are millions of copies in a heap you can see. So one spot means one cell arrived there.",
+      "Bacteria on a solid surface are effectively immobile, so all descendants of one cell stay in one place and form a visible clone. Dilution matters because the correspondence only holds if cells land far enough apart to grow into separate colonies.",
+      "The one-cell-one-colony correspondence is the entire basis of the count, and it breaks when colonies merge. This is why plates are counted only in a specific range — typically 30 to 300 — with anything denser being reported as too numerous to count rather than estimated."
+    ],
+    "from": "microbiology/04"
+  },
+  "selection-needs-no-agent": {
+    "q": [
+      "Did any single beetle change colour?",
+      "Did any individual beetle change during the simulation?",
+      "What exactly changed over the generations?",
+      "At which level did the change occur?"
+    ],
+    "options": [
+      "No — only which beetles were left changed",
+      "Yes, each beetle got slowly darker",
+      "Yes, the babies chose to be darker"
+    ],
+    "answer": 0,
+    "why": [
+      "Every beetle kept the colour it hatched with. What changed was who was still there to have babies — and their babies looked like them.",
+      "No individual changed. Each beetle kept its shade for life. The population's average moved because the mismatched ones were eaten before breeding, and offspring resembled the survivors.",
+      "The individual is not the unit that changes. Each beetle's shade was fixed at hatching; the distribution moved because survival was not independent of shade. Change at the population level with none at the individual level is the signature of selection.",
+      "Selection acts on individuals and changes populations. Confusing the two levels produces Lamarckian intuitions — the beetle striving and darkening — which the simulation rules out by construction: shade is assigned at hatching and never written to again."
+    ],
+    "from": "natural-selection/01"
+  },
+  "three-conditions": {
+    "q": [
+      "You switched off 'babies like parents' and it stopped. Why?",
+      "Removing heredity halted adaptation even though the predator still ate the mismatched beetles. Why?",
+      "Why does removing heritability halt adaptation, given that differential mortality still occurs?"
+    ],
+    "options": [
+      "The killing still happened, but nothing was passed on, so each generation started over",
+      "The bird stopped being able to see them",
+      "Fewer beetles died once heredity was off"
+    ],
+    "answer": 0,
+    "why": [
+      "Exactly the same beetles got eaten. But their babies came out any colour at all, so the next round began from scratch. Selection with nothing inherited is just killing.",
+      "Mortality was unchanged — the same mismatched beetles died. But offspring shade was drawn independently of the parents, so the survivors' advantage was not transmitted. Each generation restarted from the same distribution.",
+      "Differential mortality without transmission produces no cumulative change. Selection sorts a generation; heredity is what makes the sorting persist. Remove it and each generation is an independent sample — the population is culled every round and returns to the same mean every round."
+    ],
+    "from": "natural-selection/01"
+  },
+  "selection-is-observed": {
+    "q": [
+      "Where can you actually watch this happen?",
+      "Which of these is natural selection you can observe directly?",
+      "Which of these is a directly observed instance of natural selection?",
+      "Which is an observation rather than an inference about the unobserved past?"
+    ],
+    "options": [
+      "Germs becoming hard to kill with medicine",
+      "Only in books about long ago",
+      "Nowhere — it is too slow to see"
+    ],
+    "answer": 0,
+    "why": [
+      "You can watch it in a week in a dish of germs. It is not a story about long ago — it is happening in hospitals right now.",
+      "Antibiotic resistance is measured in laboratories in days and in hospitals in weeks. So is pesticide resistance in insects, and so is the peppered moth, which was counted year by year.",
+      "Selection is observational science: resistance evolution is measured in real time, the peppered moth was censused across decades, and Darwin's finches have been tracked bird by bird on Daphne Major since 1973. None of these requires an inference about the deep past.",
+      "This matters for how the claim is classified. Variation, heritability and differential survival are each independently measurable, and their joint consequence has been observed repeatedly under controlled conditions. Whatever one concludes about the history of life, this mechanism is not in dispute — it is demonstrated."
+    ],
+    "from": "natural-selection/01"
+  },
+  "fitness-is-contextual": {
+    "q": [
+      "Can an animal be fit and unfit at the same time?",
+      "Can one organism have two different fitnesses?",
+      "In what sense is fitness not a property of an organism?"
+    ],
+    "options": [
+      "Yes — in two different places",
+      "No, fitness is fixed at birth",
+      "Only if it moves house"
+    ],
+    "answer": 0,
+    "why": [
+      "Fitness is not a thing an animal has, like weight. It is about how well it does where it actually is, so the same animal has a different answer in a different place.",
+      "Fitness is a relation between an organism and an environment, so one organism has as many fitnesses as there are environments to put it in. Nothing about the animal has to change for the number to.",
+      "This is why 'the environment selects' is a better formulation than 'the fittest survive'. It also explains heterozygote advantage: the sickle-cell allele is a liability where there is no malaria and an asset where there is, so selection maintains it at intermediate frequency in exactly the places malaria is endemic."
+    ],
+    "from": "natural-selection/02"
+  },
+  "drift-is-not-selection": {
+    "q": [
+      "A population changes over time. Is that always selection?",
+      "Does directional change in a population entail selection?"
+    ],
+    "options": [
+      "No — it can drift by chance, especially if the population is small",
+      "Yes, change always means selection",
+      "Only if the change is large"
+    ],
+    "answer": 0,
+    "why": [
+      "You saw this in the simulation: with the predator picking at random the line still wandered, and sometimes it wandered the right way. Change happened, and nothing was being selected.",
+      "Sampling error alone moves allele frequencies, and it does so faster in small populations. Distinguishing drift from selection is a real statistical problem, not a technicality — it is why 'the population changed' and 'the population adapted' are two different claims, and why demonstrating selection requires more than showing a trend."
+    ],
+    "from": "natural-selection/02"
+  },
+  "signals-are-electrical": {
+    "q": [
+      "How does your brain know something hurt a lot?",
+      "How is stimulus intensity encoded if amplitude is fixed?",
+      "What channels remain for intensity once amplitude is unavailable?"
+    ],
+    "options": [
+      "Lots of signals arrive, quickly",
+      "The signals are bigger",
+      "The signals travel faster"
+    ],
+    "answer": 0,
+    "why": [
+      "Every signal is the same size, so size cannot tell you anything. What changes is how many arrive and how fast they come — a hard press sends a flood, a light touch sends a trickle.",
+      "Rate and recruitment. A stronger stimulus fires each neuron more often and brings more neurons above threshold; amplitude is fixed and carries nothing.",
+      "Frequency and population coding, and they are what is left rather than what was chosen. The all-or-nothing law removes amplitude as a variable, so any information about intensity must be carried by the remaining degrees of freedom."
+    ],
+    "from": "neuroscience/01"
+  },
+  "synapse-is-a-gap": {
+    "q": [
+      "Why is a gap better than a wire here?",
+      "What does a chemical synapse buy over a direct electrical connection?",
+      "Why is the conversion to chemical and back worth its cost in speed?"
+    ],
+    "options": [
+      "It can be made stronger or weaker, so the brain can learn",
+      "Chemicals travel faster than electricity",
+      "It stops the cells getting tangled"
+    ],
+    "answer": 0,
+    "why": [
+      "A wire is always the same. A gap can be made easier or harder to cross — and changing how easy each gap is to cross is what learning actually is inside your head.",
+      "Adjustability. Transmitter released, receptor number and clearance rate can all change with use, so the connection has a strength that experience can set. A direct electrical junction is fixed.",
+      "It costs perhaps half a millisecond and buys plasticity, inhibition and signal inversion. Electrical synapses do exist and are faster — they are used where speed matters more than modifiability, such as escape reflexes — which is the clearest evidence that the chemical one is a deliberate trade rather than a limitation."
+    ],
+    "from": "neuroscience/02"
+  },
+  "perception-is-constructed": {
+    "q": [
+      "Is what you see the same as what is there?",
+      "What is the relationship between the retinal image and what you perceive?",
+      "In what sense is perception inferential rather than receptive?"
+    ],
+    "options": [
+      "No — it is your brain's best guess from what arrives",
+      "Yes, your eyes send a picture to your brain",
+      "Yes, unless you have something wrong with your eyes"
+    ],
+    "answer": 0,
+    "why": [
+      "Your eyes do not send a picture. They send patches of information with holes in it, and your brain builds something complete out of that. You just showed yourself one of the holes.",
+      "The image is incomplete, and what you experience is a reconstruction. You demonstrated the point yourself: the thumb vanished and background appeared, which means something manufactured that background.",
+      "The mapping from scene to retinal image loses information irreversibly, so recovering the scene is underdetermined and requires assumptions. Perception is the output of that inference. Illusions are not malfunctions — they are the inference machinery running correctly on input it was not built for."
+    ],
+    "from": "neuroscience/03"
+  },
+  "memory-is-reconstructive": {
+    "q": [
+      "Why does telling a story often make it less accurate?",
+      "Why does rehearsal reduce a memory's fidelity while increasing confidence?",
+      "Why do confidence and accuracy come apart with rehearsal?"
+    ],
+    "options": [
+      "Each telling rebuilds it, and the rebuilt version is what gets kept",
+      "Because people exaggerate on purpose",
+      "Because memories fade with time"
+    ],
+    "answer": 0,
+    "why": [
+      "Nobody is lying. Every time you tell it you build it again out of pieces, and any small change you make gets saved as the new version. Tell it fifty times and you are remembering the fiftieth telling.",
+      "Each retrieval destabilises and re-stores the trace, so alterations persist. Fluency rises with practice and fluency feels like accuracy — which is why the most-rehearsed account is both the most confident and the most drifted.",
+      "They are tracking different things. Confidence tracks ease of retrieval, which rehearsal reliably improves; accuracy tracks correspondence to the event, which rehearsal can only degrade. Nothing in the system measures the second, so there is no internal signal that would tell you."
+    ],
+    "from": "neuroscience/04"
+  },
+  "reflex-arc": {
+    "q": [
+      "Was your brain in charge of pulling your hand away?",
+      "Is the withdrawal reflex directed by the brain?",
+      "What is the brain's role in a spinal reflex?"
+    ],
+    "options": [
+      "No — the spinal cord decided, and your brain was told afterwards",
+      "Yes, it decided very quickly",
+      "Yes, but subconsciously"
+    ],
+    "answer": 0,
+    "why": [
+      "The decision was made in your spinal cord, where the message turned straight round. The signal to your brain went off at the same time and arrived later, which is why the movement comes before the pain.",
+      "The arc is complete within the cord. The ascending pathway runs in parallel and produces the sensation afterwards — the ordering you notice is real and it is a consequence of the wiring.",
+      "The brain is informed, not consulted. It can modulate the reflex — you can suppress withdrawal deliberately, up to a point — but the loop closes without it, and that is what the architecture is for."
+    ],
+    "from": "neuroscience/05"
+  },
+  "food-is-fuel-and-parts": {
+    "q": [
+      "Could you starve while eating plenty of calories?",
+      "Is adequate energy intake sufficient nutrition?",
+      "Why is calorie adequacy independent of nutritional adequacy?"
+    ],
+    "options": [
+      "Yes — calories are only one of the two jobs food does",
+      "No, calories are what matter",
+      "Only if you were already ill"
+    ],
+    "answer": 0,
+    "why": [
+      "You can burn plenty and still have nothing to rebuild yourself out of, and nothing to supply the tiny amounts of things you cannot make. Sailors with full stomachs died of scurvy.",
+      "Energy and materials are separate requirements. Kwashiorkor is protein deficiency with adequate calories; scurvy is a micronutrient deficiency with adequate everything else. Both occur in people who are eating.",
+      "They are independent because the requirements are met by different components in different quantities — grams of macronutrient against milligrams of micronutrient — and no amount of one supplies the other. This is why food fortification works so well: adding milligrams of something to a staple corrects a deficiency without changing the diet at all."
+    ],
+    "from": "nutrition/01"
+  },
+  "essential-nutrients": {
+    "q": [
+      "Why did swapping lemons for limes bring scurvy back?",
+      "Why did the lime substitution fail?",
+      "Why could nobody detect the substitution's failure in advance?"
+    ],
+    "options": [
+      "Nobody knew what the active ingredient was, so nobody could measure it",
+      "The limes had gone off",
+      "Sailors refused to drink it"
+    ],
+    "answer": 0,
+    "why": [
+      "They thought any sour citrus would do. Limes have much less vitamin C than lemons, and since nobody knew what they were looking for, nobody could check.",
+      "The substitution looked equivalent on every property anyone could measure — both were sour citrus. Without knowing the active compound there was no assay, so a weaker substitute was indistinguishable until people started getting ill again.",
+      "Because the only available test was the disease itself, which appears months later. This is the general hazard of acting on an empirical finding without a mechanism: the finding tells you what worked, and cannot tell you which feature of it mattered — so any change is a gamble you cannot evaluate."
+    ],
+    "from": "nutrition/03"
+  },
+  "evidence-in-nutrition": {
+    "q": [
+      "People who eat more vegetables live longer. Do vegetables make you live longer?",
+      "What does an observed association between vegetable intake and longevity establish?",
+      "Why does adjusting for known confounders not settle it?"
+    ],
+    "options": [
+      "Maybe — but they also differ in many other ways",
+      "Yes, that is what the study shows",
+      "No, it proves nothing at all"
+    ],
+    "answer": 0,
+    "why": [
+      "People who eat lots of vegetables usually also exercise more, smoke less and have more money. Any of those could be doing it. The study cannot tell you which.",
+      "It establishes an association and is consistent with several explanations, including that vegetables help, that vegetable-eaters differ in other ways, or both. Note that the third option is also wrong — associations are real evidence, just weaker than they are usually reported to be.",
+      "Because adjustment only removes confounders you measured, and the list of ways diet tracks with everything else in someone's life is not closed. That is why randomisation matters: it balances the confounders nobody thought of, which is precisely the set that produced the historical reversals."
+    ],
+    "from": "nutrition/04"
+  },
+  "photosynthesis-is-building": {
+    "q": [
+      "What is a tree mostly made of?",
+      "What is the source of the carbon in wood?",
+      "Where does the carbon in a tree's dry mass originate?"
+    ],
+    "options": [
+      "Carbon that used to be in the air",
+      "Minerals it pulled up from the soil",
+      "Water it soaked up through its roots"
+    ],
+    "answer": 0,
+    "why": [
+      "Every bit of wood is built from carbon dioxide the tree took out of the air. The soil gives it a few minerals and holds it upright, and that is nearly all.",
+      "Wood is roughly half carbon by dry mass, and all of that carbon entered as atmospheric CO₂. Soil contributes minerals in trace quantities — which is why a hydroponically grown plant does perfectly well with no soil at all.",
+      "The soil supplies nitrogen, phosphorus and trace elements in small amounts; the bulk is atmospheric carbon fixed by the Calvin cycle. This is also why afforestation is a carbon sink in a literal rather than metaphorical sense — the carbon is structurally in the tree."
+    ],
+    "from": "plants/01"
+  },
+  "transpiration-pull": {
+    "q": [
+      "What actually moves the water up?",
+      "What provides the motive force?",
+      "Where does the energy for lifting come from?"
+    ],
+    "options": [
+      "Evaporation at the top, pulling the thread behind it",
+      "The roots pumping it up",
+      "The stem squeezing rhythmically"
+    ],
+    "answer": 0,
+    "why": [
+      "Nothing pushes. Water leaves the leaves, and because water molecules hold onto each other, the ones behind get dragged along — all the way down to the roots.",
+      "The energy is the sun's, spent evaporating water from the leaf surface. The column is pulled from above rather than pushed from below, which is why height is not limited the way a pump would limit it.",
+      "The plant contributes no metabolic energy to the lifting at all — evaporation is driven by the atmosphere's water potential. Root pressure exists and is real, but it is a minor contribution and cannot account for anything like the observed heights."
+    ],
+    "from": "plants/02"
+  },
+  "leaf-is-a-tradeoff": {
+    "q": [
+      "Why does a plant not just keep its holes wide open?",
+      "Why is maximum aperture not optimal?",
+      "Why does the marginal value of aperture fall to zero while its cost does not?"
+    ],
+    "options": [
+      "It would run out of water before the day was over",
+      "It would get too much carbon dioxide",
+      "The holes would break"
+    ],
+    "answer": 0,
+    "why": [
+      "You watched it happen. Wide open makes sugar fast and empties the leaf of water, and a dead leaf makes no sugar at all. The most it can do is not the best it can do.",
+      "Transpirational loss rises with aperture without limit, while sugar production stops rising once light rather than CO₂ is limiting. Past that point the leaf pays more and gains nothing — and if loss exceeds root supply for long enough it dies, having produced less than a more modest setting would have.",
+      "Photosynthesis saturates and transpiration does not. That asymmetry is what makes an intermediate optimal, and because the position of the optimum depends on humidity, wind and temperature, it has to be tracked rather than set — which is what guard cells are for."
+    ],
+    "from": "plants/03"
+  },
+  "pollination-is-a-deal": {
+    "q": [
+      "Why is a bird-pollinated flower red and unscented?",
+      "Why do bird-pollinated flowers converge on red with little scent?",
+      "What does the red-and-scentless combination tell you about the receiver?"
+    ],
+    "options": [
+      "Birds see red well and smell poorly; bees are the opposite",
+      "Red is the strongest colour",
+      "Scent would attract the wrong birds"
+    ],
+    "answer": 0,
+    "why": [
+      "Birds see red very well and hardly smell at all, so a red flower with no scent is shouting at birds and staying invisible to bees. It is advertising to one customer and nobody else.",
+      "The signal is matched to the receiver's sensory system. Red is outside useful bee vision and well within bird vision, and scent would be wasted on an animal that barely smells. Excluding the wrong visitor matters as much as attracting the right one, because pollen given to the wrong courier is lost.",
+      "It is evidence read backwards: the flower's advertisement tells you what its intended customer can perceive. Convergence on the same combination across unrelated plant families on different continents is the strongest form of that argument — the same receiver produces the same signal wherever the relationship arises."
+    ],
+    "from": "plants/04"
+  },
+  "plant-systems": {
+    "q": [
+      "What problem is a flower solving?",
+      "What constraint does the flower exist to overcome?",
+      "Why is reproduction the hardest problem for a sessile organism?"
+    ],
+    "options": [
+      "The plant cannot move, but its pollen has to",
+      "Attracting sunlight to the plant",
+      "Keeping insects away from the leaves"
+    ],
+    "answer": 0,
+    "why": [
+      "A plant is stuck where it grew. Its pollen still has to get to a different plant, so it pays an animal to carry it — that is what the colour and the nectar are for.",
+      "Gametes must reach another individual and the individual cannot travel. The flower solves it by recruiting something that can, paying in nectar, and shaping itself so the payment cannot be collected without the service being done.",
+      "Because it is the one function that cannot be performed locally. Feeding, drinking and defending can all be done in place; outcrossing cannot, so it must be delegated — to an animal, or to the wind, and both routes shape the flower entirely."
+    ],
+    "from": "plants/05"
+  },
+  "sequence-determines-fold": {
+    "q": [
+      "What told the string what shape to be?",
+      "Where is the information for the fold stored?",
+      "In what sense does the sequence encode the structure?"
+    ],
+    "options": [
+      "Nothing did — the shape is what the order of beads makes happen",
+      "A folding machine in the cell",
+      "The shape is written down in the DNA separately"
+    ],
+    "answer": 0,
+    "why": [
+      "Nobody folds it. Put those beads in that order in water and that shape is what you get, because it is the arrangement the beads settle into.",
+      "There is no separate instruction for shape. The DNA specifies the order of amino acids and nothing else; the structure is a consequence of that order plus water.",
+      "The encoding is implicit rather than explicit. The genome stores a one-dimensional string and the three-dimensional structure is computed by physics at run time — which is precisely why predicting structure from sequence was an unsolved problem for fifty years."
+    ],
+    "from": "proteins/01"
+  },
+  "shape-is-function": {
+    "q": [
+      "You unfold a protein but break nothing. Does it still work?",
+      "An unfolded protein retains every bond. Is it functional?",
+      "Why does denaturation abolish function without altering composition?"
+    ],
+    "options": [
+      "No — the shape was the job",
+      "Yes, all the parts are still there",
+      "Only if it was a small protein"
+    ],
+    "answer": 0,
+    "why": [
+      "Nothing has been taken away. But the working part of a protein is the shape of its surface, and once that is gone there is nothing left to do the job.",
+      "Every atom and every covalent bond is intact. Function lived in the arrangement — the pocket, the surface, the geometry — and unfolding destroys that while leaving the chemistry untouched.",
+      "The catalytic or binding site is an emergent property of the tertiary structure: residues far apart in sequence are brought together in space to form it. Unfolding separates them, and the site simply ceases to exist as a feature."
+    ],
+    "from": "proteins/02"
+  },
+  "enzyme-specificity": {
+    "q": [
+      "Why does an enzyme only do one job?",
+      "What is the basis of enzyme specificity?",
+      "Why are specificity and catalysis inseparable?"
+    ],
+    "options": [
+      "Because only one shape fits its notch",
+      "Because it is programmed to",
+      "Because it only meets one kind of molecule"
+    ],
+    "answer": 0,
+    "why": [
+      "The notch is a particular shape. Only a molecule that matches it can get in, so that is the only reaction it can help with.",
+      "The active site's geometry is what positions a substrate correctly, and a pocket shaped to fit one molecule precisely cannot fit another. Specificity is not a separate feature — it is the same feature.",
+      "Catalytic power comes from complementarity to the transition state, and complementarity is by definition exclusive. An enzyme that accepted many substrates would position none of them well enough to accelerate anything, so promiscuity and efficiency trade off directly."
+    ],
+    "from": "proteins/03"
+  },
+  "denaturation": {
+    "q": [
+      "Why does activity fall above the optimum temperature?",
+      "Why is the fall in activity above the optimum not simply the reverse of the rise?"
+    ],
+    "options": [
+      "The enzyme is unfolding, and that does not reverse on cooling",
+      "The reaction runs out of substrate",
+      "The molecules move too fast to collide"
+    ],
+    "answer": 0,
+    "why": [
+      "Below the peak, more heat means more collisions and more reaction. Above it, the heat is shaking the protein apart — and once it has unfolded and stuck to its neighbours, cooling it down does not bring it back.",
+      "The two effects are asymmetric in kind. Collision frequency is a smooth reversible function of temperature; denaturation is a cooperative transition that destroys the active site and is usually followed by irreversible aggregation. That asymmetry is why the curve is not a symmetric peak, and why a fever above about 42 °C is dangerous rather than merely uncomfortable."
+    ],
+    "from": "proteins/03"
+  },
+  "misfolding-disease": {
+    "q": [
+      "Why is a sticky misfolded protein dangerous?",
+      "Why does misfolding cause disease beyond the loss of function?",
+      "What makes amyloid pathology self-propagating?"
+    ],
+    "options": [
+      "It makes others fold wrong too, and they pile up",
+      "It stops the cell making new proteins",
+      "It uses up all the water"
+    ],
+    "answer": 0,
+    "why": [
+      "The wrong shape has sticky bits on the outside. It grabs others, they clump, and the clumps get bigger — losing one protein would not matter much, but a growing pile does.",
+      "The misfolded form templates the same misfolding in normal copies, so the problem grows rather than staying constant, and the aggregates themselves are toxic. Alzheimer's, Parkinson's and type 2 diabetes all involve protein aggregation.",
+      "Amyloid is a cross-β structure that is thermodynamically very stable and grows by recruiting monomers onto its ends. That is self-templating — which is why prion diseases are transmissible without any nucleic acid at all, a claim that took Prusiner a decade to get accepted."
+    ],
+    "from": "proteins/04"
+  },
+  "life-without-gravity": {
+    "q": [
+      "Why did cycling in orbit not save the astronauts' bones?",
+      "Why is resistive exercise effective against bone loss where aerobic exercise is not?",
+      "What does the countermeasure's success tell you about the signal bone responds to?"
+    ],
+    "options": [
+      "Bone responds to being pushed against, and cycling does not push on it",
+      "Cycling is not hard enough work",
+      "Cycling uses up too much calcium"
+    ],
+    "answer": 0,
+    "why": [
+      "Your bones are not counting how tired you are. They are measuring how hard something squashed them, and a bicycle in space squashes nothing.",
+      "The stimulus is mechanical strain in the bone itself, not cardiovascular effort. Cycling in free fall produces almost no skeletal loading, so the signal that maintains bone is still absent however hard the crew works.",
+      "It tells you the signal is local and mechanical rather than systemic. If bone loss were caused by something circulating — a hormone, a deficiency — then general exercise or a supplement would help. That resistive loading works, and only where it is applied, identifies strain at the tissue as the controlled variable."
+    ],
+    "from": "space-biology/01"
+  },
+  "habitability": {
+    "q": [
+      "Why does the Martian surface fail the test when the ground beneath it might not?",
+      "Why is the Martian subsurface assessed as more habitable than the surface?",
+      "Which criterion does depth actually satisfy, and which does it not?"
+    ],
+    "options": [
+      "Rock blocks the radiation, and water can stay liquid down there",
+      "It is warmer nearer the middle of any planet",
+      "There is more air underground"
+    ],
+    "answer": 0,
+    "why": [
+      "The surface gets blasted with radiation and any water either freezes or boils away. A few metres down, the rock takes the hit and the pressure lets water stay water.",
+      "Depth supplies shielding and raises pressure and temperature enough for liquid water to persist. The same location also supplies chemical energy from water-rock reactions, which does not depend on sunlight.",
+      "Depth answers shielding, solvent stability and duration at once, and does not by itself answer energy — but the rock-water chemistry that comes with it does, which is why deep subsurface environments on Earth support life with no input from the surface at all."
+    ],
+    "from": "space-biology/02"
+  },
+  "extremophiles": {
+    "q": [
+      "What does a tardigrade surviving space actually prove?",
+      "What does cryptobiosis establish about the requirements of life?",
+      "Why does the distinction between tolerance and suspension matter?"
+    ],
+    "options": [
+      "That life can be paused and restarted, not that it can run on nothing",
+      "That living things can survive anywhere",
+      "That tardigrades came from space"
+    ],
+    "answer": 0,
+    "why": [
+      "While it was in space it was not doing anything. It was a dried-out speck. The clever bit is that it started again afterwards.",
+      "Nothing metabolised under those conditions. The result bounds the conditions a suspended organism can be carried through, not the conditions under which metabolism is possible.",
+      "Because the two support completely different conclusions. Suspension says a state can be preserved and resumed, which is a claim about stability. Tolerance would say chemistry proceeds under those conditions, which nothing here demonstrates — and conflating them is how a real and useful finding gets reported as evidence that life needs almost nothing."
+    ],
+    "from": "space-biology/03"
+  },
+  "closed-life-support": {
+    "q": [
+      "Why must waste be processed on a spacecraft?",
+      "Why is waste processing not optional in a closed system?",
+      "Why does the matter-cycles principle become binding rather than merely true?"
+    ],
+    "options": [
+      "The nutrients the plants need are in it, and there are no others",
+      "It would smell bad",
+      "It takes up too much room"
+    ],
+    "answer": 0,
+    "why": [
+      "There is no shop. Every atom the plants need to grow is already on board, and most of it is in the waste. Not processing it means locking those atoms away for the rest of the trip.",
+      "Matter cycles because it has nowhere else to go. The elements plants require are finite and on board, so any nutrient not returned is permanently removed from circulation and the food loop closes down.",
+      "On Earth the same principle is true and slack — the reservoirs are enormous relative to any flux, so nothing binds on a human timescale. In a sealed vehicle the reservoirs are the size of what you launched, so the cycle time becomes a hard operational constraint rather than a background fact."
+    ],
+    "from": "space-biology/04"
+  },
+  "biology-as-parts": {
+    "q": [
+      "Why is building with biological parts harder than with electronic ones?",
+      "Why does modularity fail in biological circuits?",
+      "Why is host burden a structural rather than incidental problem?"
+    ],
+    "options": [
+      "The parts affect each other through the cell they share",
+      "Biological parts are too small",
+      "Nobody has written the specifications down"
+    ],
+    "answer": 0,
+    "why": [
+      "A resistor does not care what else is in the circuit. A gene does — everything in a cell shares the same machinery, so switching one thing on takes machinery away from everything else.",
+      "Parts compete for shared cellular resources, so adding one changes the behaviour of others. Modularity assumes components do not interact except through their declared connections, and in a cell they always do.",
+      "Because the resources are finite and common by construction. Every expressed construct draws on the same ribosome pool and energy budget, so coupling is a property of being in a cell rather than a flaw to be designed out. It can be reduced by insulation and by characterising in context; it cannot be eliminated."
+    ],
+    "from": "synthetic-biology/01"
+  },
+  "genetic-circuits": {
+    "q": [
+      "Where does the memory in a toggle switch come from?",
+      "What makes a two-gene mutual repressor bistable?",
+      "Why is the behaviour a property of topology rather than of the genes?"
+    ],
+    "options": [
+      "From the arrangement — whichever wins keeps the other switched off",
+      "From a molecule that stores the state",
+      "From the DNA sequence being changed"
+    ],
+    "answer": 0,
+    "why": [
+      "Nothing stores anything. Once one gene is winning it keeps the other switched off, and that keeps it winning. The state holds itself up.",
+      "Mutual repression makes each state self-reinforcing, so there are two stable arrangements and the system stays in whichever it was pushed into. No storage molecule and no sequence change is involved.",
+      "Because swapping in different repressors with similar strengths gives the same behaviour, while rewiring the same repressors differently changes it completely. The behaviour is carried by the connection pattern, which is why the motifs recur across organisms sharing no genes."
+    ],
+    "from": "synthetic-biology/02"
+  },
+  "minimal-genome": {
+    "q": [
+      "What does it mean that 90 essential genes have no known function?",
+      "How should the unexplained essential genes be interpreted?",
+      "What does that gap indicate about the state of the field?"
+    ],
+    "options": [
+      "We can build a cell without fully understanding one",
+      "Those genes are probably not really needed",
+      "The experiment was done badly"
+    ],
+    "answer": 0,
+    "why": [
+      "They must matter, because taking any of them out kills the cell. We just do not know what they do. Being able to build something is not the same as understanding it.",
+      "They are demonstrably necessary and functionally uncharacterised. Construction ability has outrun explanatory understanding, which is unusual — normally understanding comes first.",
+      "It marks a real and quantified gap: 19% of the minimum requirement for life is unexplained in the best-characterised system anyone has built. Most fields cannot state their ignorance that precisely, and being able to is a sign of maturity rather than of failure."
+    ],
+    "from": "synthetic-biology/03"
+  },
+  "design-then-test": {
+    "q": [
+      "Why does an engineered organism stop working over time?",
+      "Why is a production strain evolutionarily unstable?",
+      "Why does coupling the product to survival solve it?"
+    ],
+    "options": [
+      "Cells that break your circuit grow faster and take over",
+      "The DNA wears out",
+      "The nutrients run out"
+    ],
+    "answer": 0,
+    "why": [
+      "Making your product costs the cell energy it could spend growing. Any cell that breaks the circuit grows a bit faster, and after enough generations those are all that is left. It is the beetles again, and your design is the thing being selected against.",
+      "Expression imposes metabolic burden, so loss-of-function mutants have higher fitness. Given mutation and enough generations they dominate — which is not a fault in the construct but the inevitable result of the three conditions applying to it.",
+      "Because it reverses the sign of the selection. If the cell cannot survive without producing, then losing the construct is lethal rather than advantageous, and the same mechanism that was destroying your design now maintains it. Working with selection rather than against it is the general lesson."
+    ],
+    "from": "synthetic-biology/04"
+  },
+  "life-is-a-process": {
+    "q": [
+      "What makes something alive?",
+      "What distinguishes living from non-living matter?",
+      "On what does the living/non-living distinction rest?"
+    ],
+    "options": [
+      "What it does and keeps doing",
+      "A special sort of stuff inside it",
+      "Whether it can move about"
+    ],
+    "answer": 0,
+    "why": [
+      "There is no special living material. Everything in you is the same kind of stuff as a rock — it is what it is all doing together that makes the difference.",
+      "No component is distinctive; the organisation is. Living things maintain themselves against decay, and that maintenance is the thing being pointed at, not any ingredient.",
+      "Movement is a poor criterion — a tree does not move and is alive, a river does and is not. The property that does the work is self-maintenance: living systems expend energy to hold themselves away from equilibrium, and stop being alive precisely when they stop."
+    ],
+    "from": "what-is-life/01"
+  },
+  "seven-signs": {
+    "q": [
+      "A tree cannot walk. Is it alive?",
+      "A tree does not move from its position. Does that count against it being alive?",
+      "How should a single failed criterion be weighed?"
+    ],
+    "options": [
+      "Yes — it does nearly all the others",
+      "No, moving is required",
+      "Only partly alive"
+    ],
+    "answer": 0,
+    "why": [
+      "Missing one sign does not matter much. A tree grows, uses energy, senses light, gets rid of waste and makes seeds — that is plenty.",
+      "One failure carries almost no weight in a cluster concept. A tree satisfies six of seven comfortably, and moving turns out to be the least important of them.",
+      "Weight it as evidence rather than as a gate. This is why 'is a virus alive?' has no clean answer and does not need one — the useful question is which properties it has and which it lacks, and that question does have an answer."
+    ],
+    "from": "what-is-life/02"
+  },
+  "metabolism-is-not-burning": {
+    "q": [
+      "Why is a fire not alive?",
+      "What does a flame fundamentally lack?",
+      "Which two properties does combustion lack?"
+    ],
+    "options": [
+      "It carries no instructions and captures no energy",
+      "It is not made of cells",
+      "It cannot move on its own"
+    ],
+    "answer": 0,
+    "why": [
+      "A fire does lots of things living things do. But it has no recipe for itself, and it throws all its energy away as heat instead of using it.",
+      "No heredity and no coupling. A new flame inherits nothing from the old one, so nothing can accumulate; and the energy leaves as heat rather than being captured to do work.",
+      "Both are needed and neither is present. Without energy capture there is nothing to power maintenance; without heredity there is nothing to select on, so a fire cannot adapt in any generation, however many flames it lights."
+    ],
+    "from": "what-is-life/03"
+  },
+  "origin-of-life-unsolved": {
+    "q": [
+      "Has anyone ever made something alive out of things that were not alive?",
+      "What is the current experimental status of the origin of life?",
+      "What is the honest experimental status of abiogenesis?"
+    ],
+    "options": [
+      "No. Some of the steps, but not the whole thing",
+      "Yes, in 1953",
+      "Yes, it happens in laboratories all the time"
+    ],
+    "answer": 0,
+    "why": [
+      "The famous experiment made building blocks, not a living thing. It is still an open question, and anyone who tells you it is settled is going beyond the evidence.",
+      "Individual steps have been achieved; the whole has not. Both sides of the disagreement accept this, and a textbook or a video that implies otherwise has overstated the case.",
+      "This is worth being precise about, because it is misreported in both directions: popular accounts sometimes imply the problem is solved, and some critiques imply no progress has been made. Neither is accurate. Substantial partial results exist; a complete route does not."
+    ],
+    "from": "what-is-life/04"
+  }
+}
