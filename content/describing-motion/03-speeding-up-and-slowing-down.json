@@ -1,0 +1,167 @@
+{
+  "id": "describing-motion/03",
+  "module": "describing-motion",
+  "index": 2,
+  "title": "Speeding Up and Slowing Down",
+  "specimen": null,
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "A ball sits still. Then it moves. What happened in between?",
+        "A ball is at rest. Then it is moving. Something changed its speed — what?",
+        "A stationary ball begins to move. A moving ball comes to rest. Both involve a change in speed.",
+        "An object at rest acquires velocity; a moving object loses it. Both are changes in the rate of change of position."
+      ],
+      "sub": [
+        "Its speed changed. That change has a name.",
+        "Speed does not just appear. It changes — and the rate of that change is a thing.",
+        "The rate at which speed changes is called acceleration.",
+        "The time derivative of velocity is acceleration — a vector quantity, m/s²."
+      ]
+    },
+
+    {
+      "type": "predict",
+      "concept": "acceleration-is-change",
+      "question": [
+        "The ball is slowing down because of friction. Is it accelerating?",
+        "A ball slows down because of friction. Is it accelerating?",
+        "A rolling ball's speed decreases due to friction. Is it accelerating?",
+        "An object decelerates due to kinetic friction. Is its acceleration nonzero?"
+      ],
+      "options": [
+        "Yes, slowing down is accelerating — just in the opposite direction",
+        "No, accelerating only means speeding up",
+        "No, friction is not a real acceleration"
+      ],
+      "outcome": "Yes, slowing down is accelerating — just in the opposite direction",
+      "note": [
+        "This one surprises people. Guess what you think, then check.",
+        "Predict before checking. The answer is the opposite of what most people expect.",
+        "Form a hypothesis. Deceleration is a kind of acceleration — predict which.",
+        "Predict: is deceleration a subset of acceleration, or a distinct phenomenon?"
+      ]
+    },
+
+    {
+      "type": "sim",
+      "sim": "incline",
+      "levels": [1, 2],
+      "guided": true,
+      "t": [
+        "Push the ball, then let friction slow it. Watch the speed arrow shrink.",
+        "Launch the ball and watch friction slow it. The speed arrow shrinks — that is acceleration, pointing backwards."
+      ],
+      "params": {
+        "push": 4,
+        "friction": 3,
+        "goalDist": 0.7
+      },
+      "paramsByLevel": {
+        "1": { "push": 4, "friction": 2, "goalDist": 0.6 },
+        "2": { "push": 4, "friction": 3, "goalDist": 0.7 }
+      },
+      "goal": [
+        "Watch the speed arrow shrink as friction slows the ball. That shrinking is acceleration.",
+        "Observe the velocity arrow decreasing in magnitude. That rate of decrease is acceleration."
+      ]
+    },
+
+    {
+      "type": "sim",
+      "sim": "incline",
+      "levels": [3, 4],
+      "guided": false,
+      "t": [
+        "Find a push and friction where the ball speeds up, then slows down. Both are acceleration.",
+        "Configure push and friction so the ball accelerates then decelerates. Both phases involve nonzero acceleration — identify the direction in each."
+      ],
+      "params": {
+        "push": 5,
+        "friction": 4,
+        "goalDist": 0.8
+      },
+      "paramsByLevel": {
+        "4": { "push": 6, "friction": 5, "goalDist": 0.85 }
+      },
+      "goal": [
+        "Reach the goal. The ball sped up, then slowed down — both are acceleration.",
+        "Reach the goal. The velocity increased then decreased; acceleration was positive then negative."
+      ]
+    },
+
+    {
+      "type": "name",
+      "t": [
+        "When speed changes — faster or slower — that is called acceleration.",
+        "A change in speed is called acceleration. Speeding up and slowing down are both acceleration.",
+        "Acceleration is how fast speed changes. It is measured in metres per second per second (m/s²).",
+        "Acceleration is the rate of change of velocity: a = Δv/Δt. A vector, m/s². Deceleration is acceleration antiparallel to velocity."
+      ],
+      "sub": [
+        "Speeding up is acceleration forward. Slowing down is acceleration backward.",
+        "More push means more acceleration. More friction means acceleration backward (slowing).",
+        "Friction causes acceleration opposite to motion. The sign of acceleration relative to velocity determines speed-up vs slow-down.",
+        "a = F_net/m by Newton's second law. Friction produces a negative acceleration; the applied force, a positive one."
+      ]
+    },
+
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "When a car brakes, it is accelerating backward. The faster it was going, the longer that takes.",
+        "A braking car is accelerating backwards. The faster it was going, the longer it takes to stop.",
+        "Braking is deceleration. At 70 mph a car takes about 96 m to stop; at 30 mph, about 14 m. The relationship is quadratic.",
+        "Braking distance scales as v²/(2a). The quadratic dependence on initial speed is why urban speed limits save lives disproportionately."
+      ]
+    },
+
+    {
+      "type": "check",
+      "concept": "acceleration-is-change",
+      "q": [
+        "A ball is slowing down. Is it accelerating?",
+        "A rolling ball's speed is decreasing. Is it accelerating?",
+        "An object's speed is decreasing. Is its acceleration nonzero?",
+        "An object decelerates. Is a nonzero?"
+      ],
+      "options": [
+        "Yes — slowing down is acceleration in the opposite direction",
+        "No, acceleration only means speeding up",
+        "Only if it eventually stops"
+      ],
+      "answer": 0,
+      "why": [
+        "Acceleration is any change in speed. Slowing down is acceleration pointing against the motion — the friction force pushes it backward.",
+        "Acceleration is a change in velocity, including decreases. Friction produces acceleration opposite to motion, which slows the ball.",
+        "a = Δv/Δt. If v decreases, Δv is negative, so a is negative (opposite to motion). Deceleration is acceleration with sign reversed.",
+        "Acceleration is the time derivative of velocity. Any change in velocity's magnitude or direction constitutes acceleration; deceleration is the case where a · v < 0."
+      ]
+    },
+
+    {
+      "type": "check",
+      "concept": "acceleration-is-change",
+      "q": [
+        "You push a ball. It speeds up. Where is the acceleration pointing?",
+        "A ball speeds up when you push it. Which way does the acceleration point?",
+        "An object's speed increases under a push. What is the direction of its acceleration?",
+        "Under an applied force, an object's speed increases. What is the sign of a relative to v?"
+      ],
+      "options": [
+        "Forward — the same way it is moving",
+        "Backward — opposite to the motion",
+        "Sideways — perpendicular to the motion"
+      ],
+      "answer": 0,
+      "why": [
+        "The push is forward, so the acceleration is forward. The ball speeds up because the acceleration points the same way it is moving.",
+        "Acceleration points in the direction of the net force. The push is forward, so acceleration is forward — and speed increases.",
+        "a = F_net/m. The applied force is forward, so a is forward. When a is parallel to v, speed increases.",
+        "By Newton's second law, a is parallel to F_net. When a · v > 0, speed increases; the applied force provides the parallel component."
+      ]
+    }
+  ]
+}

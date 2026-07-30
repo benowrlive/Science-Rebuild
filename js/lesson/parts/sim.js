@@ -26,6 +26,7 @@ const SIMS = {
   web: () => import("../../sims/web.js"),
   outbreak: () => import("../../sims/outbreak.js"),
   incline: () => import("../../sims/incline.js"),
+  forces: () => import("../../sims/forces.js"),
 };
 
 export const RENDER = {

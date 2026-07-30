@@ -1,0 +1,164 @@
+{
+  "id": "describing-motion/04",
+  "module": "describing-motion",
+  "index": 3,
+  "title": "Who Is Moving",
+  "specimen": null,
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "You sit on a train. The train moves. Are you moving?",
+        "You are on a moving train, sitting still. Are you moving?",
+        "A passenger sits at rest on a moving train. Is the passenger in motion?",
+        "An object is at rest in a reference frame moving at constant velocity. Is the object in motion?"
+      ],
+      "sub": [
+        "It depends who is asking. Motion is not a yes-or-no question.",
+        "To someone outside, yes. To you, no. Both are right.",
+        "The answer depends on the reference frame. There is no privileged frame.",
+        "Galilean relativity: motion is frame-dependent. No inertial frame is preferred."
+      ]
+    },
+
+    {
+      "type": "predict",
+      "concept": "frames-of-reference",
+      "question": [
+        "You throw a ball straight up on a moving train. Where does it land?",
+        "On a moving train, you throw a ball straight up. Where does it come down?",
+        "A ball is thrown vertically upward on a moving train. Where does it land relative to the thrower?",
+        "A projectile is launched vertically in a moving reference frame. Where does it land relative to the launcher?"
+      ],
+      "options": [
+        "Back in your hand",
+        "Behind you, because the train moved while it was in the air",
+        "In front of you, because the ball kept the train's speed"
+      ],
+      "outcome": "Back in your hand",
+      "note": [
+        "Most people get this wrong. Guess before you think too hard.",
+        "Predict first. The answer surprises almost everyone.",
+        "Form a hypothesis. Consider what the ball's horizontal velocity is, relative to the train.",
+        "Predict. Apply Galilean invariance: the ball retains the train's horizontal velocity in the ground frame."
+      ]
+    },
+
+    {
+      "type": "slider",
+      "levels": [1, 2],
+      "guided": true,
+      "label": "Whose view?",
+      "min": 0, "max": 3, "value": 0,
+      "captions": [
+        "You, on the train. The ball goes up and comes straight down.",
+        "Your friend, on the platform. The ball goes up — but also forward, because the train is moving.",
+        "A bird, flying alongside. The ball goes up and forward, but slower than from the platform.",
+        "An astronaut, looking down. The train, the platform, and the bird are all moving — the ball traces a curve through all of them."
+      ],
+      "t": [
+        "Move the slider to see the same ball throw from different viewpoints.",
+        "Drag the slider. Same throw, four viewpoints. The ball does the same thing — the description changes."
+      ],
+      "after": [
+        "Same ball, same throw. The only thing that changed was who was watching. That is what frames of reference means.",
+        "Four observers, four descriptions, one motion. The frame of reference is the difference — not the physics."
+      ]
+    },
+
+    {
+      "type": "slider",
+      "levels": [3, 4],
+      "guided": false,
+      "label": "Whose view?",
+      "min": 0, "max": 3, "value": 0,
+      "captions": [
+        "Train frame: ball moves vertically. x = 0, y(t) = v₀t − ½gt².",
+        "Platform frame: ball has the train's horizontal velocity. x(t) = v_train·t, y(t) = v₀t − ½gt².",
+        "Bird frame (matching speed): ball moves vertically slower, as the bird cancels part of the train's motion.",
+        "Ground frame from above: ball traces a parabola in 2D. All frames agree on the physics; they disagree on the coordinates."
+      ],
+      "t": [
+        "Work out what each observer sees before you reach the caption.",
+        "Predict each frame's description before the caption arrives. The invariance is in the physics, not the coordinates."
+      ],
+      "after": [
+        "All four frames agree on the laws of motion. They disagree only on the numbers — and that disagreement is not a problem, it is the content of relativity.",
+        "Galilean invariance: the laws of mechanics are the same in all inertial frames. Coordinate differences are not physical differences."
+      ]
+    },
+
+    {
+      "type": "name",
+      "t": [
+        "Who is moving depends on who is watching. That is called a frame of reference.",
+        "The viewpoint you measure from is called a frame of reference. Motion is relative to it.",
+        "A frame of reference is the coordinate system you measure motion from. The same motion looks different from different frames.",
+        "A reference frame is a coordinate system with a specified state of motion. Galilean relativity: the laws of mechanics are invariant across inertial frames."
+      ],
+      "sub": [
+        "There is no 'really moving'. Only moving relative to a frame.",
+        "No frame is more correct than another. Motion is always relative to a chosen frame.",
+        "Inertial frames (constant velocity) are equivalent under Galilean transformations.",
+        "No inertial frame is privileged. This is the principle of Galilean relativity, generalised by Einstein in 1905."
+      ]
+    },
+
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "When you catch a ball, you are using frames of reference without knowing it.",
+        "Catching a ball is an intuitive frame-of-reference calculation. Your brain converts the ball's motion to your frame automatically.",
+        "A pilot docking a spacecraft must solve the relative-motion problem explicitly — the target's frame and the chaser's frame differ.",
+        "Rendezvous problems in orbital mechanics require explicit frame transformations. The ISS and a visiting capsule share inertial physics but differ in coordinate description."
+      ]
+    },
+
+    {
+      "type": "check",
+      "concept": "frames-of-reference",
+      "q": [
+        "You throw a ball straight up on a moving train. Where does it land?",
+        "A ball is thrown vertically on a moving train. Where does it land relative to the thrower?",
+        "On a train moving at constant velocity, a ball is thrown straight up. Where does it land?",
+        "In an inertial frame moving at constant velocity, a projectile is launched vertically. Where does it land relative to the launcher?"
+      ],
+      "options": [
+        "Back in your hand — the ball keeps the train's forward speed",
+        "Behind you — the train moved out from under it",
+        "In front of you — the ball accelerated forward"
+      ],
+      "answer": 0,
+      "why": [
+        "The ball was already moving forward with the train. Nothing pushes it backward, so it keeps that speed while it goes up and comes down — landing back in your hand.",
+        "The ball retains the train's horizontal velocity (inertia). In the train's frame, it goes straight up and down. In the platform's frame, it traces a parabola — but lands in your hand either way.",
+        "Galilean invariance: in the train's inertial frame, the ball's motion is purely vertical. Horizontal velocity is conserved, so it returns to the launch point in that frame.",
+        "The ball's velocity in the ground frame has a horizontal component equal to the train's. Gravity acts only vertically, so x(t) = v_train·t returns to x=0 in the train frame at t = 2v₀/g."
+      ]
+    },
+
+    {
+      "type": "check",
+      "concept": "frames-of-reference",
+      "q": [
+        "Is there a 'really moving' frame — one that is actually at rest?",
+        "Is any one frame the 'true' stationary frame?",
+        "Is there a privileged reference frame — one that is genuinely at rest?",
+        "Does a preferred rest frame exist?"
+      ],
+      "options": [
+        "No — motion is relative to whatever frame you choose",
+        "Yes, the ground is really at rest",
+        "Yes, the Sun is really at rest"
+      ],
+      "answer": 0,
+      "why": [
+        "There is no 'really moving'. The ground is moving with the Earth. The Earth moves around the Sun. The Sun moves through the galaxy. Every frame is relative to another.",
+        "No frame is the 'real' one. The ground is moving with Earth's rotation and orbit. The Sun moves through the galaxy. Motion is always relative to a chosen frame.",
+        "Galilean relativity: all inertial frames are equivalent. No experiment in mechanics can distinguish one inertial frame from another.",
+        "No preferred inertial frame exists. This is the principle of relativity, foundational to both Galilean and Einsteinian mechanics. (The cosmic microwave background does define a convenient frame, but not a privileged one.)"
+      ]
+    }
+  ]
+}

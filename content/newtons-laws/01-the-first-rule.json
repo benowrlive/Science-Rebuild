@@ -1,0 +1,169 @@
+{
+  "id": "newtons-laws/01",
+  "module": "newtons-laws",
+  "index": 0,
+  "title": "The First Rule: Things Keep Going",
+  "specimen": "force-arrow",
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "Push a ball. It rolls. Stop pushing. Why does it keep going?",
+        "You push a ball, then let go. It keeps moving. What is carrying it?",
+        "A ball is pushed and released. It continues moving. Nothing is in contact with it. What keeps it going?",
+        "An object given an initial velocity continues in the absence of net force. Why does this need a law?"
+      ],
+      "sub": [
+        "Nothing is pushing it anymore. So why does it not stop?",
+        "For two thousand years people thought things needed a push to keep moving. They were wrong.",
+        "Aristotle held that motion requires a continuous cause. Galileo and Newton showed the opposite: a cause is required to STOP motion, not sustain it.",
+        "The principle of inertia contradicts the Aristotelian intuition that sustained motion requires sustained force. The first law formalises the correction."
+      ]
+    },
+
+    {
+      "type": "predict",
+      "concept": "inertia",
+      "question": [
+        "In space, with no friction, you push a ball once. What happens?",
+        "You push a ball once in space — no air, no friction. What happens to it?",
+        "A ball is given an impulse in vacuum, far from any mass. What is its subsequent motion?",
+        "An object receives an impulse in a region of negligible net force. Describe its trajectory."
+      ],
+      "options": [
+        "It keeps going forever at the same speed",
+        "It slows down and stops, just slowly",
+        "It speeds up because nothing is holding it back"
+      ],
+      "outcome": "It keeps going forever at the same speed",
+      "note": [
+        "This is the answer that took humanity two thousand years to accept. Guess what you think.",
+        "Predict before checking. Most people's intuition is wrong here — that intuition is Aristotle's, and it is two thousand years old.",
+        "Form a hypothesis. Consider what force, if any, acts on the ball after the impulse.",
+        "Predict. Apply the principle of inertia: with no net force, velocity is constant."
+      ]
+    },
+
+    {
+      "type": "sim",
+      "sim": "forces",
+      "levels": [1, 2],
+      "guided": true,
+      "t": [
+        "Set friction to zero. Push the trolley once, then watch — it does not stop.",
+        "Set the ground to smooth (friction 0). Launch the trolley. With nothing to slow it, it keeps going."
+      ],
+      "params": {
+        "push": 3,
+        "mass": 2,
+        "friction": 0,
+        "goalSpeed": 0.35
+      },
+      "paramsByLevel": {
+        "1": { "push": 3, "mass": 1, "friction": 0, "goalSpeed": 0.3 },
+        "2": { "push": 3, "mass": 2, "friction": 0, "goalSpeed": 0.35 }
+      },
+      "goal": [
+        "Reach the goal speed. With no friction, the trolley does not slow down — that is inertia.",
+        "Reach the target velocity. In the absence of friction, v is constant — Newton's first law."
+      ]
+    },
+
+    {
+      "type": "sim",
+      "sim": "forces",
+      "levels": [3, 4],
+      "guided": false,
+      "t": [
+        "Set friction to zero and find the smallest push that reaches the goal. Then double the mass — what changes?",
+        "With friction = 0, determine the minimum push to reach the goal speed. Then double the mass and predict the new minimum before testing. What does that tell you about inertia vs. force?"
+      ],
+      "params": {
+        "push": 2,
+        "mass": 2,
+        "friction": 0,
+        "goalSpeed": 0.4
+      },
+      "paramsByLevel": {
+        "4": { "push": 2, "mass": 3, "friction": 0, "goalSpeed": 0.45 }
+      },
+      "goal": [
+        "Reach the goal. The trolley keeps going — nothing slows it. That is the first law.",
+        "Reach the target v. Confirm v is constant under zero net force, regardless of mass."
+      ]
+    },
+
+    {
+      "type": "name",
+      "t": [
+        "Things keep going unless something stops them. That is called inertia.",
+        "Things keep moving unless a force stops them. That is inertia — Newton's first law.",
+        "Newton's first law: an object's velocity stays constant unless a net force acts on it. This tendency is called inertia.",
+        "Newton's first law (the principle of inertia): in an inertial frame, an object's velocity is constant unless acted on by a net external force. Equivalent to the assertion that inertial frames exist."
+      ],
+      "sub": [
+        "More mass means more inertia — heavier things are harder to get moving, and harder to stop.",
+        "Mass is the measure of inertia. A heavy trolley needs more push to start, and more force to stop.",
+        "Inertia is resistance to changes in motion. Mass quantifies it: F = ma, so larger m means smaller a for the same F.",
+        "Mass is the inertial measure. The first law defines inertial frames; the second law (F=ma) quantifies inertia within them."
+      ]
+    },
+
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "When a car stops suddenly, you keep going forward. That is inertia — the seatbelt is the force that stops you.",
+        "A car brakes. Your body keeps moving forward. That is inertia. The seatbelt is the force that stops you.",
+        "Whiplash, seatbelt injuries, head impacts in crashes — all inertia. Your body's velocity is unchanged until a force acts.",
+        "Inertial reference frames and the first law underlie crash dynamics. A 30 mph delta-v without restraint is fatal because no force decelerates the occupant's organs."
+      ]
+    },
+
+    {
+      "type": "check",
+      "concept": "inertia",
+      "q": [
+        "In space, with no forces at all, you push a ball once. What happens?",
+        "A ball in vacuum receives one push. No forces act afterward. What happens?",
+        "An object in a force-free region is given an impulse. Describe its subsequent motion.",
+        "In the absence of net external force, what is the trajectory of a body given an initial impulse?"
+      ],
+      "options": [
+        "It keeps moving at the same speed in a straight line, forever",
+        "It slows down and eventually stops",
+        "It speeds up because nothing holds it back"
+      ],
+      "answer": 0,
+      "why": [
+        "Nothing is pushing against it. With no force to slow it, the ball keeps its speed. That is inertia — things keep going unless a force stops them.",
+        "With no net force, the ball's velocity stays constant (Newton's first law). It does not need a push to keep moving — it needs a force to stop.",
+        "Newton's first law: in the absence of net force, velocity is constant. The ball moves in a straight line at constant speed indefinitely.",
+        "F_net = 0 ⟹ dv/dt = 0 ⟹ v = const. The principle of inertia. The ball follows a geodesic of flat spacetime — a straight line at constant velocity."
+      ]
+    },
+
+    {
+      "type": "check",
+      "concept": "inertia",
+      "q": [
+        "Which is harder to get moving — a heavy trolley or a light one?",
+        "Which needs more push to start — a heavy trolley or a light one?",
+        "Which has more inertia — a 10 kg trolley or a 1 kg trolley?",
+        "Which body has greater resistance to acceleration — 10 kg or 1 kg?"
+      ],
+      "options": [
+        "The heavy one — more mass means more inertia",
+        "The light one — it is easier to push",
+        "They are the same — inertia does not depend on mass"
+      ],
+      "answer": 0,
+      "why": [
+        "Heavier things are harder to get moving. That is what mass IS — the measure of how hard it is to change something's motion.",
+        "Mass is the measure of inertia. A heavy trolley needs more force to achieve the same acceleration (F = ma).",
+        "Inertia is proportional to mass. F = ma means a = F/m — larger m gives smaller a for the same F.",
+        "Inertial mass quantifies resistance to acceleration: a = F/m. The 10 kg trolley has ten times the inertia of the 1 kg one."
+      ]
+    }
+  ]
+}

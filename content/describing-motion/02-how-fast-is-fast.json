@@ -1,0 +1,167 @@
+{
+  "id": "describing-motion/02",
+  "module": "describing-motion",
+  "index": 1,
+  "title": "How Fast Is Fast",
+  "specimen": "stopwatch",
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "Two balls roll. One gets there first. What is different about what it did?",
+        "Two balls cross the same floor. One arrives first. What made it faster?",
+        "Two balls travel the same distance. One takes less time. The difference has a name.",
+        "Two objects traverse equal displacements in different time intervals. The quantity that distinguishes them is fundamental."
+      ],
+      "sub": [
+        "It covered the same ground in less time. That is what fast means.",
+        "Same distance, less time. That difference is what we call speed.",
+        "The ratio of displacement to time interval is speed — the scalar rate of motion.",
+        "Speed is |Δx|/Δt. The vector form, velocity, carries direction as well as magnitude."
+      ]
+    },
+
+    {
+      "type": "predict",
+      "concept": "velocity-is-rate",
+      "question": [
+        "Push the ball twice as hard. Does it go twice as fast?",
+        "If you push twice as hard, does the ball move twice as fast?",
+        "Double the push. Does the ball's speed double?",
+        "If the applied impulse doubles, does the resulting velocity double?"
+      ],
+      "options": [
+        "Yes, twice the push means twice the speed",
+        "No, it goes faster but not twice as fast",
+        "No, the push does not change the speed at all"
+      ],
+      "outcome": "Yes, twice the push means twice the speed",
+      "note": [
+        "Guess before you try it. The answer is hiding in the sim.",
+        "Predict first. The sim will tell you if you are right.",
+        "Form a hypothesis before testing. The prediction is what makes the result stick.",
+        "Predict the relationship between impulse and velocity before verifying empirically."
+      ]
+    },
+
+    {
+      "type": "sim",
+      "sim": "incline",
+      "levels": [1, 2],
+      "guided": true,
+      "t": [
+        "Try different pushes. Watch how the speed arrow grows.",
+        "Change the push and watch the speed arrow. Bigger push, bigger arrow."
+      ],
+      "params": {
+        "push": 3,
+        "friction": 1,
+        "goalDist": 0.6
+      },
+      "paramsByLevel": {
+        "1": { "push": 3, "friction": 0, "goalDist": 0.5 },
+        "2": { "push": 3, "friction": 1, "goalDist": 0.6 }
+      },
+      "goal": [
+        "Reach the goal. Notice how the speed arrow changes with the push.",
+        "Reach the goal. Observe how the velocity arrow scales with the applied force."
+      ]
+    },
+
+    {
+      "type": "sim",
+      "sim": "incline",
+      "levels": [3, 4],
+      "guided": false,
+      "t": [
+        "Find the smallest push that still reaches the goal. Then halve it — what happens to the speed?",
+        "Determine the minimum push to reach the goal. Then halve the push and observe the velocity. Is the relationship linear?"
+      ],
+      "params": {
+        "push": 2,
+        "friction": 2,
+        "goalDist": 0.7
+      },
+      "paramsByLevel": {
+        "4": { "push": 2, "friction": 3, "goalDist": 0.75 }
+      },
+      "goal": [
+        "Reach the goal. The speed is whatever the push made it.",
+        "Reach the goal. Verify the impulse–velocity relationship."
+      ]
+    },
+
+    {
+      "type": "name",
+      "t": [
+        "How fast something goes is called its speed.",
+        "How fast you go is called speed. Speed is how much ground you cover in each second.",
+        "Speed is distance divided by time. The units are metres per second, written m/s.",
+        "Speed is the scalar rate of motion: |Δx|/Δt. Velocity is the vector form — speed with a direction."
+      ],
+      "sub": [
+        "More push, more speed. Less friction, more speed.",
+        "Speed = distance ÷ time. More push means more speed; more friction means less.",
+        "A speed of 3 m/s means 3 metres every second. Friction reduces it; push increases it.",
+        "Velocity v = Δx/Δt. The impulse–velocity relationship is linear in the absence of friction; friction introduces a deceleration term."
+      ]
+    },
+
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "Speed limits are about how fast you cover ground. The faster you go, the less time you have to stop.",
+        "A speed limit is a rule about distance per second. The faster you go, the longer it takes to stop.",
+        "Braking distance grows with the square of speed. A car at 60 mph takes four times as far to stop as one at 30 mph.",
+        "Braking distance d = v²/(2μg). The quadratic dependence is why speed limits are the single largest factor in road fatality rates."
+      ]
+    },
+
+    {
+      "type": "check",
+      "concept": "velocity-is-rate",
+      "q": [
+        "What is speed?",
+        "How do we measure how fast something is going?",
+        "Define speed.",
+        "What is the scalar rate of motion?"
+      ],
+      "options": [
+        "How much distance is covered in a unit of time",
+        "How heavy something is",
+        "How long something has been moving"
+      ],
+      "answer": 0,
+      "why": [
+        "Speed is distance divided by time. A ball covering 6 metres in 3 seconds has a speed of 2 metres per second.",
+        "Speed = distance ÷ time. It is the rate at which position changes. 6 metres in 3 seconds is 2 m/s.",
+        "Speed is |Δx|/Δt — the magnitude of the rate of change of position. Units: m/s.",
+        "Speed is the scalar magnitude of velocity: |Δx/Δt|. It quantifies the rate of position change without regard to direction."
+      ]
+    },
+
+    {
+      "type": "check",
+      "concept": "velocity-is-rate",
+      "q": [
+        "Ball A goes 6 m in 3 s. Ball B goes 6 m in 2 s. Which is faster?",
+        "Ball A travels 6 m in 3 s. Ball B travels 6 m in 2 s. Which is faster?",
+        "Two balls travel 6 m. A takes 3 s, B takes 2 s. Which has the greater speed?",
+        "Two objects traverse 6 m. Object A takes 3 s, object B takes 2 s. Which has the higher speed?"
+      ],
+      "options": [
+        "Ball B is faster",
+        "Ball A is faster",
+        "They are the same speed"
+      ],
+      "answer": 0,
+      "why": [
+        "Ball B covers the same distance in less time. Less time for the same distance means more speed.",
+        "Same distance, less time = more speed. B covers 6 m in 2 s (3 m/s); A covers 6 m in 3 s (2 m/s).",
+        "Speed = distance/time. B: 6/2 = 3 m/s. A: 6/3 = 2 m/s. B is faster.",
+        "v = Δx/Δt. v_B = 6/2 = 3 m/s > v_A = 6/3 = 2 m/s. Same displacement, shorter interval → higher speed."
+      ]
+    }
+  ]
+}

@@ -492,6 +492,48 @@
     ],
     "from": "describing-motion/01"
   },
+  "acceleration-is-change": {
+    "q": [
+      "A ball is slowing down. Is it accelerating?",
+      "A rolling ball's speed is decreasing. Is it accelerating?",
+      "An object's speed is decreasing. Is its acceleration nonzero?",
+      "An object decelerates. Is a nonzero?"
+    ],
+    "options": [
+      "Yes — slowing down is acceleration in the opposite direction",
+      "No, acceleration only means speeding up",
+      "Only if it eventually stops"
+    ],
+    "answer": 0,
+    "why": [
+      "Acceleration is any change in speed. Slowing down is acceleration pointing against the motion — the friction force pushes it backward.",
+      "Acceleration is a change in velocity, including decreases. Friction produces acceleration opposite to motion, which slows the ball.",
+      "a = Δv/Δt. If v decreases, Δv is negative, so a is negative (opposite to motion). Deceleration is acceleration with sign reversed.",
+      "Acceleration is the time derivative of velocity. Any change in velocity's magnitude or direction constitutes acceleration; deceleration is the case where a · v < 0."
+    ],
+    "from": "describing-motion/03"
+  },
+  "frames-of-reference": {
+    "q": [
+      "You throw a ball straight up on a moving train. Where does it land?",
+      "A ball is thrown vertically on a moving train. Where does it land relative to the thrower?",
+      "On a train moving at constant velocity, a ball is thrown straight up. Where does it land?",
+      "In an inertial frame moving at constant velocity, a projectile is launched vertically. Where does it land relative to the launcher?"
+    ],
+    "options": [
+      "Back in your hand — the ball keeps the train's forward speed",
+      "Behind you — the train moved out from under it",
+      "In front of you — the ball accelerated forward"
+    ],
+    "answer": 0,
+    "why": [
+      "The ball was already moving forward with the train. Nothing pushes it backward, so it keeps that speed while it goes up and comes down — landing back in your hand.",
+      "The ball retains the train's horizontal velocity (inertia). In the train's frame, it goes straight up and down. In the platform's frame, it traces a parabola — but lands in your hand either way.",
+      "Galilean invariance: in the train's inertial frame, the ball's motion is purely vertical. Horizontal velocity is conserved, so it returns to the launch point in that frame.",
+      "The ball's velocity in the ground frame has a horizontal component equal to the train's. Gravity acts only vertically, so x(t) = v_train·t returns to x=0 in the train frame at t = 2v₀/g."
+    ],
+    "from": "describing-motion/04"
+  },
   "one-cell-to-many": {
     "q": [
       "How does a cell know what to become?",
@@ -1766,6 +1808,27 @@
       "The brain is informed, not consulted. It can modulate the reflex — you can suppress withdrawal deliberately, up to a point — but the loop closes without it, and that is what the architecture is for."
     ],
     "from": "neuroscience/05"
+  },
+  "inertia": {
+    "q": [
+      "In space, with no forces at all, you push a ball once. What happens?",
+      "A ball in vacuum receives one push. No forces act afterward. What happens?",
+      "An object in a force-free region is given an impulse. Describe its subsequent motion.",
+      "In the absence of net external force, what is the trajectory of a body given an initial impulse?"
+    ],
+    "options": [
+      "It keeps moving at the same speed in a straight line, forever",
+      "It slows down and eventually stops",
+      "It speeds up because nothing holds it back"
+    ],
+    "answer": 0,
+    "why": [
+      "Nothing is pushing against it. With no force to slow it, the ball keeps its speed. That is inertia — things keep going unless a force stops them.",
+      "With no net force, the ball's velocity stays constant (Newton's first law). It does not need a push to keep moving — it needs a force to stop.",
+      "Newton's first law: in the absence of net force, velocity is constant. The ball moves in a straight line at constant speed indefinitely.",
+      "F_net = 0 ⟹ dv/dt = 0 ⟹ v = const. The principle of inertia. The ball follows a geodesic of flat spacetime — a straight line at constant velocity."
+    ],
+    "from": "newtons-laws/01"
   },
   "food-is-fuel-and-parts": {
     "q": [

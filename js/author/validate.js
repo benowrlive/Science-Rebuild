@@ -145,7 +145,7 @@ export function validate(lesson) {
     the filesystem. Update when a new sim is added to js/sims/. */
 const SIM_REGISTRY = new Set([
   "membrane", "energy", "selection", "replication", "folding",
-  "spike", "stomata", "web", "outbreak", "incline",
+  "spike", "stomata", "web", "outbreak", "incline", "forces",
 ]);
 
 export const AVAILABLE_SIMS = [...SIM_REGISTRY];

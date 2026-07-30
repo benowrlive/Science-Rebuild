@@ -2,7 +2,7 @@
    tools/build.mjs — do not hand-edit the list. Offline is the normal case for
    this product, not a degraded one. */
 
-const VERSION = "a16841b1bf1d";
+const VERSION = "d62292d7efe6";
 const CACHE = `fp-${VERSION}`;
 
 /* __PRECACHE_START__ */
@@ -40,6 +40,9 @@ const PRECACHE = [
   "content/crispr/05-edit-a-gene.json",
   "content/curriculum.json",
   "content/describing-motion/01-here-to-there.json",
+  "content/describing-motion/02-how-fast-is-fast.json",
+  "content/describing-motion/03-speeding-up-and-slowing-down.json",
+  "content/describing-motion/04-who-is-moving.json",
   "content/development/01-one-cell-becomes-an-animal.json",
   "content/development/02-where-is-the-instruction-for-leg.json",
   "content/development/03-the-same-toolkit-in-a-fly-and-in-you.json",
@@ -103,6 +106,7 @@ const PRECACHE = [
   "content/neuroscience/03-your-brain-edits-what-you-see.json",
   "content/neuroscience/04-memory-is-rebuilt-not-replayed.json",
   "content/neuroscience/05-wire-a-reflex.json",
+  "content/newtons-laws/01-the-first-rule.json",
   "content/nutrition/01-food-is-two-things.json",
   "content/nutrition/02-what-happens-to-a-sandwich.json",
   "content/nutrition/03-the-vitamin-nobody-could-find.json",
@@ -162,6 +166,7 @@ const PRECACHE = [
   "js/sims/base.js",
   "js/sims/energy.js",
   "js/sims/folding.js",
+  "js/sims/forces.js",
   "js/sims/hand.js",
   "js/sims/incline.js",
   "js/sims/membrane.js",

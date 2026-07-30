@@ -32,7 +32,10 @@
     "4": "crispr/05-edit-a-gene.json"
   },
   "describing-motion": {
-    "0": "describing-motion/01-here-to-there.json"
+    "0": "describing-motion/01-here-to-there.json",
+    "1": "describing-motion/02-how-fast-is-fast.json",
+    "2": "describing-motion/03-speeding-up-and-slowing-down.json",
+    "3": "describing-motion/04-who-is-moving.json"
   },
   "development": {
     "0": "development/01-one-cell-becomes-an-animal.json",
@@ -123,6 +126,9 @@
     "2": "neuroscience/03-your-brain-edits-what-you-see.json",
     "3": "neuroscience/04-memory-is-rebuilt-not-replayed.json",
     "4": "neuroscience/05-wire-a-reflex.json"
+  },
+  "newtons-laws": {
+    "0": "newtons-laws/01-the-first-rule.json"
   },
   "nutrition": {
     "0": "nutrition/01-food-is-two-things.json",
