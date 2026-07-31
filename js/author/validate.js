@@ -145,7 +145,7 @@ export function validate(lesson) {
     the filesystem. Update when a new sim is added to js/sims/. */
 const SIM_REGISTRY = new Set([
   "membrane", "energy", "selection", "replication", "folding",
-  "spike", "stomata", "web", "outbreak", "incline", "forces", "coaster",
+  "spike", "stomata", "web", "outbreak", "incline", "forces", "coaster", "pendulum",
 ]);
 
 export const AVAILABLE_SIMS = [...SIM_REGISTRY];
@@ -202,6 +202,10 @@ export const SIM_INFO = {
     desc: "A ball on a roller-coaster track. Shows KE/PE energy tradeoff. Child sets start height and friction.",
     params: { startHeight: "1-5: how high the ball starts", friction: "0-3: track roughness", goalX: "0.8-0.95: where the goal is" },
   },
+  pendulum: {
+    desc: "A pendulum swinging from a pivot. Shows oscillation, restoring force, damping. Child sets length, amplitude, damping.",
+    params: { length: "1-5: string length (longer = slower swing)", amplitude: "1-5: how far it starts from centre", damping: "0-3: air resistance", goalTime: "seconds of swinging required" },
+  },
 };
 
 /** Default params for each sim — pre-fills the params textarea so an author
@@ -224,6 +228,7 @@ export function defaultParams(sim) {
     else if (k === "per") out[k] = 14;
     else if (k === "startHeight") out[k] = 4;
     else if (k === "goalX") out[k] = 0.9;
+    else if (k === "goalTime") out[k] = 8;
   }
   return out;
 }

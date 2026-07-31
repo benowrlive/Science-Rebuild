@@ -1,0 +1,162 @@
+{
+  "id": "oscillation/01",
+  "module": "oscillation",
+  "index": 0,
+  "title": "The Pull Back",
+  "specimen": "pendulum",
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "Push a swing, let go. It comes back. What pulls it?",
+        "A swing, pushed once, returns. What is pulling it back?",
+        "A pendulum displaced from rest accelerates back toward centre. What provides the force?",
+        "A pendulum at displacement θ experiences a restoring torque. What is its origin?"
+      ],
+      "sub": [
+        "Nothing is touching it. But something pulls it back to the middle.",
+        "The swing has no engine. It comes back on its own. Something is pulling.",
+        "Gravity provides the restoring force. The component of weight along the arc pulls the bob toward equilibrium.",
+        "Gravity mg has a component mg sin(θ) along the arc. This is the restoring force: F = -mg sin(θ) ≈ -mgθ for small angles."
+      ]
+    },
+    {
+      "type": "predict",
+      "concept": "restoring-force",
+      "question": [
+        "A swing is at the bottom of its arc, moving fast. Is a force pulling it back?",
+        "At the bottom of the swing's arc (maximum speed), is there a restoring force?",
+        "A pendulum passes through θ=0 with maximum v. What is the restoring force at that instant?",
+        "At the equilibrium position (θ=0), what is the restoring force on a pendulum?"
+      ],
+      "options": [
+        "No — at the bottom, the pull is zero. It only pulls when it is away from the middle.",
+        "Yes — the pull is strongest at the bottom",
+        "Yes — the pull is the same everywhere"
+      ],
+      "outcome": "No — at the bottom, the pull is zero. It only pulls when it is away from the middle.",
+      "note": [
+        "Think about where the pull is strongest. Guess before you check.",
+        "Predict. The restoring force depends on position — where is it zero?",
+        "Form a hypothesis from F = -mg sin(θ). Where is θ = 0?",
+        "Predict. F_restoring = -mg sin(θ). At θ=0, F=0. Verify in the sim."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "pendulum",
+      "levels": [1, 2],
+      "guided": true,
+      "t": [
+        "Set air to 0. Let it swing. Watch the red arrow — it only appears when the bob is away from the middle.",
+        "Set damping to 0. Let it swing. Watch the red 'pull back' arrow: it appears when the bob is away from centre and disappears at the bottom. That is the restoring force."
+      ],
+      "params": {
+        "length": 3,
+        "amplitude": 4,
+        "damping": 0,
+        "goalTime": 8
+      },
+      "paramsByLevel": {
+        "1": { "length": 2, "amplitude": 3, "damping": 0, "goalTime": 6 },
+        "2": { "length": 3, "amplitude": 4, "damping": 0, "goalTime": 8 }
+      },
+      "goal": [
+        "Let it swing for 8 seconds. Watch the arrow appear and disappear — that is the restoring force.",
+        "Sustain oscillation for 8 s. Observe F_restoring = -mg sin(θ): zero at θ=0, maximum at the turning points."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "pendulum",
+      "levels": [3, 4],
+      "guided": false,
+      "t": [
+        "Set air to 0 and a large amplitude. Does the period change? Try a small amplitude — does it change then? Work it out before you test.",
+        "With damping=0, compare the period at amplitude 5 vs amplitude 1. Predict whether the period changes before testing. (For small angles, T = 2π√(L/g) — independent of amplitude. For large angles, it is slightly longer.)"
+      ],
+      "params": {
+        "length": 3,
+        "amplitude": 5,
+        "damping": 0,
+        "goalTime": 10
+      },
+      "paramsByLevel": {
+        "4": { "length": 4, "amplitude": 5, "damping": 0, "goalTime": 12 }
+      },
+      "goal": [
+        "Sustain the swing. The restoring force is what brings it back — every time, without fail.",
+        "Sustain oscillation. Verify isochronism: T is approximately independent of amplitude for small θ."
+      ]
+    },
+    {
+      "type": "name",
+      "t": [
+        "The pull back to the middle is called the restoring force. It is zero at the middle and strongest at the edges.",
+        "The pull back to the middle is called the restoring force. It gets stronger the further you are from the centre.",
+        "The restoring force is what makes things oscillate. For a pendulum, it is gravity pulling the bob back toward the lowest point. The further from the centre, the stronger the pull.",
+        "The restoring force is F = -mg sin(θ) for a pendulum. It is a function of displacement, zero at equilibrium, maximum at the turning points. The negative sign indicates it opposes the displacement — the defining property of a restoring force."
+      ],
+      "sub": [
+        "Without a restoring force, nothing oscillates. With one, things swing back and forth on their own.",
+        "A restoring force is what turns a push into a swing. Without it, the push would just... go. With it, the push comes back.",
+        "Restoring force → acceleration toward equilibrium → overshoot → restoring force again → oscillation. The cycle is the oscillation.",
+        "A restoring force F(x) with F(0)=0 and F'(0)<0 produces oscillation about x=0. For small displacements, F ≈ -kx, giving SHM with ω = √(k/m)."
+      ]
+    },
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "Every clock that ticks, every string that vibrates, every bridge that sways — all of them have a restoring force.",
+        "Clocks, guitar strings, bridges, swings — all oscillate because something pulls them back to the middle.",
+        "Every oscillator in physics — pendulum, spring, LC circuit, atom — has a restoring force. It is the universal mechanism of periodic motion.",
+        "The restoring force is the defining feature of every harmonic system: mechanical, electrical, quantum. The harmonic oscillator is the most-solved problem in physics precisely because restoring forces are everywhere."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "restoring-force",
+      "q": [
+        "What is a restoring force?",
+        "What does 'restoring force' mean?",
+        "Define the restoring force in an oscillating system.",
+        "What characterises a restoring force?"
+      ],
+      "options": [
+        "A force that pulls things back toward the middle",
+        "A force that pushes things away",
+        "A force that stops things from moving"
+      ],
+      "answer": 0,
+      "why": [
+        "A restoring force pulls things back toward the middle. On a swing, gravity does it. The further you are from the middle, the harder it pulls.",
+        "A restoring force always points toward the equilibrium position. For a pendulum, gravity's component along the arc does this. Zero at the centre, maximum at the edges.",
+        "A restoring force opposes displacement from equilibrium. F(0) = 0, and F points toward 0 for x ≠ 0. This is what produces oscillation.",
+        "A restoring force satisfies F(x)·x < 0 (opposes displacement). For small displacements, F ≈ -kx, giving simple harmonic motion with ω² = k/m."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "restoring-force",
+      "q": [
+        "Where is the restoring force on a pendulum the strongest?",
+        "Where is the restoring force maximum on a pendulum?",
+        "At what displacement is the restoring force on a pendulum largest?",
+        "For a pendulum, at what θ is |F_restoring| maximised?"
+      ],
+      "options": [
+        "At the edges — when it is furthest from the middle",
+        "At the bottom — when it is moving fastest",
+        "The force is the same everywhere"
+      ],
+      "answer": 0,
+      "why": [
+        "The further from the middle, the harder gravity pulls back. At the edges (the turning points), the bob is furthest from centre, so the restoring force is strongest. At the bottom, it is zero.",
+        "F = -mg sin(θ). The force is proportional to sin(θ), which is maximum at the largest angle (the turning points) and zero at θ=0 (the bottom).",
+        "F_restoring = -mg sin(θ). Maximum |F| at maximum |θ| — the turning points. Zero at θ=0.",
+        "F = -mg sin(θ). d|F|/dθ = mg cos(θ) > 0 for |θ| < π/2, so |F| increases with |θ|. Maximum at the amplitude extremes."
+      ]
+    }
+  ]
+}

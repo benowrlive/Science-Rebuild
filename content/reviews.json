@@ -2034,6 +2034,27 @@
     ],
     "from": "nutrition/04"
   },
+  "restoring-force": {
+    "q": [
+      "What is a restoring force?",
+      "What does 'restoring force' mean?",
+      "Define the restoring force in an oscillating system.",
+      "What characterises a restoring force?"
+    ],
+    "options": [
+      "A force that pulls things back toward the middle",
+      "A force that pushes things away",
+      "A force that stops things from moving"
+    ],
+    "answer": 0,
+    "why": [
+      "A restoring force pulls things back toward the middle. On a swing, gravity does it. The further you are from the middle, the harder it pulls.",
+      "A restoring force always points toward the equilibrium position. For a pendulum, gravity's component along the arc does this. Zero at the centre, maximum at the edges.",
+      "A restoring force opposes displacement from equilibrium. F(0) = 0, and F points toward 0 for x ≠ 0. This is what produces oscillation.",
+      "A restoring force satisfies F(x)·x < 0 (opposes displacement). For small displacements, F ≈ -kx, giving simple harmonic motion with ω² = k/m."
+    ],
+    "from": "oscillation/01"
+  },
   "photosynthesis-is-building": {
     "q": [
       "What is a tree mostly made of?",

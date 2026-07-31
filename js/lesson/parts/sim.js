@@ -28,6 +28,7 @@ const SIMS = {
   incline: () => import("../../sims/incline.js"),
   forces: () => import("../../sims/forces.js"),
   coaster: () => import("../../sims/coaster.js"),
+  pendulum: () => import("../../sims/pendulum.js"),
 };
 
 export const RENDER = {

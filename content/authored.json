@@ -146,6 +146,9 @@
     "2": "nutrition/03-the-vitamin-nobody-could-find.json",
     "3": "nutrition/04-why-diets-disagree.json"
   },
+  "oscillation": {
+    "0": "oscillation/01-the-pull-back.json"
+  },
   "plants": {
     "0": "plants/01-eating-light.json",
     "1": "plants/02-the-plumbing-that-has-no-pump.json",
