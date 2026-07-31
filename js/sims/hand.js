@@ -6,12 +6,20 @@
    CAD diagram.
 
    The technique: every "stroke" is drawn as many short segments with small
-   random offsets, so a line wobbles like a pencil dragged by hand. The
-   jitter is deterministic per-call (seeded) so the same frame renders
-   identically — a flickering sketch is worse than no sketch.
+   random offsets, so a line wobbles like a pencil dragged by hand.
 
-   Zero dependencies, stays in the sim JS budget. Used by fp-incline and any
-   future physics sim that wants the hand-drawn look. */
+   STABILITY: the jitter seed is a per-draw-call counter, NOT the pixel
+   coordinates. This is critical — if the seed were derived from x/y, a 1px
+   resize would change the hash and the jitter pattern would shift every frame,
+   making static lines vibrate. The counter resets at the start of each draw()
+   via seedHand(), so "the 3rd element drawn" always gets the same jitter as
+   long as the draw order is stable. Moving elements (the ball, arrows whose
+   position depends on velocity) get a new counter value each frame because
+   they are drawn in a different order or position — which is correct, because
+   they ARE moving.
+
+   Zero dependencies, stays in the sim JS budget. Used by fp-incline,
+   fp-forces, fp-coaster, and any future physics sim. */
 
 // Deterministic PRNG so a frame doesn't flicker between repaints.
 // mulberry32: small, fast, good enough for visual jitter.
@@ -24,9 +32,14 @@ function mulberry32(seed) {
   };
 }
 
-// A per-sim seed, so two sims on the same page don't jitter in unison.
+// Per-sim base seed (so two sims on the same page don't jitter in unison)
+// plus a per-draw-call counter that increments on every hand*() call.
+// seedHand() resets the counter at the start of each draw() so element N
+// is stable across frames.
 let _seed = 1;
-export function seedHand(n) { _seed = n | 0; }
+let _counter = 0;
+export function seedHand(n) { _seed = n | 0; _counter = 0; }
+export function nextRng() { return mulberry32(_seed + (_counter++ * 2654435761)); }
 
 /** Draw a hand-drawn line from (x1,y1) to (x2,y2).
     `jitter` is the max offset in px; `passes` is how many times to go over it
@@ -35,7 +48,7 @@ export function handLine(ctx, x1, y1, x2, y2, { jitter = 1.5, passes = 2, color,
   if (color) ctx.strokeStyle = color;
   ctx.lineWidth = width;
   ctx.lineCap = "round";
-  const rng = mulberry32(_seed + (x1 * 31 + y1 * 17 + x2 * 13 + y1) | 0);
+  const rng = nextRng();
   const dx = x2 - x1, dy = y2 - y1;
   const len = Math.hypot(dx, dy);
   const steps = Math.max(4, Math.floor(len / 8));
@@ -68,7 +81,7 @@ export function handCircle(ctx, cx, cy, r, { jitter = 1.5, passes = 2, color, wi
   if (color) ctx.strokeStyle = color;
   if (fill) ctx.fillStyle = fill;
   ctx.lineWidth = width;
-  const rng = mulberry32(_seed + (cx * 31 + cy * 17 + r) | 0);
+  const rng = nextRng();
   const steps = 32;
   for (let p = 0; p < passes; p++) {
     ctx.beginPath();
@@ -104,7 +117,7 @@ export function handDashed(ctx, x1, y1, x2, y2, { dash = 6, gap = 4, jitter = 1,
   if (color) ctx.strokeStyle = color;
   ctx.lineWidth = width;
   ctx.lineCap = "round";
-  const rng = mulberry32(_seed + (x1 * 31 + y1 * 17) | 0);
+  const rng = nextRng();
   const dx = x2 - x1, dy = y2 - y1;
   const len = Math.hypot(dx, dy) || 1;
   const nx = -dy / len, ny = dx / len;

@@ -19,7 +19,7 @@
    with the sketchy line utility from hand.js. */
 
 import { Sim, token, chip, say } from "./base.js";
-import { handLine, handCircle, handArrow, handDashed, handText, seedHand } from "./hand.js";
+import { handLine, handCircle, handArrow, handDashed, handText, seedHand, nextRng } from "./hand.js";
 import "../components/slider.js";
 
 /* The track is defined as a function y(x) — height at position x.
@@ -208,12 +208,13 @@ class Coaster extends Sim {
     const trackH = ground - topPad;
     seedHand(91);
 
-    // Draw the track — hand-drawn curve
+    // Draw the track — hand-drawn curve, using the shared counter-based RNG
+    // so the jitter is stable across frames (no vibration on static elements).
     ctx.strokeStyle = token("--ink-2");
     ctx.lineWidth = 3;
     ctx.lineCap = "round";
     const steps = 60;
-    const rng = ((s) => () => { s = (s * 1103515245 + 12345) & 0x7fffffff; return s / 0x7fffffff; })(91);
+    const rng = nextRng();
     ctx.beginPath();
     for (let i = 0; i <= steps; i++) {
       const x = i / steps;

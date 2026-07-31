@@ -80,9 +80,13 @@ class Incline extends Sim {
      decelerates it. This is the mechanism: push sets v, friction drains it. */
   launch() {
     if (this.running) return;
+    this.ball.x = 0.08;               // reset to start so the ball can be pushed again
     this.ball.v = this.push * 0.15;   // initial velocity from the push
     this.running = true;
     this.trail = [];
+    this.elapsed = 0;
+    this.held = 0;
+    this.met = false;                 // allow the goal to fire again on the new run
     this.resume();
   }
 

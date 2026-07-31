@@ -1486,6 +1486,69 @@
     ],
     "from": "kinetic-potential/01"
   },
+  "kinetic-energy": {
+    "q": [
+      "What is kinetic energy?",
+      "What does kinetic energy mean?",
+      "Define kinetic energy.",
+      "What is KE = ½mv²?"
+    ],
+    "options": [
+      "The energy of moving",
+      "The energy of being high up",
+      "The energy of being hot"
+    ],
+    "answer": 0,
+    "why": [
+      "Kinetic energy is the energy of motion. A moving ball has it; a still ball does not. The faster you go, the more you have.",
+      "Kinetic energy is the energy of motion: KE = ½mv². Any moving object has it, proportional to mass and to speed squared.",
+      "KE = ½mv². The energy a body possesses by virtue of its motion. A scalar, always non-negative.",
+      "KE = ½mv². The work required to accelerate a body from rest to v. A state function of velocity, not position."
+    ],
+    "from": "kinetic-potential/02"
+  },
+  "energy-transforms": {
+    "q": [
+      "A ball rolls down a frictionless hill. What happens to its PE and KE?",
+      "A ball descends a frictionless slope. How do PE and KE change?",
+      "On a frictionless descent, how do PE and KE trade?",
+      "For a frictionless descent, what is the relationship between ΔPE and ΔKE?"
+    ],
+    "options": [
+      "PE decreases, KE increases — by the same amount",
+      "Both decrease",
+      "Both increase"
+    ],
+    "answer": 0,
+    "why": [
+      "As the ball falls, it loses height (PE goes down) and gains speed (KE goes up). The amount lost equals the amount gained — energy is traded, not created.",
+      "PE decreases as height decreases; KE increases as speed increases. By conservation, ΔPE = -ΔKE. The total is constant.",
+      "ΔPE = -ΔKE. The decrease in potential energy equals the increase in kinetic energy. E = PE + KE is conserved.",
+      "d(PE)/dt + d(KE)/dt = 0. The trade is exact for conservative forces: the work done by gravity converts PE to KE with no loss."
+    ],
+    "from": "kinetic-potential/03"
+  },
+  "work-is-energy-transfer": {
+    "q": [
+      "What is work, in physics?",
+      "What does 'work' mean in physics?",
+      "Define work (the physics quantity).",
+      "What is W = F·d?"
+    ],
+    "options": [
+      "Energy being transferred from one thing to another",
+      "Trying hard at something",
+      "A force that stops things"
+    ],
+    "answer": 0,
+    "why": [
+      "Work is energy moving from one thing to another. The lift does work on the coaster — energy goes from the motor to the coaster's height. The brake does work too — energy goes from the coaster to heat.",
+      "Work is energy transfer. When a force moves something, work is done: W = force × distance. The lift does work (energy in); the brake does work (energy out as heat).",
+      "Work = F × d (force times distance). It is the mechanism of energy transfer. Positive work adds energy; negative work removes it.",
+      "W = ∫F·ds. Work is the path integral of force — the transfer of energy between forms and systems. The work-energy theorem: W_net = ΔKE."
+    ],
+    "from": "kinetic-potential/04"
+  },
   "drug-must-reach-target": {
     "q": [
       "Why do most new medicines fail?",

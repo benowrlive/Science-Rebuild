@@ -1,0 +1,141 @@
+{
+  "id": "kinetic-potential/04",
+  "module": "kinetic-potential",
+  "index": 3,
+  "title": "Build a Roller Coaster",
+  "specimen": null,
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "A roller coaster needs four parts to work. Can you put them in the right place?",
+        "A roller coaster has four energy parts. Can you place each one correctly?",
+        "A roller coaster's energy system has four components: lift, drop, speed, brake. Assign each to its role.",
+        "Identify the four energy components of a roller coaster and their roles in the energy cycle."
+      ],
+      "sub": [
+        "Lift, drop, speed, brake. Get all four right to finish the module.",
+        "Each part has a job. Place them correctly to complete the energy story.",
+        "The lift gives PE; the drop converts PE to KE; speed is the KE; the brake dissipates KE as heat.",
+        "The energy cycle: lift (work in), drop (PE→KE), speed (KE realised), brake (KE→heat). Build the diagram."
+      ]
+    },
+    {
+      "type": "predict",
+      "concept": "work-is-energy-transfer",
+      "question": [
+        "What does the lift hill of a roller coaster actually do?",
+        "What is the purpose of the lift hill on a roller coaster?",
+        "The lift hill does what to the coaster's energy?",
+        "What energy transfer does the lift hill perform?"
+      ],
+      "options": [
+        "It gives the coaster potential energy by lifting it up",
+        "It gives the coaster kinetic energy by pushing it forward",
+        "It slows the coaster down for safety"
+      ],
+      "outcome": "It gives the coaster potential energy by lifting it up",
+      "note": [
+        "The lift is the only place energy goes IN. Guess what kind.",
+        "Predict. The lift is where the motor does work — what form does that energy take?",
+        "Form a hypothesis: the lift does work against gravity. What does the work become?",
+        "Predict. The chain does work W = mgh on the coaster. What energy is stored?"
+      ]
+    },
+    {
+      "type": "build",
+      "guided": true,
+      "t": [
+        "Put each part in the right place. Lift gives height energy. Drop turns height into speed. Speed is the moving energy. Brake turns speed into heat.",
+        "Place each part in its role. Lift: stores PE. Drop: converts PE to KE. Speed: the KE itself. Brake: dissipates KE as heat."
+      ],
+      "parts": [
+        { "id": "lift", "label": "Lift hill" },
+        { "id": "drop", "label": "Drop" },
+        { "id": "speed", "label": "Speed" },
+        { "id": "brake", "label": "Brake" }
+      ],
+      "slots": [
+        { "correct": "lift", "label": ["Gives height energy", "Stores PE (work in)"] },
+        { "correct": "drop", "label": ["Turns height into speed", "Converts PE to KE"] },
+        { "correct": "speed", "label": ["The moving energy", "Kinetic energy realised"] },
+        { "correct": "brake", "label": ["Turns speed into heat", "Dissipates KE as heat"] }
+      ],
+      "trials": [
+        {
+          "name": ["All parts correct", "Complete energy cycle"],
+          "needs": ["lift", "drop", "speed", "brake"],
+          "pass": ["Every part is in its right place. That is a complete roller coaster energy cycle.", "The energy cycle is complete: work in (lift), conversion (drop), realisation (speed), dissipation (brake)."],
+          "fail": ["Some parts are misplaced. Lift stores PE, drop converts it, speed is the KE, brake dissipates it.", "The cycle is incomplete. Review: lift = work in, drop = PE→KE, speed = KE, brake = KE→heat."]
+        },
+        {
+          "name": ["Energy in", "Input stage"],
+          "needs": ["lift"],
+          "pass": ["The lift is correct — it is where energy goes IN, as potential energy.", "Lift correct: the chain does work mgh, storing PE. The only energy input."],
+          "fail": ["The lift is wrong. It lifts the coaster up, giving it potential energy. That is the only place energy enters.", "Lift incorrect. The lift is the energy input: W = mgh stored as PE. Without it, nothing moves."]
+        },
+        {
+          "name": ["Energy out", "Dissipation stage"],
+          "needs": ["brake"],
+          "pass": ["The brake is correct — it is where energy leaves, as heat.", "Brake correct: KE is dissipated as heat. The energy exits the mechanical system."],
+          "fail": ["The brake is wrong. It stops the coaster by turning its kinetic energy into heat. That is where energy leaves.", "Brake incorrect. The brake dissipates KE as thermal energy. This is where the mechanical energy exits the system."]
+        }
+      ],
+      "win": [
+        "You built a roller coaster energy cycle. Energy goes in at the lift, trades back and forth through the drops and climbs, and leaves at the brake.",
+        "The energy cycle is complete. Work in at the lift, PE ↔ KE trades through the track, dissipation at the brake. This is every roller coaster, every pendulum, every swing."
+      ],
+      "lose": [
+        "Some parts are misplaced. Lift stores PE, drop converts it, speed is the KE, brake dissipates it. Try again.",
+        "The cycle is incomplete. The lift is the input (PE), the drop converts (PE→KE), speed is the KE, the brake is the output (KE→heat). Adjust and re-test."
+      ]
+    },
+    {
+      "type": "name",
+      "t": [
+        "The lift does work on the coaster. Work is how energy moves from one thing to another.",
+        "The lift does work on the coaster. Work is energy being transferred — from the motor, to the coaster's height.",
+        "Work is energy transfer. The lift does work W = mgh on the coaster, storing PE. The brake does negative work, removing KE as heat.",
+        "Work is energy transfer: W = F·d. The lift does +mgh (storing PE); the brake does -½mv² (dissipating KE). The work-energy theorem: W_net = ΔKE."
+      ],
+      "sub": [
+        "Every energy transfer is work. Lifting, pushing, braking — all work.",
+        "Work is the verb of energy. Energy does not appear — work puts it there.",
+        "Work = force × distance. It is how energy moves between forms and between objects.",
+        "W = ∫F·ds. Work is the path integral of force, the mechanism of all energy transfer."
+      ]
+    },
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "Every machine is an energy cycle: work in, trade, work out. A car engine, a wind turbine, your body — all of them.",
+        "Every machine is this cycle: work in, energy trades, work out. Engines, turbines, muscles — all of them.",
+        "The work-energy framework is universal. A car engine does work (chemical → mechanical), the drivetrain trades it, the brakes dissipate it. Every machine follows this pattern.",
+        "The first law of thermodynamics for open systems: energy in = work out + heat out + ΔU. Every machine — engine, turbine, cell — obeys this. The roller coaster is the simplest instance."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "work-is-energy-transfer",
+      "q": [
+        "What is work, in physics?",
+        "What does 'work' mean in physics?",
+        "Define work (the physics quantity).",
+        "What is W = F·d?"
+      ],
+      "options": [
+        "Energy being transferred from one thing to another",
+        "Trying hard at something",
+        "A force that stops things"
+      ],
+      "answer": 0,
+      "why": [
+        "Work is energy moving from one thing to another. The lift does work on the coaster — energy goes from the motor to the coaster's height. The brake does work too — energy goes from the coaster to heat.",
+        "Work is energy transfer. When a force moves something, work is done: W = force × distance. The lift does work (energy in); the brake does work (energy out as heat).",
+        "Work = F × d (force times distance). It is the mechanism of energy transfer. Positive work adds energy; negative work removes it.",
+        "W = ∫F·ds. Work is the path integral of force — the transfer of energy between forms and systems. The work-energy theorem: W_net = ΔKE."
+      ]
+    }
+  ]
+}

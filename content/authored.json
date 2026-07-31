@@ -103,7 +103,10 @@
     "4": "immunity/05-build-a-defence.json"
   },
   "kinetic-potential": {
-    "0": "kinetic-potential/01-the-energy-of-moving.json"
+    "0": "kinetic-potential/01-the-energy-of-moving.json",
+    "1": "kinetic-potential/02-the-energy-of-where.json",
+    "2": "kinetic-potential/03-trading-one-for-the-other.json",
+    "3": "kinetic-potential/04-build-a-roller-coaster.json"
   },
   "medicine": {
     "0": "medicine/01-finding-the-right-molecule.json",

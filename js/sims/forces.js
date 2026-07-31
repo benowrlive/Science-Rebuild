@@ -84,10 +84,13 @@ class Forces extends Sim {
      friction. This is the F=ma lesson. */
   launch() {
     if (this.running) return;
+    this.trolley.x = 0.12;            // reset to start so the trolley can be launched again
     this.trolley.v = 0;
     this.running = true;
     this.trail = [];
     this.elapsed = 0;
+    this.held = 0;
+    this.met = false;                 // allow the goal to fire again on the new run
     this.resume();
   }
 

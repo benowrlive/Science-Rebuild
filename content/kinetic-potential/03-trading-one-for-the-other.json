@@ -1,0 +1,160 @@
+{
+  "id": "kinetic-potential/03",
+  "module": "kinetic-potential",
+  "index": 2,
+  "title": "Trading One for the Other",
+  "specimen": null,
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "A ball rolls down a hill and up the other side. It stops at the same height it started. Why?",
+        "A ball rolls down a hill and up the other side. It reaches the same height it started from. Why?",
+        "A ball on a frictionless track returns to its starting height on the other side. What conservation law does this demonstrate?",
+        "A ball on a frictionless track returns to its starting height. What is conserved?"
+      ],
+      "sub": [
+        "The height energy became moving energy, then became height energy again. None was lost.",
+        "PE became KE, then KE became PE. The total stayed the same. That is energy conservation.",
+        "The total mechanical energy (PE + KE) is conserved in the absence of friction.",
+        "Conservation of mechanical energy: PE + KE = const when no non-conservative forces act."
+      ]
+    },
+    {
+      "type": "predict",
+      "concept": "energy-transforms",
+      "question": [
+        "A ball starts at height 4 and rolls down. At the bottom, how high could it climb on the other side?",
+        "A ball starts at height h=4 (no friction). How high does it climb on the other side?",
+        "A frictionless ball starts at h=4. What height does it reach on the opposite side?",
+        "For a frictionless track, if h₀ = 4, what is h_max on the opposite side?"
+      ],
+      "options": [
+        "The same height — 4. Energy is conserved.",
+        "Lower — some energy is lost going down",
+        "Higher — it builds up speed"
+      ],
+      "outcome": "The same height — 4. Energy is conserved.",
+      "note": [
+        "No friction, so no energy is lost. Guess what happens.",
+        "Predict. No friction means no energy leaves the system.",
+        "Form a hypothesis from PE + KE = const.",
+        "Predict. With no non-conservative forces, E = PE + KE is conserved."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "coaster",
+      "levels": [1, 2],
+      "guided": true,
+      "t": [
+        "Set friction to 0. Launch from height 4. Watch the PE and KE bars trade — and see how high the ball climbs on the hill.",
+        "Set friction to 0, start height 4. Launch. Watch the gold PE bar and blue KE bar swap: PE shrinks as the ball falls, KE grows. Then KE shrinks as it climbs, PE grows. The total stays the same."
+      ],
+      "params": {
+        "startHeight": 4,
+        "friction": 0,
+        "goalX": 0.9
+      },
+      "paramsByLevel": {
+        "1": { "startHeight": 4, "friction": 0, "goalX": 0.85 },
+        "2": { "startHeight": 4, "friction": 0, "goalX": 0.9 }
+      },
+      "goal": [
+        "Watch the bars trade. PE becomes KE, KE becomes PE. The total never changes.",
+        "Observe energy conservation: PE + KE = const. The bars trade, the sum is invariant."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "coaster",
+      "levels": [3, 4],
+      "guided": false,
+      "t": [
+        "Now add friction (set it to 2). Launch from the same height. Does the ball reach the same height on the other side? Why?",
+        "Set friction to 2. Launch from h=4. Predict the maximum height on the opposite side before testing — where did the missing energy go?"
+      ],
+      "params": {
+        "startHeight": 4,
+        "friction": 2,
+        "goalX": 0.9
+      },
+      "paramsByLevel": {
+        "4": { "startHeight": 5, "friction": 3, "goalX": 0.9 }
+      },
+      "goal": [
+        "With friction, the ball climbs less. Energy was lost — as heat. That is dissipation.",
+        "Friction dissipates energy as heat: PE₀ > PE_max. The 'missing' energy is thermal."
+      ]
+    },
+    {
+      "type": "name",
+      "t": [
+        "Height energy and moving energy trade back and forth. The total stays the same (if there is no friction). That is called energy conservation.",
+        "PE and KE trade back and forth. The total stays the same — that is energy conservation.",
+        "Energy conservation: PE + KE = constant (no friction). Energy changes form but is never created or destroyed.",
+        "Conservation of mechanical energy: E = PE + KE is constant when only conservative forces act. Friction breaks this — energy is dissipated as heat."
+      ],
+      "sub": [
+        "With friction, some energy escapes as heat. The total still does not disappear — it just leaves the ball.",
+        "Friction turns some KE into heat. The energy is not gone — it is in the air and the track. But it is no longer useful to the ball.",
+        "Energy is always conserved (first law of thermodynamics). Friction converts mechanical energy to thermal energy — still there, but no longer organised.",
+        "The first law: ΔU = Q - W. Friction does negative work, converting mechanical energy to internal energy. Total energy is always conserved; useful energy is not."
+      ]
+    },
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "A roller coaster works because of this trade. The chain lift gives you PE; the rest of the ride is PE turning into KE and back.",
+        "A roller coaster is this trade in action. The lift hill gives you PE; every drop and climb is PE ↔ KE. No engine needed after the lift.",
+        "Hydroelectric dams, pendulum clocks, playground swings — all rely on the PE ↔ KE trade. The engineering is in minimising friction so the trade lasts.",
+        "Every oscillator (pendulum, LC circuit, molecular vibration) is a PE ↔ KE (or analogous) trade. The conservation law is what makes periodic motion possible."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "energy-transforms",
+      "q": [
+        "A ball rolls down a frictionless hill. What happens to its PE and KE?",
+        "A ball descends a frictionless slope. How do PE and KE change?",
+        "On a frictionless descent, how do PE and KE trade?",
+        "For a frictionless descent, what is the relationship between ΔPE and ΔKE?"
+      ],
+      "options": [
+        "PE decreases, KE increases — by the same amount",
+        "Both decrease",
+        "Both increase"
+      ],
+      "answer": 0,
+      "why": [
+        "As the ball falls, it loses height (PE goes down) and gains speed (KE goes up). The amount lost equals the amount gained — energy is traded, not created.",
+        "PE decreases as height decreases; KE increases as speed increases. By conservation, ΔPE = -ΔKE. The total is constant.",
+        "ΔPE = -ΔKE. The decrease in potential energy equals the increase in kinetic energy. E = PE + KE is conserved.",
+        "d(PE)/dt + d(KE)/dt = 0. The trade is exact for conservative forces: the work done by gravity converts PE to KE with no loss."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "energy-transforms",
+      "q": [
+        "The same ball rolls down a hill WITH friction. Does it reach the same height on the other side?",
+        "With friction, does the ball reach the same height on the opposite side?",
+        "A ball rolls down and up a track with friction. How does h_max compare to h₀?",
+        "With kinetic friction, how does h_max relate to h₀?"
+      ],
+      "options": [
+        "No — it reaches a lower height. Some energy became heat.",
+        "Yes — friction does not affect height",
+        "No — it reaches a higher height"
+      ],
+      "answer": 0,
+      "why": [
+        "Friction turns some of the ball's energy into heat. The ball has less energy to climb with, so it reaches a lower height. The energy is not gone — it is in the track and air as warmth.",
+        "Friction converts some mechanical energy to thermal energy. The ball has less KE at the bottom, so it climbs less. Total energy is conserved, but mechanical energy is not.",
+        "Friction is a non-conservative force: ΔE_mechanical = -W_friction < 0. The lost mechanical energy becomes heat. h_max < h₀.",
+        "W_friction = -μmg·d converts mechanical to thermal energy. h_max = h₀ - (W_friction/mg). The first law holds: the energy is conserved, just redistributed."
+      ]
+    }
+  ]
+}

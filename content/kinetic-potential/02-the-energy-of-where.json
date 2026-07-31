@@ -1,0 +1,160 @@
+{
+  "id": "kinetic-potential/02",
+  "module": "kinetic-potential",
+  "index": 1,
+  "title": "The Energy of Where",
+  "specimen": null,
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "A ball is at the bottom of the hill, moving fast. It has no height. What does it have?",
+        "A ball rolls fast along the ground. It is not high up. What does it have?",
+        "A ball at ground level moves at speed v. What energy does it possess?",
+        "A body at h=0 with velocity v has what form of energy?"
+      ],
+      "sub": [
+        "It is not high, so it has no height energy. But it is moving — and moving is a kind of energy too.",
+        "Height is not the only energy. Moving is energy. The faster you go, the more you have.",
+        "Kinetic energy: the energy of motion. A moving ball has it even at ground level.",
+        "Kinetic energy KE = ½mv². The energy of motion, present whenever v ≠ 0."
+      ]
+    },
+    {
+      "type": "predict",
+      "concept": "kinetic-energy",
+      "question": [
+        "A ball moves twice as fast. Does it have twice the moving energy?",
+        "Double the speed of a ball. Does its moving energy double?",
+        "If v → 2v, what happens to the kinetic energy?",
+        "If velocity doubles (at constant m), how does KE change?"
+      ],
+      "options": [
+        "No, it has FOUR times as much — speed is squared",
+        "Yes, twice the speed means twice the energy",
+        "No, the energy stays the same"
+      ],
+      "outcome": "No, it has FOUR times as much — speed is squared",
+      "note": [
+        "This one surprises almost everyone. Guess what you think.",
+        "Predict before checking. The answer is not what intuition says.",
+        "Form a hypothesis from KE = ½mv². The v is squared.",
+        "Predict. KE ∝ v², so doubling v quadruples KE. Verify in the sim."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "coaster",
+      "levels": [1, 2],
+      "guided": true,
+      "t": [
+        "Launch the ball from a height. Watch the KE bar (blue) grow as it falls — the faster it goes, the more KE.",
+        "Launch from height 4. Watch the blue KE bar grow as the ball descends. The faster it moves, the larger the bar."
+      ],
+      "params": {
+        "startHeight": 4,
+        "friction": 0,
+        "goalX": 0.9
+      },
+      "paramsByLevel": {
+        "1": { "startHeight": 3, "friction": 0, "goalX": 0.85 },
+        "2": { "startHeight": 4, "friction": 0, "goalX": 0.9 }
+      },
+      "goal": [
+        "Launch and watch the KE bar. The faster the ball, the bigger the blue bar.",
+        "Launch. Observe KE ∝ v²: the blue bar grows quadratically with speed."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "coaster",
+      "levels": [3, 4],
+      "guided": false,
+      "t": [
+        "Launch from height 2, then height 4. The second ball goes faster — but by how much? Work it out before you check.",
+        "Launch from h=2, then h=4. Predict the ratio of speeds at the bottom (use mgh = ½mv²) before testing. Verify the √ relationship."
+      ],
+      "params": {
+        "startHeight": 3,
+        "friction": 0,
+        "goalX": 0.9
+      },
+      "paramsByLevel": {
+        "4": { "startHeight": 4, "friction": 0, "goalX": 0.9 }
+      },
+      "goal": [
+        "Launch from different heights. Higher start means more speed — but not linearly more.",
+        "Verify: v = √(2gh). Doubling h gives √2 times the speed, not double. KE is quadratic in v."
+      ]
+    },
+    {
+      "type": "name",
+      "t": [
+        "The energy of moving is called kinetic energy. The faster you go, the more you have.",
+        "The energy of motion is called kinetic energy. Faster means more — and not just a little more.",
+        "Kinetic energy (KE) is the energy of motion: KE = ½mv². The v is squared, so double the speed means four times the energy.",
+        "Kinetic energy: KE = ½mv². A scalar quantity, quadratic in velocity. The factor of ½ comes from the work-energy theorem integration."
+      ],
+      "sub": [
+        "Double the speed and you get FOUR times the kinetic energy. That is why speed limits matter so much.",
+        "KE = ½ × mass × speed × speed. The speed is squared — so 2× speed = 4× energy. This is why braking distance grows fast.",
+        "KE = ½mv². The quadratic dependence on v is why a crash at 60 mph has four times the energy of a crash at 30 mph.",
+        "The v² dependence is why braking distance scales as v²: d = v²/(2a). Road fatality rates correlate with speed limits precisely because of this."
+      ]
+    },
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "A car at 60 mph has four times the moving energy of a car at 30 mph. That is why speed limits save lives.",
+        "A car at 60 mph has four times the kinetic energy of one at 30 mph. Braking distance quadruples. That is why speed limits matter.",
+        "KE = ½mv². Double the speed, four times the energy, four times the braking distance. This single equation explains most road safety policy.",
+        "The v² dependence makes kinetic energy the dominant factor in crash severity. A 10% speed increase yields a 21% increase in crash energy — the physics behind Vision Zero policy."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "kinetic-energy",
+      "q": [
+        "What is kinetic energy?",
+        "What does kinetic energy mean?",
+        "Define kinetic energy.",
+        "What is KE = ½mv²?"
+      ],
+      "options": [
+        "The energy of moving",
+        "The energy of being high up",
+        "The energy of being hot"
+      ],
+      "answer": 0,
+      "why": [
+        "Kinetic energy is the energy of motion. A moving ball has it; a still ball does not. The faster you go, the more you have.",
+        "Kinetic energy is the energy of motion: KE = ½mv². Any moving object has it, proportional to mass and to speed squared.",
+        "KE = ½mv². The energy a body possesses by virtue of its motion. A scalar, always non-negative.",
+        "KE = ½mv². The work required to accelerate a body from rest to v. A state function of velocity, not position."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "kinetic-energy",
+      "q": [
+        "A ball moves at 2 m/s. Another ball (same mass) moves at 4 m/s. How much more KE does the faster one have?",
+        "Ball A moves at 2 m/s. Ball B (same mass) at 4 m/s. How much more KE does B have?",
+        "Two identical masses: v_A = 2 m/s, v_B = 4 m/s. What is KE_B / KE_A?",
+        "For equal masses with v_B = 2·v_A, what is the ratio KE_B / KE_A?"
+      ],
+      "options": [
+        "Four times as much — speed is squared",
+        "Twice as much",
+        "The same"
+      ],
+      "answer": 0,
+      "why": [
+        "KE = ½ × mass × speed × speed. The speed is squared, so twice the speed means four times the energy. 4 m/s has four times the KE of 2 m/s.",
+        "KE = ½mv². B has speed 4 (squared = 16); A has speed 2 (squared = 4). 16/4 = 4. Four times the kinetic energy.",
+        "KE ∝ v². (v_B/v_A)² = (4/2)² = 4. B has four times the KE of A.",
+        "KE_B/KE_A = (v_B/v_A)² = 4. The quadratic dependence on v is the whole story."
+      ]
+    }
+  ]
+}
