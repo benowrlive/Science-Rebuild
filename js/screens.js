@@ -100,11 +100,23 @@ export function atlas() {
   const ready = due().length, waiting = dueCount();
   const playable = playableWorlds();
   return [
-    el("h1", { text: "Atlas" }),
-    el("p", { class: "lede", text: pick([
-      "Pick a place and go. Everything here is something you can operate.",
-      `${worlds.length} worlds across ${subjects.length} subjects. Most of them are already open to you.`,
-    ]) }),
+    /* The hero band. A context setter, not a menu — the title, a one-line
+       statement of what this IS, and floating particles that suggest both
+       molecules (life) and orbits (physics). The particles are CSS-only;
+       no JS animation loop. */
+    el("section", { class: "hero", "aria-label": "Welcome" },
+      el("div", { class: "hero-particles", "aria-hidden": "true" },
+        ...Array.from({ length: 14 }, (_, i) =>
+          el("span", { class: `hero-particle hero-particle--${(i % 5) + 1}`, style: `--i:${i}` }))),
+      el("h1", { class: "hero-title", text: "First Principles" }),
+      el("p", { class: "hero-tag", text: "Learn science by operating the mechanism before naming it." }),
+      progress.prose ? el("div", { class: "hero-subjects" },
+        ...subjects.map((s) => el("a", {
+          class: "hero-subject pressable",
+          href: `#subject-${s.id}`,
+          onclick: (e) => { e.preventDefault(); document.getElementById(`subject-${s.id}`)?.scrollIntoView({ behavior: "smooth", block: "start" }); },
+        }, el("span", { text: s.title })))) : null,
+    ),
     // Reviews sit above new material: a due retrieval is worth more than the
     // next lesson, and the Atlas should say so. Flat, not raised — the review
     // flow itself lands in phase 6, and the affordance rule forbids dressing
@@ -130,7 +142,7 @@ export function atlas() {
     ...subjects.map((subj) => {
       const mine = playable.filter((w) => (w.subject ?? "life") === subj.id);
       if (!mine.length) return null;
-      return el("section", { class: "subject-section", "data-subject": subj.id },
+      return el("section", { class: "subject-section", id: `subject-${subj.id}`, "data-subject": subj.id },
         el("h2", { class: "subject-title", text: subj.title }),
         el("p", { class: "subject-tag", text: pick(subj.tagline) }),
         el("div", { class: "islands" }, mine.map(island)));
