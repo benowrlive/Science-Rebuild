@@ -123,6 +123,12 @@ subscribe(() => {
 
   if ("serviceWorker" in navigator && location.protocol !== "file:") {
     navigator.serviceWorker.register("sw.js").catch(() => { /* offline is a bonus, not a requirement */ });
+    // When the SW activates a new version, reload once so the child sees the
+    // new build immediately rather than on the next visit.
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (!navigator.serviceWorker.controller) return;
+      location.reload();
+    });
   }
 })();
 

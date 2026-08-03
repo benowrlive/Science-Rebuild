@@ -2,7 +2,7 @@
    tools/build.mjs — do not hand-edit the list. Offline is the normal case for
    this product, not a degraded one. */
 
-const VERSION = "941dd9ee00e6";
+const VERSION = "028a94271ed4";
 const CACHE = `fp-${VERSION}`;
 
 /* __PRECACHE_START__ */
@@ -202,6 +202,10 @@ self.addEventListener("activate", (e) => {
     caches.keys()
       .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
+      // Notify all open clients that a new version is active, so they can
+      // reload without the user having to close and reopen the tab.
+      .then(() => self.clients.matchAll())
+      .then((clients) => clients.forEach((c) => c.postMessage({ type: "sw-updated" })))
   );
 });
 
