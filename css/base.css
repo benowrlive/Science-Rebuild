@@ -50,7 +50,19 @@ body {
   font-size: var(--fs-md);
   line-height: var(--lh-body);
   color: var(--ink);
-  background: var(--paper);
+  /* Notebook paper: warm white with faint horizontal ruling every 2rem.
+     The ruling is barely visible — it reads as paper, not as a grid.
+     A 2px gradient line every 32px (2rem at 16px root) at 4% opacity. */
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(2rem - 1px),
+      rgb(var(--shade) / 0.04) calc(2rem - 1px),
+      rgb(var(--shade) / 0.04) 2rem
+    ),
+    var(--paper);
+  background-attachment: local;
   min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

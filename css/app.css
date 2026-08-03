@@ -707,7 +707,19 @@ body {
   font-size: var(--fs-md);
   line-height: var(--lh-body);
   color: var(--ink);
-  background: var(--paper);
+  /* Notebook paper: warm white with faint horizontal ruling every 2rem.
+     The ruling is barely visible — it reads as paper, not as a grid.
+     A 2px gradient line every 32px (2rem at 16px root) at 4% opacity. */
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(2rem - 1px),
+      rgb(var(--shade) / 0.04) calc(2rem - 1px),
+      rgb(var(--shade) / 0.04) 2rem
+    ),
+    var(--paper);
+  background-attachment: local;
   min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -862,19 +874,20 @@ img { max-width: 100%; height: auto; }
    the only exemption. */
 
 /* ---------------------------------------------------------------- app frame */
+/* The app bar reads as the notebook's spiral binding strip: flat, with a
+   darker bottom edge suggesting the coil. */
 .app-bar {
   position: sticky; top: 0; z-index: 20;
   display: flex; align-items: center; gap: var(--s-3);
   padding: var(--s-2) var(--s-4);
-  background: color-mix(in srgb, var(--paper) 86%, transparent);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--hairline);
+  background: var(--paper);
+  border-bottom: 2px solid var(--ink);
 }
 .brand {
   display: flex; align-items: center; gap: var(--s-2);
   font-family: var(--font-display); font-weight: var(--weight-display);
   font-size: var(--fs-lg); color: var(--ink); text-decoration: none;
-  padding: var(--s-2); border-radius: var(--r-md);
+  padding: var(--s-2);
   min-height: var(--touch);
 }
 .brand .mark { width: 1.6em; height: 1.6em; flex: none; }
@@ -1364,10 +1377,10 @@ fp-predict { display: grid; gap: var(--s-3); max-width: var(--measure); }
    =========================================================================== */
 .stage-wrap {
   display: grid; gap: var(--s-5);
-  padding: var(--s-5); border-radius: var(--r-lg);
-  border: var(--clay-border) solid var(--w-line);
-  background: var(--w-tint);
-  box-shadow: var(--e0);            /* a stage is a place, not a control */
+  padding: var(--s-6); border-radius: 4px 8px 6px 10px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 3px 3px 0 rgb(var(--shade) / 0.08);
 }
 .stage-host { min-height: 16rem; display: grid; align-content: start; }
 
@@ -1859,14 +1872,27 @@ body[data-booting] #main { opacity: 0; }
 }
 
 /* --------------------------------------------------------------- hero band */
+/* The hero reads as the front page of a notebook: white paper, a sketched
+   border, and the title written in marker. No tinted background — the
+   paper texture shows through. */
 .hero {
   position: relative; overflow: hidden;
   padding: var(--s-10) var(--s-4) var(--s-8);
   margin-bottom: var(--s-8);
-  border-radius: var(--r-lg);
-  background: var(--w-origins-tint);
-  border: var(--clay-border) solid var(--w-origins-line);
+  background: transparent;
+  border: 3px solid var(--ink);
+  border-radius: 4px 8px 6px 10px;
   text-align: center;
+}
+/* A piece of tape holding the page down, top-left */
+.hero::before {
+  content: ""; position: absolute; top: -8px; left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 80px; height: 24px;
+  background: rgb(var(--rim) / 0.6);
+  border: 1px solid rgb(var(--shade) / 0.1);
+  border-radius: 1px;
+  z-index: 3;
 }
 .hero-particles { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
 .hero-particle {
@@ -1888,19 +1914,30 @@ body[data-booting] #main { opacity: 0; }
 .hero-title {
   position: relative; z-index: 2;
   font-family: var(--font-display); font-size: var(--fs-2xl); font-weight: var(--weight-display);
-  color: var(--w-origins-deep); margin-bottom: var(--s-2);
+  color: var(--ink); margin-bottom: var(--s-2);
+  /* Marker title: a highlighter swipe behind the text */
+  display: inline-block;
+  padding: 0 0.3em;
+  background: var(--w-origins-fill);
+  border-radius: 3px 6px 4px 8px;
+  transform: rotate(-0.5deg);
 }
 .hero-tag {
   position: relative; z-index: 2;
   font-size: var(--fs-lg); color: var(--ink-2); max-width: 32rem; margin: 0 auto;
+  font-style: italic;
 }
 .hero-subjects { position: relative; z-index: 2; display: flex; gap: var(--s-3); justify-content: center; margin-top: var(--s-6); flex-wrap: wrap; }
 .hero-subject {
-  padding: var(--s-2) var(--s-5); border-radius: var(--r-pill);
-  border: var(--clay-border) solid var(--w-origins-line);
-  background: var(--paper); color: var(--w-origins-text);
-  font-weight: var(--weight-bold); text-decoration: none; box-shadow: var(--e1);
+  padding: var(--s-2) var(--s-5);
+  border: 2px solid var(--ink);
+  border-radius: 4px 8px 6px 10px;
+  background: transparent; color: var(--ink);
+  font-weight: var(--weight-bold); text-decoration: none;
+  transform: rotate(-0.3deg);
 }
+.hero-subject:nth-child(2) { transform: rotate(0.4deg); }
+.hero-subject:hover { background: var(--w-origins-tint); }
 /* On small screens, reduce hero padding so it doesn't dominate */
 @media (max-width: 30rem) {
   .hero { padding: var(--s-6) var(--s-3) var(--s-5); margin-bottom: var(--s-5); }
@@ -1909,3 +1946,75 @@ body[data-booting] #main { opacity: 0; }
 
 /* subject-section scroll margin for hero-button navigation */
 .subject-section { scroll-margin-top: var(--s-12); }
+
+/* ----------------------------------------------------------- notebook theme */
+/* The highlighter pen: a colored background behind text that reads like a
+   marker dragged across a notebook page. Slightly wider than the text,
+   slightly tilted, using the world's tint colour. Applied to stage kickers,
+   subject titles, and module world labels. */
+.highlight {
+  display: inline-block;
+  padding: 0 0.4em;
+  margin-inline: -0.1em;
+  background: var(--w-tint, var(--sunk));
+  border-radius: 2px 4px 3px 5px;
+  transform: rotate(-0.4deg);
+  box-shadow: 1px 1px 0 rgb(var(--shade) / 0.06);
+}
+/* Stage kickers are the small uppercase labels above each stage. They become
+   highlighted text — the visual signature of a notebook. */
+.stage-kicker {
+  display: inline-block;
+  padding: 1px 0.4em;
+  margin-inline-start: -0.1em;
+  background: var(--w-tint, var(--sunk));
+  border-radius: 2px 4px 3px 5px;
+  transform: rotate(-0.3deg);
+}
+/* Subject titles get a wider highlight, like a section header in a notebook */
+.subject-title {
+  display: inline-block;
+  padding: 2px 0.6em;
+  margin-inline-start: -0.2em;
+  background: var(--sunk);
+  border-radius: 3px 6px 4px 7px;
+  transform: rotate(-0.2deg);
+}
+/* Module world label (the "ORIGINS" / "MOTION" kicker on module pages) */
+.module-world {
+  display: inline-block;
+  padding: 1px 0.5em;
+  background: var(--w-tint, var(--sunk));
+  border-radius: 2px 4px 3px 5px;
+  transform: rotate(-0.3deg);
+}
+/* The continue card kicker — "START HERE" / "CONTINUE" */
+.continue-kicker {
+  display: inline-block;
+  padding: 1px 0.4em;
+  background: rgb(255 255 255 / 0.5);
+  border-radius: 2px 4px 3px 5px;
+  transform: rotate(-0.3deg);
+}
+
+/* Notebook margin: a faint vertical line on the left of the main content,
+   like the red margin line on notebook paper. Only visible on wider
+   screens where there's room for it. */
+@media (min-width: 40rem) {
+  main {
+    border-inline-start: 1px solid rgb(var(--shade) / 0.08);
+    padding-inline-start: var(--s-6);
+  }
+}
+
+/* Islands and cards: flatten the claymorphic elevation slightly so they
+   read as pages on a desk rather than floating buttons. The elevation
+   stays on touchable things (buttons, links) — the affordance rule holds. */
+.island, .notice, .signpost {
+  box-shadow: var(--e0);
+  border-style: solid;
+}
+/* But keep the raised look on actual controls */
+a.node-hit, .continue, .review-call, .back, .next-btn, .pressable {
+  /* these keep their elevation — touchable stays raised */
+}
