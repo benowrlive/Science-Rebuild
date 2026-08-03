@@ -1,6 +1,7 @@
 /* Boot + router. Hash routing because it needs no server rewrite rules and
    works identically from a file server, a static host and the service worker. */
 
+import { inject } from '@vercel/analytics';
 import { progress, subscribe } from "./state.js";
 import { applyRoot, needsPicker } from "./level.js";
 import { loadCurriculum } from "./curriculum.js";
@@ -106,6 +107,9 @@ subscribe(() => {
   // position the child is standing in.
   if (!liveRoute) paint();
 });
+
+// Initialize Vercel Analytics
+inject();
 
 (async function boot() {
   applyRoot();

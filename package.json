@@ -13,9 +13,14 @@
     "check": "npm run build && npm run verify && npm run lighthouse"
   },
   "devDependencies": {
-    "playwright": "^1.62.0",
+    "chrome-launcher": "^1.1.0",
     "lighthouse": "^12.0.0",
-    "chrome-launcher": "^1.1.0"
+    "playwright": "^1.62.0"
   },
-  "engines": { "node": "22.x" }
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
 }
