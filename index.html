@@ -23,6 +23,28 @@
 </head>
 <body>
 
+<!-- SW KILLER: unregister ALL service workers and clear ALL caches on load.
+     This is a one-time fix for the broken SW from the rolled-back commits.
+     Once the browser fetches this HTML (bypassing SW for navigation requests),
+     this script runs first, kills the old SW, and the page reloads clean.
+     Safe to remove after all users have been migrated. -->
+<script>
+(function() {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function(regs) {
+      if (regs.length === 0) return;  // nothing to kill — already clean
+      Promise.all(regs.map(function(r) { return r.unregister(); })).then(function() {
+        caches.keys().then(function(keys) {
+          return Promise.all(keys.map(function(k) { return caches.delete(k); }));
+        }).then(function() {
+          location.reload();  // reload without the old SW
+        });
+      });
+    });
+  }
+})();
+</script>
+
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="app-bar">
