@@ -1159,16 +1159,7 @@ a.node-hit:hover .node-mark {
   50% { outline-offset: 5px; }
 }
 
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .pressable::after, .next-btn.m-attend, .skeleton, .stage.m-enter, .stage.m-exit,
-  .stage > *, .quiz-feedback, .predict-result, .island:hover, a.node-hit:hover .node-mark,
-  .badge--earned, .slider-input::-webkit-slider-thumb, :focus-visible {
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-  }
-}
+
 
 /* Dev mode toggle: distinct from danger, clear ON/OFF states */
 .dev-toggle {
@@ -1200,7 +1191,6 @@ a.node-hit:hover .node-mark {
   padding-inline-start: var(--s-4);
 }
 
-
 .subject-section[data-subject="life"] .subject-title::before {
   content: ""; display: inline-block; width: 0.6em; height: 0.6em;
   border-radius: 50%; background: var(--w-origins-fill);
@@ -1211,7 +1201,6 @@ a.node-hit:hover .node-mark {
   border-radius: 50%; background: var(--w-motion-fill);
   margin-inline-end: 0.4em; vertical-align: middle;
 }
-
 
 .island {
   border: none;
@@ -1228,7 +1217,6 @@ a.node-hit:hover .node-mark {
   box-shadow: 0 4px 16px rgb(0 0 0 / 0.1), 0 8px 24px rgb(0 0 0 / 0.05);
 }
 
-
 .node + .node::before {
   background: linear-gradient(to bottom,
     var(--w-line, var(--hairline)) 0%,
@@ -1243,7 +1231,6 @@ a.node-hit:hover .node-mark {
   100% { background-position: 0 8px; }
 }
 
-
 .node--next .node-mark {
   box-shadow: 0 0 0 0 var(--w-fill);
   animation: next-pulse 2s var(--ease-move) infinite;
@@ -1253,11 +1240,9 @@ a.node-hit:hover .node-mark {
   50% { box-shadow: 0 0 0 6px rgb(var(--rim) / 0.15); }
 }
 
-
 .ring-fill {
   transition: stroke-dasharray 800ms var(--ease-appear);
 }
-
 
 .continue {
   border-inline-start: 4px solid var(--w-line, var(--hairline));
@@ -1268,8 +1253,100 @@ a.node-hit:hover .node-mark {
   to { opacity: 1; transform: none; }
 }
 
-
 .review-call {
   border-inline-start: 4px solid var(--w-discovery-line);
   animation: continue-enter 400ms var(--ease-appear) both;
 }
+
+.sim-canvas {
+  transition: border-color 200ms var(--ease-move), box-shadow 200ms var(--ease-move);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.06);
+}
+.sim-canvas:hover {
+  border-color: var(--w-line, var(--ink-2));
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.1);
+}
+
+.stage-after:not([hidden]) {
+  animation: goal-celebrate 500ms var(--ease-appear) both;
+}
+@keyframes goal-celebrate {
+  0% { opacity: 0; transform: scale(0.8) translateY(10px); }
+  50% { transform: scale(1.05) translateY(-3px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.sim-btn {
+  transition: transform 150ms var(--ease-move), box-shadow 150ms var(--ease-move), background-color 150ms var(--ease-move);
+}
+.sim-btn:hover {
+  transform: translateY(-1px);
+  background: var(--w-tint, var(--sunk));
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+}
+
+.sim-switch[aria-pressed="true"] {
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1), 0 0 0 2px var(--w-fill);
+}
+
+.sim-legend li {
+  transition: transform 150ms var(--ease-move);
+}
+.sim-legend li:hover {
+  transform: scale(1.05);
+}
+
+.sim-broken {
+  animation: sim-shake 400ms var(--ease-move);
+}
+@keyframes sim-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.tutor-panel:not([hidden]) {
+  animation: tutor-slide 300ms var(--ease-move) both;
+}
+@keyframes tutor-slide {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.tutor-ask.m-attend {
+  animation: tutor-attention 1.5s var(--ease-move) infinite;
+}
+@keyframes tutor-attention {
+  0%, 100% { transform: scale(1); box-shadow: var(--e1); }
+  50% { transform: scale(1.05); box-shadow: var(--e2), 0 0 16px var(--w-fill); }
+}
+
+.quiz-option[data-mark]::after {
+  animation: mark-pop 300ms var(--ease-appear) both;
+}
+@keyframes mark-pop {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.trial {
+  animation: trial-reveal 300ms var(--ease-move) both;
+}
+.trial:nth-child(1) { animation-delay: 0ms; }
+.trial:nth-child(2) { animation-delay: 80ms; }
+.trial:nth-child(3) { animation-delay: 160ms; }
+.trial:nth-child(4) { animation-delay: 240ms; }
+@keyframes trial-reveal {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: none; }
+}
+
+.nudge {
+  animation: nudge-bounce 500ms var(--ease-appear) both;
+}
+@keyframes nudge-bounce {
+  0% { opacity: 0; transform: scale(0.9); }
+  60% { transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
