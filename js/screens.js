@@ -354,6 +354,20 @@ export function me() {
     el("a", { class: "back pressable", href: "#/author" },
       svgIcon("next"), el("span", { text: "Authoring tool" })),
 
+    /* Dev mode: unlocks ALL modules for testing. Bypasses the normal
+       progression gates so a tester can jump to any lesson without
+       completing prerequisites. Does NOT award XP or mark lessons done —
+       it only bypasses the unlock checks. Toggle off to restore normal
+       progression. */
+    el("button", {
+      class: `pressable${progress.prefs.dev ? " danger" : ""}`,
+      onclick: () => {
+        const on = !progress.prefs.dev;
+        setPref("dev", on ? "on" : null);
+        location.hash = "#/";
+      },
+    }, progress.prefs.dev ? "Dev mode: ON (all unlocked) — tap to turn off" : "Unlock all modules (dev mode)"),
+
     el("button", {
       class: "danger pressable",
       onclick: () => { if (confirm("Erase all progress? This cannot be undone.")) { reset(); location.hash = "#/"; } },

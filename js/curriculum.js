@@ -27,6 +27,7 @@ export const getWorldOf = (id) => byId.get(id)?.world ?? null;
 export const getWorld = (id) => worlds.find((w) => w.id === id) ?? null;
 
 export const isComplete = (id, p) => {
+  if (p.prefs?.dev) return true;  // dev mode: everything is "complete" for unlock purposes
   const m = getModule(id);
   return !!m && (p.modules[id]?.lessonsDone ?? 0) >= m.lessons;
 };
@@ -37,6 +38,7 @@ export const completedCount = (p) => [...byId.keys()].filter((id) => isComplete(
     on Cells alone so a child gripped by animals is not made to grind through
     biomolecules first — see blueprint 4. */
 export function isWorldUnlocked(world, p) {
+  if (p.prefs?.dev) return true;  // dev mode: all worlds unlocked
   if (!world.requires.every((id) => isComplete(id, p))) return false;
   if (world.requiresAnyCompleted && completedCount(p) < world.requiresAnyCompleted) return false;
   return true;
@@ -45,6 +47,7 @@ export function isWorldUnlocked(world, p) {
 export function isModuleUnlocked(id, p) {
   const entry = byId.get(id);
   if (!entry) return false;
+  if (p.prefs?.dev) return true;  // dev mode: all modules unlocked
   if (!isWorldUnlocked(entry.world, p)) return false;
   return entry.module.requires.every((r) => isComplete(r, p));
 }
@@ -116,6 +119,8 @@ const reachableWorlds = () => {
 };
 
 export const playableWorlds = () => {
+  // Dev mode: show ALL worlds that have authored content, regardless of gates
+  if (progress.prefs?.dev) return worlds.filter((w) => worldHasContent(w));
   const open = reachableWorlds();
   return worlds.filter((w) => worldHasContent(w) && open.has(w.id));
 };

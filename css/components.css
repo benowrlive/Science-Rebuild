@@ -966,3 +966,208 @@ fp-board .board-slots fp-slot { flex: 1 1 8rem; }
   overflow-x: auto; max-height: 24rem; overflow-y: auto;
   border: 1px solid var(--hairline); white-space: pre;
 }
+
+/* =========================================================== PHASE 1-3: ENGAGING UI
+   Tactile buttons, loading states, text reveals, hover micro-interactions.
+   Every touch and sight should feel alive. CSS-only, no JS animation loops. */
+
+/* --- 1.1: Tactile press effect (ripple) --- */
+/* A radial gradient that appears at the press point, like Material ripple.
+   Uses :active pseudo-class — no JS needed. */
+.pressable {
+  position: relative;
+  overflow: hidden;
+}
+.pressable::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at center, rgb(255 255 255 / 0.3) 0%, transparent 60%);
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 400ms var(--ease-appear), opacity 300ms var(--ease-move);
+  pointer-events: none;
+}
+.pressable:active::after {
+  opacity: 1;
+  transform: scale(2);
+  transition: transform 0ms, opacity 0ms;
+}
+
+/* --- 1.2: Hover lift with shadow growth --- */
+a.node-hit, .continue, .review-call, .back, .hero-subject, .auth-module, .auth-lesson {
+  transition: transform 200ms var(--ease-move), box-shadow 200ms var(--ease-move), border-color 200ms var(--ease-move);
+}
+a.node-hit:hover, .continue:hover, .review-call:hover, .hero-subject:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.12), 0 2px 8px rgb(0 0 0 / 0.06);
+}
+
+/* --- 1.3: Icon nudge on hover --- */
+.node-hit .icon, .continue .icon, .review-call .icon, .hero-subject .icon {
+  transition: transform 200ms var(--ease-move);
+}
+.node-hit:hover .icon, .continue:hover .icon {
+  transform: translateX(3px);
+}
+
+/* --- 1.4: Next button glow pulse (when enabled after answering) --- */
+.next-btn.m-attend {
+  animation: next-glow 2s var(--ease-move) infinite;
+}
+@keyframes next-glow {
+  0%, 100% { box-shadow: var(--e1), 0 0 0 0 rgb(var(--rim) / 0); }
+  50% { box-shadow: var(--e2), 0 0 20px 4px rgb(var(--rim) / 0.15); }
+}
+
+/* --- 2.1: Skeleton loading for stage content --- */
+.skeleton {
+  background: linear-gradient(90deg,
+    var(--sunk) 0%,
+    var(--surface) 50%,
+    var(--sunk) 100%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s var(--ease-move) infinite;
+  border-radius: var(--r-sm);
+}
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* --- 2.2: Stage enter — slide up + fade --- */
+.stage.m-enter {
+  animation: stage-enter 350ms var(--ease-appear) both;
+}
+@keyframes stage-enter {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+/* --- 2.3: Stage exit — slide left + fade (for back navigation) --- */
+.stage.m-exit {
+  animation: stage-exit 200ms var(--ease-move) both;
+}
+@keyframes stage-exit {
+  to { opacity: 0; transform: translateX(-20px); }
+}
+
+/* --- 3.1: Text reveal — staggered fade-up for stage content --- */
+.stage > * {
+  animation: text-reveal 400ms var(--ease-move) both;
+  animation-delay: calc(var(--stagger, 0) * 60ms);
+}
+.stage > *:nth-child(1) { --stagger: 0; }
+.stage > *:nth-child(2) { --stagger: 1; }
+.stage > *:nth-child(3) { --stagger: 2; }
+.stage > *:nth-child(4) { --stagger: 3; }
+.stage > *:nth-child(5) { --stagger: 4; }
+.stage > *:nth-child(6) { --stagger: 5; }
+@keyframes text-reveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* --- 3.2: Quiz/predict option hover — subtle background fill --- */
+.quiz-option, .predict-option {
+  transition: transform 150ms var(--ease-move), background-color 150ms var(--ease-move), border-color 150ms var(--ease-move);
+}
+.quiz-option:hover:not(:disabled), .predict-option:hover:not(:disabled) {
+  transform: translateX(4px);
+  background: var(--w-tint, var(--sunk));
+}
+
+/* --- 3.3: Feedback reveal — scale + bounce --- */
+.quiz-feedback, .predict-result {
+  animation: feedback-pop 400ms var(--ease-appear) both;
+}
+@keyframes feedback-pop {
+  0% { opacity: 0; transform: scale(0.9) translateY(10px); }
+  60% { transform: scale(1.02) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* --- 4.1: Island hover — subtle tilt + color saturation --- */
+.island {
+  transition: transform 250ms var(--ease-move), box-shadow 250ms var(--ease-move);
+}
+.island:hover {
+  transform: translateY(-2px) rotate(-0.2deg);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.08), 0 8px 24px rgb(0 0 0 / 0.04);
+}
+
+/* --- 4.2: Module node hover — ring pulse --- */
+a.node-hit:hover .node-mark {
+  animation: mark-pulse 600ms var(--ease-move);
+}
+@keyframes mark-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* --- 4.3: Progress ring animation --- */
+.ring-fill {
+  transition: stroke-dasharray 600ms var(--ease-appear);
+}
+
+/* --- 4.4: Badge earn — celebration bounce --- */
+.badge--earned {
+  animation: badge-bounce 600ms var(--ease-appear) both;
+}
+@keyframes badge-bounce {
+  0% { transform: scale(0) rotate(-20deg); }
+  60% { transform: scale(1.1) rotate(5deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+/* --- 5.1: Sim canvas hover — cursor hint --- */
+.sim-canvas {
+  cursor: crosshair;
+  transition: border-color 200ms var(--ease-move);
+}
+.sim-canvas:hover {
+  border-color: var(--w-line, var(--ink-3));
+}
+
+/* --- 5.2: Slider thumb — grow on hover/drag --- */
+.slider-input::-webkit-slider-thumb {
+  transition: transform 150ms var(--ease-move);
+}
+.slider-input:hover::-webkit-slider-thumb {
+  transform: scale(1.2);
+}
+.slider-input:active::-webkit-slider-thumb {
+  transform: scale(1.3);
+}
+
+/* --- 5.3: Choice radio — smooth fill --- */
+.choice-box {
+  transition: border-color 200ms var(--ease-move), background-color 200ms var(--ease-move), transform 200ms var(--ease-move);
+}
+.choice:hover .choice-box {
+  transform: translateY(-1px);
+}
+
+/* --- 6.1: Boot intro — improved particle drift --- */
+.boot-dot {
+  filter: drop-shadow(0 0 4px var(--w-origins-fill));
+}
+
+/* --- 6.2: Focus ring — animated for keyboard users --- */
+:focus-visible {
+  animation: focus-ring 1s var(--ease-move) infinite;
+}
+@keyframes focus-ring {
+  0%, 100% { outline-offset: 3px; }
+  50% { outline-offset: 5px; }
+}
+
+/* --- Reduced motion: disable all the above --- */
+@media (prefers-reduced-motion: reduce) {
+  .pressable::after, .next-btn.m-attend, .skeleton, .stage.m-enter, .stage.m-exit,
+  .stage > *, .quiz-feedback, .predict-result, .island:hover, a.node-hit:hover .node-mark,
+  .badge--earned, .slider-input::-webkit-slider-thumb, :focus-visible {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
