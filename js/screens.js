@@ -347,38 +347,32 @@ export function me() {
       { value: "hyperlegible", label: "Easier to read", hint: "A font designed for low vision and dyslexia" },
     ], progress.prefs.face ?? "", (v) => setPref("face", v)),
 
-    /* The authoring tool. Authors are not children and this is not a learning
-       control — it is a working surface for the people who build the content.
-       Linked from Me rather than the Atlas so a child never lands on it by
-       accident. The route is lazy-loaded, so opening Me costs nothing. */
-    el("a", { class: "back pressable", href: "#/author" },
-      svgIcon("next"), el("span", { text: "Authoring tool" })),
-
-    /* Dev mode: unlocks ALL modules for testing. Bypasses the normal
-       progression gates so a tester can jump to any lesson without
-       completing prerequisites. Does NOT award XP or mark lessons done —
-       it only bypasses the unlock checks. Toggle off to restore normal
-       progression. */
-    el("button", {
-      class: `dev-toggle pressable${progress.prefs.dev ? " dev-toggle--on" : ""}`,
-      onclick: () => {
-        const on = !progress.prefs.dev;
-        setPref("dev", on ? "on" : null);
-        location.hash = "#/";
-        document.dispatchEvent(new CustomEvent("fp:repaint"));
-      },
-    }, progress.prefs.dev ? "Dev mode: ON — tap to turn off" : "Unlock all modules (dev mode)"),
-
-    el("button", {
-      class: "danger pressable",
-      onclick: () => {
-        if (confirm("Erase all progress? This cannot be undone.")) {
-          reset();
-          location.hash = "#/";
-          document.dispatchEvent(new CustomEvent("fp:repaint"));
-        }
-      },
-    }, "Erase all progress"),
+    /* Tools and actions: grouped in a section with proper spacing so
+       buttons don't touch each other. */
+    el("section", { class: "me-actions" },
+      el("h2", { text: "Tools" }),
+      el("div", { class: "me-action-row" },
+        el("a", { class: "back pressable", href: "#/author" },
+          svgIcon("next"), el("span", { text: "Authoring tool" })),
+        el("button", {
+          class: `dev-toggle pressable${progress.prefs.dev ? " dev-toggle--on" : ""}`,
+          onclick: () => {
+            const on = !progress.prefs.dev;
+            setPref("dev", on ? "on" : null);
+            location.hash = "#/";
+            document.dispatchEvent(new CustomEvent("fp:repaint"));
+          },
+        }, progress.prefs.dev ? "Dev mode: ON — tap to turn off" : "Unlock all modules")),
+      el("button", {
+        class: "danger pressable",
+        onclick: () => {
+          if (confirm("Erase all progress? This cannot be undone.")) {
+            reset();
+            location.hash = "#/";
+            document.dispatchEvent(new CustomEvent("fp:repaint"));
+          }
+        },
+      }, "Erase all progress")),
   ];
 }
 
