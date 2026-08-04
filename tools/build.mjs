@@ -7,7 +7,7 @@ import { gzipSync } from "node:zlib";
 import { join, relative, extname, dirname } from "node:path";
 
 const ROOT = new URL("..", import.meta.url).pathname;
-const SKIP = new Set(["tools", "docs", "node_modules", ".git", ".github", "shots"]);
+const SKIP = new Set(["tools", "docs", "node_modules", ".git", ".github", "shots", "skills", "upload", "scripts", "agent-ctx"]);
 const problems = [];
 const fail = (m) => problems.push(m);
 
@@ -462,6 +462,37 @@ for (const [name, actual, limit] of budgets) {
   console.log(`  ${name.padEnd(18)} ${(actual / 1024).toFixed(1).padStart(6)} KB / ${(limit / 1024).toFixed(0)} KB  (${pct}%)`);
 }
 console.log(`precache: ${files.length + 1} entries, version ${version}`);
+
+/* ------------------------------------------------------------- route validation
+   Catches the most common integration break: a route or link that points
+   nowhere. Checks three things:
+   1. Every dynamic import() in sim.js resolves to a shipped sim file
+   2. No files in the precache are from skipped directories (skills, upload, etc.)
+   3. The index.html doesn't reference scripts that don't exist
+*/
+{
+  // 1. Check sim imports resolve
+  const simPart = readFileSync(join(ROOT, "js/lesson/parts/sim.js"), "utf8");
+  const simImports = [...simPart.matchAll(/import\(["']\.\.\/\.\.\/sims\/([^"']+)\.js["']/g)];
+  for (const [, name] of simImports) {
+    const path = `js/sims/${name}.js`;
+    if (!files.includes(path)) fail(`route validation: sim.js imports "${name}" but ${path} is not shipped`);
+  }
+
+  // 2. Check no skipped directories leaked into precache
+  for (const f of files) {
+    const topDir = f.split("/")[0];
+    if (SKIP.has(topDir)) fail(`route validation: ${f} is in precache but ${topDir}/ is in SKIP set`);
+  }
+
+  // 3. Check index.html script tags resolve
+  const html = readFileSync(join(ROOT, "index.html"), "utf8");
+  const scriptSrcs = [...html.matchAll(/<script[^>]+src=["']([^"']+)["']/g)];
+  for (const [, src] of scriptSrcs) {
+    if (src.startsWith("http")) continue;
+    if (!files.includes(src) && src !== "sw.js") fail(`route validation: index.html references ${src} but it is not shipped`);
+  }
+}
 
 if (problems.length) {
   console.error("\nFAILED:");
