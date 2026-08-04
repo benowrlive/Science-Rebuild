@@ -883,12 +883,13 @@ img { max-width: 100%; height: auto; }
 .bar-link {
   display: inline-flex; align-items: center; justify-content: center;
   min-height: var(--touch); min-width: var(--touch);
-  padding-inline: var(--s-3);
+  padding-inline: var(--s-4);
   border-radius: var(--r-pill); color: var(--ink);
   text-decoration: none; font-weight: var(--weight-bold);
-  border: var(--clay-border) solid transparent;
+  border: none; background: var(--sunk);
+  transition: transform 150ms var(--ease-move), box-shadow 150ms var(--ease-move), background-color 150ms var(--ease-move);
 }
-.bar-link:hover { background: var(--sunk); box-shadow: var(--e1); }
+.bar-link:hover { background: var(--w-origins-tint); box-shadow: 0 2px 8px rgb(0 0 0 / 0.08); transform: translateY(-1px); }
 
 main {
   max-width: var(--shell-max);
@@ -949,13 +950,7 @@ body:not([data-ready]) #main { opacity: 0; }
   grid-template-columns: repeat(auto-fit, minmax(min(21rem, 100%), 1fr));
 }
 
-.island {
-  border: var(--clay-border) solid var(--hairline);
-  border-radius: var(--r-lg);
-  background: var(--surface);
-  padding: var(--s-5);
-  box-shadow: var(--e0);        /* flat: an island is a place, not a button */
-}
+/* island styles moved to Phase 4 block below */
 .island--locked { background: var(--sunk); }
 .island--locked .island-head { opacity: .72; }
 
@@ -1024,14 +1019,17 @@ a.node-hit:hover { border-color: var(--w-line); }
 .node--next .node-status { color: var(--w-text); }
 
 /* -------------------------------------------------------------------- module */
+/* Back button: solid surface with shadow, clear touch target */
 .back {
   display: inline-flex; align-items: center; gap: var(--s-2);
   min-height: var(--touch); padding-inline: var(--s-3) var(--s-4);
   margin-bottom: var(--s-4);
-  border-radius: var(--r-pill); border: var(--clay-border) solid var(--hairline);
-  background: var(--surface); box-shadow: var(--e1);
+  border-radius: var(--r-pill); border: none;
+  background: var(--surface); box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);
   color: var(--ink); text-decoration: none; font-weight: var(--weight-bold);
+  transition: transform 150ms var(--ease-move), box-shadow 150ms var(--ease-move);
 }
+.back:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgb(0 0 0 / 0.12); }
 
 .module-head {
   padding: var(--s-6); border-radius: var(--r-lg);
@@ -1097,12 +1095,14 @@ a.node-hit:hover { border-color: var(--w-line); }
   min-height: var(--touch);
   padding: var(--s-3) var(--s-4);
   border-radius: var(--r-md);
-  border: var(--clay-border) solid var(--hairline);
-  background: var(--surface); box-shadow: var(--e1);
+  border: 2px solid var(--hairline);
+  background: var(--surface); box-shadow: 0 1px 3px rgb(0 0 0 / 0.04);
+  transition: border-color 200ms var(--ease-move), background-color 200ms var(--ease-move), box-shadow 200ms var(--ease-move), transform 200ms var(--ease-move);
 }
 .choice input:checked + .choice-box {
   border-color: var(--w-origins-line);
   background: var(--w-origins-tint);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.08), inset 0 0 0 1px var(--w-origins-fill);
 }
 /* focus lives on the invisible input, so it must be forwarded to the box */
 .choice input:focus-visible + .choice-box {
@@ -1112,13 +1112,15 @@ a.node-hit:hover { border-color: var(--w-line); }
 .choice-hint { font-size: var(--fs-sm); color: var(--ink-2); }
 .choice input:checked + .choice-box .choice-hint { color: var(--w-origins-text); }
 
+/* Danger button: SOLID red fill — destructive actions must look destructive */
 .danger {
   min-height: var(--touch); padding: 0 var(--s-5);
-  border-radius: var(--r-pill);
-  border: var(--clay-border) solid var(--w-wrong-line);
-  color: var(--w-wrong-text); background: var(--surface);
-  font-weight: var(--weight-bold); box-shadow: var(--e1);
+  border-radius: var(--r-pill); border: none;
+  color: var(--paper); background: var(--w-wrong-line);
+  font-weight: var(--weight-bold); box-shadow: 0 2px 8px rgb(0 0 0 / 0.12);
+  transition: transform 150ms var(--ease-move), box-shadow 150ms var(--ease-move), background-color 150ms var(--ease-move);
 }
+.danger:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgb(0 0 0 / 0.2); background: var(--w-wrong-text); }
 
 /* -------------------------------------------------------------- level picker */
 .picker {
@@ -1820,13 +1822,9 @@ fp-board .board-slots fp-slot { flex: 1 1 8rem; }
   border: 1px solid var(--hairline); white-space: pre;
 }
 
-/* =========================================================== PHASE 1-3: ENGAGING UI
-   Tactile buttons, loading states, text reveals, hover micro-interactions.
-   Every touch and sight should feel alive. CSS-only, no JS animation loops. */
+/* Phase 1-3: Engaging UI */
 
-/* --- 1.1: Tactile press effect (ripple) --- */
-/* A radial gradient that appears at the press point, like Material ripple.
-   Uses :active pseudo-class — no JS needed. */
+/* 1.1: Ripple */
 .pressable {
   position: relative;
   overflow: hidden;
@@ -1846,7 +1844,7 @@ fp-board .board-slots fp-slot { flex: 1 1 8rem; }
   transition: transform 0ms, opacity 0ms;
 }
 
-/* --- 1.2: Hover lift with shadow growth --- */
+/* 1.2: Hover lift */
 a.node-hit, .continue, .review-call, .back, .hero-subject, .auth-module, .auth-lesson {
   transition: transform 200ms var(--ease-move), box-shadow 200ms var(--ease-move), border-color 200ms var(--ease-move);
 }
@@ -1855,7 +1853,7 @@ a.node-hit:hover, .continue:hover, .review-call:hover, .hero-subject:hover {
   box-shadow: 0 6px 20px rgb(0 0 0 / 0.12), 0 2px 8px rgb(0 0 0 / 0.06);
 }
 
-/* --- 1.3: Icon nudge on hover --- */
+/* 1.3: Icon nudge */
 .node-hit .icon, .continue .icon, .review-call .icon, .hero-subject .icon {
   transition: transform 200ms var(--ease-move);
 }
@@ -1863,7 +1861,7 @@ a.node-hit:hover, .continue:hover, .review-call:hover, .hero-subject:hover {
   transform: translateX(3px);
 }
 
-/* --- 1.4: Next button glow pulse (when enabled after answering) --- */
+/* 1.4: Next glow */
 .next-btn.m-attend {
   animation: next-glow 2s var(--ease-move) infinite;
 }
@@ -1872,7 +1870,7 @@ a.node-hit:hover, .continue:hover, .review-call:hover, .hero-subject:hover {
   50% { box-shadow: var(--e2), 0 0 20px 4px rgb(var(--rim) / 0.15); }
 }
 
-/* --- 2.1: Skeleton loading for stage content --- */
+/* 2.1: Skeleton */
 .skeleton {
   background: linear-gradient(90deg,
     var(--sunk) 0%,
@@ -1887,7 +1885,7 @@ a.node-hit:hover, .continue:hover, .review-call:hover, .hero-subject:hover {
   100% { background-position: -200% 0; }
 }
 
-/* --- 2.2: Stage enter — slide up + fade --- */
+/* 2.2: Stage enter */
 .stage.m-enter {
   animation: stage-enter 350ms var(--ease-appear) both;
 }
@@ -1896,7 +1894,7 @@ a.node-hit:hover, .continue:hover, .review-call:hover, .hero-subject:hover {
   to { opacity: 1; transform: none; }
 }
 
-/* --- 2.3: Stage exit — slide left + fade (for back navigation) --- */
+/* 2.3: Stage exit */
 .stage.m-exit {
   animation: stage-exit 200ms var(--ease-move) both;
 }
@@ -1904,7 +1902,7 @@ a.node-hit:hover, .continue:hover, .review-call:hover, .hero-subject:hover {
   to { opacity: 0; transform: translateX(-20px); }
 }
 
-/* --- 3.1: Text reveal — staggered fade-up for stage content --- */
+/* 3.1: Text reveal */
 .stage > * {
   animation: text-reveal 400ms var(--ease-move) both;
   animation-delay: calc(var(--stagger, 0) * 60ms);
@@ -1920,7 +1918,7 @@ a.node-hit:hover, .continue:hover, .review-call:hover, .hero-subject:hover {
   to { opacity: 1; transform: none; }
 }
 
-/* --- 3.2: Quiz/predict option hover — subtle background fill --- */
+/* 3.2: Option hover */
 .quiz-option, .predict-option {
   transition: transform 150ms var(--ease-move), background-color 150ms var(--ease-move), border-color 150ms var(--ease-move);
 }
@@ -1929,7 +1927,7 @@ a.node-hit:hover, .continue:hover, .review-call:hover, .hero-subject:hover {
   background: var(--w-tint, var(--sunk));
 }
 
-/* --- 3.3: Feedback reveal — scale + bounce --- */
+/* 3.3: Feedback pop */
 .quiz-feedback, .predict-result {
   animation: feedback-pop 400ms var(--ease-appear) both;
 }
@@ -1939,7 +1937,7 @@ a.node-hit:hover, .continue:hover, .review-call:hover, .hero-subject:hover {
   100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-/* --- 4.1: Island hover — subtle tilt + color saturation --- */
+/* 4.1: Island tilt */
 .island {
   transition: transform 250ms var(--ease-move), box-shadow 250ms var(--ease-move);
 }
@@ -1948,7 +1946,7 @@ a.node-hit:hover, .continue:hover, .review-call:hover, .hero-subject:hover {
   box-shadow: 0 4px 16px rgb(0 0 0 / 0.08), 0 8px 24px rgb(0 0 0 / 0.04);
 }
 
-/* --- 4.2: Module node hover — ring pulse --- */
+/* 4.2: Node pulse */
 a.node-hit:hover .node-mark {
   animation: mark-pulse 600ms var(--ease-move);
 }
@@ -1957,12 +1955,12 @@ a.node-hit:hover .node-mark {
   50% { transform: scale(1.15); }
 }
 
-/* --- 4.3: Progress ring animation --- */
+/* 4.3: Ring anim */
 .ring-fill {
   transition: stroke-dasharray 600ms var(--ease-appear);
 }
 
-/* --- 4.4: Badge earn — celebration bounce --- */
+/* 4.4: Badge bounce */
 .badge--earned {
   animation: badge-bounce 600ms var(--ease-appear) both;
 }
@@ -1972,7 +1970,7 @@ a.node-hit:hover .node-mark {
   100% { transform: scale(1) rotate(0); }
 }
 
-/* --- 5.1: Sim canvas hover — cursor hint --- */
+/* 5.1: Sim hover */
 .sim-canvas {
   cursor: crosshair;
   transition: border-color 200ms var(--ease-move);
@@ -1981,7 +1979,7 @@ a.node-hit:hover .node-mark {
   border-color: var(--w-line, var(--ink-3));
 }
 
-/* --- 5.2: Slider thumb — grow on hover/drag --- */
+/* 5.2: Slider thumb */
 .slider-input::-webkit-slider-thumb {
   transition: transform 150ms var(--ease-move);
 }
@@ -1992,7 +1990,7 @@ a.node-hit:hover .node-mark {
   transform: scale(1.3);
 }
 
-/* --- 5.3: Choice radio — smooth fill --- */
+/* 5.3: Choice fill */
 .choice-box {
   transition: border-color 200ms var(--ease-move), background-color 200ms var(--ease-move), transform 200ms var(--ease-move);
 }
@@ -2000,12 +1998,12 @@ a.node-hit:hover .node-mark {
   transform: translateY(-1px);
 }
 
-/* --- 6.1: Boot intro — improved particle drift --- */
+/* 6.1: Boot drift */
 .boot-dot {
   filter: drop-shadow(0 0 4px var(--w-origins-fill));
 }
 
-/* --- 6.2: Focus ring — animated for keyboard users --- */
+/* 6.2: Focus ring */
 :focus-visible {
   animation: focus-ring 1s var(--ease-move) infinite;
 }
@@ -2014,7 +2012,7 @@ a.node-hit:hover .node-mark {
   50% { outline-offset: 5px; }
 }
 
-/* --- Reduced motion: disable all the above --- */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .pressable::after, .next-btn.m-attend, .skeleton, .stage.m-enter, .stage.m-exit,
   .stage > *, .quiz-feedback, .predict-result, .island:hover, a.node-hit:hover .node-mark,
@@ -2023,4 +2021,108 @@ a.node-hit:hover .node-mark {
     transition: none !important;
     transform: none !important;
   }
+}
+
+/* Dev mode toggle: distinct from danger, clear ON/OFF states */
+.dev-toggle {
+  min-height: var(--touch); padding: 0 var(--s-5);
+  border-radius: var(--r-pill); border: 2px solid var(--w-frontier-line);
+  background: var(--surface); color: var(--w-frontier-text);
+  font-weight: var(--weight-bold); box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);
+  transition: transform 150ms var(--ease-move), box-shadow 150ms var(--ease-move), background-color 150ms var(--ease-move);
+}
+.dev-toggle:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgb(0 0 0 / 0.12); background: var(--w-frontier-tint); }
+.dev-toggle--on {
+  border: none; background: var(--w-frontier-line); color: var(--paper);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.2), 0 0 0 3px var(--w-frontier-fill);
+  animation: dev-pulse 2s var(--ease-move) infinite;
+}
+.dev-toggle--on:hover { background: var(--w-frontier-text); }
+@keyframes dev-pulse {
+  0%, 100% { box-shadow: 0 2px 12px rgb(0 0 0 / 0.2), 0 0 0 3px var(--w-frontier-fill); }
+  50% { box-shadow: 0 2px 16px rgb(0 0 0 / 0.3), 0 0 0 6px var(--w-frontier-fill); }
+}
+
+/* Phase 4: Atlas visual separation */
+.subject-section[data-subject="life"] {
+  border-inline-start: 4px solid var(--w-origins-line);
+  padding-inline-start: var(--s-4);
+}
+.subject-section[data-subject="physics"] {
+  border-inline-start: 4px solid var(--w-motion-line);
+  padding-inline-start: var(--s-4);
+}
+
+
+.subject-section[data-subject="life"] .subject-title::before {
+  content: ""; display: inline-block; width: 0.6em; height: 0.6em;
+  border-radius: 50%; background: var(--w-origins-fill);
+  margin-inline-end: 0.4em; vertical-align: middle;
+}
+.subject-section[data-subject="physics"] .subject-title::before {
+  content: ""; display: inline-block; width: 0.6em; height: 0.6em;
+  border-radius: 50%; background: var(--w-motion-fill);
+  margin-inline-end: 0.4em; vertical-align: middle;
+}
+
+
+.island {
+  border: none;
+  border-top: 4px solid var(--w-line, var(--hairline));
+  border-radius: var(--r-md);
+  background: var(--surface);
+  padding: var(--s-5);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.06), 0 4px 12px rgb(0 0 0 / 0.03);
+  transition: transform 250ms var(--ease-move), box-shadow 250ms var(--ease-move);
+}
+.island--locked { border-top-color: var(--hairline); background: var(--sunk); opacity: 0.7; }
+.island:hover {
+  transform: translateY(-3px) rotate(-0.2deg);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.1), 0 8px 24px rgb(0 0 0 / 0.05);
+}
+
+
+.node + .node::before {
+  background: linear-gradient(to bottom,
+    var(--w-line, var(--hairline)) 0%,
+    var(--w-line, var(--hairline)) 50%,
+    transparent 50%,
+    transparent 100%);
+  background-size: 100% 8px;
+  animation: chain-draw 2s var(--ease-move) infinite;
+}
+@keyframes chain-draw {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 8px; }
+}
+
+
+.node--next .node-mark {
+  box-shadow: 0 0 0 0 var(--w-fill);
+  animation: next-pulse 2s var(--ease-move) infinite;
+}
+@keyframes next-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(var(--rim) / 0); }
+  50% { box-shadow: 0 0 0 6px rgb(var(--rim) / 0.15); }
+}
+
+
+.ring-fill {
+  transition: stroke-dasharray 800ms var(--ease-appear);
+}
+
+
+.continue {
+  border-inline-start: 4px solid var(--w-line, var(--hairline));
+  animation: continue-enter 400ms var(--ease-appear) both;
+}
+@keyframes continue-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+
+.review-call {
+  border-inline-start: 4px solid var(--w-discovery-line);
+  animation: continue-enter 400ms var(--ease-appear) both;
 }

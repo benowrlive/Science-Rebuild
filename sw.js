@@ -2,7 +2,7 @@
    tools/build.mjs — do not hand-edit the list. Offline is the normal case for
    this product, not a degraded one. */
 
-const VERSION = "8a74e82f94e5";
+const VERSION = "eee9af6ff4d7";
 const CACHE = `fp-${VERSION}`;
 
 /* __PRECACHE_START__ */
@@ -321,7 +321,10 @@ const PRECACHE = [
   "skills/storyboard-manager/index.js",
   "skills/storyboard-manager/package.json",
   "skills/ui-ux-pro-max/_meta.json",
-  "skills/writing-plans/_meta.json"
+  "skills/writing-plans/_meta.json",
+  "upload/pasted_image_1785811235697.png",
+  "upload/pasted_image_1785812945263.png",
+  "upload/pasted_image_1785812955678.png"
 ];
 /* __PRECACHE_END__ */
 
