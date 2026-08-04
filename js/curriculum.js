@@ -146,6 +146,15 @@ export function allSpecimens() {
   return out;
 }
 
+/** Specimens grouped by world, for the Me screen's collapsible shelf.
+    Worlds with zero specimens are filtered out. */
+export function specimensByWorld() {
+  const all = allSpecimens();
+  return worlds.map((world) => ({
+    world, items: all.filter((s) => s.module.worldId === world.id),
+  })).filter((g) => g.items.length);
+}
+
 /** The single thing the Atlas should glow: the next unlocked, unfinished module. */
 export function nextUp(p) {
   for (const world of worlds) {

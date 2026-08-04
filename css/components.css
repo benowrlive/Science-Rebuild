@@ -830,3 +830,11 @@ a.node-hit:hover,.continue:hover,.review-call:hover,.hero-subject:hover{transfor
 @keyframes tutor-slide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 .tutor-ask.m-attend{animation:tutor-attention 1.5s var(--ease-move) infinite}
 @keyframes tutor-attention{0%,100%{transform:scale(1);box-shadow:var(--e1)}50%{transform:scale(1.05);box-shadow:var(--e2),0 0 16px var(--w-fill)}}
+/* Specimen shelf: grouped by world */
+.shelf-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s-3)}
+.shelf-count{font-weight:var(--weight-bold);color:var(--ink-3);font-size:var(--fs-sm)}
+.shelf-world{margin-top:var(--s-3)}
+.shelf-summary{display:flex;align-items:center;justify-content:space-between;gap:var(--s-3);min-height:var(--touch);padding:var(--s-2) var(--s-4);border-radius:var(--r-md);border:var(--clay-border) solid var(--w-line,var(--hairline));background:var(--surface);box-shadow:var(--e1);cursor:pointer}
+.shelf-world-name{font-family:var(--font-display);font-weight:var(--weight-bold);color:var(--w-text,var(--ink))}
+.shelf-world-count{font-size:var(--fs-sm);color:var(--ink-3);font-variant-numeric:tabular-nums}
+.shelf-world[open] .shelf-summary{margin-bottom:var(--s-3)}

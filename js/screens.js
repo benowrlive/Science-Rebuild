@@ -8,8 +8,8 @@ import { LEVELS, DEPTH, prose, content, setLevels } from "./level.js";
 import { sfx, canSpeak } from "./audio.js";
 import {
   worlds, subjects, getModule, getWorldOf, isComplete, isModuleUnlocked,
-  isWorldUnlocked, worldProgress, lockReason, nextUp, completedCount, allSpecimens,
-  playableWorlds, comingWorlds, writtenCount, isWritten,
+  isWorldUnlocked, worldProgress, lockReason, nextUp, completedCount,
+  specimensByWorld, playableWorlds, comingWorlds, writtenCount, isWritten,
 } from "./curriculum.js";
 import { due, dueCount, SESSION_CAP } from "./scheduler.js";
 import { BADGES, earnedBadges, hasSpecimen } from "./reward.js";
@@ -264,26 +264,40 @@ function drawSpecimen(slot, id) {
   });
 }
 
+/* Grouped by world, collapsible */
 function specimenShelf() {
-  const all = allSpecimens();
-  if (!all.length) return null;
+  const groups = specimensByWorld();
+  if (!groups.length) return null;
+  const held = groups.reduce((n, g) => n + g.items.filter((i) => hasSpecimen(i.specimen.id)).length, 0);
+  const total = groups.reduce((n, g) => n + g.items.length, 0);
+
   return el("section", { class: "shelf" },
-    el("h2", { text: "Specimens" }),
+    el("div", { class: "shelf-head" },
+      el("h2", { text: "Specimens" }),
+      el("span", { class: "shelf-count", text: `${held} of ${total}` })),
     el("p", { class: "shelf-note", text: pick([
       "These are parts, not stickers. You use them to build things later.",
       "Each is a working component: collecting it here is what lets you build with it in a later world.",
     ]) }),
-    el("ul", { class: "specimens" }, all.map(({ specimen, module }) => {
-      const got = hasSpecimen(specimen.id);
-      // Only for collected ones: seeing the drawing IS the reveal.
-      const slot = got ? el("span", { class: "specimen-slot" }) : null;
-      if (slot) drawSpecimen(slot, specimen.id);
-      return el("li", { class: `specimen${got ? " specimen--got" : ""}`, "data-world": module.worldId },
-        slot,
-        el("span", { class: "specimen-title", text: got ? specimen.title : "Not collected" }),
-        el("span", { class: "specimen-blurb", text: got ? pick(specimen.blurb) : `From ${module.title}` }),
-        el("span", { class: "specimen-unlocks", text: got ? specimen.unlocks : "" }));
-    })));
+    groups.map(({ world, items }) => {
+      const mine = items.filter((i) => hasSpecimen(i.specimen.id)).length;
+      const box = el("details", { class: "shelf-world", "data-world": world.id },
+        el("summary", { class: "shelf-summary pressable" },
+          el("span", { class: "shelf-world-name", text: world.title }),
+          el("span", { class: "shelf-world-count", text: `${mine} of ${items.length}` })),
+        el("ul", { class: "specimens" }, items.map(({ specimen, module }) => {
+          const got = hasSpecimen(specimen.id);
+          const slot = got ? el("span", { class: "specimen-slot" }) : null;
+          if (slot) drawSpecimen(slot, specimen.id);
+          return el("li", { class: `specimen${got ? " specimen--got" : ""}`, "data-world": module.worldId },
+            slot,
+            el("span", { class: "specimen-title", text: got ? specimen.title : "Not collected" }),
+            el("span", { class: "specimen-blurb", text: got ? pick(specimen.blurb) : `From ${module.title}` }),
+            el("span", { class: "specimen-unlocks", text: got ? specimen.unlocks : "" }));
+        })));
+      box.open = mine > 0;
+      return box;
+    }));
 }
 
 export function me() {
@@ -347,8 +361,7 @@ export function me() {
       { value: "hyperlegible", label: "Easier to read", hint: "A font designed for low vision and dyslexia" },
     ], progress.prefs.face ?? "", (v) => setPref("face", v)),
 
-    /* Tools and actions: grouped in a section with proper spacing so
-       buttons don't touch each other. */
+/* Tools section */
     el("section", { class: "me-actions" },
       el("h2", { text: "Tools" }),
       el("div", { class: "me-action-row" },
