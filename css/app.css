@@ -1148,12 +1148,12 @@ a.node-hit: hover{border-color: var(--w-line);}
   position:relative;overflow:hidden;
   transition:all 200ms var(--ease-move);
 }
-.bar-link{border:2px solid transparent;background-clip:padding-box}
-.bar-link:hover{
-  border-image:linear-gradient(135deg,var(--w-origins-line),var(--w-motion-line),var(--w-energy-line),var(--w-waves-line),var(--w-living-line)) 1;
-  background:var(--paper);transform:translateY(-1px);
-  box-shadow:0 0 12px var(--w-origins-tint),0 2px 8px rgb(0 0 0/.08);
-}
+.bar-link::before{content:"";position:absolute;inset:-2px;border-radius:inherit;background:linear-gradient(135deg,var(--w-origins-line),var(--w-motion-line),var(--w-energy-line),var(--w-waves-line),var(--w-living-line));background-size:300% 300%;z-index:-2;opacity:0;filter:blur(4px);transition:opacity 300ms var(--ease-move);animation:fx-glow-flow 4s linear infinite}
+.bar-link::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--sunk);z-index:-1}
+.bar-link:hover::before{opacity:.8}
+.bar-link:hover::after{background:var(--paper)}
+.bar-link:hover{transform:translateY(-1px)}
+@keyframes fx-glow-flow{to{background-position:300% 50%}}
 
 /* === Next button: colorful glow when active === */
 .next-btn{
@@ -1167,21 +1167,16 @@ a.node-hit: hover{border-color: var(--w-line);}
   transition:all 200ms var(--ease-move);
   position:relative;
 }
-.next-btn:not(:disabled){box-shadow:0 2px 8px rgb(0 0 0/.12),0 0 0 1px var(--w-fill)}
-.next-btn:not(:disabled):hover{
-  transform:translateY(-2px);
-  box-shadow:0 4px 16px rgb(0 0 0/.2),0 0 0 2px var(--w-fill),0 0 20px var(--w-tint);
-}
+.next-btn:not(:disabled){box-shadow:0 0 8px var(--w-tint),0 2px 8px rgb(0 0 0/.12)}
+.next-btn:not(:disabled):hover{transform:translateY(-2px);box-shadow:0 0 20px var(--w-tint),0 0 40px var(--w-fill),0 4px 16px rgb(0 0 0/.2)}
 .next-btn:disabled,.back:disabled{
   box-shadow:none;background:var(--sunk);color:var(--ink-3);
   border:none;cursor:default;
 }
-.next-btn.m-attend{
-  animation:next-glow 2s var(--ease-move) infinite;
-}
-@keyframes next-glow{
-  0%,100%{box-shadow:0 2px 8px rgb(0 0 0/.12),0 0 0 1px var(--w-fill),0 0 0 0 var(--w-tint)}
-  50%{box-shadow:0 4px 16px rgb(0 0 0/.2),0 0 0 2px var(--w-fill),0 0 24px 4px var(--w-tint)}
+.next-btn.m-attend{animation:fx-neon-pulse 1.8s ease-in-out infinite}
+@keyframes fx-neon-pulse{
+  0%,100%{box-shadow:0 0 8px var(--w-tint),0 0 16px var(--w-fill),inset 0 0 5px var(--w-tint)}
+  50%{box-shadow:0 0 16px var(--w-tint),0 0 36px var(--w-fill),inset 0 0 10px var(--w-tint)}
 }
 
 /* === Back button: clean solid with hover lift === */
@@ -1206,7 +1201,7 @@ a.node-hit: hover{border-color: var(--w-line);}
   box-shadow:0 2px 8px rgb(0 0 0/.12);
   transition:all 200ms var(--ease-move);
 }
-.danger:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgb(0 0 0/.2),0 0 16px var(--w-wrong-tint);background:var(--w-wrong-text)}
+.danger:hover{transform:translateY(-2px);box-shadow:0 0 16px var(--w-wrong-fill),0 0 32px var(--w-wrong-tint);background:var(--w-wrong-text)}
 
 /* === Dev toggle: blue with RGB glow when ON === */
 .dev-toggle{
@@ -1220,14 +1215,15 @@ a.node-hit: hover{border-color: var(--w-line);}
 .dev-toggle:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgb(0 0 0/.12);background:var(--w-frontier-tint)}
 .dev-toggle--on{
   border:none;background:var(--w-frontier-line);color:var(--paper);
-  box-shadow:0 2px 12px rgb(0 0 0/.2),0 0 0 3px var(--w-frontier-fill);
-  animation:dev-pulse 2s var(--ease-move) infinite;
+  box-shadow:0 0 8px var(--w-frontier-tint),0 0 16px var(--w-frontier-fill),0 2px 12px rgb(0 0 0/.2);
+  animation:fx-neon-blue 1.8s ease-in-out infinite;
+}
+@keyframes fx-neon-blue{
+  0%,100%{box-shadow:0 0 8px var(--w-frontier-tint),0 0 16px var(--w-frontier-fill),inset 0 0 5px var(--w-frontier-tint)}
+  50%{box-shadow:0 0 16px var(--w-frontier-tint),0 0 36px var(--w-frontier-fill),inset 0 0 10px var(--w-frontier-tint)}
 }
 .dev-toggle--on:hover{background:var(--w-frontier-text)}
-@keyframes dev-pulse{
-  0%,100%{box-shadow:0 2px 12px rgb(0 0 0/.2),0 0 0 3px var(--w-frontier-fill),0 0 0 0 var(--w-frontier-tint)}
-  50%{box-shadow:0 2px 16px rgb(0 0 0/.3),0 0 0 6px var(--w-frontier-fill),0 0 24px 6px var(--w-frontier-tint)}
-}
+
 
 /* === Choice boxes: colorful checked state === */
 .choice-box{
@@ -1385,7 +1381,8 @@ a.node-hit:hover{border-color:var(--w-line)}
 .hero-particle--5{width:7px;height:7px;left:85%;bottom:-20px;animation-delay:calc(var(--i,0) * -2s)}
 @keyframes hero-float{0%{opacity:0;transform:translateY(0) scale(.5)}15%{opacity:.6}85%{opacity:.4}100%{opacity:0;transform:translateY(-280px) scale(1)}}
 @media (prefers-reduced-motion:reduce){.hero-particle{animation:none;display:none}}
-.hero-title{position:relative;z-index:2;font-family:var(--font-display);font-size:var(--fs-2xl);font-weight:var(--weight-display);color:var(--paper);margin-bottom:var(--s-2);text-shadow:0 2px 8px rgb(0 0 0/.15);display:block;padding:0;background:none;border-radius:0;transform:none}
+.hero-title{position:relative;z-index:2;font-family:var(--font-display);font-size:var(--fs-2xl);font-weight:var(--weight-display);margin-bottom:var(--s-2);display:block;padding:0;background:linear-gradient(90deg,#fff,var(--w-origins-fill),#fff,var(--w-motion-fill),#fff);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fx-grad-flow 6s linear infinite}
+@keyframes fx-grad-flow{to{background-position:300% 50%}}
 .hero-tag{position:relative;z-index:2;font-size:var(--fs-lg);color:rgb(255 255 255/.95);max-width:32rem;margin:0 auto;text-shadow:0 1px 4px rgb(0 0 0/.1)}
 .hero-subjects{position:relative;z-index:2;display:flex;gap:var(--s-3);justify-content:center;margin-top:var(--s-6);flex-wrap:wrap}
 .hero-subject{padding:var(--s-3) var(--s-6);border:none;border-radius:var(--r-pill);background:var(--paper);color:var(--ink);font-weight:var(--weight-bold);text-decoration:none;box-shadow:0 2px 8px rgb(0 0 0/.15);transform:none;transition:all 150ms var(--ease-move)}
