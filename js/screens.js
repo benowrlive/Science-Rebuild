@@ -364,15 +364,20 @@ export function me() {
       onclick: () => {
         const on = !progress.prefs.dev;
         setPref("dev", on ? "on" : null);
-        // Navigate to Atlas. The hash is already #/me, so we need to change it.
-        // But we must wait for the subscribe() paint to complete first.
-        setTimeout(() => { location.hash = "#/"; }, 50);
+        location.hash = "#/";
+        document.dispatchEvent(new CustomEvent("fp:repaint"));
       },
     }, progress.prefs.dev ? "Dev mode: ON — tap to turn off" : "Unlock all modules (dev mode)"),
 
     el("button", {
       class: "danger pressable",
-      onclick: () => { if (confirm("Erase all progress? This cannot be undone.")) { reset(); setTimeout(() => { location.hash = "#/"; }, 50); } },
+      onclick: () => {
+        if (confirm("Erase all progress? This cannot be undone.")) {
+          reset();
+          location.hash = "#/";
+          document.dispatchEvent(new CustomEvent("fp:repaint"));
+        }
+      },
     }, "Erase all progress"),
   ];
 }
@@ -385,7 +390,12 @@ export function levelPicker() {
     el("ul", { class: "picker" }, LEVELS.map((l) =>
       el("li", {},
         el("button", { class: "picker-card pressable",
-          onclick: () => { setLevels({ prose: l.n, content: l.n }); } },
+          onclick: () => {
+            setLevels({ prose: l.n, content: l.n });
+            // Force a repaint — the subscribe() callback's paint() can be
+            // cancelled by the paint token guard during the boot race.
+            document.dispatchEvent(new CustomEvent("fp:repaint"));
+          } },
           el("span", { class: "picker-sample", text: l.sample }),
           el("span", { class: "picker-age", text: `Ages ${l.label}` }))))),
   ];

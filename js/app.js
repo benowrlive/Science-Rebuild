@@ -107,6 +107,10 @@ subscribe(() => {
   if (!liveRoute) paint();
 });
 
+// Allow screens to force a repaint (e.g. after setLevels changes needsPicker)
+// without creating a circular import. Screens dispatch 'fp:repaint'.
+addEventListener("fp:repaint", () => paint());
+
 (async function boot() {
   applyRoot();
   try {
