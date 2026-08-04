@@ -27,16 +27,7 @@
 .brand .mark{width: 1.6em;height: 1.6em;flex: none;}
 .app-bar .spacer{flex: 1;}
 
-.bar-link{
-  display: inline-flex;align-items: center;justify-content: center;
-  min-height: var(--touch);min-width: var(--touch);
-  padding-inline: var(--s-4);
-  border-radius: var(--r-pill);color: var(--ink);
-  text-decoration: none;font-weight: var(--weight-bold);
-  border: none;background: var(--sunk);
-  transition: transform 150ms var(--ease-move),box-shadow 150ms var(--ease-move),background-color 150ms var(--ease-move);
-}
-.bar-link: hover{background: var(--w-origins-tint);box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);transform: translateY(-1px);}
+/* bar-link styles moved to colorful section below */
 
 main{
   max-width: var(--shell-max);
@@ -167,16 +158,7 @@ a.node-hit: hover{border-color: var(--w-line);}
 
 /* -------------------------------------------------------------------- module */
 /* Back button: solid surface with shadow,clear touch target */
-.back{
-  display: inline-flex;align-items: center;gap: var(--s-2);
-  min-height: var(--touch);padding-inline: var(--s-3) var(--s-4);
-  margin-bottom: var(--s-4);
-  border-radius: var(--r-pill);border: none;
-  background: var(--surface);box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);
-  color: var(--ink);text-decoration: none;font-weight: var(--weight-bold);
-  transition: transform 150ms var(--ease-move),box-shadow 150ms var(--ease-move);
-}
-.back: hover{transform: translateY(-2px);box-shadow: 0 4px 12px rgb(0 0 0 / 0.12);}
+/* .back styles moved to colorful section */
 
 .module-head{
   padding: var(--s-6);border-radius: var(--r-lg);
@@ -260,14 +242,8 @@ a.node-hit: hover{border-color: var(--w-line);}
 .choice input: checked + .choice-box .choice-hint{color: var(--w-origins-text);}
 
 /* Danger button:SOLID red fill — destructive actions must look destructive */
-.danger{
-  min-height: var(--touch);padding: 0 var(--s-5);
-  border-radius: var(--r-pill);border: none;
-  color: var(--paper);background: var(--w-wrong-line);
-  font-weight: var(--weight-bold);box-shadow: 0 2px 8px rgb(0 0 0 / 0.12);
-  transition: transform 150ms var(--ease-move),box-shadow 150ms var(--ease-move),background-color 150ms var(--ease-move);
-}
-.danger: hover{transform: translateY(-2px);box-shadow: 0 4px 12px rgb(0 0 0 / 0.2);background: var(--w-wrong-text);}
+/* .danger styles moved to colorful section */
+.danger:hover{transform: translateY(-2px);box-shadow: 0 4px 12px rgb(0 0 0 / 0.2);background: var(--w-wrong-text);}
 
 /* -------------------------------------------------------------- level picker */
 .picker{
