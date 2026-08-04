@@ -364,20 +364,15 @@ export function me() {
       onclick: () => {
         const on = !progress.prefs.dev;
         setPref("dev", on ? "on" : null);
-        // Navigate to Atlas AFTER the state update settles, not simultaneously.
-        // setPref triggers fp:change → subscribe() → paint(), which repaints
-        // the current view. If we set location.hash at the same time, the
-        // hashchange's paint() races with the subscribe's paint() and the
-        // paint token guard can cancel the wrong one. Waiting one tick ensures
-        // the subscribe paint completes first, then the hashchange paint runs
-        // cleanly for the Atlas.
-        setTimeout(() => { location.hash = "#/"; }, 0);
+        // Navigate to Atlas. The hash is already #/me, so we need to change it.
+        // But we must wait for the subscribe() paint to complete first.
+        setTimeout(() => { location.hash = "#/"; }, 50);
       },
     }, progress.prefs.dev ? "Dev mode: ON — tap to turn off" : "Unlock all modules (dev mode)"),
 
     el("button", {
       class: "danger pressable",
-      onclick: () => { if (confirm("Erase all progress? This cannot be undone.")) { reset(); setTimeout(() => { location.hash = "#/"; }, 0); } },
+      onclick: () => { if (confirm("Erase all progress? This cannot be undone.")) { reset(); setTimeout(() => { location.hash = "#/"; }, 50); } },
     }, "Erase all progress"),
   ];
 }
@@ -390,7 +385,7 @@ export function levelPicker() {
     el("ul", { class: "picker" }, LEVELS.map((l) =>
       el("li", {},
         el("button", { class: "picker-card pressable",
-          onclick: () => { setLevels({ prose: l.n, content: l.n }); setTimeout(() => { location.hash = "#/"; }, 0); } },
+          onclick: () => { setLevels({ prose: l.n, content: l.n }); } },
           el("span", { class: "picker-sample", text: l.sample }),
           el("span", { class: "picker-age", text: `Ages ${l.label}` }))))),
   ];
