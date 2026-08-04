@@ -30,12 +30,13 @@
 .bar-link {
   display: inline-flex; align-items: center; justify-content: center;
   min-height: var(--touch); min-width: var(--touch);
-  padding-inline: var(--s-3);
+  padding-inline: var(--s-4);
   border-radius: var(--r-pill); color: var(--ink);
   text-decoration: none; font-weight: var(--weight-bold);
-  border: var(--clay-border) solid transparent;
+  border: none; background: var(--sunk);
+  transition: transform 150ms var(--ease-move), box-shadow 150ms var(--ease-move), background-color 150ms var(--ease-move);
 }
-.bar-link:hover { background: var(--sunk); box-shadow: var(--e1); }
+.bar-link:hover { background: var(--w-origins-tint); box-shadow: 0 2px 8px rgb(0 0 0 / 0.08); transform: translateY(-1px); }
 
 main {
   max-width: var(--shell-max);
@@ -171,14 +172,17 @@ a.node-hit:hover { border-color: var(--w-line); }
 .node--next .node-status { color: var(--w-text); }
 
 /* -------------------------------------------------------------------- module */
+/* Back button: solid surface with shadow, clear touch target */
 .back {
   display: inline-flex; align-items: center; gap: var(--s-2);
   min-height: var(--touch); padding-inline: var(--s-3) var(--s-4);
   margin-bottom: var(--s-4);
-  border-radius: var(--r-pill); border: var(--clay-border) solid var(--hairline);
-  background: var(--surface); box-shadow: var(--e1);
+  border-radius: var(--r-pill); border: none;
+  background: var(--surface); box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);
   color: var(--ink); text-decoration: none; font-weight: var(--weight-bold);
+  transition: transform 150ms var(--ease-move), box-shadow 150ms var(--ease-move);
 }
+.back:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgb(0 0 0 / 0.12); }
 
 .module-head {
   padding: var(--s-6); border-radius: var(--r-lg);
@@ -244,12 +248,14 @@ a.node-hit:hover { border-color: var(--w-line); }
   min-height: var(--touch);
   padding: var(--s-3) var(--s-4);
   border-radius: var(--r-md);
-  border: var(--clay-border) solid var(--hairline);
-  background: var(--surface); box-shadow: var(--e1);
+  border: 2px solid var(--hairline);
+  background: var(--surface); box-shadow: 0 1px 3px rgb(0 0 0 / 0.04);
+  transition: border-color 200ms var(--ease-move), background-color 200ms var(--ease-move), box-shadow 200ms var(--ease-move), transform 200ms var(--ease-move);
 }
 .choice input:checked + .choice-box {
   border-color: var(--w-origins-line);
   background: var(--w-origins-tint);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.08), inset 0 0 0 1px var(--w-origins-fill);
 }
 /* focus lives on the invisible input, so it must be forwarded to the box */
 .choice input:focus-visible + .choice-box {
@@ -259,13 +265,15 @@ a.node-hit:hover { border-color: var(--w-line); }
 .choice-hint { font-size: var(--fs-sm); color: var(--ink-2); }
 .choice input:checked + .choice-box .choice-hint { color: var(--w-origins-text); }
 
+/* Danger button: SOLID red fill — destructive actions must look destructive */
 .danger {
   min-height: var(--touch); padding: 0 var(--s-5);
-  border-radius: var(--r-pill);
-  border: var(--clay-border) solid var(--w-wrong-line);
-  color: var(--w-wrong-text); background: var(--surface);
-  font-weight: var(--weight-bold); box-shadow: var(--e1);
+  border-radius: var(--r-pill); border: none;
+  color: var(--paper); background: var(--w-wrong-line);
+  font-weight: var(--weight-bold); box-shadow: 0 2px 8px rgb(0 0 0 / 0.12);
+  transition: transform 150ms var(--ease-move), box-shadow 150ms var(--ease-move), background-color 150ms var(--ease-move);
 }
+.danger:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgb(0 0 0 / 0.2); background: var(--w-wrong-text); }
 
 /* -------------------------------------------------------------- level picker */
 .picker {
@@ -1170,4 +1178,24 @@ a.node-hit:hover .node-mark {
     transition: none !important;
     transform: none !important;
   }
+}
+
+/* Dev mode toggle: distinct from danger, clear ON/OFF states */
+.dev-toggle {
+  min-height: var(--touch); padding: 0 var(--s-5);
+  border-radius: var(--r-pill); border: 2px solid var(--w-frontier-line);
+  background: var(--surface); color: var(--w-frontier-text);
+  font-weight: var(--weight-bold); box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);
+  transition: transform 150ms var(--ease-move), box-shadow 150ms var(--ease-move), background-color 150ms var(--ease-move);
+}
+.dev-toggle:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgb(0 0 0 / 0.12); background: var(--w-frontier-tint); }
+.dev-toggle--on {
+  border: none; background: var(--w-frontier-line); color: var(--paper);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.2), 0 0 0 3px var(--w-frontier-fill);
+  animation: dev-pulse 2s var(--ease-move) infinite;
+}
+.dev-toggle--on:hover { background: var(--w-frontier-text); }
+@keyframes dev-pulse {
+  0%, 100% { box-shadow: 0 2px 12px rgb(0 0 0 / 0.2), 0 0 0 3px var(--w-frontier-fill); }
+  50% { box-shadow: 0 2px 16px rgb(0 0 0 / 0.3), 0 0 0 6px var(--w-frontier-fill); }
 }

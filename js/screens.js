@@ -360,13 +360,13 @@ export function me() {
        it only bypasses the unlock checks. Toggle off to restore normal
        progression. */
     el("button", {
-      class: `pressable${progress.prefs.dev ? " danger" : ""}`,
+      class: `dev-toggle pressable${progress.prefs.dev ? " dev-toggle--on" : ""}`,
       onclick: () => {
         const on = !progress.prefs.dev;
         setPref("dev", on ? "on" : null);
         location.hash = "#/";
       },
-    }, progress.prefs.dev ? "Dev mode: ON (all unlocked) — tap to turn off" : "Unlock all modules (dev mode)"),
+    }, progress.prefs.dev ? "Dev mode: ON — tap to turn off" : "Unlock all modules (dev mode)"),
 
     el("button", {
       class: "danger pressable",
