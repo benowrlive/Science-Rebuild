@@ -2,6 +2,8 @@
    is this unlocked, and how far through it are we. Unlock rules live in the
    data, not here — this file only evaluates them. */
 
+import { progress } from "./state.js";
+
 export let worlds = [];
 export let subjects = [];   // top-level subject grouping, each world carries .subject
 export let authored = {};      // moduleId -> { lessonIndex: file }
