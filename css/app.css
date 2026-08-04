@@ -1148,17 +1148,12 @@ a.node-hit: hover{border-color: var(--w-line);}
   position:relative;overflow:hidden;
   transition:all 200ms var(--ease-move);
 }
-.bar-link::before{
-  content:"";position:absolute;inset:-2px;
-  background:linear-gradient(135deg,var(--w-origins-line),var(--w-motion-line),var(--w-energy-line),var(--w-waves-line),var(--w-living-line));
-  border-radius:inherit;z-index:-1;opacity:0;
-  transition:opacity 200ms var(--ease-move);
-  background-size:300% 300%;
-  animation:rgb-shift 3s linear infinite;
+.bar-link{border:2px solid transparent;background-clip:padding-box}
+.bar-link:hover{
+  border-image:linear-gradient(135deg,var(--w-origins-line),var(--w-motion-line),var(--w-energy-line),var(--w-waves-line),var(--w-living-line)) 1;
+  background:var(--paper);transform:translateY(-1px);
+  box-shadow:0 0 12px var(--w-origins-tint),0 2px 8px rgb(0 0 0/.08);
 }
-.bar-link:hover::before{opacity:1}
-.bar-link:hover{background:var(--paper);transform:translateY(-1px)}
-@keyframes rgb-shift{0%{background-position:0% 0%}100%{background-position:300% 300%}}
 
 /* === Next button: colorful glow when active === */
 .next-btn{
