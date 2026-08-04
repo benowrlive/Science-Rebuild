@@ -2055,6 +2055,69 @@
     ],
     "from": "oscillation/01"
   },
+  "amplitude-and-frequency": {
+    "q": [
+      "Two pendulums, same length. One swings wide, one swings small. Which has more swings per minute?",
+      "Two same-length pendulums: wide vs small amplitude. Which oscillates more frequently?",
+      "For equal L, does amplitude affect frequency?",
+      "For small-angle oscillations, is f dependent on A?"
+    ],
+    "options": [
+      "They swing the same number of times — amplitude does not change frequency",
+      "The wide one swings more times",
+      "The small one swings more times"
+    ],
+    "answer": 0,
+    "why": [
+      "Amplitude is how far it swings. Frequency is how often. For a pendulum, the frequency depends on the length, not the amplitude. Wide or small, the rhythm is the same.",
+      "Frequency depends on length, not amplitude. The wide and small pendulums swing the same number of times per minute.",
+      "f = 1/T = (1/2π)√(g/L). Amplitude does not appear. Both pendulums oscillate at the same frequency.",
+      "f = (1/2π)√(g/L) — independent of A for small angles. The wide and small pendulums are isochronous."
+    ],
+    "from": "oscillation/02"
+  },
+  "period-and-rhythm": {
+    "q": [
+      "What does the period of a pendulum depend on?",
+      "What sets the period of a pendulum?",
+      "On what quantities does T depend?",
+      "What are the variables in T = 2π√(L/g)?"
+    ],
+    "options": [
+      "The length of the string and gravity — not the mass",
+      "The mass of the bob",
+      "How hard you push it"
+    ],
+    "answer": 0,
+    "why": [
+      "The period depends on the length and gravity. A heavier bob does not swing slower. A harder push does not make it faster. Only the length matters (and gravity, which you cannot change).",
+      "T = 2π√(L/g). Mass does not appear. Amplitude does not appear (for small swings). Only length and gravity set the period.",
+      "T = 2π√(L/g). The period is a function of L and g only. Mass cancels because gravity and inertia both scale with m.",
+      "T = 2π√(L/g). The m in mg and the m in ma cancel, so T is independent of mass. This is a deep equivalence — the same reason all objects fall at the same rate."
+    ],
+    "from": "oscillation/03"
+  },
+  "damping": {
+    "q": [
+      "A swing stops after a while. What happened to its energy?",
+      "A pendulum comes to rest. Where did its energy go?",
+      "A damped oscillator loses amplitude. What happens to its energy?",
+      "For a damped oscillator, where does the mechanical energy go?"
+    ],
+    "options": [
+      "It became heat — air resistance turned the motion energy into warmth",
+      "It disappeared — the energy is gone",
+      "It went into the string"
+    ],
+    "answer": 0,
+    "why": [
+      "The energy is not gone. Air resistance turned the swing's motion energy into heat — warmth in the air. Energy is always conserved; it just changed form.",
+      "The energy became thermal energy. Air resistance and friction converted the mechanical energy to heat. The total energy is conserved, but it is no longer useful as motion.",
+      "Damping converts mechanical energy to thermal energy. The total energy is conserved (first law), but the useful mechanical energy decreases.",
+      "The damping force does work W = -∫bv dx < 0, converting E_mechanical to Q_thermal. Energy is conserved (first law); entropy increases (second law)."
+    ],
+    "from": "oscillation/04"
+  },
   "photosynthesis-is-building": {
     "q": [
       "What is a tree mostly made of?",

@@ -1,0 +1,162 @@
+{
+  "id": "oscillation/03",
+  "module": "oscillation",
+  "index": 2,
+  "title": "The Rhythm of a Swing",
+  "specimen": null,
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "A long pendulum swings slowly. A short one swings fast. Why?",
+        "A long pendulum swings slowly. A short one swings fast. What decides the rhythm?",
+        "Pendulums of different lengths have different periods. What is the relationship?",
+        "How does the period of a pendulum depend on its length?"
+      ],
+      "sub": [
+        "It is not the weight. It is not how hard you push. It is one thing: the length.",
+        "The length of the string sets the rhythm. Nothing else matters (for small swings).",
+        "T = 2π√(L/g). The period depends on length and gravity — not on mass or amplitude.",
+        "T = 2π√(L/g). The period is proportional to the square root of length. Mass and amplitude do not appear."
+      ]
+    },
+    {
+      "type": "predict",
+      "concept": "period-and-rhythm",
+      "question": [
+        "A pendulum is 1 m long. You make it 4 m long. How many times slower does it swing?",
+        "A 1 m pendulum is extended to 4 m. How does the period change?",
+        "If L → 4L, what happens to T?",
+        "If length quadruples, by what factor does T change?"
+      ],
+      "options": [
+        "Twice as slow — the square root of 4 is 2",
+        "Four times as slow",
+        "The same speed"
+      ],
+      "outcome": "Twice as slow — the square root of 4 is 2",
+      "note": [
+        "The rule has a square root in it. Guess what that means.",
+        "Predict. The relationship is T ∝ √L, not T ∝ L.",
+        "Form a hypothesis from T = 2π√(L/g).",
+        "Predict. T ∝ √L, so 4× length gives 2× period."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "pendulum",
+      "levels": [1, 2],
+      "guided": true,
+      "t": [
+        "Try length 2, then length 4. Watch how the rhythm slows — but not by as much as you might think.",
+        "Set length to 2, then 4. The pendulum swings slower — but only by a factor of about 1.4, not 2. The square root is the reason."
+      ],
+      "params": {
+        "length": 3,
+        "amplitude": 3,
+        "damping": 0,
+        "goalTime": 8
+      },
+      "paramsByLevel": {
+        "1": { "length": 2, "amplitude": 3, "damping": 0, "goalTime": 6 },
+        "2": { "length": 3, "amplitude": 3, "damping": 0, "goalTime": 8 }
+      },
+      "goal": [
+        "Try different lengths. Longer means slower — but by the square root, not by the same amount.",
+        "Verify T ∝ √L: doubling L gives √2 ≈ 1.41× the period, not 2×."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "pendulum",
+      "levels": [3, 4],
+      "guided": false,
+      "t": [
+        "Find the length that gives a 1-second period. Then predict: what length gives a 2-second period? Test it.",
+        "Determine the length giving T ≈ 1 s. Then predict the length for T = 2 s (it should be 4× the length) and verify."
+      ],
+      "params": {
+        "length": 2,
+        "amplitude": 3,
+        "damping": 0,
+        "goalTime": 10
+      },
+      "paramsByLevel": {
+        "4": { "length": 3, "amplitude": 3, "damping": 0, "goalTime": 12 }
+      },
+      "goal": [
+        "Sustain the swing. The length sets the rhythm — and the rule is a square root.",
+        "Verify T = 2π√(L/g). For T = 2 s, L = g/π² ≈ 0.994 m — the seconds pendulum."
+      ]
+    },
+    {
+      "type": "name",
+      "t": [
+        "The time for one swing is called the period. For a pendulum, it depends on the length: longer means slower.",
+        "The period is the time for one complete swing. For a pendulum: T = 2π√(L/g). Longer means slower, but by the square root.",
+        "The period T is the time for one oscillation. For a pendulum: T = 2π√(L/g). The square root means 4× length gives 2× period.",
+        "Period: T = 2π√(L/g). Proportional to √L and 1/√g. Independent of mass and (for small angles) amplitude. Galileo's isochronism."
+      ],
+      "sub": [
+        "The rule is T = 2 × π × square root of (length ÷ gravity). The square root is the surprise.",
+        "T = 2π√(L/g). The square root means: to double the period, you need four times the length.",
+        "The √L dependence means the relationship is non-linear. A pendulum 4× as long swings 2× as slow, not 4×.",
+        "T = 2π√(L/g) is derived from the small-angle SHM equation θ̈ = -(g/L)θ. The √L is a direct consequence of the dynamics."
+      ]
+    },
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "A 1-metre pendulum takes about 2 seconds per swing. That is the seconds pendulum — the basis of the first accurate clocks.",
+        "A pendulum about 1 metre long has a 2-second period — 1 second each way. This 'seconds pendulum' was the standard for clock design.",
+        "The seconds pendulum (L ≈ 0.994 m at standard gravity) was used to define the metre before the SI redefinition.",
+        "The seconds pendulum: L = g/π² ≈ 0.994 m. Historically proposed as the definition of the metre (1790). The period's √L dependence makes pendulum length a precise, reproducible standard."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "period-and-rhythm",
+      "q": [
+        "What does the period of a pendulum depend on?",
+        "What sets the period of a pendulum?",
+        "On what quantities does T depend?",
+        "What are the variables in T = 2π√(L/g)?"
+      ],
+      "options": [
+        "The length of the string and gravity — not the mass",
+        "The mass of the bob",
+        "How hard you push it"
+      ],
+      "answer": 0,
+      "why": [
+        "The period depends on the length and gravity. A heavier bob does not swing slower. A harder push does not make it faster. Only the length matters (and gravity, which you cannot change).",
+        "T = 2π√(L/g). Mass does not appear. Amplitude does not appear (for small swings). Only length and gravity set the period.",
+        "T = 2π√(L/g). The period is a function of L and g only. Mass cancels because gravity and inertia both scale with m.",
+        "T = 2π√(L/g). The m in mg and the m in ma cancel, so T is independent of mass. This is a deep equivalence — the same reason all objects fall at the same rate."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "period-and-rhythm",
+      "q": [
+        "A pendulum is 1 m long. You make it 4 m long. What happens to the period?",
+        "If L goes from 1 m to 4 m, what happens to T?",
+        "If L → 4L, by what factor does T change?",
+        "For L → 4L, what is T_new / T_old?"
+      ],
+      "options": [
+        "It doubles — the square root of 4 is 2",
+        "It quadruples",
+        "It stays the same"
+      ],
+      "answer": 0,
+      "why": [
+        "T = 2π√(L/g). If L becomes 4 times bigger, √L becomes 2 times bigger. The period doubles — not quadruples. The square root is the key.",
+        "T ∝ √L. Four times the length gives √4 = 2 times the period. The relationship is a square root, not linear.",
+        "T ∝ √L. T_new/T_old = √(4L/L) = √4 = 2. The period doubles.",
+        "T = 2π√(L/g). ∂T/∂L = π/(√(Lg)). At L → 4L, T → 2T. The √L dependence means the response is sublinear."
+      ]
+    }
+  ]
+}

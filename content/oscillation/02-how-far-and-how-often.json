@@ -1,0 +1,162 @@
+{
+  "id": "oscillation/02",
+  "module": "oscillation",
+  "index": 1,
+  "title": "How Far and How Often",
+  "specimen": null,
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "Two swings: one swings wide, one swings small. Which is faster?",
+        "Two pendulums: one swings wide, one swings small. Which has more swings per minute?",
+        "Two pendulums of equal length but different amplitudes. Which oscillates faster?",
+        "For equal-length pendulums with different amplitudes, how does the period compare?"
+      ],
+      "sub": [
+        "Most people say the wider one is faster. They are wrong.",
+        "The answer surprised Galileo. It still surprises people.",
+        "Galileo discovered that amplitude does not affect period — for small angles.",
+        "Isochronism: for small angles, T is independent of amplitude. Galileo's discovery, 1602."
+      ]
+    },
+    {
+      "type": "predict",
+      "concept": "amplitude-and-frequency",
+      "question": [
+        "A swing goes wide. Another goes small. Same length. Which finishes one swing first?",
+        "Two pendulums, same length. One swings wide, one swings small. Which completes a swing first?",
+        "Two identical-length pendulums: amplitude 5 vs amplitude 1. Which has the shorter period?",
+        "For small-angle oscillations, how does T depend on amplitude?"
+      ],
+      "options": [
+        "They take the same time — amplitude does not change the rhythm",
+        "The wide one is faster",
+        "The small one is faster"
+      ],
+      "outcome": "They take the same time — amplitude does not change the rhythm",
+      "note": [
+        "This is Galileo's discovery. Guess before you check.",
+        "Predict. Most people get this wrong — the answer is counterintuitive.",
+        "Form a hypothesis. Consider T = 2π√(L/g) — where is amplitude?",
+        "Predict. For small θ, T ≈ 2π√(L/g) — independent of amplitude. This is isochronism."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "pendulum",
+      "levels": [1, 2],
+      "guided": true,
+      "t": [
+        "Set the same length. Try amplitude 2, then amplitude 5. Watch the rhythm — it stays the same.",
+        "Set length to 3. Try amplitude 2, then 5. The pendulum swings wider but the rhythm (how often it swings) does not change."
+      ],
+      "params": {
+        "length": 3,
+        "amplitude": 4,
+        "damping": 0,
+        "goalTime": 8
+      },
+      "paramsByLevel": {
+        "1": { "length": 2, "amplitude": 3, "damping": 0, "goalTime": 6 },
+        "2": { "length": 3, "amplitude": 4, "damping": 0, "goalTime": 8 }
+      },
+      "goal": [
+        "Let it swing. Try different amplitudes — the rhythm stays the same. That is isochronism.",
+        "Sustain oscillation. Verify isochronism: T is independent of amplitude for small angles."
+      ]
+    },
+    {
+      "type": "sim",
+      "sim": "pendulum",
+      "levels": [3, 4],
+      "guided": false,
+      "t": [
+        "Test amplitude 1 vs amplitude 5. Predict: will the periods differ? Time them.",
+        "Compare T at amplitude 1 vs amplitude 5. Predict the ratio before testing. (For large amplitudes, T increases slightly — the small-angle approximation breaks down.)"
+      ],
+      "params": {
+        "length": 3,
+        "amplitude": 5,
+        "damping": 0,
+        "goalTime": 10
+      },
+      "paramsByLevel": {
+        "4": { "length": 4, "amplitude": 5, "damping": 0, "goalTime": 12 }
+      },
+      "goal": [
+        "Sustain the swing. For small angles the rhythm is the same. For large angles, it is slightly slower.",
+        "Sustain oscillation. Verify: T ≈ T₀(1 + θ₀²/16) — the large-angle correction."
+      ]
+    },
+    {
+      "type": "name",
+      "t": [
+        "How far it swings is called amplitude. How often it swings is called frequency. They are independent.",
+        "Amplitude is how far the swing goes. Frequency is how often it swings. Changing one does not change the other (for small swings).",
+        "Amplitude: the maximum displacement from centre. Frequency: the number of oscillations per second. For a pendulum, frequency depends on length, not amplitude.",
+        "Amplitude A is the maximum |θ|. Frequency f = 1/T. For small angles, T = 2π√(L/g) — so f depends on L and g, not A. This is isochronism."
+      ],
+      "sub": [
+        "This is why a pendulum clock keeps time regardless of how hard you push it.",
+        "Pendulum clocks work because amplitude does not affect the rhythm. Push harder and it swings wider — but not faster.",
+        "Isochronism is why pendulums make good clocks: the period is stable against amplitude variation.",
+        "The small-angle isochronism is the physical basis of pendulum clocks. Christiaan Huygens exploited it in 1656."
+      ]
+    },
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "Pendulum clocks kept time for 300 years because of this. Push harder, it swings wider — but not faster.",
+        "Pendulum clocks worked for 300 years because amplitude does not change the period. This discovery made accurate timekeeping possible.",
+        "Huygens' 1656 pendulum clock was accurate to 15 seconds per day — a 60-fold improvement over previous clocks. Isochronism made it possible.",
+        "The pendulum clock was the most accurate timekeeper from 1656 until the 1930s. Its precision derived directly from the small-angle isochronism Galileo discovered in 1602."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "amplitude-and-frequency",
+      "q": [
+        "Two pendulums, same length. One swings wide, one swings small. Which has more swings per minute?",
+        "Two same-length pendulums: wide vs small amplitude. Which oscillates more frequently?",
+        "For equal L, does amplitude affect frequency?",
+        "For small-angle oscillations, is f dependent on A?"
+      ],
+      "options": [
+        "They swing the same number of times — amplitude does not change frequency",
+        "The wide one swings more times",
+        "The small one swings more times"
+      ],
+      "answer": 0,
+      "why": [
+        "Amplitude is how far it swings. Frequency is how often. For a pendulum, the frequency depends on the length, not the amplitude. Wide or small, the rhythm is the same.",
+        "Frequency depends on length, not amplitude. The wide and small pendulums swing the same number of times per minute.",
+        "f = 1/T = (1/2π)√(g/L). Amplitude does not appear. Both pendulums oscillate at the same frequency.",
+        "f = (1/2π)√(g/L) — independent of A for small angles. The wide and small pendulums are isochronous."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "amplitude-and-frequency",
+      "q": [
+        "What is amplitude?",
+        "What does amplitude measure?",
+        "Define amplitude.",
+        "What is the amplitude of an oscillation?"
+      ],
+      "options": [
+        "How far the swing goes from the centre",
+        "How fast the swing moves",
+        "How long the string is"
+      ],
+      "answer": 0,
+      "why": [
+        "Amplitude is how far the swing goes from the middle. A wide swing has big amplitude; a small swing has small amplitude.",
+        "Amplitude is the maximum displacement from equilibrium. It measures how far, not how fast.",
+        "Amplitude A = max|θ| — the maximum displacement from the rest position. A scalar, measured in degrees or radians.",
+        "Amplitude is the extremum of the displacement function. For SHM: θ(t) = A cos(ωt + φ)."
+      ]
+    }
+  ]
+}

@@ -147,7 +147,10 @@
     "3": "nutrition/04-why-diets-disagree.json"
   },
   "oscillation": {
-    "0": "oscillation/01-the-pull-back.json"
+    "0": "oscillation/01-the-pull-back.json",
+    "1": "oscillation/02-how-far-and-how-often.json",
+    "2": "oscillation/03-the-rhythm-of-a-swing.json",
+    "3": "oscillation/04-build-an-oscillator.json"
   },
   "plants": {
     "0": "plants/01-eating-light.json",

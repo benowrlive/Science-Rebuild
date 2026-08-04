@@ -1,0 +1,141 @@
+{
+  "id": "oscillation/04",
+  "module": "oscillation",
+  "index": 3,
+  "title": "Build an Oscillator",
+  "specimen": null,
+  "stages": [
+    {
+      "type": "hook",
+      "t": [
+        "Three things make an oscillator. Can you put them in the right place?",
+        "An oscillator needs three parts. Can you identify each one?",
+        "Three components are required for oscillation: a mass, a restoring force, and equilibrium. Place each correctly.",
+        "Identify the three components of any harmonic oscillator."
+      ],
+      "sub": [
+        "Mass, restoring force, and the balance point. Get all three right to finish.",
+        "Every oscillator has these three. Match each to its role.",
+        "The mass provides inertia, the restoring force pulls back, equilibrium is the rest point.",
+        "Every oscillator: inertial element, conservative restoring force, stable equilibrium. These are the necessary and sufficient conditions."
+      ]
+    },
+    {
+      "type": "predict",
+      "concept": "damping",
+      "q": [
+        "A swing stops after a while. What took its energy?",
+        "A pendulum eventually stops. What removed its energy?",
+        "What causes a damped oscillator to lose amplitude over time?",
+        "What force dissipates the energy of an undriven oscillator?"
+      ],
+      "options": [
+        "Air resistance — it turns the swing's energy into heat",
+        "Gravity — it pulls the swing down",
+        "The string — it absorbs the energy"
+      ],
+      "answer": 0,
+      "why": [
+        "Air resistance (and friction at the pivot) slowly drains the swing's energy. The energy is not gone — it becomes warmth in the air. That is damping.",
+        "Air resistance and friction convert the pendulum's mechanical energy to thermal energy. The swing loses amplitude because it loses useful energy.",
+        "Damping: drag and friction do negative work, converting E_mechanical to Q_thermal. The amplitude decays exponentially.",
+        "Damping force F_d = -bv. The work done by damping ∝ v² drains energy at rate bv². Amplitude decays as e^(-γt) where γ = b/2m."
+      ]
+    },
+    {
+      "type": "build",
+      "guided": true,
+      "t": [
+        "Put each part in the right place. Mass is the bob. Restoring force is gravity pulling back. Equilibrium is the lowest point.",
+        "Place each component. Mass = the bob (inertia). Restoring force = gravity along the arc. Equilibrium = the vertical rest position."
+      ],
+      "parts": [
+        { "id": "mass", "label": "Mass (bob)" },
+        { "id": "restore", "label": "Restoring force" },
+        { "id": "equilibrium", "label": "Equilibrium" },
+        { "id": "damping", "label": "Damping (air)" }
+      ],
+      "slots": [
+        { "correct": "mass", "label": ["The thing that moves", "Inertial element"] },
+        { "correct": "restore", "label": ["Pulls back to centre", "Conservative restoring force"] },
+        { "correct": "equilibrium", "label": ["The rest position", "Stable equilibrium"] },
+        { "correct": "damping", "label": ["Drains energy over time", "Dissipative force"] }
+      ],
+      "trials": [
+        {
+          "name": ["All parts correct", "Complete oscillator"],
+          "needs": ["mass", "restore", "equilibrium", "damping"],
+          "pass": ["Every part is in its right place. That is a complete oscillator.", "The oscillator is complete: inertia, restoring force, equilibrium, dissipation."],
+          "fail": ["Some parts are misplaced. Mass moves, restoring force pulls back, equilibrium is the rest, damping drains.", "Incomplete. Review: mass = inertia, restore = conservative, equilibrium = rest, damping = dissipative."]
+        },
+        {
+          "name": ["What makes it oscillate", "Oscillation conditions"],
+          "needs": ["mass", "restore", "equilibrium"],
+          "pass": ["Mass, restoring force, equilibrium — these three are what make it oscillate.", "Correct: inertia + restoring force + stable equilibrium ⟹ oscillation."],
+          "fail": ["The oscillation needs mass, a restoring force, and equilibrium. Check these three.", "Missing one of the three conditions for oscillation."]
+        },
+        {
+          "name": ["What makes it stop", "Dissipation"],
+          "needs": ["damping"],
+          "pass": ["Damping is correct — it drains the energy, so the swing eventually stops.", "Damping correct: the dissipative force that removes mechanical energy over time."],
+          "fail": ["Damping is wrong. It is air resistance (and friction) that drains the energy and stops the swing.", "Damping incorrect. Damping is the non-conservative force that converts mechanical energy to heat."]
+        }
+      ],
+      "win": [
+        "You built an oscillator. Mass, restoring force, equilibrium, and damping — every oscillator in the universe has these four.",
+        "Complete oscillator. These four components — inertial element, restoring force, equilibrium, dissipation — describe every harmonic system from a pendulum to a quantum field."
+      ],
+      "lose": [
+        "Some parts are misplaced. Mass moves, restoring force pulls back, equilibrium is the rest, damping drains. Try again.",
+        "Incomplete. The four components: mass (inertia), restoring force (conservative), equilibrium (rest position), damping (dissipative). Adjust and re-test."
+      ]
+    },
+    {
+      "type": "name",
+      "t": [
+        "Every oscillator has the same four parts: a mass, a restoring force, a balance point, and damping. This is universal.",
+        "Every oscillator in the world has these four parts: mass, restoring force, equilibrium, and damping. From a swing to a guitar string to a heartbeat.",
+        "An oscillator requires: an inertial element, a restoring force, a stable equilibrium, and (in reality) damping. These four describe every oscillating system.",
+        "Every harmonic oscillator: inertial element (m), conservative restoring force (F = -kx), stable equilibrium (F(0) = 0, F'(0) < 0), and dissipative damping (-bv). These are the necessary and sufficient components."
+      ],
+      "sub": [
+        "A swing, a guitar string, a heartbeat, a building in an earthquake — all oscillators, all with the same four parts.",
+        "The same four parts appear in every oscillator: mechanical, electrical, biological. The math is identical even when the physics is different.",
+        "The universality of the harmonic oscillator is why it is the most-solved problem in physics. The same equation describes a pendulum, an LC circuit, and a molecular vibration.",
+        "The damped harmonic oscillator equation mẍ + bẋ + kx = 0 is universal. It appears in mechanics, electronics, acoustics, and quantum field theory. The four components are the irreducible minimum."
+      ]
+    },
+    {
+      "type": "apply",
+      "kicker": "Why this matters",
+      "t": [
+        "Every clock, every instrument, every bridge — all oscillators, all with the same four parts. Understanding one is understanding all.",
+        "Clocks, instruments, bridges, hearts — all oscillators. The same four parts, the same equation. Understand one, understand all.",
+        "The harmonic oscillator is the most important model in physics. It describes pendulums, circuits, molecules, and quantum fields. The four-part decomposition is universal.",
+        "The harmonic oscillator appears in every area of physics: mechanics, electronics, acoustics, optics, quantum mechanics. It is the Taylor expansion of any stable system about equilibrium. Understanding it is foundational."
+      ]
+    },
+    {
+      "type": "check",
+      "concept": "damping",
+      "q": [
+        "A swing stops after a while. What happened to its energy?",
+        "A pendulum comes to rest. Where did its energy go?",
+        "A damped oscillator loses amplitude. What happens to its energy?",
+        "For a damped oscillator, where does the mechanical energy go?"
+      ],
+      "options": [
+        "It became heat — air resistance turned the motion energy into warmth",
+        "It disappeared — the energy is gone",
+        "It went into the string"
+      ],
+      "answer": 0,
+      "why": [
+        "The energy is not gone. Air resistance turned the swing's motion energy into heat — warmth in the air. Energy is always conserved; it just changed form.",
+        "The energy became thermal energy. Air resistance and friction converted the mechanical energy to heat. The total energy is conserved, but it is no longer useful as motion.",
+        "Damping converts mechanical energy to thermal energy. The total energy is conserved (first law), but the useful mechanical energy decreases.",
+        "The damping force does work W = -∫bv dx < 0, converting E_mechanical to Q_thermal. Energy is conserved (first law); entropy increases (second law)."
+      ]
+    }
+  ]
+}
