@@ -33,7 +33,7 @@ export const DEPTH = [
   { n: 4, label: "The whole argument", hint: "Where the simple story breaks down." },
 ];
 
-export const DEFAULT_LEVEL = 2;
+const DEFAULT_LEVEL = 2;
 
 export const prose = () => progress.prose ?? DEFAULT_LEVEL;
 export const content = () => progress.content ?? DEFAULT_LEVEL;

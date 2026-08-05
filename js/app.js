@@ -38,7 +38,6 @@ function resolve() {
 
 let current = "";
 let painted = false;
-let paintToken = 0;
 
 async function paint() {
   // A state change repaints the screen, which would otherwise throw a keyboard
@@ -51,9 +50,7 @@ async function paint() {
   // every caller synchronous-looking and means there is exactly one paint path.
   // Token-guard the await: if a second paint was triggered while this one was
   // waiting on a dynamic import, the older view must not overwrite the newer.
-  const token = ++paintToken;
   const nodes = await view();
-  if (token !== paintToken) return;        // a later paint superseded this one
   mount(host, nodes);
 
   const restored = keep && host.querySelector(`[data-fk="${CSS.escape(keep)}"]`);
@@ -95,10 +92,6 @@ subscribe(() => {
   // position the child is standing in.
   if (!liveRoute) paint();
 });
-
-// Allow screens to force a repaint (e.g. after setLevels changes needsPicker)
-// without creating a circular import. Screens dispatch 'fp:repaint'.
-addEventListener("fp:repaint", () => paint());
 
 (async function boot() {
   applyRoot();

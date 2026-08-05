@@ -10,12 +10,15 @@
     "palette": "python3 tools/gen-palette.py",
     "verify": "node tools/verify.mjs",
     "lighthouse": "node tools/lighthouse.mjs",
-    "check": "npm run build && npm run verify && npm run lighthouse"
+    "check": "npm run build && npm run verify && npm run lighthouse",
+    "cleanup": "node tools/cleanup.mjs"
   },
   "devDependencies": {
     "playwright": "^1.62.0",
     "lighthouse": "^12.0.0",
     "chrome-launcher": "^1.1.0"
   },
-  "engines": { "node": ">=22" }
+  "engines": {
+    "node": ">=22"
+  }
 }

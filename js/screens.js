@@ -3,7 +3,7 @@
 
 import { el } from "./el.js";
 import { icon as svgIcon, svgEl, svgOf } from "./icons.js";
-import { progress, reset, update } from "./state.js";
+import { progress, reset, update, setPref } from "./state.js";
 import { LEVELS, DEPTH, prose, content, setLevels } from "./level.js";
 import { sfx, canSpeak } from "./audio.js";
 import {
@@ -223,9 +223,7 @@ function choiceGroup(legend, name, options, currentValue, onPick) {
 /* Preferences go through state.update like everything else — one persistence
    path, one place migrations have to know about. applyRoot() reads them back
    onto <html> so CSS is the only consumer. */
-function setPref(key, value) {
-  update((p) => { p.prefs[key] = value || null; });
-}
+/* setPref is now imported from state.js */
 
 function badgeShelf() {
   const earned = new Set(earnedBadges(progress).map((b) => b.id));
@@ -373,8 +371,7 @@ export function me() {
             const on = !progress.prefs.dev;
             setPref("dev", on ? "on" : null);
             location.hash = "#/";
-            document.dispatchEvent(new CustomEvent("fp:repaint"));
-          },
+                      },
         }, progress.prefs.dev ? "Dev mode: ON — tap to turn off" : "Unlock all modules")),
       el("button", {
         class: "danger pressable",
@@ -382,8 +379,7 @@ export function me() {
           if (confirm("Erase all progress? This cannot be undone.")) {
             reset();
             location.hash = "#/";
-            document.dispatchEvent(new CustomEvent("fp:repaint"));
-          }
+                      }
         },
       }, "Erase all progress")),
   ];
@@ -401,8 +397,7 @@ export function levelPicker() {
             setLevels({ prose: l.n, content: l.n });
             // Force a repaint — the subscribe() callback's paint() can be
             // cancelled by the paint token guard during the boot race.
-            document.dispatchEvent(new CustomEvent("fp:repaint"));
-          } },
+                      } },
           el("span", { class: "picker-sample", text: l.sample }),
           el("span", { class: "picker-age", text: `Ages ${l.label}` }))))),
   ];

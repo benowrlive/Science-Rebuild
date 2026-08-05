@@ -5,7 +5,7 @@
    app into a 2000-line one. */
 
 const KEY = "fp.progress";
-export const VERSION = 2;
+const VERSION = 2;
 
 const fresh = () => ({
   version: VERSION,
@@ -97,6 +97,12 @@ export function update(fn) {
 export function subscribe(fn) {
   document.addEventListener("fp:change", fn);
   return () => document.removeEventListener("fp:change", fn);
+}
+
+
+/** Set a preference. Thin wrapper around update() for prefs. */
+export function setPref(key, value) {
+  update((p) => { p.prefs[key] = value || null; });
 }
 
 export function reset() {

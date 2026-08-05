@@ -86,7 +86,7 @@ export const lessonFile = (moduleId, index) => authored[moduleId]?.[index] ?? nu
 /** A world is only shown once something in it can actually be played. The
     Atlas used to promise twenty-five modules and deliver one, which reads as
     abandoned rather than early. */
-export const worldHasContent = (world) => world.modules.some((m) => writtenCount(m.id) > 0);
+const worldHasContent = (world) => world.modules.some((m) => writtenCount(m.id) > 0);
 
 /** Having content is not enough — the child has to be able to GET there.
 
@@ -134,7 +134,7 @@ export const comingWorlds = () => {
 /** Every specimen in the curriculum, with the module it comes from. Flat so
     the Me screen can render the whole collection, collected or not — an empty
     slot you can see is what makes a collection feel like one. */
-export function allSpecimens() {
+function allSpecimens() {
   const out = [];
   for (const world of worlds) {
     for (const m of world.modules) {

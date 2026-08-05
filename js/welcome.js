@@ -13,7 +13,7 @@ export async function welcome(){
       el("p",{class:"lede",text:d.body}),
       last&&c.note?el("p",{class:"welcome-note",text:c.note}):null,
       el("button",{class:"next-btn pressable m-attend","data-world":"origins",
-        onclick:()=>{if(last){setPref("greeted","1");document.dispatchEvent(new CustomEvent("fp:repaint"))}else{s++;p()}}},
+        onclick:()=>{if(last){setPref("greeted","1");location.hash = "#/"}else{s++;p()}}},
         el("span",{text:last?(c.cta??"Start"):"Next"}),svgIcon("next"))))
   }
   p();return[h];
