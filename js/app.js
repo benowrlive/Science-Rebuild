@@ -1,5 +1,5 @@
 import { progress, subscribe } from "./state.js";
-import { applyRoot, needsPicker, needsWelcome } from "./level.js";
+import { applyRoot, needsPicker, needsWelcome, applyGlass } from "./level.js";
 import { loadCurriculum } from "./curriculum.js";
 import { atlas, module as moduleScreen, me, levelPicker } from "./screens.js";
 import { mount } from "./el.js";
@@ -95,6 +95,7 @@ subscribe(() => {
 
 (async function boot() {
   applyRoot();
+  applyGlass();
   try {
     await loadCurriculum();
     render();

@@ -4,7 +4,7 @@
 import { el } from "./el.js";
 import { icon as svgIcon, svgEl, svgOf } from "./icons.js";
 import { progress, reset, update, setPref } from "./state.js";
-import { LEVELS, DEPTH, prose, content, setLevels } from "./level.js";
+import { LEVELS, DEPTH, prose, content, setLevels, applyGlass } from "./level.js";
 import { sfx, canSpeak } from "./audio.js";
 import {
   worlds, subjects, getModule, getWorldOf, isComplete, isModuleUnlocked,
@@ -358,6 +358,11 @@ export function me() {
       { value: "", label: "Standard" },
       { value: "hyperlegible", label: "Easier to read", hint: "A font designed for low vision and dyslexia" },
     ], progress.prefs.face ?? "", (v) => setPref("face", v)),
+
+    choiceGroup("Glass mode", "glass", [
+      { value: "", label: "Off" },
+      { value: "on", label: "Liquid glass", hint: "Frosted glass effect on all cards" },
+    ], progress.prefs.glass ?? "", (v) => { setPref("glass", v); applyGlass(); }),
 
 /* Tools section */
     el("section", { class: "me-actions" },

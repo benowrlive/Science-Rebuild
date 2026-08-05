@@ -44,9 +44,19 @@ export function applyRoot() {
   const root = document.documentElement;
   root.dataset.level = String(prose());
   root.dataset.age = String(content());
-  for (const key of ["theme", "face"]) {
+  for (const key of ["theme", "face", "glass"]) {
     const v = progress.prefs?.[key];
     if (v) root.dataset[key] = v; else delete root.dataset[key];
+  }
+}
+
+/** Apply liquid glass effect to cards. Called when glass pref changes. */
+export function applyGlass() {
+  const root = document.documentElement;
+  if (progress.prefs?.glass === "on") {
+    root.dataset.glass = "on";
+  } else {
+    delete root.dataset.glass;
   }
 }
 

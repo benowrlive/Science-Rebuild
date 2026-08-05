@@ -1007,3 +1007,8 @@ fp-board .board-slots fp-slot { flex: 1 1 8rem; }
 .next-btn.m-attend{animation:fx-neon-pulse 1.8s ease-in-out infinite}
 @keyframes fx-neon-pulse{0%,100%{box-shadow:0 0 8px var(--w-tint),0 0 16px var(--w-fill),inset 0 0 5px var(--w-tint)}50%{box-shadow:0 0 16px var(--w-tint),0 0 36px var(--w-fill),inset 0 0 10px var(--w-tint)}}
 
+/* Liquid glass mode */
+[data-glass="on"] .island,[data-glass="on"] .stage-wrap,[data-glass="on"] .continue,[data-glass="on"] .review-call,[data-glass="on"] .choice-box,[data-glass="on"] .picker-card,[data-glass="on"] .module-head,[data-glass="on"] .notice,[data-glass="on"] .auth-stage,[data-glass="on"] .trials{background:linear-gradient(180deg,rgba(255 255 255/.12),rgba(255 255 255/.04));box-shadow:inset 0 1px 1px rgba(255 255 255/.5),inset 0 0 0 1px rgba(255 255 255/.13),0 8px 32px rgba(0 0 0/.12)}
+[data-glass="on"] .app-bar{background:rgba(255 255 255/.6)}
+[data-glass="on"] body{background:linear-gradient(135deg,#a8edea,#fed6e3,#a8edea);background-size:400% 400%;animation:glass-bg 15s ease infinite}
+@keyframes glass-bg{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
