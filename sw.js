@@ -2,7 +2,7 @@
    tools/build.mjs — do not hand-edit the list. Offline is the normal case for
    this product, not a degraded one. */
 
-const VERSION = "14d27bdc7d9f";
+const VERSION = "a8072a533934";
 const CACHE = `fp-${VERSION}`;
 
 /* __PRECACHE_START__ */
@@ -11,6 +11,9 @@ const PRECACHE = [
   "assets/fonts/baloo-2-latin-600-normal.woff2",
   "assets/fonts/nunito-latin-400-normal.woff2",
   "assets/fonts/nunito-latin-700-normal.woff2",
+  "assets/fp-logo-256.png",
+  "assets/fp-logo-512.png",
+  "assets/fp-logo.png",
   "assets/icon-192.png",
   "assets/icon-512.png",
   "assets/icon-maskable.png",
@@ -207,6 +210,8 @@ self.addEventListener("activate", (e) => {
     caches.keys()
       .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
+      .then(() => self.clients.matchAll({ type: "window" }))
+      .then((clients) => clients.forEach((c) => c.postMessage({ type: "sw-activated" })))
   );
 });
 
@@ -214,16 +219,21 @@ self.addEventListener("fetch", (e) => {
   const { request } = e;
   if (request.method !== "GET" || new URL(request.url).origin !== location.origin) return;
 
-  // Hash routing means every in-app route IS the shell document, so a cold
-  // offline start needs the shell as a fallback. But falling back to the shell
-  // for *every* navigation silently shadows any other real page at this origin
-  // — styleguide.html was served index.html and looked like a broken build.
-  // Try the exact document first; use the shell only when there isn't one.
+  // STALE-WHILE-REVALIDATE for navigations: serve cached HTML instantly,
+  // then fetch the fresh version in the background and notify the page.
+  // This gives instant loads AND automatic updates — no manual clearing.
   if (request.mode === "navigate") {
     e.respondWith(
-      caches.match(request)
-        .then((hit) => hit || fetch(request))
-        .catch(() => caches.match("./"))
+      caches.match(request).then((cached) => {
+        const fetchPromise = fetch(request).then((res) => {
+          if (res.ok) {
+            const copy = res.clone();
+            caches.open(CACHE).then((c) => c.put(request, copy));
+          }
+          return res;
+        }).catch(() => cached || caches.match("./"));
+        return cached || fetchPromise;
+      })
     );
     return;
   }

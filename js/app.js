@@ -108,7 +108,16 @@ subscribe(() => {
   }
 
   if ("serviceWorker" in navigator && location.protocol !== "file:") {
-    navigator.serviceWorker.register("sw.js").catch(() => { /* offline is a bonus, not a requirement */ });
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+    // When a new SW activates, reload ONCE so the child sees the new build.
+    // After this reload, the new SW is in control and the stale-while-revalidate
+    // strategy keeps everything up to date automatically — no manual clearing.
+    let reloaded = false;
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (reloaded || !navigator.serviceWorker.controller) return;
+      reloaded = true;
+      location.reload();
+    });
   }
 })();
 

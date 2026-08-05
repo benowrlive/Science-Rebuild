@@ -1,7 +1,7 @@
 {
-  "name": "First Principles Life Sciences",
-  "short_name": "Life Sciences",
-  "description": "Learn biology by operating the mechanism before naming it.",
+  "name": "First Principles of Science",
+  "short_name": "First Principles",
+  "description": "Learn science by operating the mechanism before naming it.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

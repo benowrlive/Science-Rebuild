@@ -7,7 +7,7 @@ export async function welcome(){
   function p(){
     const d=c.steps[s],last=s>=c.steps.length-1;
     mount(h,el("section",{class:"welcome","data-world":"origins"},
-      el("img",{class:"owner-mark",src:"assets/publisher-mark.png",width:320,height:320,alt:"",decoding:"async"}),
+      el("img",{class:"owner-mark",src:"assets/fp-logo-256.png",width:256,height:256,alt:"First Principles of Science",decoding:"async"}),
       el("div",{class:"welcome-progress"},...c.steps.map((_,i)=>el("span",{class:`welcome-dot${i<=s?" welcome-dot--done":""}`}))),
       el("h1",{class:"welcome-h",text:d.headline}),
       el("p",{class:"lede",text:d.body}),

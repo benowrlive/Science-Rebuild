@@ -19,6 +19,14 @@
       "body": "Reading level and science level are set separately. A dyslexic fourteen-year-old can have level-1 sentences with level-4 science. A strong reader can have gentle science. The two are independent."
     },
     {
+      "headline": "How should the words be written?",
+      "body": "Level 1: short sentences for a five-year-old. Level 4: full technical register for a sixteen-year-old. The child picks the sentence that feels right — not their age. They can change it any time under Me."
+    },
+    {
+      "headline": "How deep should the science go?",
+      "body": "Level 1: just the idea, one thing at a time. Level 4: the whole argument, where the simple story breaks down. This is separate from the words — a child can read easily and still want deep science, or the other way round."
+    },
+    {
       "headline": "Yours, and private.",
       "body": "It works with no internet after the first visit. No account, no advertising, and nothing about your child leaves the device. Everything is stored in the browser."
     },
@@ -29,5 +37,5 @@
   ],
 
   "cta": "Hand it to your child",
-  "note": "They choose how the words are written on the next screen. You can change it, and everything else, under Me."
+  "note": "They choose how the words are written and how deep the science goes on the next screen. You can change both, and everything else, under Me."
 }
