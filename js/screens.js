@@ -334,8 +334,15 @@ export function me() {
       (v) => setLevels({ content: v })),
 
     choiceGroup("Colours", "theme", [
-      { value: "", label: "Match my device" }, { value: "light", label: "Light" }, { value: "dark", label: "Dark" },
-    ], progress.prefs.theme ?? "", (v) => setPref("theme", v)),
+      { value: "", label: "Match my device" },
+      { value: "light", label: "Light", hint: "Bright with frosted glass cards" },
+      { value: "dark", label: "Dark" },
+    ], progress.prefs.theme ?? "", (v) => {
+      setPref("theme", v);
+      // Light mode = glass on; dark/match = glass off
+      setPref("glass", v === "light" ? "on" : null);
+      applyGlass();
+    }),
 
     /* Sound defaults ON: it is synthesised, so it costs nothing to ship, and
        the confirmation chime on switching it back on is the fastest way to know
@@ -358,11 +365,6 @@ export function me() {
       { value: "", label: "Standard" },
       { value: "hyperlegible", label: "Easier to read", hint: "A font designed for low vision and dyslexia" },
     ], progress.prefs.face ?? "", (v) => setPref("face", v)),
-
-    choiceGroup("Glass mode", "glass", [
-      { value: "", label: "Off" },
-      { value: "on", label: "Liquid glass", hint: "Frosted glass effect on all cards" },
-    ], progress.prefs.glass ?? "", (v) => { setPref("glass", v); applyGlass(); }),
 
 /* Tools section */
     el("section", { class: "me-actions" },
