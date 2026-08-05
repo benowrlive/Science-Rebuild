@@ -1,0 +1,33 @@
+{
+  "_note": [
+    "The front door, written for the ADULT — a parent decides whether this gets used.",
+    "Edit this file, not the JavaScript. The content is broken into steps so the",
+    "parent can read one idea at a time and tap Next, like a guided onboarding."
+  ],
+
+  "steps": [
+    {
+      "headline": "Your child runs the experiment first.",
+      "body": "Every lesson opens with something they can operate — a simulation to break, a prediction they have to commit to, a thing to build. The word for what they have just seen arrives afterwards, never before. That order is the whole method."
+    },
+    {
+      "headline": "166 lessons across two subjects.",
+      "body": "Life sciences: cells, DNA, proteins, evolution, ecology, biotechnology. Physics: motion, forces, energy, waves, fields, modern physics. All for ages 5 to 16."
+    },
+    {
+      "headline": "Two dials, not one.",
+      "body": "Reading level and science level are set separately. A dyslexic fourteen-year-old can have level-1 sentences with level-4 science. A strong reader can have gentle science. The two are independent."
+    },
+    {
+      "headline": "Yours, and private.",
+      "body": "It works with no internet after the first visit. No account, no advertising, and nothing about your child leaves the device. Everything is stored in the browser."
+    },
+    {
+      "headline": "Where science touches origins.",
+      "body": "Six lessons sit where a mainstream reading and a creationist reading of the same evidence diverge. Both readings are set out side by side and attributed to the people who hold them. The child handles the evidence first. We do not tell them what to conclude."
+    }
+  ],
+
+  "cta": "Hand it to your child",
+  "note": "They choose how the words are written on the next screen. You can change it, and everything else, under Me."
+}

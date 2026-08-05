@@ -66,6 +66,11 @@ export function setLevels({ prose: pr, content: co } = {}) {
     that feels right — never to type their age. */
 export const needsPicker = () => progress.prose == null;
 
+/** True until the parent has seen the welcome screen. The welcome is written
+    for the adult — it explains the method, the privacy, and the editorial
+    position before handing the device to a child. */
+export const needsWelcome = () => progress.prose == null && !progress.prefs?.greeted;
+
 /* ---------------------------------------------------------- the level nudge
    Self-selected difficulty skews upward: children pick the clever-sounding
    sentence and grown-ups pick for them. The blueprint specified a corrective

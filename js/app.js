@@ -1,8 +1,5 @@
-/* Boot + router. Hash routing because it needs no server rewrite rules and
-   works identically from a file server, a static host and the service worker. */
-
 import { progress, subscribe } from "./state.js";
-import { applyRoot, needsPicker } from "./level.js";
+import { applyRoot, needsPicker, needsWelcome } from "./level.js";
 import { loadCurriculum } from "./curriculum.js";
 import { atlas, module as moduleScreen, me, levelPicker } from "./screens.js";
 import { mount } from "./el.js";
@@ -10,19 +7,11 @@ import { mount } from "./el.js";
 const host = document.getElementById("main");
 const live = document.getElementById("live");
 
-/* Lesson code is imported only when a lesson route is hit, so a child on the
-   Atlas never downloads the runner, the quiz component or the review flow. */
 const lazyLesson = (...args) => import("./lesson/view.js").then((m) => m.lessonView(...args));
 const lazyReview = () => import("./lesson/review.js").then((m) => m.reviewView());
-/* The authoring tool is lazy too — it is only opened by authors, never by a
-   child, and it carries the per-stage-type form components nothing else needs. */
 const lazyAuthor = () => import("./author/index.js").then((m) => m.authorView());
+const lazyWelcome = () => import("./welcome.js").then((m) => m.welcome());
 
-/* `live: true` marks a route that owns its own DOM across state changes.
-   Without it, awarding XP mid-lesson dispatched fp:change, the subscriber
-   repainted the route, and the child was thrown back to stage one by their own
-   correct answer. Stateless screens (Atlas, module, Me) still repaint on every
-   change, which is what keeps them honest. */
 const routes = [
   [/^\/?$/, atlas],
   [/^\/m\/([\w-]+)$/, moduleScreen],
@@ -57,7 +46,7 @@ async function paint() {
   // must survive a repaint carry data-fk.
   const keep = document.activeElement?.closest?.("[data-fk]")?.dataset.fk;
 
-  const view = needsPicker() ? levelPicker : resolve();
+  const view = needsWelcome() ? lazyWelcome : needsPicker() ? levelPicker : resolve();
   // A view may be async (lazily-imported lesson code). Awaiting it here keeps
   // every caller synchronous-looking and means there is exactly one paint path.
   // Token-guard the await: if a second paint was triggered while this one was
